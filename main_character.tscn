@@ -1,0 +1,120 @@
+[gd_scene load_steps=20 format=3 uid="uid://d33nbegkq8h2m"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_v25hk"]
+[ext_resource type="Texture2D" uid="uid://b34yvxhajb05w" path="res://assets/player/jump/character_jump0004.png" id="2_6dkjc"]
+[ext_resource type="Texture2D" uid="uid://c2x2aqiup7a2f" path="res://assets/player/stand/character_stand.png" id="2_w4wps"]
+[ext_resource type="Texture2D" uid="uid://beor1yipfqgas" path="res://assets/player/jump/character_jump0005.png" id="3_pp8x7"]
+[ext_resource type="Texture2D" uid="uid://dq6qm26kn1vrk" path="res://assets/player/jump/character_jump0001.png" id="4_x82fl"]
+[ext_resource type="Texture2D" uid="uid://c6dske1afh6q3" path="res://assets/player/jump/character_jump0002.png" id="5_xep85"]
+[ext_resource type="Texture2D" uid="uid://bklg4noqxkpt6" path="res://assets/player/jump/character_jump0003.png" id="6_e5mto"]
+[ext_resource type="Texture2D" uid="uid://bc0bopqg5b7sh" path="res://assets/player/run/character_run0000.png" id="7_i2qrm"]
+[ext_resource type="Texture2D" uid="uid://havgka18s046" path="res://assets/player/run/character_run0001.png" id="8_p0fhb"]
+[ext_resource type="Texture2D" uid="uid://cfn1o2q00iwbx" path="res://assets/player/run/character_run0002.png" id="9_78iln"]
+[ext_resource type="Texture2D" uid="uid://mp4au38gjvvs" path="res://assets/player/run/character_run0003.png" id="10_4nkfi"]
+[ext_resource type="Texture2D" uid="uid://bjd5q27s345fl" path="res://assets/player/run/character_run0004.png" id="11_8rcrg"]
+[ext_resource type="Texture2D" uid="uid://bnqphe7tfd3d4" path="res://assets/player/run/character_run0005.png" id="12_0hygf"]
+[ext_resource type="Texture2D" uid="uid://br4vgxfrud46e" path="res://assets/player/run/character_run0006.png" id="13_vhk6l"]
+[ext_resource type="Texture2D" uid="uid://def4tc0h3jp3b" path="res://assets/player/run/character_run0007.png" id="14_xc88j"]
+[ext_resource type="Texture2D" uid="uid://cku26dfgrtuwl" path="res://assets/player/run/character_run0008.png" id="15_r3q7x"]
+[ext_resource type="Texture2D" uid="uid://cuoju4d7s8p3l" path="res://assets/player/run/character_run0009.png" id="16_4xdax"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lnbq"]
+radius = 27.0
+height = 96.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8d5qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6dkjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pp8x7")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w4wps")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x82fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xep85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e5mto")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_i2qrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p0fhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_78iln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4nkfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8rcrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0hygf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vhk6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xc88j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r3q7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4xdax")
+}],
+"loop": true,
+"name": &"run",
+"speed": 14.0
+}]
+
+[node name="MainCharacter" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 3
+floor_constant_speed = true
+floor_snap_length = 5.0
+script = ExtResource("1_v25hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_5lnbq")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+scale = Vector2(0.480556, 0.480556)
+sprite_frames = SubResource("SpriteFrames_8d5qg")
+animation = &"jump"
+autoplay = "idle"
+
+[node name="CoyoteJumpTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.2
+
+[node name="WallJumpTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.2
