@@ -26,6 +26,9 @@ height = 96.0
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_e5mto")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_6dkjc")
 }, {
 "duration": 1.0,
@@ -49,13 +52,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_xep85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_e5mto")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

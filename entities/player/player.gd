@@ -5,12 +5,11 @@ extends CharacterBody2D
 @export var JUMP_HEIGHT : float = 205
 @export var JUMP_TIME_TO_PEAK : float = 0.6
 @export var JUMP_TIME_TO_DESCENT : float = 0.5
+@export var CUT_JUMP_HEIGHT : float = 0.6
 
 @onready var JUMP_VELOCITY : float = ((2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK) * -1.0
 @onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
 @onready var FALL_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)) * -1.0
-
-@export var CUT_JUMP_HEIGHT : float = 0.6
 
 enum State {
 	IDLE,
