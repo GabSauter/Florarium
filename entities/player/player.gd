@@ -78,15 +78,14 @@ func jump(direction):
 			velocity.y *= CUT_JUMP_HEIGHT
 	
 	# horizontal
-	if direction:
-		velocity.x = SPEED * direction
+	#if direction:
+	velocity.x = SPEED * direction
 
 func fall(direction):
 	$AnimatedSprite2D.play("fall")
 	
 	# horizontal
-	if direction:
-		velocity.x = SPEED * direction
+	velocity.x = SPEED * direction
 
 func apply_gravity(delta):
 	if not is_on_floor():

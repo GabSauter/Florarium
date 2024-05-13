@@ -1,0 +1,1895 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddqjd3aptdlu8"]
+
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/main_character.tscn" id="1_jd7ac"]
+[ext_resource type="Texture2D" uid="uid://dyackxfof7oei" path="res://assets/world/level1/level_1_ground.png" id="3_2ce8m"]
+[ext_resource type="Texture2D" uid="uid://dtof0pahar05e" path="res://assets/rocks/Rock_1.PNG" id="4_l0rsp"]
+[ext_resource type="Texture2D" uid="uid://d1qskh5u17est" path="res://assets/rocks/Rock_2.PNG" id="5_fgd3r"]
+[ext_resource type="Texture2D" uid="uid://qwqsdijyahu1" path="res://assets/bushes/Bush_1.PNG" id="6_7x16k"]
+[ext_resource type="Texture2D" uid="uid://cxwnui1m46lm2" path="res://assets/bushes/Bush_2.PNG" id="7_us1m6"]
+[ext_resource type="Shader" path="res://blur.gdshader" id="8_42jsw"]
+[ext_resource type="Texture2D" uid="uid://db7t5eqbthc2j" path="res://assets/tree/Tree.png" id="8_phh1s"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effect/Solid_white.png" id="9_3435m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ymf"]
+shader = ExtResource("8_42jsw")
+shader_parameter/lod = 0.5
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_eea5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 1344, 3904, 1344, 3904, 384, 3712, 384, 3712, 960, 3200, 960, 3200, 1024, 2872, 1024, 2872, 960, 2304, 960, 2304, 1152, 1664, 1152, 1664, 1072, 1600, 1072, 1600, 1152, 40, 1152, 40, 544, 0, 544)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.32549, 0.670588, 0.435294, 1)
+
+[node name="UIContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UIContainer"]
+layout_mode = 2
+offset_left = 208.0
+offset_top = 909.0
+offset_right = 372.0
+offset_bottom = 932.0
+text = "-> Move para direita"
+
+[node name="Label2" type="Label" parent="UIContainer"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 917.0
+offset_right = 918.0
+offset_bottom = 940.0
+text = "<- Move para esquerda"
+
+[node name="Label3" type="Label" parent="UIContainer"]
+layout_mode = 0
+offset_left = 1360.0
+offset_top = 960.0
+offset_right = 1555.0
+offset_bottom = 983.0
+text = "Aperte Espaço para pular"
+
+[node name="Label4" type="Label" parent="UIContainer"]
+layout_mode = 0
+offset_left = 2136.0
+offset_top = 768.0
+offset_right = 2407.0
+offset_bottom = 791.0
+text = "Segure espaço para pular mais alto"
+
+[node name="Label5" type="Label" parent="UIContainer"]
+layout_mode = 0
+offset_left = 2944.0
+offset_top = 760.0
+offset_right = 3077.0
+offset_bottom = 783.0
+text = "Evite os espinhos"
+
+[node name="-3" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
+
+[node name="Sprite2D3" type="Sprite2D" parent="-3"]
+position = Vector2(0, -200)
+
+[node name="Rock1" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(391, 1231)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Bush54" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3098, 1104)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush33" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2072, 1203)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush32" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2421, 1073)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush45" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2996, 1090)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush46" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush47" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush31" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2493, 1060)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Rock3" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(902, 1234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock6" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2525, 1122)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock2" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(100, 1228)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock4" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1360, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock5" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1817, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock7" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3329, 1024)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Bush1" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(296, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush7" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(696, 1216)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush8" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(802, 1219)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush19" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1683, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush3" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(176, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush12" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1223, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush5" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(464, 1224)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush6" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(615, 1221)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush10" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(985, 1211)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush4" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(535, 1233)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush29" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2383, 1120)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush9" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(935, 1247)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush15" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1570, 1202)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush22" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2252, 1180)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush14" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1440, 1215)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush16" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1678, 1231)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush11" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1120, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush18" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1918, 1204)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush30" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2671, 1063)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush24" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2412, 1146)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush21" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2137, 1210)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush25" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2596, 1110)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush13" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1280, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush17" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(1825, 1245)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush20" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2001, 1215)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush23" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2346, 1205)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush26" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2508, 1162)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush28" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2706, 1129)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush34" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2890, 1091)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush48" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2831, 1137)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush49" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2964, 1145)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush50" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3077, 1142)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush51" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2748, 1172)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush52" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2992, 1174)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush35" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3280, 1071)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush36" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3497, 1015)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush37" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3783, 1022)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush43" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3647, 1056)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush44" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3779, 1079)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush38" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3618, 1108)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush42" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3716, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush39" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3376, 1078)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush40" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3492, 1081)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush41" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3567, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush2" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(15, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush27" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(2616, 1170)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush53" type="Sprite2D" parent="-3/Sprite2D3"]
+position = Vector2(3158, 1177)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="SolidWhite2" type="Sprite2D" parent="-3"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(-931.111, -503.333)
+scale = Vector2(28.5, 8.92222)
+texture = ExtResource("9_3435m")
+centered = false
+
+[node name="Blur3" type="Sprite2D" parent="-3"]
+z_index = -2
+z_as_relative = false
+material = SubResource("ShaderMaterial_e1ymf")
+position = Vector2(2261.11, 993.636)
+scale = Vector2(24.0889, 6.41667)
+texture = ExtResource("9_3435m")
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="Sprite2D2" type="Sprite2D" parent="-2"]
+z_index = -2
+position = Vector2(0, -150)
+
+[node name="Rock1" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(391, 1231)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Bush54" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3098, 1104)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush33" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2072, 1203)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush32" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2421, 1073)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush45" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2996, 1090)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush46" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush47" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush31" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2493, 1060)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Rock3" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(902, 1234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock6" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2525, 1122)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock2" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(100, 1228)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock4" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1360, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock5" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1817, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock7" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3329, 1024)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Bush1" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(296, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush7" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(696, 1216)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush8" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(802, 1219)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush19" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1683, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush3" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(176, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush12" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1223, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush5" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(464, 1224)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush6" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(615, 1221)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush10" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(985, 1211)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush4" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(535, 1233)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush29" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2383, 1120)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush9" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(935, 1247)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush15" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1570, 1202)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush22" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2252, 1180)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush14" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1440, 1215)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush16" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1678, 1231)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush11" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1120, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush18" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1918, 1204)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush30" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2671, 1063)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush24" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2412, 1146)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush21" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2137, 1210)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush25" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2596, 1110)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush13" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1280, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush17" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(1825, 1245)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush20" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2001, 1215)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush23" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2346, 1205)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush26" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2508, 1162)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush28" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2706, 1129)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush34" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2890, 1091)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush48" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2831, 1137)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush49" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2964, 1145)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush50" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3077, 1142)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush51" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2748, 1172)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush52" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2992, 1174)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush35" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3280, 1071)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush36" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3497, 1015)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush37" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3783, 1022)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush43" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3647, 1056)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush44" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3779, 1079)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush38" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3618, 1108)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush42" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3716, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush39" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3376, 1078)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush40" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3492, 1081)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush41" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3567, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush2" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(15, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush27" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(2616, 1170)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush53" type="Sprite2D" parent="-2/Sprite2D2"]
+position = Vector2(3158, 1177)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="SolidWhite" type="Sprite2D" parent="-2"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(-931.111, -503.333)
+scale = Vector2(28.5, 8.92222)
+texture = ExtResource("9_3435m")
+centered = false
+
+[node name="Blur2" type="Sprite2D" parent="-2"]
+z_index = -2
+z_as_relative = false
+material = SubResource("ShaderMaterial_e1ymf")
+position = Vector2(2261.11, 993.636)
+scale = Vector2(24.0889, 6.41667)
+texture = ExtResource("9_3435m")
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+z_index = -1
+position = Vector2(0, -100)
+
+[node name="Rock1" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(391, 1231)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Bush54" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3098, 1104)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush33" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2072, 1203)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush32" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2421, 1073)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush45" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2996, 1090)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush46" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush47" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush31" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2493, 1060)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Rock3" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(902, 1234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock6" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2525, 1122)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock2" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(100, 1228)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock4" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1360, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock5" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1817, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock7" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3329, 1024)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Bush1" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(296, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush7" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(696, 1216)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush8" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(802, 1219)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush19" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1683, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush3" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(176, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush12" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1223, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush5" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(464, 1224)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush6" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(615, 1221)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush10" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(985, 1211)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush4" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(535, 1233)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush29" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2383, 1120)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush9" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(935, 1247)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush15" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1570, 1202)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush22" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2252, 1180)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush14" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1440, 1215)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush16" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1678, 1231)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush11" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1120, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush18" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1918, 1204)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush30" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2671, 1063)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush24" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2412, 1146)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush21" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2137, 1210)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush25" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2596, 1110)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush13" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1280, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush17" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(1825, 1245)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush20" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2001, 1215)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush23" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2346, 1205)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush26" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2508, 1162)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush28" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2706, 1129)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush34" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2890, 1091)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush48" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2831, 1137)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush49" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2964, 1145)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush50" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3077, 1142)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush51" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2748, 1172)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush52" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2992, 1174)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush35" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3280, 1071)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush36" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3497, 1015)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush37" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3783, 1022)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush43" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3647, 1056)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush44" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3779, 1079)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush38" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3618, 1108)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush42" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3716, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush39" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3376, 1078)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush40" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3492, 1081)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush41" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3567, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush2" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(15, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush27" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(2616, 1170)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush53" type="Sprite2D" parent="-1/Sprite2D"]
+position = Vector2(3158, 1177)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="SolidWhite" type="Sprite2D" parent="-1"]
+modulate = Color(1, 1, 1, 0.0941176)
+position = Vector2(-931.111, -503.333)
+scale = Vector2(28.5, 8.92222)
+texture = ExtResource("9_3435m")
+centered = false
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+z_index = -1
+material = SubResource("ShaderMaterial_e1ymf")
+position = Vector2(2241.11, 1050)
+scale = Vector2(24.0889, 6.41667)
+texture = ExtResource("9_3435m")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Level1Ground" type="Sprite2D" parent="0"]
+position = Vector2(1984, 1152)
+texture = ExtResource("3_2ce8m")
+
+[node name="MainCharacter" parent="0" instance=ExtResource("1_jd7ac")]
+position = Vector2(514, 1092)
+
+[node name="1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="1"]
+z_index = 1
+
+[node name="Rock1" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(391, 1231)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Bush54" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3098, 1104)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush33" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2072, 1203)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush32" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2421, 1073)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush45" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2996, 1090)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush46" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush47" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush31" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2493, 1060)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Rock3" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(902, 1234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock6" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2525, 1122)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock2" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(100, 1228)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock4" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1360, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock5" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1817, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock7" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3329, 1024)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Bush1" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(296, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush7" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(696, 1216)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush8" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(802, 1219)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush19" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1683, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush3" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(176, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush12" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1223, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush5" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(464, 1224)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush6" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(615, 1221)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush10" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(985, 1211)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush4" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(535, 1233)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush29" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2383, 1120)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush9" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(935, 1247)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush15" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1570, 1202)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush22" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2252, 1180)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush14" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1440, 1215)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush16" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1678, 1231)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush11" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1120, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush18" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1918, 1204)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush30" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2671, 1063)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush24" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2412, 1146)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush21" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2137, 1210)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush25" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2596, 1110)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush13" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1280, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush17" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(1825, 1245)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush20" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2001, 1215)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush23" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2346, 1205)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush26" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2508, 1162)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush28" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2706, 1129)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush34" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2890, 1091)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush48" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2831, 1137)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush49" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2964, 1145)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush50" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3077, 1142)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush51" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2748, 1172)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush52" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2992, 1174)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush35" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3280, 1071)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush36" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3497, 1015)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush37" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3783, 1022)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush43" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3647, 1056)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush44" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3779, 1079)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush38" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3618, 1108)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush42" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3716, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush39" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3376, 1078)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush40" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3492, 1081)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush41" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3567, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush2" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(15, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush27" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(2616, 1170)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush53" type="Sprite2D" parent="1/Sprite2D"]
+position = Vector2(3158, 1177)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="Bush1" type="Sprite2D" parent="2"]
+position = Vector2(65.8333, 1234.17)
+texture = ExtResource("6_7x16k")
+centered = false
+
+[node name="Bush2" type="Sprite2D" parent="2"]
+position = Vector2(225.833, 1235)
+texture = ExtResource("6_7x16k")
+centered = false
+
+[node name="3" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.3
+
+[node name="Sprite2D4" type="Sprite2D" parent="3"]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+position = Vector2(0, 120)
+
+[node name="Rock1" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(391, 1231)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Bush54" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3098, 1104)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush33" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2072, 1203)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush32" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2421, 1073)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush45" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2996, 1090)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush46" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush47" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2782, 1088)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush31" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2493, 1060)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Rock3" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(902, 1234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock6" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2525, 1122)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_l0rsp")
+
+[node name="Rock2" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(100, 1228)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock4" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1360, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock5" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1817, 1199)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Rock7" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3329, 1024)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("5_fgd3r")
+
+[node name="Bush1" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(292.308, 1228.46)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush61" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(234.615, 1245.38)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush7" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(696, 1216)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush8" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(802, 1219)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush19" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1683, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush3" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(176, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush12" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1223, 1230)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush60" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1171, 1223)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush5" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(464, 1224)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush6" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(615, 1221)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush10" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(985, 1211)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush4" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(535, 1233)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush29" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2383, 1120)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush9" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(935, 1247)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush15" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1570, 1202)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush22" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2252, 1180)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush14" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1440, 1215)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush16" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1678, 1231)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush56" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1500, 1232)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush62" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1428, 1266)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush63" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1717, 1259)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush11" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1120, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush55" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1049, 1223)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush18" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1918, 1204)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush59" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1587, 1261)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush30" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2671, 1063)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush24" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2412, 1146)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush21" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2137, 1210)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush25" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2596, 1110)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush13" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1280, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush17" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1823, 1265)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush57" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2182, 1232)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush65" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2143, 1262)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush20" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2001, 1215)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush66" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2030, 1264)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush64" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1924, 1262)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush23" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2346, 1205)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush58" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2290, 1259)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush26" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2508, 1162)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush28" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2706, 1129)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush34" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2890, 1091)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush48" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2831, 1137)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush49" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2964, 1145)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush50" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3077, 1142)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush51" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2748, 1172)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush67" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2820, 1190)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush52" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3002, 1169)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush68" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2945, 1221)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush69" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3080, 1223)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush35" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3280, 1071)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush36" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3497, 1015)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush37" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3783, 1022)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush43" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3647, 1056)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush44" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3779, 1079)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush38" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3618, 1108)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush42" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3716, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush39" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3376, 1078)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush40" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3492, 1081)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush41" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3567, 1114)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush2" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(15, 1234)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush27" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2616, 1170)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush53" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3247, 1117)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Bush70" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3210, 1152)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("7_us1m6")
+
+[node name="Tree" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(-46.1539, 724.615)
+texture = ExtResource("8_phh1s")
+
+[node name="Tree2" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(799, 738)
+texture = ExtResource("8_phh1s")
+
+[node name="Tree3" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(2557, 689)
+texture = ExtResource("8_phh1s")
+
+[node name="Bush71" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3174, 1209)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Tree4" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3536, 546)
+texture = ExtResource("8_phh1s")
+
+[node name="Bush72" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3284, 1195)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush73" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3355, 1167)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush78" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3813, 1149)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush79" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3882, 1165)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush74" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3480, 1171)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush75" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3480, 1171)
+rotation = -0.0889744
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush76" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3594, 1172)
+rotation = -0.0889744
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush77" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(3682, 1171)
+rotation = -0.0889744
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush80" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1299, 1278)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush81" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1165, 1278)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush82" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(1049, 1288)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush83" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(951, 1316)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush86" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(657, 1320)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush87" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(429, 1283)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush88" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(288, 1282)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush84" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(811, 1320)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
+
+[node name="Bush85" type="Sprite2D" parent="3/Sprite2D4"]
+position = Vector2(558, 1292)
+rotation = 0.0455871
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("6_7x16k")
