@@ -19,8 +19,6 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=2
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -49,4 +47,4 @@ jump={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.333333, 0.576471, 0.54902, 1)
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
