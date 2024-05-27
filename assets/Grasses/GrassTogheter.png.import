@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byhq1keens5la"
-path="res://.godot/imported/level_1_Ground-2.png-99ba2c1f3ce3e7ed8356e3f75db376fe.ctex"
+uid="uid://da1iwwt47164h"
+path="res://.godot/imported/GrassTogheter.png-85a40b9a98b78a001fa9069249e895c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_1_Ground-2.png"
-dest_files=["res://.godot/imported/level_1_Ground-2.png-99ba2c1f3ce3e7ed8356e3f75db376fe.ctex"]
+source_file="res://assets/Grasses/GrassTogheter.png"
+dest_files=["res://.godot/imported/GrassTogheter.png-85a40b9a98b78a001fa9069249e895c0.ctex"]
 
 [params]
 

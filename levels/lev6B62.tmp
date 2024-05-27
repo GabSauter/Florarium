@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=29 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/main_character.tscn" id="1_jd7ac"]
@@ -40,9 +40,12 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_83kbi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gf8"]
-size = Vector2(9229, 2043)
+size = Vector2(2084.76, 629.666)
 
-[sub_resource type="Resource" id="Resource_yexr3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjelg"]
+size = Vector2(327.361, 252.348)
+
+[sub_resource type="Resource" id="Resource_fum1w"]
 script = ExtResource("14_bwbiv")
 duration = 1.0
 transition = 0
@@ -52,12 +55,11 @@ ease = 2
 script = ExtResource("1_eea5y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1323, 999)
-zoom = Vector2(0.5, 0.5)
-limit_left = 43
-limit_top = -145
-limit_right = 9272
-limit_bottom = 1898
+position = Vector2(929, 871)
+limit_left = 285
+limit_top = 601
+limit_right = 2370
+limit_bottom = 1231
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -68,6 +70,7 @@ follow_viewport_enabled = true
 follow_viewport_scale = 0.7
 
 [node name="-2" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 follow_viewport_scale = 0.8
 
@@ -94,6 +97,7 @@ texture = ExtResource("9_3435m")
 centered = false
 
 [node name="-1" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 follow_viewport_scale = 0.9
 
@@ -346,22 +350,10 @@ rotation = 2.07694
 scale = Vector2(1.142, 33.167)
 texture = SubResource("GradientTexture1D_g3myh")
 
-[node name="Sprite2D14" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(-2592.22, 786.667)
-rotation = 2.07694
-scale = Vector2(1.142, 33.167)
-texture = SubResource("GradientTexture1D_g3myh")
-
 [node name="Sprite2D11" type="Sprite2D" parent="-1/Sprites/Shadows"]
 position = Vector2(-276.851, 556.999)
 rotation = 2.07694
 scale = Vector2(1.142, 33.167)
-texture = SubResource("GradientTexture1D_g3myh")
-
-[node name="Sprite2D13" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(-1055.56, 548.889)
-rotation = 2.07694
-scale = Vector2(0.901027, 26.1685)
 texture = SubResource("GradientTexture1D_g3myh")
 
 [node name="Sprite2D12" type="Sprite2D" parent="-1/Sprites/Shadows"]
@@ -371,21 +363,9 @@ scale = Vector2(1.142, 33.167)
 texture = SubResource("GradientTexture1D_g3myh")
 
 [node name="Sprite2D16" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(4773.33, 748.889)
+position = Vector2(6057.59, 680.333)
 rotation = 2.07694
 scale = Vector2(1.142, 33.167)
-texture = SubResource("GradientTexture1D_g3myh")
-
-[node name="Sprite2D17" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(3474.44, 598.889)
-rotation = 2.07694
-scale = Vector2(0.992894, 28.8365)
-texture = SubResource("GradientTexture1D_g3myh")
-
-[node name="Sprite2D18" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(2128.89, 668.889)
-rotation = 2.07694
-scale = Vector2(0.992894, 28.8365)
 texture = SubResource("GradientTexture1D_g3myh")
 
 [node name="Sprite2D2" type="Sprite2D" parent="-1/Sprites/Shadows"]
@@ -395,7 +375,7 @@ scale = Vector2(1.142, 33.167)
 texture = SubResource("GradientTexture1D_g3myh")
 
 [node name="Sprite2D3" type="Sprite2D" parent="-1/Sprites/Shadows"]
-position = Vector2(1122.22, 802.222)
+position = Vector2(1468.81, 742.12)
 rotation = 2.07694
 scale = Vector2(1.142, 33.167)
 texture = SubResource("GradientTexture1D_g3myh")
@@ -570,10 +550,7 @@ scale = Vector2(1.00843, 1.00843)
 texture = ExtResource("4_5etp6")
 
 [node name="MainCharacter" parent="0" instance=ExtResource("1_jd7ac")]
-position = Vector2(-1041, 1037)
-
-[node name="CharacterBody2D" parent="0/MainCharacter" index="0"]
-position = Vector2(1933, -38)
+position = Vector2(929, 1024)
 
 [node name="Ground" type="Node2D" parent="0"]
 
@@ -803,27 +780,45 @@ follow_viewport_scale = 1.3
 
 [node name="CameraRegions" type="Node2D" parent="."]
 
-[node name="LevelArea2D" type="Area2D" parent="CameraRegions"]
-collision_layer = 5
+[node name="RoomLeftArea2D" type="Area2D" parent="CameraRegions"]
+unique_name_in_owner = true
+position = Vector2(370, 866)
+collision_layer = 0
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraRegions/LevelArea2D"]
-position = Vector2(4657.5, 876.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraRegions/RoomLeftArea2D"]
+position = Vector2(957.671, 50)
+scale = Vector2(0.740987, 1)
 shape = SubResource("RectangleShape2D_22gf8")
 
-[node name="PhantomCamera2D" type="Node2D" parent="CameraRegions/LevelArea2D" node_paths=PackedStringArray("follow_target")]
-position = Vector2(1323, 999)
+[node name="PhantomCamera2D" type="Node2D" parent="CameraRegions" node_paths=PackedStringArray("follow_target")]
+position = Vector2(929, 871)
 script = ExtResource("13_i6151")
 priority = 5
-follow_mode = 5
-follow_target = NodePath("../../../0/MainCharacter/CharacterBody2D")
-zoom = Vector2(0.5, 0.5)
-tween_resource = SubResource("Resource_yexr3")
+follow_mode = 2
+follow_target = NodePath("../../0/MainCharacter/CharacterBody2D")
 tween_on_load = false
-follow_damping = true
-dead_zone_width = 0.085
-dead_zone_height = 0.6
 draw_limits = true
-limit_target = NodePath("../CollisionShape2D")
+limit_target = NodePath("../RoomLeftArea2D/CollisionShape2D")
+
+[node name="RoomLeftArea2D2" type="Area2D" parent="CameraRegions"]
+unique_name_in_owner = true
+position = Vector2(1986, 613)
+scale = Vector2(3.48, 3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraRegions/RoomLeftArea2D2"]
+position = Vector2(457.327, 74.8333)
+scale = Vector2(2.67816, 2.41333)
+shape = SubResource("RectangleShape2D_cjelg")
+
+[node name="PhantomCamera2D2" type="Node2D" parent="CameraRegions"]
+position = Vector2(3101, 1071)
+script = ExtResource("13_i6151")
+tween_resource = SubResource("Resource_fum1w")
+draw_limits = true
+limit_target = NodePath("../RoomLeftArea2D2/CollisionShape2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2

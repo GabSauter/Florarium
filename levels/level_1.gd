@@ -6,7 +6,6 @@ extends Node2D
 var character_start_position = Vector2(288,328)
 
 func _ready():
-	
 	paint()
 
 func paint():
