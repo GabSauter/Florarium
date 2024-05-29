@@ -1,18 +1,21 @@
 extends CharacterBody2D
 
-var gravity_value = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 #player input
 var movement_input = Vector2.ZERO
+
 var jump_input = false
 var jump_input_actuation = false
+var cut_jump_input = false
+
 var climb_input = false 
 var dash_input = false
 
 #player_movement
 	#run
-@export var SPEED : int = 450
-
+var last_direction = Vector2.RIGHT
+@export var ACCELERATION = 1050
+@export var MAX_SPEED : int = 650
+@export var FRICTION = 3000
 	#jump
 @export var JUMP_HEIGHT : float = 383
 @export var JUMP_TIME_TO_PEAK : float = 0.6
@@ -23,10 +26,9 @@ var dash_input = false
 @onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
 @onready var FALL_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)) * -1.0
 
-var last_direction = Vector2.RIGHT
-
 #mechanics
 var can_dash = true
+var can_air_jump = true
 
 #states
 var current_state = null
@@ -62,16 +64,6 @@ func change_state(input_state):
 		prev_state.exit_state()
 		current_state.enter_state()
 
-func get_next_to_wall():
-	for raycast in Raycasts.get_children():
-		raycast.force_raycast_update() 
-		if raycast.is_colliding():
-			if raycast.target_position.x > 0:
-				return Vector2.RIGHT
-			else:
-				return Vector2.LEFT
-	return null
-
 func player_input():
 	movement_input = Vector2.ZERO
 	if Input.is_action_pressed("MoveRight"):
@@ -88,6 +80,10 @@ func player_input():
 		jump_input = true
 	else: 
 		jump_input = false
+	if Input.is_action_just_released("Jump"):
+		cut_jump_input = true
+	else: 
+		cut_jump_input = false
 	if Input.is_action_just_pressed("Jump"):
 		jump_input_actuation = true
 	else: 
@@ -102,5 +98,5 @@ func player_input():
 	#dash
 	if Input.is_action_just_pressed("Dash"):
 		dash_input = true
-	else: 
+	else:
 		dash_input = false

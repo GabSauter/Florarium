@@ -4,15 +4,14 @@ func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
-	if Player.jump_input_actuation and Player.can_air_jump:
-		return STATES.AIR_JUMP
-	if Player.velocity.y >0:
+	if Player.velocity.y > 0:
 		return STATES.FALL
 	if Player.dash_input and Player.can_dash:
 		return STATES.DASH
 	return null
 
 func enter_state():
+	Player.can_air_jump = false
 	Player.velocity.y = Player.JUMP_VELOCITY
 
 func cut_jump_height():
