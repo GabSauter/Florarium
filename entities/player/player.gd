@@ -1,7 +1,19 @@
 extends CharacterBody2D
- 
+
+var gravity_value = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+#player input
+var movement_input = Vector2.ZERO
+var jump_input = false
+var jump_input_actuation = false
+var climb_input = false 
+var dash_input = false
+
+#player_movement
+	#run
 @export var SPEED : int = 450
 
+	#jump
 @export var JUMP_HEIGHT : float = 383
 @export var JUMP_TIME_TO_PEAK : float = 0.6
 @export var JUMP_TIME_TO_DESCENT : float = 0.5
@@ -11,83 +23,84 @@ extends CharacterBody2D
 @onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
 @onready var FALL_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)) * -1.0
 
-enum State {
-	IDLE,
-	RUNNING,
-	JUMPING,
-	FALLING
-}
+var last_direction = Vector2.RIGHT
 
-var current_state = State.IDLE
- 
+#mechanics
+var can_dash = true
+
+#states
+var current_state = null
+var prev_state = null
+
+#nodes
+@onready var STATES = $STATES
+@onready var Raycasts = $Raycasts
+
+func _ready():
+	for state in STATES.get_children():
+		state.STATES = STATES
+		state.Player = self
+	prev_state = STATES.IDLE
+	current_state = STATES.IDLE
+
 func _physics_process(delta):
-	var direction = Input.get_axis("move_left","move_right")
-	handle_state(direction)
-	apply_gravity(delta)
-	
+	player_input()
+	change_state(current_state.update(delta))
+	$Label.text = str(current_state.get_name())
 	move_and_slide()
 
-func handle_state(direction):
-	match current_state:
-		State.IDLE:
-			idle()
-			if direction:
-				current_state = State.RUNNING
-			if Input.is_action_just_pressed("jump"):
-				current_state = State.JUMPING
-		State.RUNNING:
-			run(direction)
-			if not direction:
-				current_state = State.IDLE
-			if Input.is_action_just_pressed("jump"):
-				current_state = State.JUMPING
-			if velocity.y > 0:
-				current_state = State.FALLING
-		State.JUMPING:
-			jump(direction)
-			if velocity.y > 0:
-				current_state = State.FALLING
-		State.FALLING:
-			fall(direction)
-			if is_on_floor() and direction:
-				current_state = State.RUNNING
-			if is_on_floor():
-				current_state = State.IDLE
-	
-	if direction == 1:
-		$AnimatedSprite2D.flip_h = false
-	elif direction == -1:
-		$AnimatedSprite2D.flip_h = true
-
-func idle():
-	$AnimatedSprite2D.play("idle")
-	velocity.x = 0
-
-func run(direction):
-	$AnimatedSprite2D.play("run")
-	velocity.x = SPEED * direction
-
-func jump(direction):
-	# vertical
-	if is_on_floor() and Input.is_action_pressed("jump"):
-		$AnimatedSprite2D.play("jump")
-		velocity.y = JUMP_VELOCITY
-	
-	if Input.is_action_just_released("jump"):
-		if velocity.y < 0:
-			velocity.y *= CUT_JUMP_HEIGHT
-	
-	# horizontal
-	#if direction:
-	velocity.x = SPEED * direction
-
-func fall(direction):
-	$AnimatedSprite2D.play("fall")
-	
-	# horizontal
-	velocity.x = SPEED * direction
-
-func apply_gravity(delta):
+func gravity(delta):
 	if not is_on_floor():
 		var get_gravity = JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY
 		velocity.y += get_gravity * delta
+
+func change_state(input_state):
+	if input_state != null:
+		prev_state = current_state 
+		current_state = input_state
+		
+		prev_state.exit_state()
+		current_state.enter_state()
+
+func get_next_to_wall():
+	for raycast in Raycasts.get_children():
+		raycast.force_raycast_update() 
+		if raycast.is_colliding():
+			if raycast.target_position.x > 0:
+				return Vector2.RIGHT
+			else:
+				return Vector2.LEFT
+	return null
+
+func player_input():
+	movement_input = Vector2.ZERO
+	if Input.is_action_pressed("MoveRight"):
+		movement_input.x += 1
+	if Input.is_action_pressed("MoveLeft"):
+		movement_input.x -= 1
+	if Input.is_action_pressed("MoveUp"):
+		movement_input.y -= 1
+	if Input.is_action_pressed("MoveDown"):
+		movement_input.y += 1
+	
+	# jumps
+	if Input.is_action_pressed("Jump"):
+		jump_input = true
+	else: 
+		jump_input = false
+	if Input.is_action_just_pressed("Jump"):
+		jump_input_actuation = true
+	else: 
+		jump_input_actuation = false
+	
+	#climb
+	if Input.is_action_pressed("Climb"):
+		climb_input = true
+	else: 
+		climb_input = false
+	
+	#dash
+	if Input.is_action_just_pressed("Dash"):
+		dash_input = true
+	else: 
+		dash_input = false
