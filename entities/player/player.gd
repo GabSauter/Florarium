@@ -74,6 +74,8 @@ func player_input():
 		movement_input.y -= 1
 	if Input.is_action_pressed("MoveDown"):
 		movement_input.y += 1
+		if is_on_floor(): #for one way plataform
+			position.y += 1 
 	
 	# jumps
 	if Input.is_action_pressed("Jump"):

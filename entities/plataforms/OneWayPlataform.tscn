@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhbr7udkkaqmf"]
+
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="1_l5gsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiuo7"]
+size = Vector2(438, 6)
+
+[node name="OneWayPlataform" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.27451, 0.333333, 1, 1)
+scale = Vector2(2.19, 0.03)
+texture = ExtResource("1_l5gsv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_eiuo7")
+one_way_collision = true
