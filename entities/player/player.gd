@@ -34,6 +34,9 @@ var can_air_jump = true
 var current_state = null
 var prev_state = null
 
+#buffer
+var jump_buffer = false
+
 #nodes
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts

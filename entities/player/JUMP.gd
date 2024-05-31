@@ -1,5 +1,8 @@
 extends "state.gd"
 
+func enter_state():
+	Player.velocity.y = Player.JUMP_VELOCITY
+
 func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
@@ -13,9 +16,6 @@ func update(delta):
 	if Player.dash_input and Player.can_dash:
 		return STATES.DASH
 	return null
-
-func enter_state():
-	Player.velocity.y = Player.JUMP_VELOCITY
 
 func cut_jump_height():
 	if Player.cut_jump_input:
