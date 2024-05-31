@@ -21,6 +21,7 @@ var last_direction = Vector2.RIGHT
 @export var JUMP_TIME_TO_PEAK : float = 0.6
 @export var JUMP_TIME_TO_DESCENT : float = 0.5
 @export var CUT_JUMP_HEIGHT: float = 0.6
+@export var MAX_FALL_SPEED: float = 5000
 
 @onready var JUMP_VELOCITY : float = ((2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK) * -1.0
 @onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
@@ -57,7 +58,10 @@ func _physics_process(delta):
 func gravity(delta):
 	if not is_on_floor():
 		var get_gravity = JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY
-		velocity.y += get_gravity * delta
+		if velocity.y > MAX_FALL_SPEED:
+			velocity.y = MAX_FALL_SPEED
+		else:
+			velocity.y += get_gravity * delta
 
 func change_state(input_state):
 	if input_state != null:
