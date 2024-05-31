@@ -9,6 +9,8 @@ func enter_state():
 func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
+	if Player.is_on_wall():
+		return STATES.SLIDE
 	if Player.jump_input_actuation and Player.can_air_jump:
 		return STATES.AIR_JUMP
 	if Player.velocity.y > 0:

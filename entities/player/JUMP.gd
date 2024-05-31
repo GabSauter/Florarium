@@ -8,6 +8,8 @@ func update(delta):
 		return STATES.AIR_JUMP
 	if Player.velocity.y >0:
 		return STATES.FALL
+	if Player.is_on_wall_only():
+		return STATES.SLIDE
 	if Player.dash_input and Player.can_dash:
 		return STATES.DASH
 	return null
