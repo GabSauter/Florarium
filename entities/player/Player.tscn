@@ -30,6 +30,7 @@ position = Vector2(-10, -2)
 texture = ExtResource("26_tk5n4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.917647, 0.913725, 1)
 texture = ExtResource("2_c4eoj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

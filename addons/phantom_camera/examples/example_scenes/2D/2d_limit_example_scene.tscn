@@ -569,14 +569,14 @@ ease = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmxri"]
 size = Vector2(790, 410)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjw"]
-size = Vector2(1530, 700)
-
 [sub_resource type="Resource" id="Resource_exr3j"]
 script = ExtResource("9_twplb")
 duration = 0.9
 transition = 2
 ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjw"]
+size = Vector2(1530, 700)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daeuh"]
 size = Vector2(1027.5, 610.5)
@@ -605,7 +605,7 @@ metadata/_edit_lock_ = true
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
 position = Vector2(-97, 0)
-scale = Vector2(4.18986, 3.10864)
+scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_kf7eg")
 format = 2
 layer_0/name = "Background"
@@ -616,8 +616,7 @@ layer_1/tile_data = PackedInt32Array(65533, 720896, 0, 65534, 720896, 0, 65535, 
 
 [node name="TileMap2" type="TileMap" parent="."]
 z_index = -1
-position = Vector2(-171, -2)
-scale = Vector2(3.39883, 3.27844)
+scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_kf7eg")
 format = 2
 layer_0/name = "Background"
@@ -645,7 +644,7 @@ position = Vector2(66, -113.205)
 script = ExtResource("4_4b648")
 priority = 5
 follow_mode = 2
-follow_target = NodePath("../CharacterBody2D")
+follow_target = NodePath("../CharacterBody2D/PlayerVisuals")
 zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_ct1eh")
 follow_offset = Vector2(0, -63.205)
@@ -656,45 +655,45 @@ limit_margin = Vector4i(-50, 0, -50, 0)
 
 [node name="RoomLeftArea2D" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(717, -176)
+position = Vector2(117, -174)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomLeftArea2D"]
-position = Vector2(-75, 39)
+position = Vector2(-79, 43)
 shape = SubResource("RectangleShape2D_xmxri")
 debug_color = Color(0, 0.6, 0.701961, 0.0313726)
 
-[node name="RoomCentreArea2D" type="Area2D" parent="."]
+[node name="RoomCentrePhantomCamera2D" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(796, -169)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomCentreArea2D"]
-position = Vector2(369, -34)
-shape = SubResource("RectangleShape2D_wtfjw")
-debug_color = Color(0, 0.6, 0.701961, 0)
-
-[node name="RoomCentrePhantomCamera2D" type="Node2D" parent="RoomCentreArea2D"]
-unique_name_in_owner = true
-position = Vector2(707.333, -9)
+position = Vector2(1474, -149)
 script = ExtResource("4_4b648")
 follow_mode = 2
 zoom = Vector2(1.5, 1.5)
 tween_resource = SubResource("Resource_exr3j")
 follow_damping = true
 draw_limits = true
-limit_target = NodePath("../CollisionShape2D")
+limit_target = NodePath("../RoomCentreArea2D/CollisionShape2D")
+
+[node name="RoomCentreArea2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(755, -179)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomCentreArea2D"]
+position = Vector2(338, -28)
+shape = SubResource("RectangleShape2D_wtfjw")
+debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="RoomRightArea2D" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(2067, -161)
+position = Vector2(2065, -160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomRightArea2D"]
-position = Vector2(256, -18)
+position = Vector2(255.75, -3.25)
 shape = SubResource("RectangleShape2D_daeuh")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="RoomRightPhantomCamera2D" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(2387, -216)
+position = Vector2(2347, -156)
 scale = Vector2(1.0024, 1)
 script = ExtResource("4_4b648")
 follow_mode = 2
@@ -706,10 +705,10 @@ draw_limits = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(66, -113.205)
 zoom = Vector2(2, 2)
-limit_left = -482
-limit_top = -547
-limit_right = 623
-limit_bottom = 298
+limit_left = -387
+limit_top = -528
+limit_right = 433
+limit_bottom = 288
 position_smoothing_speed = 10.0
 editor_draw_limits = true
 

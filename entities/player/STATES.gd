@@ -10,9 +10,3 @@ extends Node
 @onready var WALL_JUMP = $WALL_JUMP
 
 #@onready var CLIMB = $CLIMB
-
-func _ready():
-	pass
-
-func _process(delta):
-	pass

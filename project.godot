@@ -27,6 +27,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 MoveLeft={
@@ -71,3 +75,7 @@ Climb={
 
 2d_physics/layer_1="Character"
 2d_physics/layer_2="Floor"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0.0156863, 0.0705882, 1)

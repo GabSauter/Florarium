@@ -29,10 +29,13 @@ func update(delta):
 		return STATES.DASH
 	if Player.is_on_wall_only():
 		return STATES.SLIDE
-	if Player.jump_input_actuation and Player.can_air_jump:
-		return STATES.AIR_JUMP
+	#if Player.jump_input_actuation and Player.can_air_jump:
+		#return STATES.AIR_JUMP
 	if Player.jump_input_actuation and can_coyote_jump:
+		if Player.prev_state == STATES.SLIDE:
+			return STATES.WALL_JUMP
 		return STATES.JUMP
+		
 	return null
 
 func _on_coyote_timer_timeout():
@@ -43,7 +46,7 @@ func start_jump_buffer_timer():
 		JumpBufferTimer.start(jump_buffer_duration)
 
 func _on_jump_buffer_timer_timeout():
-	if Player.current_state == STATES.FALL or Player.current_state == STATES.SLIDE or Player.current_state == STATES.AIR_JUMP:
-		Player.jump_buffer = false
-	else:
+	if Player.current_state == STATES.IDLE or Player.current_state == STATES.MOVE:
 		Player.jump_buffer = true
+	else:
+		Player.jump_buffer = false

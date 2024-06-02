@@ -1,16 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxtsl6qlpq1ar"]
+[gd_scene load_steps=12 format=3 uid="uid://dg1tuoxd3b4tw"]
 
-[ext_resource type="Texture2D" uid="uid://c77npili4pel4" path="res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png" id="1_27o77"]
-[ext_resource type="PackedScene" uid="uid://dg7rhrymsrrrm" path="res://addons/phantom_camera/examples/ui/ui_inventory.tscn" id="2_1tbys"]
-[ext_resource type="PackedScene" uid="uid://iq5xd1ob1res" path="res://addons/phantom_camera/examples/ui/ui_sign.tscn" id="3_1kfnp"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_mylkx"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_lwx5e"]
-[ext_resource type="Resource" uid="uid://euybd2w0bax" path="res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres" id="6_tju6r"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="8_bo8m7"]
-[ext_resource type="PackedScene" uid="uid://7kh0xydx0b1o" path="res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn" id="8_wlikg"]
+[ext_resource type="Texture2D" uid="uid://c77npili4pel4" path="res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png" id="1_nf5bo"]
+[ext_resource type="PackedScene" uid="uid://dg7rhrymsrrrm" path="res://addons/phantom_camera/examples/ui/ui_inventory.tscn" id="2_5oggv"]
+[ext_resource type="PackedScene" uid="uid://iq5xd1ob1res" path="res://addons/phantom_camera/examples/ui/ui_sign.tscn" id="3_aku7q"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_j3ux0"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_uwr6r"]
+[ext_resource type="Resource" uid="uid://euybd2w0bax" path="res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres" id="6_4l0c3"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="7_briql"]
+[ext_resource type="PackedScene" uid="uid://7kh0xydx0b1o" path="res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn" id="8_i4m1d"]
+[ext_resource type="Script" path="res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd" id="9_m3lnd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_easgx"]
-texture = ExtResource("1_27o77")
+texture = ExtResource("1_nf5bo")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -592,11 +593,11 @@ layer_1/tile_data = PackedInt32Array(1, 720896, 0, 2, 720896, 0, 3, 720896, 0, 4
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="UIInventory" parent="UI" instance=ExtResource("2_1tbys")]
+[node name="UIInventory" parent="UI" instance=ExtResource("2_5oggv")]
 unique_name_in_owner = true
 visible = false
 
-[node name="UISign" parent="UI" instance=ExtResource("3_1kfnp")]
+[node name="UISign" parent="UI" instance=ExtResource("3_aku7q")]
 unique_name_in_owner = true
 visible = false
 
@@ -605,19 +606,19 @@ position = Vector2(282, -29)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("4_mylkx")
+script = ExtResource("4_j3ux0")
 
 [node name="Player" type="Node" parent="."]
 
 [node name="PlayerPhantomCamera2D" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 position = Vector2(282, -29)
-script = ExtResource("5_lwx5e")
+script = ExtResource("5_uwr6r")
 priority = 5
 follow_mode = 5
-follow_target = NodePath("../CharacterBody2D/PlayerVisuals")
+follow_target = NodePath("../CharacterBody2D")
 zoom = Vector2(2, 2)
-tween_resource = ExtResource("6_tju6r")
+tween_resource = ExtResource("6_4l0c3")
 tween_on_load = false
 follow_damping = true
 dead_zone_width = 0.416
@@ -631,11 +632,10 @@ offset_top = -145.0
 offset_right = 332.0
 offset_bottom = -81.0
 theme_override_colors/font_color = Color(0.294118, 1, 0.631373, 1)
-theme_override_fonts/font = ExtResource("8_bo8m7")
+theme_override_fonts/font = ExtResource("7_briql")
 text = "[WASD] to move
 [Space] to jump"
 
-[node name="CharacterBody2D" parent="Player" instance=ExtResource("8_wlikg")]
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("8_i4m1d")]
 position = Vector2(282, -29)
-
-[editable path="Player/CharacterBody2D"]
+script = ExtResource("9_m3lnd")

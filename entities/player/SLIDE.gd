@@ -17,6 +17,8 @@ func update(delta):
 		return STATES.WALL_JUMP
 	if Player.is_on_floor():
 		return STATES.IDLE
+	#if Player.dash_input:
+		#return STATES.DASH
 	return null
 
 func slide_movement(delta):
