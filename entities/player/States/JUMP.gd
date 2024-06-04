@@ -7,9 +7,8 @@ func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
-	if Player.jump_input_actuation and Player.can_air_jump:
-		return STATES.AIR_JUMP
-	if Player.velocity.y >0:
+	
+	if Player.velocity.y > 0:
 		return STATES.FALL
 	if Player.is_on_wall_only():
 		return STATES.SLIDE

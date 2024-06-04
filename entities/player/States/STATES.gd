@@ -6,7 +6,4 @@ extends Node
 @onready var FALL = $FALL
 @onready var DASH = $DASH
 @onready var SLIDE = $SLIDE
-@onready var AIR_JUMP = $AIR_JUMP
 @onready var WALL_JUMP = $WALL_JUMP
-
-#@onready var CLIMB = $CLIMB

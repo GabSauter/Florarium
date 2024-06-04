@@ -21,8 +21,6 @@ func enter_state():
 	handle_dash_velocity_on_different_directions()
 
 func update(delta):
-	if Player.jump_input_actuation and Player.can_air_jump:
-		return STATES.AIR_JUMP
 	if !dashing:
 		return STATES.FALL
 	return null

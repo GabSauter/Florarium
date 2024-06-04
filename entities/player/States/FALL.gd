@@ -9,11 +9,7 @@ extends "state.gd"
 var can_coyote_jump = true
 
 func enter_state():
-	if Player.prev_state == STATES.IDLE or Player.prev_state == STATES.MOVE or Player.prev_state == STATES.SLIDE:
-		can_coyote_jump = true
-		CoyoteTimer.start(coyote_duration)
-	else: 
-		can_coyote_jump = false
+	handle_can_coyote_jump()
 
 func update(delta):
 	Player.gravity(delta)
@@ -29,14 +25,19 @@ func update(delta):
 		return STATES.DASH
 	if Player.is_on_wall_only():
 		return STATES.SLIDE
-	#if Player.jump_input_actuation and Player.can_air_jump:
-		#return STATES.AIR_JUMP
 	if Player.jump_input_actuation and can_coyote_jump:
 		if Player.prev_state == STATES.SLIDE:
 			return STATES.WALL_JUMP
 		return STATES.JUMP
 		
 	return null
+
+func handle_can_coyote_jump():
+	if Player.prev_state == STATES.IDLE or Player.prev_state == STATES.MOVE or Player.prev_state == STATES.SLIDE:
+		can_coyote_jump = true
+		CoyoteTimer.start(coyote_duration)
+	else: 
+		can_coyote_jump = false
 
 func _on_coyote_timer_timeout():
 	can_coyote_jump = false

@@ -2,7 +2,6 @@ extends "state.gd"
 
 func enter_state():
 	Player.can_dash = true
-	Player.can_air_jump = true
 
 func update(delta):
 	Player.gravity(delta)

@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+@onready var STATES = $STATES
+
 #player input
 var movement_input = Vector2.ZERO
 
@@ -7,7 +10,6 @@ var jump_input = false
 var jump_input_actuation = false
 var cut_jump_input = false
 
-var climb_input = false 
 var dash_input = false
 
 #player_movement
@@ -20,16 +22,19 @@ var last_direction = Vector2.RIGHT
 @export var JUMP_HEIGHT : float = 383
 @export var JUMP_TIME_TO_PEAK : float = 0.6
 @export var JUMP_TIME_TO_DESCENT : float = 0.5
+@export var JUMP_TIME_TO_DESCENT_SLIDING : float = 1
 @export var CUT_JUMP_HEIGHT: float = 0.6
 @export var MAX_FALL_SPEED: float = 5000
+
+@export var JUMP_OFF_WALL_POWER = 1200
 
 @onready var JUMP_VELOCITY : float = ((2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK) * -1.0
 @onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
 @onready var FALL_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)) * -1.0
+@onready var SLIDE_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT_SLIDING * JUMP_TIME_TO_DESCENT_SLIDING)) * -1.0
 
 #mechanics
 var can_dash = true
-var can_air_jump = true
 
 #states
 var current_state = null
@@ -37,10 +42,6 @@ var prev_state = null
 
 #buffer
 var jump_buffer = false
-
-#nodes
-@onready var STATES = $STATES
-@onready var Raycasts = $Raycasts
 
 func _ready():
 	for state in STATES.get_children():
@@ -57,7 +58,14 @@ func _physics_process(delta):
 
 func gravity(delta):
 	if not is_on_floor():
-		var get_gravity = JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY
+		var get_gravity
+		if current_state == STATES.FALL:
+			get_gravity = FALL_GRAVITY
+		elif current_state == STATES.SLIDE and velocity.y > 0:
+			get_gravity = SLIDE_GRAVITY
+		else:
+			get_gravity = JUMP_GRAVITY
+		
 		if velocity.y > MAX_FALL_SPEED:
 			velocity.y = MAX_FALL_SPEED
 		else:
@@ -82,27 +90,21 @@ func player_input():
 	if Input.is_action_pressed("MoveDown"):
 		movement_input.y += 1
 		if is_on_floor(): #for one way plataform
-			position.y += 1 
+			position.y += 1
 	
 	# jumps
 	if Input.is_action_pressed("Jump"):
 		jump_input = true
-	else: 
+	else:
 		jump_input = false
 	if Input.is_action_just_released("Jump"):
 		cut_jump_input = true
-	else: 
+	else:
 		cut_jump_input = false
 	if Input.is_action_just_pressed("Jump"):
 		jump_input_actuation = true
-	else: 
+	else:
 		jump_input_actuation = false
-	
-	#climb
-	if Input.is_action_pressed("Climb"):
-		climb_input = true
-	else: 
-		climb_input = false
 	
 	#dash
 	if Input.is_action_just_pressed("Dash"):

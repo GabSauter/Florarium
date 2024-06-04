@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bktfpmjsmwl5o"]
 
-[ext_resource type="Script" path="res://entities/player/WALL_JUMP.gd" id="1_i1g8c"]
+[ext_resource type="Script" path="res://entities/player/States/WALL_JUMP.gd" id="1_i1g8c"]
 
 [node name="WALL_JUMP" type="Node2D"]
 script = ExtResource("1_i1g8c")
