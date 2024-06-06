@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -76,6 +80,8 @@ Climb={
 2d_physics/layer_1="Character"
 2d_physics/layer_2="Floor"
 2d_physics/layer_3="onewayplataform"
+2d_physics/layer_4="collectables"
+2d_physics/layer_5="obstacles"
 
 [rendering]
 

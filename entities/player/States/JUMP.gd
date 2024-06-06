@@ -1,7 +1,7 @@
 extends "state.gd"
 
 func enter_state():
-	Player.velocity.y = Player.JUMP_VELOCITY
+	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func update(delta):
 	Player.gravity(delta)
@@ -19,4 +19,4 @@ func update(delta):
 func cut_jump_height():
 	if Player.cut_jump_input:
 		if Player.velocity.y < 0:
-			Player.velocity.y *= Player.CUT_JUMP_HEIGHT
+			Player.velocity.y *= Player.movement.CUT_JUMP_HEIGHT

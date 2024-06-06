@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtikb6ji87s0d"]
 
-[ext_resource type="Script" path="res://entities/player/States/FALL.gd" id="1_vpit5"]
+[ext_resource type="Script" path="res://entities/player/states/FALL.gd" id="1_vpit5"]
 
 [node name="FALL" type="Node2D"]
 script = ExtResource("1_vpit5")

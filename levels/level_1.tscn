@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=9 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
+[ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="3_pg1w4"]
 [ext_resource type="PackedScene" uid="uid://dhbr7udkkaqmf" path="res://entities/plataforms/OneWayPlataform.tscn" id="4_a8o8c"]
+[ext_resource type="PackedScene" uid="uid://btjryqd8q2ddi" path="res://entities/obstacles/Spike.tscn" id="4_mmiel"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="5_sqy2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o8hs"]
@@ -45,6 +47,12 @@ offset_bottom = 40.0
 
 [node name="Player" parent="0" instance=ExtResource("2_gwwpf")]
 position = Vector2(10679, -513)
+
+[node name="DashCollectable" parent="0" instance=ExtResource("3_pg1w4")]
+position = Vector2(11834, -1283)
+
+[node name="Spike" parent="0" instance=ExtResource("4_mmiel")]
+position = Vector2(8734, -1806)
 
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

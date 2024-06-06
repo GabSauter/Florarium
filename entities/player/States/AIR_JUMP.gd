@@ -12,9 +12,9 @@ func update(delta):
 
 func enter_state():
 	Player.can_air_jump = false
-	Player.velocity.y = Player.JUMP_VELOCITY
+	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func cut_jump_height():
 	if Player.cut_jump_input:
 		if Player.velocity.y < 0:
-			Player.velocity.y *= Player.CUT_JUMP_HEIGHT
+			Player.velocity.y *= Player.movement.CUT_JUMP_HEIGHT

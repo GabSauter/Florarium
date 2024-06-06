@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://dg0p36t1gcoud"]
+
+[ext_resource type="Script" path="res://entities/player/resources/Player_Movement_Data.gd" id="1_3vbcq"]
+
+[resource]
+script = ExtResource("1_3vbcq")
+ACCELERATION = 1050
+MAX_SPEED = 650
+FRICTION = 3000
+JUMP_HEIGHT = 383.0
+JUMP_TIME_TO_PEAK = 0.6
+JUMP_TIME_TO_DESCENT = 0.5
+JUMP_TIME_TO_DESCENT_SLIDING = 1.0
+CUT_JUMP_HEIGHT = 0.6
+MAX_FALL_SPEED = 5000.0
+JUMP_OFF_WALL_POWER = 1200

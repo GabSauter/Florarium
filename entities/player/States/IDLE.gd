@@ -5,7 +5,7 @@ func enter_state():
 
 func update(delta):
 	Player.gravity(delta)
-	Player.velocity.x = move_toward(Player.velocity.x, 0, Player.FRICTION * delta)
+	Player.velocity.x = move_toward(Player.velocity.x, 0, Player.movement.FRICTION * delta)
 	
 	if Player.movement_input.x != 0:
 		return STATES.MOVE

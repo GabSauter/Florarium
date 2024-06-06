@@ -1,8 +1,8 @@
 extends "state.gd"
 
 func enter_state():
-	Player.velocity.x = Player.JUMP_OFF_WALL_POWER * Player.get_wall_normal()[0]
-	Player.velocity.y = Player.JUMP_VELOCITY
+	Player.velocity.x = Player.movement.JUMP_OFF_WALL_POWER * Player.get_wall_normal()[0]
+	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func update(delta):
 	Player.gravity(delta)

@@ -1,37 +1,21 @@
 extends CharacterBody2D
-
+class_name Player
 
 @onready var STATES = $STATES
+@onready var labelState = $LabelState
+@onready var labelGravity = $LabelGravity
+@onready var labelVelocityY = $LabelVelocityY
+@onready var labelVelocityX = $LabelVelocityX
+
+@export var movement: PlayerMovementData
 
 #player input
+var last_direction = Vector2.RIGHT
 var movement_input = Vector2.ZERO
-
 var jump_input = false
 var jump_input_actuation = false
 var cut_jump_input = false
-
 var dash_input = false
-
-#player_movement
-	#run
-var last_direction = Vector2.RIGHT
-@export var ACCELERATION = 1050
-@export var MAX_SPEED : int = 650
-@export var FRICTION = 3000
-	#jump
-@export var JUMP_HEIGHT : float = 383
-@export var JUMP_TIME_TO_PEAK : float = 0.6
-@export var JUMP_TIME_TO_DESCENT : float = 0.5
-@export var JUMP_TIME_TO_DESCENT_SLIDING : float = 1
-@export var CUT_JUMP_HEIGHT: float = 0.6
-@export var MAX_FALL_SPEED: float = 5000
-
-@export var JUMP_OFF_WALL_POWER = 1200
-
-@onready var JUMP_VELOCITY : float = ((2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK) * -1.0
-@onready var JUMP_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK)) * -1.0
-@onready var FALL_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)) * -1.0
-@onready var SLIDE_GRAVITY : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT_SLIDING * JUMP_TIME_TO_DESCENT_SLIDING)) * -1.0
 
 #mechanics
 var can_dash = true
@@ -43,6 +27,8 @@ var prev_state = null
 #buffer
 var jump_buffer = false
 
+var respawn_position: Vector2
+
 func _ready():
 	for state in STATES.get_children():
 		state.STATES = STATES
@@ -53,21 +39,29 @@ func _ready():
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
-	$Label.text = str(current_state.get_name())
+	labelState.text = str(current_state.get_name())
+	labelVelocityY.text = str(velocity.y)
+	labelVelocityX.text = str(velocity.x)
 	move_and_slide()
 
 func gravity(delta):
 	if not is_on_floor():
 		var get_gravity
-		if current_state == STATES.FALL:
-			get_gravity = FALL_GRAVITY
+		if abs(velocity.y) < movement.APEX_RANGE:
+			labelGravity.text = str("Apex gravity")
+			get_gravity = movement.APEX_GRAVITY
+		elif current_state == STATES.FALL:
+			labelGravity.text = str("Fall gravity")
+			get_gravity = movement.FALL_GRAVITY
 		elif current_state == STATES.SLIDE and velocity.y > 0:
-			get_gravity = SLIDE_GRAVITY
+			labelGravity.text = str("Slide gravity")
+			get_gravity = movement.SLIDE_GRAVITY
 		else:
-			get_gravity = JUMP_GRAVITY
+			labelGravity.text = str("Normal gravity")
+			get_gravity = movement.JUMP_GRAVITY
 		
-		if velocity.y > MAX_FALL_SPEED:
-			velocity.y = MAX_FALL_SPEED
+		if velocity.y > movement.MAX_FALL_SPEED:
+			velocity.y = movement.MAX_FALL_SPEED
 		else:
 			velocity.y += get_gravity * delta
 
