@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://tbv4c7bmbf67"]
+
+[ext_resource type="Script" path="res://entities/plataforms/MovePlataform.gd" id="1_4533i"]
+
+[sub_resource type="Animation" id="Animation_oelkq"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_a3nfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3gq7"]
+_data = {
+"RESET": SubResource("Animation_a3nfx"),
+"move": SubResource("Animation_oelkq")
+}
+
+[node name="MovePlataform" type="Path2D"]
+script = ExtResource("1_4533i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = 0.0232516
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody")
+
+[node name="AnimatableBody" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody"]
+self_modulate = Color(0, 0.466667, 0.360784, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_p3gq7")
+}

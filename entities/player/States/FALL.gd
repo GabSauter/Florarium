@@ -17,6 +17,9 @@ func update(delta):
 	
 	start_jump_buffer_timer()
 	
+	if Player.dead:
+		return STATES.DIE
+	
 	if Player.is_on_floor() and Player.velocity.x == 0:
 		return STATES.IDLE
 	if Player.is_on_floor() and Player.velocity.x != 0:

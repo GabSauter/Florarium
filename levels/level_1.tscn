@@ -1,11 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=15 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
 [ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="3_pg1w4"]
 [ext_resource type="PackedScene" uid="uid://dhbr7udkkaqmf" path="res://entities/plataforms/OneWayPlataform.tscn" id="4_a8o8c"]
 [ext_resource type="PackedScene" uid="uid://btjryqd8q2ddi" path="res://entities/obstacles/Spike.tscn" id="4_mmiel"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="5_chh1w"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="5_sqy2g"]
+[ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="6_bsq3h"]
+
+[sub_resource type="Curve2D" id="Curve2D_7hogg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -396, 20, 0, 0, 0, 0, 498, 17)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xy6y"]
+size = Vector2(168.666, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_qkum5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, -1, 0, 0, 0, 0, 2, -396)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eovcd"]
+size = Vector2(279, 21.9999)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o8hs"]
 texture = ExtResource("5_sqy2g")
@@ -54,6 +74,57 @@ position = Vector2(11834, -1283)
 [node name="Spike" parent="0" instance=ExtResource("4_mmiel")]
 position = Vector2(8734, -1806)
 
+[node name="Respawn" parent="0" instance=ExtResource("5_chh1w")]
+position = Vector2(9071, -2098)
+
+[node name="Respawn2" parent="0" instance=ExtResource("5_chh1w")]
+position = Vector2(7825, -2103)
+
+[node name="MovePlataform" parent="0" instance=ExtResource("6_bsq3h")]
+position = Vector2(6962, -2082)
+curve = SubResource("Curve2D_7hogg")
+loop = false
+speed = 0.5
+
+[node name="PathFollow2D" parent="0/MovePlataform" index="0"]
+position = Vector2(-396, 20)
+rotation = -0.00335569
+
+[node name="AnimatableBody" parent="0/MovePlataform" index="1"]
+position = Vector2(-396, 20)
+rotation = -0.00335569
+
+[node name="Sprite2D" parent="0/MovePlataform/AnimatableBody" index="0"]
+position = Vector2(76.4766, -0.0207235)
+scale = Vector2(0.842813, 0.101275)
+texture = ExtResource("5_sqy2g")
+
+[node name="CollisionShape2D" parent="0/MovePlataform/AnimatableBody" index="1"]
+position = Vector2(75.7622, -0.0463867)
+shape = SubResource("RectangleShape2D_1xy6y")
+
+[node name="MovePlataform2" parent="0" instance=ExtResource("6_bsq3h")]
+position = Vector2(5759, -2056)
+curve = SubResource("Curve2D_qkum5")
+loop = false
+
+[node name="PathFollow2D" parent="0/MovePlataform2" index="0"]
+position = Vector2(2, -1)
+rotation = -1.5708
+
+[node name="AnimatableBody" parent="0/MovePlataform2" index="1"]
+position = Vector2(2, -1)
+rotation = -1.5708
+
+[node name="Sprite2D" parent="0/MovePlataform2/AnimatableBody" index="0"]
+position = Vector2(36.0578, -0.428326)
+scale = Vector2(1.37177, 0.121127)
+texture = ExtResource("5_sqy2g")
+
+[node name="CollisionShape2D" parent="0/MovePlataform2/AnimatableBody" index="1"]
+position = Vector2(35.5, 0)
+shape = SubResource("RectangleShape2D_eovcd")
+
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 follow_viewport_scale = 1.1
@@ -98,3 +169,6 @@ position = Vector2(11792, -3198)
 
 [node name="OneWayPlataform4" parent="MapCollisions" instance=ExtResource("4_a8o8c")]
 position = Vector2(11807, -2830)
+
+[editable path="0/MovePlataform"]
+[editable path="0/MovePlataform2"]

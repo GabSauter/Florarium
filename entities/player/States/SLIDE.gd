@@ -8,6 +8,9 @@ func update(delta):
 	player_movement(delta)
 	Player.gravity(delta)
 	
+	if Player.dead:
+		return STATES.DIE
+	
 	if !Player.is_on_wall_only():
 		return STATES.FALL
 	if Player.jump_input_actuation:

@@ -7,6 +7,9 @@ func update(delta):
 	Player.gravity(delta)
 	Player.velocity.x = move_toward(Player.velocity.x, 0, Player.movement.FRICTION * delta)
 	
+	if Player.dead:
+		return STATES.DIE
+	
 	if Player.movement_input.x != 0:
 		return STATES.MOVE
 	if Player.jump_input_actuation == true or Player.jump_buffer:

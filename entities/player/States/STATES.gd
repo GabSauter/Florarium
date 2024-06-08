@@ -7,3 +7,5 @@ extends Node
 @onready var DASH = $DASH
 @onready var SLIDE = $SLIDE
 @onready var WALL_JUMP = $WALL_JUMP
+
+@onready var DIE = $DIE

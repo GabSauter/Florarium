@@ -8,6 +8,9 @@ func update(delta):
 	player_movement(delta)
 	cut_jump_height()
 	
+	if Player.dead:
+		return STATES.DIE
+	
 	if Player.velocity.y > 0:
 		return STATES.FALL
 	if Player.is_on_wall_only():

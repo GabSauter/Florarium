@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cup3sk1s7crm0"]
+
+[ext_resource type="Script" path="res://entities/player/states/DIE.gd" id="1_71mgy"]
+
+[node name="DIE" type="Node2D"]
+script = ExtResource("1_71mgy")

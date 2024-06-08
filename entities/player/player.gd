@@ -27,6 +27,7 @@ var prev_state = null
 #buffer
 var jump_buffer = false
 
+var dead = false
 var respawn_position: Vector2
 
 func _ready():
@@ -67,7 +68,7 @@ func gravity(delta):
 
 func change_state(input_state):
 	if input_state != null:
-		prev_state = current_state 
+		prev_state = current_state
 		current_state = input_state
 		
 		prev_state.exit_state()

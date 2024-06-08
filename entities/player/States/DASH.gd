@@ -18,6 +18,8 @@ func enter_state():
 	handle_dash_velocity_on_different_directions()
 
 func update(delta):
+	if Player.dead:
+		return STATES.DIE
 	if !dashing:
 		return STATES.FALL
 	return null
