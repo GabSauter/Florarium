@@ -86,4 +86,4 @@ Climb={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0.0156863, 0.0705882, 1)
+environment/defaults/default_clear_color=Color(0.913725, 0.498039, 0, 1)

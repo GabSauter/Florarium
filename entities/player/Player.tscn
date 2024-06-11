@@ -15,9 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cup3sk1s7crm0" path="res://entities/player/states/DIE.tscn" id="14_eq251"]
 [ext_resource type="Texture2D" uid="uid://kjic6iygn73n" path="res://assets/other/teste1280x720.jpg" id="26_tk5n4"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lnbq"]
-radius = 101.0
-height = 202.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h878u"]
+size = Vector2(200, 200)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
@@ -37,7 +36,7 @@ self_modulate = Color(1, 0.917647, 0.913725, 1)
 texture = ExtResource("2_c4eoj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_5lnbq")
+shape = SubResource("RectangleShape2D_h878u")
 
 [node name="STATES" type="Node2D" parent="."]
 script = ExtResource("4_cvlxd")
