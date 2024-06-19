@@ -1,18 +1,17 @@
 extends "state.gd"
 
 func enter_state():
-	Player.velocity.y = Player.movement.JUMP_VELOCITY
+	Player.velocity.x = Player.velocity.x - cos(Player.bounce_rotation + PI/2) * Player.bounce_force
+	Player.velocity.y = -sin(Player.bounce_rotation + PI/2) * Player.bounce_force
+	Player.can_dash = true
+	Player.bounce = false
 
 func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
-	cut_jump_height()
 	
 	if Player.dead:
 		return STATES.DIE
-	
-	if Player.bounce:
-		return STATES.BOUNCE
 	
 	if Player.velocity.y > 0:
 		return STATES.FALL
@@ -20,9 +19,6 @@ func update(delta):
 		return STATES.SLIDE
 	if Player.dash_input and Player.can_dash:
 		return STATES.DASH
+	if Player.is_on_floor():
+		return STATES.MOVE
 	return null
-
-func cut_jump_height():
-	if Player.cut_jump_input:
-		if Player.velocity.y < 0:
-			Player.velocity.y *= Player.movement.CUT_JUMP_HEIGHT

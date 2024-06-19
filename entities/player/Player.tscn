@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d33nbegkq8h2m"]
+[gd_scene load_steps=17 format=3 uid="uid://d33nbegkq8h2m"]
 
 [ext_resource type="Script" path="res://entities/player/Player.gd" id="1_2uie1"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="2_c4eoj"]
@@ -13,13 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://cp6t3r2im4wee" path="res://entities/player/states/AIR_JUMP.tscn" id="11_o4xu1"]
 [ext_resource type="PackedScene" uid="uid://bktfpmjsmwl5o" path="res://entities/player/states/WALL_JUMP.tscn" id="12_g8hft"]
 [ext_resource type="PackedScene" uid="uid://cup3sk1s7crm0" path="res://entities/player/states/DIE.tscn" id="14_eq251"]
+[ext_resource type="PackedScene" uid="uid://bdfsckrrfil0f" path="res://entities/player/states/BOUNCE.tscn" id="15_2b0nd"]
 [ext_resource type="Texture2D" uid="uid://kjic6iygn73n" path="res://assets/other/teste1280x720.jpg" id="26_tk5n4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h878u"]
 size = Vector2(200, 200)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 78
+collision_mask = 206
 floor_constant_speed = true
 floor_max_angle = 0.349066
 floor_snap_length = 2.0
@@ -58,6 +59,8 @@ script = ExtResource("4_cvlxd")
 [node name="WALL_JUMP" parent="STATES" instance=ExtResource("12_g8hft")]
 
 [node name="DIE" parent="STATES" instance=ExtResource("14_eq251")]
+
+[node name="BOUNCE" parent="STATES" instance=ExtResource("15_2b0nd")]
 
 [node name="LabelState" type="Label" parent="."]
 offset_left = -20.0

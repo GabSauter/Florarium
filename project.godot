@@ -84,6 +84,7 @@ Climb={
 2d_physics/layer_5="obstacles"
 2d_physics/layer_6="respawn"
 2d_physics/layer_7="disappearPlatform"
+2d_physics/layer_8="bouncePlataform"
 
 [rendering]
 

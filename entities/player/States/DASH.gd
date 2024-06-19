@@ -20,6 +20,10 @@ func enter_state():
 func update(delta):
 	if Player.dead:
 		return STATES.DIE
+	
+	if Player.bounce:
+		return STATES.BOUNCE
+	
 	if !dashing:
 		return STATES.FALL
 	return null

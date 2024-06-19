@@ -30,6 +30,10 @@ var jump_buffer = false
 var dead = false
 var respawn_position: Vector2
 
+var bounce = false
+var bounce_rotation
+var bounce_force
+
 func _ready():
 	for state in STATES.get_children():
 		state.STATES = STATES

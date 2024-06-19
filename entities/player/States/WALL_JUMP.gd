@@ -7,6 +7,13 @@ func enter_state():
 func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
+	
+	if Player.dead:
+		return STATES.DIE
+	
+	if Player.bounce:
+		return STATES.BOUNCE
+	
 	if Player.is_on_wall():
 		return STATES.SLIDE
 	if Player.velocity.y > 0:

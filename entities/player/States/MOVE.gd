@@ -10,6 +10,9 @@ func update(delta):
 	if Player.dead:
 		return STATES.DIE
 	
+	if Player.bounce:
+		return STATES.BOUNCE
+	
 	if Player.movement_input == Vector2.ZERO:
 		return STATES.IDLE
 	if Player.velocity.y >0:

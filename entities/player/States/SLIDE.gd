@@ -11,6 +11,9 @@ func update(delta):
 	if Player.dead:
 		return STATES.DIE
 	
+	if Player.bounce:
+		return STATES.BOUNCE
+	
 	if !Player.is_on_wall_only():
 		return STATES.FALL
 	if Player.jump_input_actuation:

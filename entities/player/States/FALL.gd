@@ -20,6 +20,9 @@ func update(delta):
 	if Player.dead:
 		return STATES.DIE
 	
+	if Player.bounce:
+		return STATES.BOUNCE
+	
 	if Player.is_on_floor() and Player.velocity.x == 0:
 		return STATES.IDLE
 	if Player.is_on_floor() and Player.velocity.x != 0:

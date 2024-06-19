@@ -8,4 +8,6 @@ extends Node
 @onready var SLIDE = $SLIDE
 @onready var WALL_JUMP = $WALL_JUMP
 
+@onready var BOUNCE = $BOUNCE
+
 @onready var DIE = $DIE
