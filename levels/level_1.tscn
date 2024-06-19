@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=16 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="5_chh1w"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="5_sqy2g"]
 [ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="6_bsq3h"]
+[ext_resource type="PackedScene" uid="uid://cfpu3dtqg207i" path="res://entities/plataforms/DisappearPlatform.tscn" id="8_amtsk"]
 
 [sub_resource type="Curve2D" id="Curve2D_7hogg"]
 _data = {
@@ -124,6 +125,12 @@ texture = ExtResource("5_sqy2g")
 [node name="CollisionShape2D" parent="0/MovePlataform2/AnimatableBody" index="1"]
 position = Vector2(35.5, 0)
 shape = SubResource("RectangleShape2D_eovcd")
+
+[node name="DisappearPlatform2" parent="0" instance=ExtResource("8_amtsk")]
+position = Vector2(8440, -1990)
+
+[node name="DisappearPlatform" parent="0" instance=ExtResource("8_amtsk")]
+position = Vector2(8223, -1991)
 
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
