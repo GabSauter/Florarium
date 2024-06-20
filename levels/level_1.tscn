@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cfpu3dtqg207i" path="res://entities/plataforms/DisappearPlatform.tscn" id="8_amtsk"]
 [ext_resource type="PackedScene" uid="uid://cstc5n3u4vh7p" path="res://entities/plataforms/BouncePlataform.tscn" id="10_e3va5"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="11_7y7wt"]
-[ext_resource type="PackedScene" uid="uid://cpo757j58sgpi" path="res://levels/level_2.tscn" id="12_vr2ve"]
+[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/resources/world1/world1scene.tscn" id="12_hp0rh"]
 
 [sub_resource type="Curve2D" id="Curve2D_7hogg"]
 _data = {
@@ -196,7 +196,7 @@ rotation = 1.5708
 
 [node name="NextLevel" parent="." instance=ExtResource("11_7y7wt")]
 position = Vector2(9913, -581)
-new_scene = ExtResource("12_vr2ve")
+new_scene = ExtResource("12_hp0rh")
 
 [editable path="0/MovePlataform"]
 [editable path="0/MovePlataform2"]
