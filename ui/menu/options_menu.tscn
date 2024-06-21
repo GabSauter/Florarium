@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://wkku8p1vo8af"]
+
+[ext_resource type="Script" path="res://ui/menu/options_menu.gd" id="1_d7ckb"]
+[ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="2_rc5ok"]
+[ext_resource type="Script" path="res://ui/menu/option_audio_menu.gd" id="3_eyk8j"]
+
+[node name="OptionsMenu" type="Control"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d7ckb")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.556863, 0.556863, 0.556863, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rc5ok")
+expand_mode = 1
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Voltar"
+
+[node name="OptionsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Opções"
+horizontal_alignment = 1
+
+[node name="AudioBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_eyk8j")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/AudioBoxContainer"]
+layout_mode = 2
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/AudioBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Música"
+
+[node name="MusicHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Sons"
+
+[node name="SFXHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_button_down"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer/MasterHSlider" to="MarginContainer/VBoxContainer/AudioBoxContainer" method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer/MusicHSlider" to="MarginContainer/VBoxContainer/AudioBoxContainer" method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/AudioBoxContainer/GridContainer/SFXHSlider" to="MarginContainer/VBoxContainer/AudioBoxContainer" method="_on_sfxh_slider_value_changed"]

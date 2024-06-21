@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd2vvgssqjvim"]
 
 [ext_resource type="Script" path="res://entities/game_related/NextLevel.gd" id="1_7lnhi"]
-[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="1_87he8"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_87he8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l161k"]
 radius = 30.0

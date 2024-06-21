@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpo757j58sgpi"]
 
-[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/effects/Solid_white.png" id="1_5d8qt"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_5d8qt"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_ssuyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxsfc"]
