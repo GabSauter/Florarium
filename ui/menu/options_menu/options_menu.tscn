@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://wkku8p1vo8af"]
 
-[ext_resource type="Script" path="res://ui/menu/options_menu.gd" id="1_d7ckb"]
-[ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="2_rc5ok"]
-[ext_resource type="PackedScene" uid="uid://uowkqq54vc8u" path="res://ui/menu/options_container.tscn" id="3_p1au8"]
+[ext_resource type="Script" path="res://ui/menu/options_menu/options_menu.gd" id="1_nmi2a"]
+[ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="2_blj8a"]
+[ext_resource type="PackedScene" uid="uid://uowkqq54vc8u" path="res://ui/menu/options_menu/components/options_container.tscn" id="3_x2qof"]
 
 [node name="OptionsMenu" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d7ckb")
+script = ExtResource("1_nmi2a")
 
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color(0.556863, 0.556863, 0.556863, 1)
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rc5ok")
+texture = ExtResource("2_blj8a")
 expand_mode = 1
 flip_h = true
 
@@ -53,7 +53,7 @@ theme_override_font_sizes/font_size = 32
 text = "Opções"
 horizontal_alignment = 1
 
-[node name="OptionsContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_p1au8")]
+[node name="OptionsContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_x2qof")]
 layout_mode = 2
 size_flags_vertical = 3
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://uowkqq54vc8u"]
 
-[ext_resource type="Script" path="res://ui/menu/AudioMenu.gd" id="1_e0a17"]
-[ext_resource type="PackedScene" uid="uid://cevnbuo2e4utj" path="res://ui/menu/hot_key_rebind_button.tscn" id="1_pj5vu"]
-[ext_resource type="PackedScene" uid="uid://c40660wl8h7pu" path="res://ui/menu/window_mode_button.tscn" id="1_xvngp"]
-[ext_resource type="PackedScene" uid="uid://b5cbca25q3kw8" path="res://ui/menu/resolution_mode_button.tscn" id="2_vkoh3"]
+[ext_resource type="PackedScene" uid="uid://c40660wl8h7pu" path="res://ui/menu/options_menu/option_video/components/window_mode_button.tscn" id="1_0131g"]
+[ext_resource type="PackedScene" uid="uid://b5cbca25q3kw8" path="res://ui/menu/options_menu/option_video/components/resolution_mode_button.tscn" id="2_emldp"]
+[ext_resource type="PackedScene" uid="uid://cevnbuo2e4utj" path="res://ui/menu/options_menu/option_control/components/hot_key_rebind_button.tscn" id="3_tqmdf"]
+[ext_resource type="Script" path="res://ui/menu/options_menu/option_audio/audio_menu.gd" id="4_hkls7"]
 
 [node name="OptionsContainer" type="Control"]
 layout_mode = 3
@@ -48,10 +48,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Window_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xvngp")]
+[node name="Window_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_0131g")]
 layout_mode = 2
 
-[node name="Resolution_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_vkoh3")]
+[node name="Resolution_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_emldp")]
 layout_mode = 2
 
 [node name="Controles" type="TabBar" parent="TabContainer"]
@@ -79,34 +79,44 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 50
 
-[node name="HotKey_Rebind_Button" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HotKey_Rebind_Button" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "MoveRight"
 
-[node name="HotKey_Rebind_Button2" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HotKey_Rebind_Button2" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "MoveLeft"
 
-[node name="HotKey_Rebind_Button3" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HotKey_Rebind_Button3" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "MoveUp"
 
-[node name="HotKey_Rebind_Button4" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HotKey_Rebind_Button4" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "MoveDown"
 
-[node name="HotKey_Rebind_Button5" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HotKey_Rebind_Button5" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "Jump"
 
-[node name="HotKey_Rebind_Button6" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+[node name="HotKey_Rebind_Button6" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
 layout_mode = 2
 action_name = "Dash"
+
+[node name="HotKey_Rebind_Button7" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_tqmdf")]
+layout_mode = 2
+action_name = "Pause"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Áudio" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-script = ExtResource("1_e0a17")
+script = ExtResource("4_hkls7")
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Áudio"]
 layout_mode = 1

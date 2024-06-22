@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7fiofvea4nhi"]
+
+[ext_resource type="PackedScene" uid="uid://cevnbuo2e4utj" path="res://ui/menu/options_menu/option_control/components/hot_key_rebind_button.tscn" id="1_h8r53"]
+
+[node name="Controles" type="TabBar"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HotKey_Rebind_Button" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "MoveRight"
+
+[node name="HotKey_Rebind_Button2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "MoveLeft"
+
+[node name="HotKey_Rebind_Button3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "MoveUp"
+
+[node name="HotKey_Rebind_Button4" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "MoveDown"
+
+[node name="HotKey_Rebind_Button5" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "Jump"
+
+[node name="HotKey_Rebind_Button6" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "Dash"
+
+[node name="HotKey_Rebind_Button7" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h8r53")]
+layout_mode = 2
+action_name = "Pause"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2

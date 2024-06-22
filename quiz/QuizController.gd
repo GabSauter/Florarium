@@ -1,6 +1,7 @@
 extends Control
 
-@export var new_game_scene: PackedScene
+var runningScene: RunningScene
+@export var next_scene: PackedScene
 
 @onready var v_box_container_options = $Background/CardBackground/VBoxContainer/VBoxContainerOptions
 @onready var question_text = $Background/CardBackground/VBoxContainer/QuestionText
@@ -23,6 +24,8 @@ var current_quiz: QuizQuestion:
 	get: return quiz.theme[index]
 
 func _ready():
+	runningScene = get_tree().current_scene.get_node("RunningScene")
+	
 	numberOfCorrect = 0
 	for button in v_box_container_options.get_children():
 		buttons.append(button)
@@ -75,10 +78,4 @@ func end_quiz():
 	score.text = str(numberOfCorrect) + "/" + str(quiz.theme.size())
 
 func _on_continue_button_button_down():
-	var tree = get_tree()
-	var current_scene = tree.current_scene
-	current_scene.queue_free()
-	
-	var new_scene_instance = new_game_scene.instantiate()
-	tree.root.add_child(new_scene_instance)
-	tree.current_scene = new_scene_instance
+	runningScene.next_scene(next_scene)

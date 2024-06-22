@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8e1fjpg4mike"]
+
+[ext_resource type="PackedScene" uid="uid://c40660wl8h7pu" path="res://ui/menu/options_menu/option_video/components/window_mode_button.tscn" id="1_uut0h"]
+[ext_resource type="PackedScene" uid="uid://b5cbca25q3kw8" path="res://ui/menu/options_menu/option_video/components/resolution_mode_button.tscn" id="2_kv5h0"]
+
+[node name="Vídeo" type="TabBar"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Window_Mode_Button" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_uut0h")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kv5h0")]
+layout_mode = 2

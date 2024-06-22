@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cge7qhcd1pmij"]
+
+[ext_resource type="Script" path="res://ui/menu/options_menu/option_audio/audio_menu.gd" id="1_doi7c"]
+
+[node name="Áudio" type="TabBar"]
+visible = false
+script = ExtResource("1_doi7c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="AudioBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/AudioBoxContainer"]
+layout_mode = 2
+text = "Áudio
+ "
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/AudioBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterHSlider" type="HSlider" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Música"
+
+[node name="MusicHSlider" type="HSlider" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Sons"
+
+[node name="SFXHSlider" type="HSlider" parent="MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="value_changed" from="MarginContainer/AudioBoxContainer/GridContainer/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/AudioBoxContainer/GridContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/AudioBoxContainer/GridContainer/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]

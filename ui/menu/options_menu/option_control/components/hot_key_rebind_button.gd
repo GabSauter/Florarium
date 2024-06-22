@@ -26,6 +26,8 @@ func set_action_name():
 			label.text = "Pular"
 		"Dash":
 			label.text = "Impulso"
+		"Pause":
+			label.text = "Pausar"
 
 func set_text_for_key():
 	var action_events = InputMap.action_get_events(action_name)

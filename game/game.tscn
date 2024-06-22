@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bum8rrxocek8d"]
+
+[ext_resource type="PackedScene" uid="uid://borto8er3l4xv" path="res://ui/menu/main_menu/main_menu.tscn" id="1_ftlkm"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_rnwei"]
+[ext_resource type="Script" path="res://game/RunningScene.gd" id="2_ps7hn"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_rnwei")
+
+[node name="RunningScene" type="Node2D" parent="."]
+script = ExtResource("2_ps7hn")
+
+[node name="MainMenu" parent="RunningScene" instance=ExtResource("1_ftlkm")]
+offset_right = 1280.0
+offset_bottom = 720.0

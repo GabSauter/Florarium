@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var game = $"../.."
+var runningScene: RunningScene
 
 @onready var options_menu = $OptionsMenu
 
@@ -11,9 +11,12 @@ extends Control
 
 @export var new_game_scene: PackedScene
 
+func _ready():
+	runningScene = get_tree().current_scene.get_node("RunningScene")
+
 func _on_start_button_button_down():
 	var level1 = preload("res://levels/level_1.tscn")
-	game.next_scene(level1)
+	runningScene.next_scene(level1)
 
 func _on_options_button_button_down():
 	options_menu.visible = true

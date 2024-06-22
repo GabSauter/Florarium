@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40660wl8h7pu"]
+
+[ext_resource type="PackedScene" uid="uid://djg11mldwxkjo" path="res://ui/menu/options_menu/option_video/components/options_display_button.tscn" id="1_sbhsk"]
+[ext_resource type="Script" path="res://ui/menu/options_menu/option_video/components/window_mode_button.gd" id="2_srao2"]
+
+[node name="Window_Mode_Button" instance=ExtResource("1_sbhsk")]
+script = ExtResource("2_srao2")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Tela"

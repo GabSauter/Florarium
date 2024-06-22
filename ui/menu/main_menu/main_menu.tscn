@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://borto8er3l4xv"]
 
-[ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_65v3q"]
+[ext_resource type="Script" path="res://ui/menu/main_menu/main_menu.gd" id="1_65v3q"]
 [ext_resource type="PackedScene" uid="uid://ddqjd3aptdlu8" path="res://levels/level_1.tscn" id="2_4s5eu"]
 [ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="3_k6q8g"]
 [ext_resource type="AudioStream" uid="uid://cavw6jjmm0gh0" path="res://assets/audios/musics/menumusic.mp3" id="4_5i5mu"]
-[ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu.tscn" id="4_8cpnl"]
+[ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu/options_menu.tscn" id="4_8cpnl"]
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
