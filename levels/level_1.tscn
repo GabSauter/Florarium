@@ -195,7 +195,7 @@ position = Vector2(10420, -1047)
 rotation = 1.5708
 
 [node name="NextLevel" parent="." instance=ExtResource("11_7y7wt")]
-position = Vector2(9913, -581)
+position = Vector2(11137, 1428)
 new_scene = ExtResource("12_hp0rh")
 
 [editable path="0/MovePlataform"]

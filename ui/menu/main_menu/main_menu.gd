@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-var runningScene: RunningScene
+var levelContainer: LevelContainer
 
 @onready var options_menu = $OptionsMenu
 
@@ -12,11 +12,13 @@ var runningScene: RunningScene
 @export var new_game_scene: PackedScene
 
 func _ready():
-	runningScene = get_tree().current_scene.get_node("RunningScene")
+	levelContainer = get_tree().current_scene.get_node("LevelContainer")
 
 func _on_start_button_button_down():
 	var level1 = preload("res://levels/level_1.tscn")
-	runningScene.next_scene(level1)
+	levelContainer.next_level(level1)
+	
+	self.queue_free()
 
 func _on_options_button_button_down():
 	options_menu.visible = true

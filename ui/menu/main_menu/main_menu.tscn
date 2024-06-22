@@ -16,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_65v3q")
 new_game_scene = ExtResource("2_4s5eu")
-metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
