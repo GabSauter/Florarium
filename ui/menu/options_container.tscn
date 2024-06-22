@@ -1,0 +1,175 @@
+[gd_scene load_steps=5 format=3 uid="uid://uowkqq54vc8u"]
+
+[ext_resource type="Script" path="res://ui/menu/AudioMenu.gd" id="1_e0a17"]
+[ext_resource type="PackedScene" uid="uid://cevnbuo2e4utj" path="res://ui/menu/hot_key_rebind_button.tscn" id="1_pj5vu"]
+[ext_resource type="PackedScene" uid="uid://c40660wl8h7pu" path="res://ui/menu/window_mode_button.tscn" id="1_xvngp"]
+[ext_resource type="PackedScene" uid="uid://b5cbca25q3kw8" path="res://ui/menu/resolution_mode_button.tscn" id="2_vkoh3"]
+
+[node name="OptionsContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Vídeo" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Vídeo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Vídeo/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Window_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xvngp")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Vídeo/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_vkoh3")]
+layout_mode = 2
+
+[node name="Controles" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controles"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controles/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controles/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="HotKey_Rebind_Button" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "MoveRight"
+
+[node name="HotKey_Rebind_Button2" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "MoveLeft"
+
+[node name="HotKey_Rebind_Button3" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "MoveUp"
+
+[node name="HotKey_Rebind_Button4" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "MoveDown"
+
+[node name="HotKey_Rebind_Button5" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "Jump"
+
+[node name="HotKey_Rebind_Button6" parent="TabContainer/Controles/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_pj5vu")]
+layout_mode = 2
+action_name = "Dash"
+
+[node name="Áudio" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("1_e0a17")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Áudio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="AudioBoxContainer" type="VBoxContainer" parent="TabContainer/Áudio/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer"]
+layout_mode = 2
+text = "Áudio
+ "
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterHSlider" type="HSlider" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Música"
+
+[node name="MusicHSlider" type="HSlider" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Sons"
+
+[node name="SFXHSlider" type="HSlider" parent="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/MasterHSlider" to="TabContainer/Áudio" method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/MusicHSlider" to="TabContainer/Áudio" method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/SFXHSlider" to="TabContainer/Áudio" method="_on_sfxh_slider_value_changed"]

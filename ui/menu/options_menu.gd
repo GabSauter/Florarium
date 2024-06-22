@@ -1,6 +1,7 @@
 extends Control
 
-@onready var game = $"../.."
+func _ready():
+	self.set_process(false)
 
 func _on_back_button_button_down():
 	self.visible = false
