@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd8nup6cyjgy4"]
 
 [ext_resource type="Script" path="res://ui/menu/pause_menu/pause_menu.gd" id="1_6805y"]
-[ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="1_p3kx5"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="2_bs1j7"]
 [ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu/options_menu.tscn" id="3_8x5g5"]
 
 [node name="PauseMenu" type="Control"]
@@ -16,14 +16,14 @@ grow_vertical = 2
 script = ExtResource("1_6805y")
 
 [node name="Background" type="TextureRect" parent="."]
-self_modulate = Color(0.376471, 0.376471, 0.376471, 0.670588)
+self_modulate = Color(0, 0, 0, 0.854902)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_p3kx5")
+texture = ExtResource("2_bs1j7")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

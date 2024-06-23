@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://borto8er3l4xv"]
+[gd_scene load_steps=11 format=3 uid="uid://borto8er3l4xv"]
 
 [ext_resource type="Script" path="res://ui/menu/main_menu/main_menu.gd" id="1_65v3q"]
 [ext_resource type="PackedScene" uid="uid://ddqjd3aptdlu8" path="res://levels/level_1.tscn" id="2_4s5eu"]
-[ext_resource type="Texture2D" uid="uid://dr7btnk1b7ra1" path="res://assets/sprites/menu/menuforestbackground.jpg" id="3_k6q8g"]
+[ext_resource type="Texture2D" uid="uid://b0r0o21es4uqf" path="res://assets/sprites/menu/background.png" id="3_3m4q5"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="3_3q01p"]
 [ext_resource type="AudioStream" uid="uid://cavw6jjmm0gh0" path="res://assets/audios/musics/menumusic.mp3" id="4_5i5mu"]
 [ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu/options_menu.tscn" id="4_8cpnl"]
+[ext_resource type="Texture2D" uid="uid://c3g7pkn2xjoen" path="res://assets/sprites/menu/FlorarumLogoNoBackGround.png" id="4_jn5d4"]
+
+[sub_resource type="Gradient" id="Gradient_jxgti"]
+offsets = PackedFloat32Array(0, 0.788321, 1)
+colors = PackedColorArray(0.344792, 0.508024, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qb8gx"]
+gradient = SubResource("Gradient_jxgti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j85hs"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 130.0
+emission_ring_inner_radius = 600.0
+direction = Vector3(0, 0, 0)
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 10.0
+radial_accel_max = 10.0
+color_ramp = SubResource("GradientTexture1D_qb8gx")
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
@@ -17,16 +40,33 @@ grow_vertical = 2
 script = ExtResource("1_65v3q")
 new_game_scene = ExtResource("2_4s5eu")
 
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(643, 373)
+scale = Vector2(1.24953, 0.76674)
+texture = ExtResource("3_3m4q5")
+
 [node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.00392157, 0.0470588, 0.12549, 0.886275)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_k6q8g")
+texture = ExtResource("3_3q01p")
 expand_mode = 1
 flip_h = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(603.25, 359.25)
+scale = Vector2(0.696777, 0.696777)
+texture = ExtResource("4_jn5d4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(606, 357)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_j85hs")
+lifetime = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -39,16 +79,6 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
-
-[node name="TitleLabel" type="Label" parent="MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 18
-theme_override_font_sizes/font_size = 64
-text = "Florarium
-"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
