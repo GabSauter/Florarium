@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+SettingsDataContainer="*res://game/managers/settings/settings_data_container.gd"
+SettingsSignalBus="*res://game/managers/settings/settings_signal_bus.gd"
+SettingsSaveManager="*res://game/managers/settings/settings_save_manager.gd"
 
 [display]
 

@@ -11,12 +11,18 @@ const RESOLUTION_DICTIONARY = {
 func _ready():
 	add_resolution_items()
 	option_button.item_selected.connect(on_resolution_mode_selected)
+	load_data()
+
+func load_data():
+	on_resolution_mode_selected(SettingsDataContainer.get_resolution_index())
+	option_button.select(SettingsDataContainer.get_resolution_index())
 
 func add_resolution_items():
 	for resolution_size_text in RESOLUTION_DICTIONARY:
 		option_button.add_item(resolution_size_text)
 
 func on_resolution_mode_selected(index: int):
+	SettingsSignalBus.emit_on_resolution_selected(index)
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
 	center_window()
 
