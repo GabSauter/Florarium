@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="KeybindResource" load_steps=9 format=3 uid="uid://cq1grimxe4ac7"]
+
+[ext_resource type="Script" path="res://game/managers/settings/resource/key_bind_resource.gd" id="1_sogkc"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ca2oh"]
+device = -1
+physical_keycode = 67
+unicode = 99
+
+[sub_resource type="InputEventKey" id="InputEventKey_3wsle"]
+device = -1
+physical_keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_d8ww0"]
+device = -1
+physical_keycode = 4194322
+
+[sub_resource type="InputEventKey" id="InputEventKey_ueeoa"]
+device = -1
+physical_keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_tcxpd"]
+device = -1
+physical_keycode = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_ancp3"]
+device = -1
+physical_keycode = 4194320
+
+[sub_resource type="InputEventKey" id="InputEventKey_ne581"]
+device = -1
+physical_keycode = 4194305
+
+[resource]
+script = ExtResource("1_sogkc")
+DEFAULT_MOVE_LEFT_KEY = SubResource("InputEventKey_ueeoa")
+DEFAULT_MOVE_RIGHT_KEY = SubResource("InputEventKey_tcxpd")
+DEFAULT_MOVE_UP_KEY = SubResource("InputEventKey_ancp3")
+DEFAULT_MOVE_DOWN_KEY = SubResource("InputEventKey_d8ww0")
+DEFAULT_JUMP_KEY = SubResource("InputEventKey_3wsle")
+DEFAULT_DASH_KEY = SubResource("InputEventKey_ca2oh")
+DEFAULT_PAUSE_KEY = SubResource("InputEventKey_ne581")
