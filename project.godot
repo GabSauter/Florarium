@@ -22,6 +22,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 SettingsDataContainer="*res://game/managers/settings/settings_data_container.gd"
 SettingsSignalBus="*res://game/managers/settings/settings_signal_bus.gd"
 SettingsSaveManager="*res://game/managers/settings/settings_save_manager.gd"
+HandlePause="*res://game/managers/pause/handle_pause.gd"
 
 [display]
 

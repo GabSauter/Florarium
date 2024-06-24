@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bum8rrxocek8d"]
+[gd_scene load_steps=5 format=3 uid="uid://bum8rrxocek8d"]
 
 [ext_resource type="PackedScene" uid="uid://borto8er3l4xv" path="res://ui/menu/main_menu/main_menu.tscn" id="1_ftlkm"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rnwei"]
 [ext_resource type="Script" path="res://game/LevelContainer.gd" id="2_ps7hn"]
 [ext_resource type="Script" path="res://game/UIContainer.gd" id="2_x85wu"]
-[ext_resource type="Script" path="res://game/managers/handle_pause.gd" id="5_dy04m"]
-[ext_resource type="PackedScene" uid="uid://dd8nup6cyjgy4" path="res://ui/menu/pause_menu/pause_menu.tscn" id="6_cf3fc"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rnwei")
@@ -20,7 +18,3 @@ script = ExtResource("2_x85wu")
 script = ExtResource("2_ps7hn")
 
 [node name="ManagerContainer" type="Node2D" parent="."]
-
-[node name="HandlePause" type="Node2D" parent="ManagerContainer"]
-script = ExtResource("5_dy04m")
-pause_menu = ExtResource("6_cf3fc")
