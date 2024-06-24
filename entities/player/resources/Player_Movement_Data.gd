@@ -7,7 +7,7 @@ class_name PlayerMovementData
 @export var MAX_SPEED : int = 650
 @export var FRICTION = 3000
 	#jump
-@export var JUMP_HEIGHT : float = 383
+@export var JUMP_HEIGHT : float = 423
 @export var JUMP_TIME_TO_PEAK : float = 0.6
 @export var JUMP_TIME_TO_DESCENT : float = 0.5
 @export var JUMP_TIME_TO_DESCENT_SLIDING : float = 1
@@ -23,7 +23,7 @@ class_name PlayerMovementData
 @export var APEX_GRAVITY : float = 1000
 @export var APEX_RANGE : float = 60
 
-@export var dash_speed_x = 1200
-@export var dash_speed_y = 800
-@export var dash_speed_diagonal = 1000
-@export var dash_duration = .15
+@export var dash_speed_x = 1300
+@export var dash_speed_y = 1000
+@export var dash_speed_diagonal = 1100
+@export var dash_duration = .25

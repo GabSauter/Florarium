@@ -4,21 +4,22 @@
 [ext_resource type="Script" path="res://entities/plataforms/DisappearPlatform.gd" id="1_q1u70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62eys"]
-size = Vector2(92, 20)
+size = Vector2(242, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wafac"]
-size = Vector2(92, 2)
+size = Vector2(252, 2)
 
 [node name="DisappearPlatform" type="StaticBody2D"]
 collision_layer = 64
 script = ExtResource("1_q1u70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_62eys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.34902, 0.541176, 1, 1)
-scale = Vector2(0.46, 0.1)
+scale = Vector2(1.26, 0.1)
 texture = ExtResource("1_oj2f2")
 
 [node name="Area2D" type="Area2D" parent="."]

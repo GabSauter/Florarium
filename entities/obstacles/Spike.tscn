@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_x7c4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx0xq"]
-size = Vector2(126, 9)
+size = Vector2(296, 9)
 
 [node name="Spike" type="Node2D"]
 script = ExtResource("1_x7c4b")
@@ -12,7 +12,7 @@ script = ExtResource("1_x7c4b")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.847059, 0, 0.0431373, 1)
 position = Vector2(0, -1.19209e-07)
-scale = Vector2(0.63, 0.05)
+scale = Vector2(1.48, 0.05)
 texture = ExtResource("1_7lyrf")
 
 [node name="Area2D" type="Area2D" parent="."]

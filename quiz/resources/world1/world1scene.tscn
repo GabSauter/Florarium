@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://duoidkopi2o1i"]
 
 [ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_8osvi"]
-[ext_resource type="PackedScene" uid="uid://cpo757j58sgpi" path="res://levels/level_2.tscn" id="2_q7sxl"]
+[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/level_3.tscn" id="2_1gl3r"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/resources/world1/world1_theme.tres" id="3_atxnp"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_mdbix"]
 
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8osvi")
-next_scene = ExtResource("2_q7sxl")
+next_scene = ExtResource("2_1gl3r")
 quiz = ExtResource("3_atxnp")
 color_right = Color(0, 1, 0, 1)
 color_wrong = Color(1, 0, 0, 1)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_uosaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2vu"]
-size = Vector2(98, 22)
+size = Vector2(438, 22)
 
 [node name="BouncePlataform" type="Area2D"]
 collision_layer = 128
@@ -12,7 +12,7 @@ script = ExtResource("1_7lj7h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.945098, 0.329412, 0.858824, 1)
-scale = Vector2(0.49, 0.11)
+scale = Vector2(2.19, 0.11)
 texture = ExtResource("1_uosaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
