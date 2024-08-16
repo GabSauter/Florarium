@@ -1,11 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var STATES = $STATES
 @onready var labelState = $LabelState
 @onready var labelGravity = $LabelGravity
-@onready var labelVelocityY = $LabelVelocityY
-@onready var labelVelocityX = $LabelVelocityX
 
 @export var movement: PlayerMovementData
 
@@ -45,8 +44,6 @@ func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
 	labelState.text = str(current_state.get_name())
-	labelVelocityY.text = str(velocity.y)
-	labelVelocityX.text = str(velocity.x)
 	move_and_slide()
 
 func gravity(delta):
@@ -81,15 +78,16 @@ func change_state(input_state):
 func player_input():
 	movement_input = Vector2.ZERO
 	if Input.is_action_pressed("MoveRight"):
+		animated_sprite.flip_h = true
 		movement_input.x += 1
 	if Input.is_action_pressed("MoveLeft"):
+		animated_sprite.flip_h = false
 		movement_input.x -= 1
 	if Input.is_action_pressed("MoveUp"):
 		movement_input.y -= 1
 	if Input.is_action_pressed("MoveDown"):
 		movement_input.y += 1
-		if is_on_floor(): #for one way plataform
-			position.y += 1
+		goDownFromOneWayPlataform()
 	
 	# jumps
 	if Input.is_action_pressed("Jump"):
@@ -110,3 +108,7 @@ func player_input():
 		dash_input = true
 	else:
 		dash_input = false
+
+func goDownFromOneWayPlataform():
+	if is_on_floor():
+			position.y += 1

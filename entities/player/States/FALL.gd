@@ -12,6 +12,8 @@ func enter_state():
 	handle_can_coyote_jump()
 
 func update(delta):
+	Player.animated_sprite.play("fall")
+	
 	Player.gravity(delta)
 	player_movement(delta)
 	

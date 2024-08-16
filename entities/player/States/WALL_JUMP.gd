@@ -5,6 +5,8 @@ func enter_state():
 	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func update(delta):
+	Player.animated_sprite.play("jump")
+	
 	Player.gravity(delta)
 	player_movement(delta)
 	

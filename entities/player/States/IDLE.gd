@@ -4,6 +4,8 @@ func enter_state():
 	Player.can_dash = true
 
 func update(delta):
+	Player.animated_sprite.play("idle")
+	
 	Player.gravity(delta)
 	Player.velocity.x = move_toward(Player.velocity.x, 0, Player.movement.FRICTION * delta)
 	

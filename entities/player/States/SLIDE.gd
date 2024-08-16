@@ -5,6 +5,8 @@ func enter_state():
 		Player.velocity.y = 1
 
 func update(delta):
+	Player.animated_sprite.play("slide")
+	
 	player_movement(delta)
 	Player.gravity(delta)
 	

@@ -4,6 +4,8 @@ func enter_state():
 	Player.can_dash = true
 
 func update(delta):
+	Player.animated_sprite.play("run")
+	
 	Player.gravity(delta)
 	player_movement(delta)
 	
