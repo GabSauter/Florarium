@@ -1,25 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://btjryqd8q2ddi"]
+[gd_scene load_steps=3 format=3 uid="uid://btjryqd8q2ddi"]
 
-[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_7lyrf"]
 [ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_x7c4b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx0xq"]
-size = Vector2(296, 9)
+[ext_resource type="Texture2D" uid="uid://ea8w7qhp0fhp" path="res://assets/sprites/world/forest/thorn.png" id="2_ucv1b"]
 
 [node name="Spike" type="Node2D"]
 script = ExtResource("1_x7c4b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.847059, 0, 0.0431373, 1)
 position = Vector2(0, -1.19209e-07)
-scale = Vector2(1.48, 0.05)
-texture = ExtResource("1_7lyrf")
+texture = ExtResource("2_ucv1b")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_fx0xq")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-59, 50, -62, 17, -37, 0, 17, -8, 45, 7, 52, 27, 60, 50)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -183,7 +183,7 @@ position_smoothing_enabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4oo88")
-animation = &"slide"
+animation = &"fall"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.4
