@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://npo482ygrryi"]
+
+[ext_resource type="Texture2D" uid="uid://dfw6sqmlv6fst" path="res://icon.svg" id="1_j6m31"]
+[ext_resource type="Shader" path="res://shaders/DashGhost.gdshader" id="1_lqocm"]
+[ext_resource type="Script" path="res://entities/player/effects/DashGhost.gd" id="2_ng7ei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rx62o"]
+shader = ExtResource("1_lqocm")
+shader_parameter/whiten = true
+shader_parameter/mix_weight = 1.0
+
+[node name="Dash_Ghost" type="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_rx62o")
+texture = ExtResource("1_j6m31")
+script = ExtResource("2_ng7ei")
