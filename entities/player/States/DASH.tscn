@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdsfu0u441jsy"]
+[gd_scene load_steps=7 format=3 uid="uid://cdsfu0u441jsy"]
 
 [ext_resource type="Script" path="res://entities/player/states/DASH.gd" id="1_hsbyd"]
+
+[sub_resource type="Gradient" id="Gradient_gdr5q"]
+colors = PackedColorArray(1, 1, 1, 1, 0.813258, 0.813258, 0.813258, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ld1xg"]
+gradient = SubResource("Gradient_gdr5q")
+
+[sub_resource type="Curve" id="Curve_c6rbl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_auhco"]
+curve = SubResource("Curve_c6rbl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4st74"]
+particle_flag_disable_z = true
+initial_velocity_min = 148.51
+initial_velocity_max = 336.63
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 20.0
+scale_curve = SubResource("CurveTexture_auhco")
+color_ramp = SubResource("GradientTexture1D_ld1xg")
 
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_hsbyd")
@@ -12,6 +35,12 @@ wait_time = 0.05
 
 [node name="PauseGameTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_4st74")
+explosiveness = 0.14
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
