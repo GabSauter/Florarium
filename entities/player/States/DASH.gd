@@ -74,7 +74,7 @@ func stop_ghost():
 
 func emit_particles():
 	particles.emitting = true
-	particles.process_material.direction = Vector3(-Player.velocity.x,-Player.velocity.y,0)
+	particles.process_material.direction = Vector3(-Player.movement_input.x,-Player.movement_input.y,0)
 
 func _on_dash_duration_timeout():
 	dashing = false

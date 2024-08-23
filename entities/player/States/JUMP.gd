@@ -1,6 +1,14 @@
 extends "state.gd"
 
+var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tscn")
+
 func enter_state():
+	var jump_dust_particles = jump_dust_particles_scene.instantiate()
+	jump_dust_particles.position = Player.position
+	jump_dust_particles.emitting = true
+	Player.get_parent().add_child(jump_dust_particles)
+	
+	
 	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func update(delta):
