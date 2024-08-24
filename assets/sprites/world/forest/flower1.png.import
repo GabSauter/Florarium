@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://svc28uslw27t"
-path="res://.godot/imported/tree1.png-0cc453be39d03337d81a7915543cdbfd.ctex"
+uid="uid://bdwrilg1axdqx"
+path="res://.godot/imported/flower1.png-ef23c2e4a61141f66abcc7182fa79519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world/forest/tree1.png"
-dest_files=["res://.godot/imported/tree1.png-0cc453be39d03337d81a7915543cdbfd.ctex"]
+source_file="res://assets/sprites/world/forest/flower1.png"
+dest_files=["res://.godot/imported/flower1.png-ef23c2e4a61141f66abcc7182fa79519.ctex"]
 
 [params]
 

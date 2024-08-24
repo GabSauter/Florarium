@@ -195,7 +195,7 @@ sprite_frames = SubResource("SpriteFrames_4oo88")
 animation = &"jump"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.4
+energy = 10.25
 range_z_max = -1
 texture = ExtResource("35_221xf")
 texture_scale = 1.2

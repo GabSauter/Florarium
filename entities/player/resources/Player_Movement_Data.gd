@@ -8,8 +8,8 @@ class_name PlayerMovementData
 @export var FRICTION = 1900
 	#jump
 @export var JUMP_HEIGHT : float = 230
-@export var JUMP_TIME_TO_PEAK : float = 0.45
-@export var JUMP_TIME_TO_DESCENT : float = .42
+@export var JUMP_TIME_TO_PEAK : float = 0.4
+@export var JUMP_TIME_TO_DESCENT : float = .37
 @export var JUMP_TIME_TO_DESCENT_SLIDING : float = 0.7
 @export var CUT_JUMP_HEIGHT: float = 0.55
 @export var MAX_FALL_SPEED: float = 1300
