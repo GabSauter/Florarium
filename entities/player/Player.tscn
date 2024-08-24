@@ -171,9 +171,6 @@ script = ExtResource("4_cvlxd")
 
 [node name="BOUNCE" parent="STATES" instance=ExtResource("15_2b0nd")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_myxxo")
 sprite_frames = SubResource("SpriteFrames_4oo88")
