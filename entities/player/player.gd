@@ -3,8 +3,6 @@ class_name Player
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var STATES = $STATES
-@onready var labelState = $LabelState
-@onready var labelGravity = $LabelGravity
 
 @export var movement: PlayerMovementData
 
@@ -43,23 +41,18 @@ func _ready():
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
-	labelState.text = str(current_state.get_name())
 	move_and_slide()
 
 func gravity(delta):
 	if not is_on_floor():
 		var get_gravity
 		if abs(velocity.y) < movement.APEX_RANGE:
-			labelGravity.text = str("Apex gravity")
 			get_gravity = movement.APEX_GRAVITY
 		elif current_state == STATES.FALL:
-			labelGravity.text = str("Fall gravity")
 			get_gravity = movement.FALL_GRAVITY
 		elif current_state == STATES.SLIDE and velocity.y > 0:
-			labelGravity.text = str("Slide gravity")
 			get_gravity = movement.SLIDE_GRAVITY
 		else:
-			labelGravity.text = str("Normal gravity")
 			get_gravity = movement.JUMP_GRAVITY
 		
 		if velocity.y > movement.MAX_FALL_SPEED:

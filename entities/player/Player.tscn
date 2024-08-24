@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d33nbegkq8h2m"]
+[gd_scene load_steps=39 format=3 uid="uid://d33nbegkq8h2m"]
 
 [ext_resource type="Script" path="res://entities/player/Player.gd" id="1_2uie1"]
 [ext_resource type="Resource" uid="uid://dg0p36t1gcoud" path="res://entities/player/resources/Player_Movement_Data.tres" id="2_uereg"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://yswc3or08s42" path="res://assets/sprites/characters/player/jump/frame0004.png" id="25_xypw1"]
 [ext_resource type="Texture2D" uid="uid://b0n6163r3dupg" path="res://assets/sprites/characters/player/slide/frame0000.png" id="31_ikfpd"]
 [ext_resource type="Texture2D" uid="uid://38row3u2hkuf" path="res://assets/sprites/characters/player/slide/frame0001.png" id="32_agxqu"]
-[ext_resource type="Texture2D" uid="uid://bcrdn8jrx5iui" path="res://assets/effects/light/point_light.webp" id="35_221xf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uc1ng"]
 radius = 14.0
@@ -172,20 +171,6 @@ script = ExtResource("4_cvlxd")
 
 [node name="BOUNCE" parent="STATES" instance=ExtResource("15_2b0nd")]
 
-[node name="LabelState" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -135.0
-offset_right = 20.0
-offset_bottom = -112.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="LabelGravity" type="Label" parent="."]
-offset_left = -20.0
-offset_top = 102.0
-offset_right = 20.0
-offset_bottom = 125.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
@@ -193,9 +178,3 @@ position_smoothing_enabled = true
 material = SubResource("ShaderMaterial_myxxo")
 sprite_frames = SubResource("SpriteFrames_4oo88")
 animation = &"jump"
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 10.25
-range_z_max = -1
-texture = ExtResource("35_221xf")
-texture_scale = 1.2
