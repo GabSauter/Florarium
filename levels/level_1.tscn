@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=40 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bdwrilg1axdqx" path="res://assets/sprites/world/forest/flower1.png" id="18_atnk4"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="18_qfg4r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_snrhc"]
+[ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="19_xvtqw"]
 [ext_resource type="PackedScene" uid="uid://cpo757j58sgpi" path="res://levels/level_2.tscn" id="20_7i5r2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="21_1igl7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="23_1b1tv"]
@@ -52,6 +53,31 @@ texture_region_size = Vector2i(100, 100)
 [sub_resource type="TileSet" id="TileSet_4an2l"]
 tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_f3pad")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ox4r"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_sm54f"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246154, 1), 0.0, 0.0, 0, 0, Vector2(0.553846, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_6k8hk"]
+curve = SubResource("Curve_sm54f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpyvb"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(8668, 2000, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_6k8hk")
+color = Color(1, 1, 1, 0.698039)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mo5p"]
 texture = ExtResource("8_ap2im")
@@ -1356,6 +1382,17 @@ position = Vector2(5248, -832)
 
 [node name="Respawn3" parent="0/Checkpoints" instance=ExtResource("18_qfg4r")]
 position = Vector2(6105, -832)
+
+[node name="Particles" type="Node2D" parent="0"]
+
+[node name="DustParticles" type="GPUParticles2D" parent="0/Particles"]
+material = SubResource("CanvasItemMaterial_0ox4r")
+position = Vector2(4585, -628)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_fpyvb")
+texture = ExtResource("19_xvtqw")
+lifetime = 1.5
+visibility_rect = Rect2(-4500, -700, 8668, 2000)
 
 [node name="GroundTileMap" type="TileMap" parent="0"]
 tile_set = SubResource("TileSet_28lgd")
