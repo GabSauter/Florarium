@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=35 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="15_hwvsp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="17_ppfwa"]
 [ext_resource type="Texture2D" uid="uid://bdwrilg1axdqx" path="res://assets/sprites/world/forest/flower1.png" id="18_atnk4"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="18_qfg4r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_snrhc"]
 [ext_resource type="PackedScene" uid="uid://cpo757j58sgpi" path="res://levels/level_2.tscn" id="20_7i5r2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="21_1igl7"]
@@ -51,18 +52,6 @@ texture_region_size = Vector2i(100, 100)
 [sub_resource type="TileSet" id="TileSet_4an2l"]
 tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_f3pad")
-
-[sub_resource type="Resource" id="Resource_d1xp5"]
-script = ExtResource("18_snrhc")
-duration = 1.0
-transition = 0
-ease = 2
-
-[sub_resource type="Curve2D" id="Curve2D_by4ft"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 364, 245, 0, 0, 0, 0, 2322, 233, 0, 0, 0, 0, 2597, -84, 0, 0, 0, 0, 3525, -87, 0, 0, 0, 0, 3805, -318, 0, 0, 0, 0, 3809, -622, 0, 0, 0, 0, 4749, -639, 0, 0, 0, 0, 5002, -914, 0, 0, 0, 0, 7658, -905)
-}
-point_count = 9
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mo5p"]
 texture = ExtResource("8_ap2im")
@@ -477,6 +466,18 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "florest"
 terrain_set_0/terrain_0/color = Color(0, 0.447059, 0.396078, 1)
 sources/0 = SubResource("TileSetAtlasSource_3mo5p")
+
+[sub_resource type="Resource" id="Resource_d1xp5"]
+script = ExtResource("18_snrhc")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Curve2D" id="Curve2D_by4ft"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 364, 245, 0, 0, 0, 0, 2322, 233, 0, 0, 0, 0, 2597, -84, 0, 0, 0, 0, 3525, -87, 0, 0, 0, 0, 3805, -318, 0, 0, 0, 0, 3809, -622, 0, 0, 0, 0, 4749, -639, 0, 0, 0, 0, 5002, -914, 0, 0, 0, 0, 7658, -905)
+}
+point_count = 9
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_eea5y")
@@ -1291,24 +1292,6 @@ layer_0/tile_data = PackedInt32Array(131087, 65536, 0, 131092, 196608, 0, 196614
 [node name="Player" parent="0" instance=ExtResource("2_gwwpf")]
 position = Vector2(366, 364)
 
-[node name="PhantomCamera2D2" type="Node2D" parent="0" node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(580, 244.99)
-script = ExtResource("17_ppfwa")
-follow_mode = 4
-follow_target = NodePath("../Player")
-follow_path = NodePath("../Path2D")
-snap_to_pixel = true
-tween_resource = SubResource("Resource_d1xp5")
-follow_offset = Vector2(0, -60)
-follow_damping = true
-follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
-limit_left = -60
-limit_right = 8097
-
-[node name="Path2D" type="Path2D" parent="0"]
-curve = SubResource("Curve2D_by4ft")
-
 [node name="Obstacles" type="Node2D" parent="0"]
 
 [node name="Spike" parent="0/Obstacles" instance=ExtResource("7_3r0wt")]
@@ -1362,6 +1345,17 @@ position = Vector2(7107, -729)
 [node name="Spike2" parent="0/Obstacles" instance=ExtResource("7_3r0wt")]
 position = Vector2(3260, 52.9999)
 rotation = -0.322886
+
+[node name="Checkpoints" type="Node2D" parent="0"]
+
+[node name="Respawn" parent="0/Checkpoints" instance=ExtResource("18_qfg4r")]
+position = Vector2(2900, -30)
+
+[node name="Respawn2" parent="0/Checkpoints" instance=ExtResource("18_qfg4r")]
+position = Vector2(5248, -832)
+
+[node name="Respawn3" parent="0/Checkpoints" instance=ExtResource("18_qfg4r")]
+position = Vector2(6105, -832)
 
 [node name="GroundTileMap" type="TileMap" parent="0"]
 tile_set = SubResource("TileSet_28lgd")
@@ -1553,3 +1547,21 @@ limit_right = 8097
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("23_1b1tv")
+
+[node name="PhantomCamera2D2" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
+position = Vector2(580, 244.99)
+script = ExtResource("17_ppfwa")
+follow_mode = 4
+follow_target = NodePath("../0/Player")
+follow_path = NodePath("../Path2D")
+snap_to_pixel = true
+tween_resource = SubResource("Resource_d1xp5")
+follow_offset = Vector2(0, -60)
+follow_damping = true
+follow_damping_value = Vector2(0.2, 0.2)
+draw_limits = true
+limit_left = -60
+limit_right = 8097
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_by4ft")

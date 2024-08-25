@@ -148,6 +148,11 @@ movement = ExtResource("2_uereg")
 position = Vector2(3, 9)
 shape = SubResource("CapsuleShape2D_uc1ng")
 
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_myxxo")
+sprite_frames = SubResource("SpriteFrames_4oo88")
+animation = &"jump"
+
 [node name="STATES" type="Node2D" parent="."]
 script = ExtResource("4_cvlxd")
 
@@ -170,8 +175,3 @@ script = ExtResource("4_cvlxd")
 [node name="DIE" parent="STATES" instance=ExtResource("14_eq251")]
 
 [node name="BOUNCE" parent="STATES" instance=ExtResource("15_2b0nd")]
-
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_myxxo")
-sprite_frames = SubResource("SpriteFrames_4oo88")
-animation = &"jump"

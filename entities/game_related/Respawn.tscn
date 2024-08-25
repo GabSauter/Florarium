@@ -1,19 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://lkrvelg1xc1f"]
+[gd_scene load_steps=14 format=3 uid="uid://lkrvelg1xc1f"]
 
 [ext_resource type="Script" path="res://entities/game_related/Respawn.gd" id="1_45woy"]
-[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="2_tbbjr"]
+[ext_resource type="Texture2D" uid="uid://ev0o3csqpolo" path="res://assets/sprites/game_related/checkpoint/frame0000.png" id="2_44ex0"]
+[ext_resource type="Texture2D" uid="uid://ddl3qs3tpgdqq" path="res://assets/sprites/game_related/checkpoint/frame0001.png" id="3_vn20o"]
+[ext_resource type="Texture2D" uid="uid://c80l20jtsk2gm" path="res://assets/sprites/game_related/checkpoint/frame0002.png" id="4_7ooga"]
+[ext_resource type="Texture2D" uid="uid://ds6kooubobbpa" path="res://assets/sprites/game_related/checkpoint/frame0003.png" id="5_8sk4i"]
+[ext_resource type="Texture2D" uid="uid://3vm3ifxbp8ll" path="res://assets/sprites/game_related/checkpoint/frame0004.png" id="6_fjors"]
+[ext_resource type="Texture2D" uid="uid://bjx6t22rqci6g" path="res://assets/sprites/game_related/checkpoint/frame0005.png" id="7_8yet2"]
+[ext_resource type="Texture2D" uid="uid://d1q3rq825incy" path="res://assets/sprites/effects/circle.png" id="8_li87v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvgp8"]
+size = Vector2(26, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5y7v7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_44ex0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vn20o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ooga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8sk4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fjors")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8yet2")
+}],
+"loop": false,
+"name": &"open_flower",
+"speed": 15.0
+}]
+
+[sub_resource type="Curve" id="Curve_sts3c"]
+_data = [Vector2(0, 0.417582), 0.0, 0.0, 0, 0, Vector2(0.876923, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0879121), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_27i8j"]
+curve = SubResource("Curve_sts3c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_87g44"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 1)
+direction = Vector3(0, -1, 0)
+spread = 58.671
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+scale_min = 0.01
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_27i8j")
+color = Color(1, 1, 0.533333, 1)
 
 [node name="Respawn" type="Area2D"]
 collision_layer = 32
 script = ExtResource("1_45woy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 3.5)
 shape = SubResource("RectangleShape2D_tvgp8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.498039)
-texture = ExtResource("2_tbbjr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5y7v7")
+animation = &"open_flower"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-11, -19)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_87g44")
+texture = ExtResource("8_li87v")
+lifetime = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
