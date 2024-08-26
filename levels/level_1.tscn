@@ -1424,7 +1424,7 @@ position = Vector2(1250, -145)
 amount = 6
 process_material = SubResource("ParticleProcessMaterial_koxn7")
 texture = ExtResource("21_4fye0")
-lifetime = 5.0
+lifetime = 7.0
 visibility_rect = Rect2(-1100, -100, 2600, 800)
 trail_enabled = true
 
@@ -1433,7 +1433,7 @@ position = Vector2(6197, -1172)
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_koxn7")
 texture = ExtResource("21_4fye0")
-lifetime = 5.0
+lifetime = 7.0
 visibility_rect = Rect2(-1500, -100, 2600, 800)
 trail_enabled = true
 
