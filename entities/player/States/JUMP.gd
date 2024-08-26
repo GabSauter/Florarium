@@ -8,7 +8,6 @@ func enter_state():
 	jump_dust_particles.emitting = true
 	Player.get_parent().add_child(jump_dust_particles)
 	
-	
 	Player.velocity.y = Player.movement.JUMP_VELOCITY
 
 func update(delta):
