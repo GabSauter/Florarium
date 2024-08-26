@@ -28,6 +28,11 @@ func update(delta):
 	if Player.dead:
 		return STATES.DIE
 	
+	if Player.is_on_floor() and (Player.jump_input_actuation or Player.jump_buffer):
+		Player.jump_buffer = false
+		Player.can_dash = true
+		return STATES.JUMP
+	
 	if Player.bounce:
 		return STATES.BOUNCE
 	

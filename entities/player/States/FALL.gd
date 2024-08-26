@@ -1,7 +1,7 @@
 extends "state.gd"
 
 @onready var CoyoteTimer = $CoyoteTimer
-@export var coyote_duration = .2
+@export var coyote_duration = .25
 
 @onready var JumpBufferTimer = $JumpBufferTimer
 @export var jump_buffer_duration = .1
@@ -41,7 +41,7 @@ func update(delta):
 	return null
 
 func handle_can_coyote_jump():
-	if Player.prev_state == STATES.IDLE or Player.prev_state == STATES.MOVE or Player.prev_state == STATES.SLIDE:
+	if Player.prev_state == STATES.IDLE or Player.prev_state == STATES.MOVE or Player.prev_state == STATES.SLIDE or Player.prev_state == STATES.DASH:
 		can_coyote_jump = true
 		CoyoteTimer.start(coyote_duration)
 	else: 
