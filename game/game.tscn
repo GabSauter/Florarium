@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bum8rrxocek8d"]
+[gd_scene load_steps=6 format=3 uid="uid://bum8rrxocek8d"]
 
 [ext_resource type="PackedScene" uid="uid://borto8er3l4xv" path="res://ui/menu/main_menu/main_menu.tscn" id="1_ftlkm"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rnwei"]
 [ext_resource type="Script" path="res://game/LevelContainer.gd" id="2_ps7hn"]
 [ext_resource type="Script" path="res://game/UIContainer.gd" id="2_x85wu"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_roqhq"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rnwei")
@@ -18,3 +19,8 @@ script = ExtResource("2_x85wu")
 script = ExtResource("2_ps7hn")
 
 [node name="ManagerContainer" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("5_roqhq")

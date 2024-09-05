@@ -1,8 +1,8 @@
 extends "state.gd"
 
 func enter_state():
-	if Player.velocity.y > 0 and Player.prev_state != STATES.FALL:
-		Player.velocity.y = 1
+	if Player.velocity.y > 0:
+		Player.velocity.y *= .5
 
 func update(delta):
 	Player.animated_sprite.play("slide")

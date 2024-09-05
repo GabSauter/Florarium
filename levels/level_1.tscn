@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=39 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
@@ -20,13 +20,12 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="17_ppfwa"]
 [ext_resource type="Texture2D" uid="uid://bdwrilg1axdqx" path="res://assets/sprites/world/forest/flower1.png" id="18_atnk4"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="18_qfg4r"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_snrhc"]
 [ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/ground_tile_map.tscn" id="19_qefe5"]
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="19_xvtqw"]
-[ext_resource type="PackedScene" uid="uid://cpo757j58sgpi" path="res://levels/level_2.tscn" id="20_7i5r2"]
+[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/level_2.tscn" id="20_7i5r2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="21_1igl7"]
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="21_4fye0"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="23_1b1tv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="26_ay1n3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54j1q"]
 shader = ExtResource("3_pkfc0")
@@ -86,8 +85,8 @@ directional_velocity_max = 100.0
 directional_velocity_curve = SubResource("CurveXYZTexture_hgfmq")
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="Resource" id="Resource_d1xp5"]
-script = ExtResource("18_snrhc")
+[sub_resource type="Resource" id="Resource_niwjn"]
+script = ExtResource("26_ay1n3")
 duration = 1.0
 transition = 0
 ease = 2
@@ -1177,14 +1176,6 @@ tile_set = SubResource("TileSet_4an2l")
 format = 2
 layer_0/tile_data = PackedInt32Array(262153, 0, 0, 262149, 0, 0, 262150, 65536, 0, 196622, 196608, 0, 196630, 262144, 0, 37, 524288, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(580, 245)
-limit_left = -60
-limit_right = 8097
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("23_1b1tv")
-
 [node name="PhantomCamera2D2" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
 position = Vector2(580, 244.99)
 script = ExtResource("17_ppfwa")
@@ -1192,7 +1183,7 @@ follow_mode = 4
 follow_target = NodePath("../0/Player")
 follow_path = NodePath("../Path2D")
 snap_to_pixel = true
-tween_resource = SubResource("Resource_d1xp5")
+tween_resource = SubResource("Resource_niwjn")
 follow_offset = Vector2(0, -60)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)

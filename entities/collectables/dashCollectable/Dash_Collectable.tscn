@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcrdn8jrx5iui" path="res://assets/effects/light/point_light.webp" id="3_stm4q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hilst"]
-radius = 36.0555
+radius = 56.0089
 
 [sub_resource type="Curve" id="Curve_uhi8l"]
 _data = [Vector2(0.0114286, 0.021978), 0.0, 0.0, 0, 0, Vector2(0.52, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.043956), 0.0, 0.0, 0, 0]

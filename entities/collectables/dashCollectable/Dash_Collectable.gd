@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer = $Timer
-var timer_duration = 5
+var timer_duration = 2
 
 @onready var sprite = $Sprite2D
 @onready var area_2d = $Area2D

@@ -3,15 +3,15 @@ extends Control
 var level_container: LevelContainer
 @export var next_scene: PackedScene
 
-@onready var v_box_container_options = $Background/CardBackground/VBoxContainer/VBoxContainerOptions
-@onready var question_text = $Background/CardBackground/VBoxContainer/QuestionText
+@onready var v_box_container_options = $Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions
+@onready var question_text = $Background/CardBackground/VBoxContainer2/VBoxContainer/QuestionText
 @onready var next_question_button = $Background/CardBackground/NextQuestionButton
-@onready var label_explanation = $Background/CardBackground/VBoxContainer/LabelExplanation
+@onready var label_explanation = $Background/CardBackground/VBoxContainer2/VBoxContainer/LabelExplanation
 @onready var audio_wrong = $Background/CardBackground/AudioWrong
 @onready var audio_correct = $Background/CardBackground/AudioCorrect
 
 @onready var quiz_over = $Background/QuizOver
-@onready var score = $Background/QuizOver/BackGround/VBoxContainer/Score
+@onready var score = $Background/QuizOver/BackGround/VBoxContainer2/VBoxContainer/Score
 
 @export var quiz: QuizTheme
 @export var color_right: Color
