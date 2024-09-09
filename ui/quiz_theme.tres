@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ivi55pxe0xcn"]
+
+[ext_resource type="FontFile" uid="uid://u6q7uliuq4p7" path="res://fonts/Southland TTF.ttf" id="1_8ox4c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3daqg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ogimk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m75th"]
+bg_color = Color(1, 1, 1, 0.231373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7doq5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ucr2"]
+bg_color = Color(1, 1, 1, 0.329412)
+
+[resource]
+default_font = ExtResource("1_8ox4c")
+default_font_size = 42
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+Button/colors/font_hover_color = Color(0.207843, 0.192157, 0.113725, 1)
+Button/colors/font_pressed_color = Color(0.168627, 0.168627, 0.168627, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_3daqg")
+Button/styles/focus = SubResource("StyleBoxEmpty_ogimk")
+Button/styles/hover = SubResource("StyleBoxFlat_m75th")
+Button/styles/normal = SubResource("StyleBoxFlat_7doq5")
+Button/styles/pressed = SubResource("StyleBoxFlat_2ucr2")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 46

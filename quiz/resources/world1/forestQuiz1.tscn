@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://duoidkopi2o1i"]
+[gd_scene load_steps=13 format=3 uid="uid://duoidkopi2o1i"]
 
 [ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_0d7ns"]
+[ext_resource type="Theme" uid="uid://ivi55pxe0xcn" path="res://ui/quiz_theme.tres" id="1_rswde"]
 [ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/level_2.tscn" id="2_wptqt"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/resources/world1/world1_theme.tres" id="3_s2r5q"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_jnc7g"]
@@ -8,6 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="6_c0ipt"]
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_s51d2"]
 [ext_resource type="FontFile" uid="uid://u6q7uliuq4p7" path="res://fonts/Southland TTF.ttf" id="8_pk4kl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kj43"]
+bg_color = Color(1, 1, 1, 0.435294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3f18"]
+bg_color = Color(1, 1, 1, 0.196078)
+
+[sub_resource type="Theme" id="Theme_ixjsh"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_5kj43")
+Button/styles/normal = SubResource("StyleBoxFlat_m3f18")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -19,11 +32,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_rswde")
 script = ExtResource("1_0d7ns")
 next_scene = ExtResource("2_wptqt")
 quiz = ExtResource("3_s2r5q")
-color_right = Color(0, 1, 0, 1)
-color_wrong = Color(1, 0, 0, 1)
+color_right = Color(0.603922, 1, 0.572549, 1)
+color_wrong = Color(1, 0.772549, 0.733333, 1)
 
 [node name="Background" type="TextureRect" parent="Control"]
 self_modulate = Color(0.392157, 0.686275, 0.627451, 1)
@@ -796,7 +810,6 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_pk4kl")
-theme_override_font_sizes/font_size = 36
 text = "a) Opção 1
 "
 alignment = 0
@@ -805,7 +818,6 @@ alignment = 0
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_pk4kl")
-theme_override_font_sizes/font_size = 36
 text = "b) Opção 1
 "
 alignment = 0
@@ -814,7 +826,6 @@ alignment = 0
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_pk4kl")
-theme_override_font_sizes/font_size = 36
 text = "c) Opção 1
 "
 alignment = 0
@@ -823,7 +834,6 @@ alignment = 0
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_pk4kl")
-theme_override_font_sizes/font_size = 36
 text = "d) Opção 1
 "
 alignment = 0
@@ -833,7 +843,6 @@ self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_pk4kl")
-theme_override_font_sizes/font_size = 32
 text = "Explicação da resposta certa"
 
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
@@ -843,12 +852,13 @@ text = "Explicação da resposta certa"
 [node name="NextQuestionButton" type="Button" parent="Control/Background/CardBackground"]
 layout_mode = 2
 offset_left = 140.177
-offset_top = 571.654
+offset_top = 591.654
 offset_right = 437.177
-offset_bottom = 602.654
+offset_bottom = 642.654
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+theme = SubResource("Theme_ixjsh")
 text = "Próxima Pergunta"
 
 [node name="QuizOver" type="Control" parent="Control/Background"]
@@ -860,20 +870,25 @@ offset_right = 936.0
 offset_bottom = 694.0
 
 [node name="BackGround" type="TextureRect" parent="Control/Background/QuizOver"]
-self_modulate = Color(0.411765, 0.454902, 0.588235, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_jnc7g")
+texture = ExtResource("7_s51d2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/QuizOver/BackGround"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -94.0
+offset_right = 69.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -894,6 +909,7 @@ horizontal_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="Control/Background/QuizOver/BackGround/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ixjsh")
 text = "Continuar"
 
 [connection signal="button_down" from="Control/Background/CardBackground/NextQuestionButton" to="Control" method="_on_next_question_button_button_down"]

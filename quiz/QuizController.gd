@@ -11,7 +11,7 @@ var level_container: LevelContainer
 @onready var audio_correct = $Background/CardBackground/AudioCorrect
 
 @onready var quiz_over = $Background/QuizOver
-@onready var score = $Background/QuizOver/BackGround/VBoxContainer2/VBoxContainer/Score
+@onready var score = $Background/QuizOver/BackGround/VBoxContainer/Score
 
 @export var quiz: QuizTheme
 @export var color_right: Color
@@ -45,13 +45,18 @@ func load_quiz():
 		buttons[i].pressed.connect(_button_pressed.bind(buttons[i]))
 
 func _button_pressed(button: Button):
+	var stylebox = StyleBoxFlat.new()
 	if current_quiz.correct == button.text:
 		button.modulate = color_right
+		stylebox.bg_color = Color("#FFF")
+		button.add_theme_stylebox_override("normal", stylebox)
 		numberOfCorrect += 1
 		audio_correct.play()
 		next_question_button.disabled = false
 	else:
 		button.modulate = color_wrong
+		stylebox.bg_color = Color("#FFF")
+		button.add_theme_stylebox_override("normal", stylebox)
 		audio_wrong.play()
 	
 	label_explanation.visible = true
@@ -60,6 +65,8 @@ func next_question():
 	for button in buttons:
 		button.pressed.disconnect(_button_pressed)
 		button.modulate = Color.WHITE
+		var stylebox = StyleBoxEmpty.new()
+		button.add_theme_stylebox_override("normal", stylebox)
 	
 	load_quiz()
 
