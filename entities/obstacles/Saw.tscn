@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpbvc8e30cp52"]
+
+[ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_7m3yr"]
+[ext_resource type="Texture2D" uid="uid://bx1pocbkoetg" path="res://assets/sprites/world/forest/saw/frame0000.png" id="1_ny0yg"]
+[ext_resource type="Texture2D" uid="uid://gw5pjkjsdovf" path="res://assets/sprites/world/forest/saw/frame0001.png" id="2_q8x5h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rumhu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ny0yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q8x5h")
+}],
+"loop": true,
+"name": &"rotate",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5v4b"]
+radius = 86.0058
+
+[node name="Saw" type="Node2D"]
+script = ExtResource("1_7m3yr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rumhu")
+animation = &"rotate"
+autoplay = "rotate"
+frame_progress = 0.15884
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j5v4b")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

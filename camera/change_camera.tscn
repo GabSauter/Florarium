@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://coxfd7ajyd7bc"]
+
+[ext_resource type="Script" path="res://levels/change_camera2.gd" id="1_2dhbg"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_prqvp"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_iuf2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoemh"]
+size = Vector2(424.5, 313)
+
+[sub_resource type="Resource" id="Resource_rw3al"]
+script = ExtResource("3_iuf2w")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("camera_in")]
+position = Vector2(1433, 1061)
+script = ExtResource("1_2dhbg")
+camera_in = NodePath("PhantomCamera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-746, -192)
+shape = SubResource("RectangleShape2D_xoemh")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("2_prqvp")
+priority = 10
+zoom = Vector2(0.6, 0.6)
+tween_resource = SubResource("Resource_rw3al")
+draw_limits = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

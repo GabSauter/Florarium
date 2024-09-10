@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="18_2bsc7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_emn5c"]
 [ext_resource type="Script" path="res://levels/change_camera2.gd" id="19_v24qg"]
+[ext_resource type="PackedScene" uid="uid://cakgxa7mjawj7" path="res://levels/level_6.tscn" id="20_s8nav"]
+[ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="23_yt353"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_avq0h"]
 shader = ExtResource("3_6fdb1")
@@ -74,15 +76,6 @@ directional_velocity_min = 20.0
 directional_velocity_max = 100.0
 directional_velocity_curve = SubResource("CurveXYZTexture_7sef6")
 gravity = Vector3(0, 0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoemh"]
-size = Vector2(424.5, 313)
-
-[sub_resource type="Resource" id="Resource_rw3al"]
-script = ExtResource("18_emn5c")
-duration = 1.0
-transition = 0
-ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dy3jn"]
 size = Vector2(287, 881)
@@ -866,6 +859,7 @@ layer_0/tile_data = PackedInt32Array(262144, 589824, 2, 262145, 589824, 2, 26214
 
 [node name="NextLevel" parent="0" instance=ExtResource("16_ycy4d")]
 position = Vector2(-3611, 192)
+new_scene = ExtResource("20_s8nav")
 
 [node name="Sprite2D" parent="0/NextLevel" index="0"]
 position = Vector2(178, -163)
@@ -1132,21 +1126,7 @@ lifetime = 15.0
 visibility_rect = Rect2(-1100, -100, 2600, 2200)
 trail_enabled = true
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("camera_in")]
-position = Vector2(1433, 1061)
-script = ExtResource("19_v24qg")
-camera_in = NodePath("PhantomCamera2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-746, -192)
-shape = SubResource("RectangleShape2D_xoemh")
-
-[node name="PhantomCamera2D" type="Node2D" parent="Area2D"]
-script = ExtResource("17_xt7ap")
-priority = 10
-zoom = Vector2(0.6, 0.6)
-tween_resource = SubResource("Resource_rw3al")
-draw_limits = true
+[node name="Area2D" parent="." instance=ExtResource("23_yt353")]
 
 [node name="AreaSecond" type="Area2D" parent="." node_paths=PackedStringArray("camera_in")]
 position = Vector2(2052, 848)
@@ -1229,7 +1209,6 @@ draw_limits = true
 limit_left = -3598
 limit_bottom = 475
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="AreaSecond" to="AreaSecond" method="_on_body_entered"]
 [connection signal="body_entered" from="AreaThird" to="AreaThird" method="_on_body_entered"]
 [connection signal="body_entered" from="AreaFourth" to="AreaFourth" method="_on_body_entered"]
