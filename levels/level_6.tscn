@@ -876,6 +876,12 @@ position = Vector2(-648.838, -291.461)
 [node name="Saw4" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
 position = Vector2(-651.886, -478.436)
 
+[node name="Saw11" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
+position = Vector2(-644.844, 505.58)
+
+[node name="Saw12" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
+position = Vector2(-847.654, 518.888)
+
 [node name="Saw5" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
 position = Vector2(-647.137, 303.59)
 
@@ -955,6 +961,7 @@ position = Vector2(7752, 745)
 camera_in = NodePath("../PhantomCamera2D2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
 position = Vector2(632, 536)
 limit_left = -8
 
