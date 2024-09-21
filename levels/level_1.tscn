@@ -47,7 +47,7 @@ light_mode = 1
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246154, 1), 0.0, 0.0, 0, 0, Vector2(0.553846, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_30tfl"]
+[sub_resource type="CurveTexture" id="CurveTexture_ovk5h"]
 curve = SubResource("Curve_sm54f")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpyvb"]
@@ -61,7 +61,7 @@ initial_velocity_max = 20.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_30tfl")
+scale_curve = SubResource("CurveTexture_ovk5h")
 color = Color(1, 1, 1, 0.698039)
 
 [sub_resource type="Curve" id="Curve_mdg5w"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqubnevsali2t"]
+
+[ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_vof2e"]
+[ext_resource type="Texture2D" uid="uid://e6jclxjhicvv" path="res://assets/sprites/world/city/glass_spikes.png" id="2_jrpbl"]
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_vof2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1.19209e-07)
+texture = ExtResource("2_jrpbl")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-48, 25, -44, 11, -31, -1, 13, -1, 38, 4, 49, 25)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

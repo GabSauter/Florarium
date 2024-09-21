@@ -52,7 +52,6 @@ remote_path = NodePath("../../AnimatableBody")
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody"]
-self_modulate = Color(0, 0.466667, 0.360784, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody"]
 
