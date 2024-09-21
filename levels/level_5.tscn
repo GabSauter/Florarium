@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://lp80t1s1omfq"]
+[gd_scene load_steps=43 format=3 uid="uid://lp80t1s1omfq"]
 
 [ext_resource type="Texture2D" uid="uid://dnom00g6rxrvj" path="res://assets/sprites/world/forest/trees/background_tree.png" id="1_6et3i"]
 [ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/ground_tile_map.tscn" id="1_ishb4"]
@@ -76,6 +76,12 @@ directional_velocity_min = 20.0
 directional_velocity_max = 100.0
 directional_velocity_curve = SubResource("CurveXYZTexture_7sef6")
 gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Resource" id="Resource_kou22"]
+script = ExtResource("18_emn5c")
+duration = 1.0
+transition = 0
+ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dy3jn"]
 size = Vector2(287, 881)
@@ -1126,7 +1132,15 @@ lifetime = 15.0
 visibility_rect = Rect2(-1100, -100, 2600, 2200)
 trail_enabled = true
 
-[node name="Area2D" parent="." instance=ExtResource("23_yt353")]
+[node name="Area2D" parent="." node_paths=PackedStringArray("camera_in") instance=ExtResource("23_yt353")]
+camera_in = NodePath("PhantomCamera2D2")
+
+[node name="PhantomCamera2D2" type="Node2D" parent="Area2D"]
+position = Vector2(-219, 117)
+script = ExtResource("17_xt7ap")
+zoom = Vector2(0.7, 0.7)
+tween_resource = SubResource("Resource_kou22")
+draw_limits = true
 
 [node name="AreaSecond" type="Area2D" parent="." node_paths=PackedStringArray("camera_in")]
 position = Vector2(2052, 848)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://c4xuxw8eapjaw"]
+[gd_scene load_steps=32 format=4 uid="uid://c4xuxw8eapjaw"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_3kk5w"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="1_jrspm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="5_8v0y4"]
 [ext_resource type="Texture2D" uid="uid://c8rf60nqwwb7i" path="res://assets/sprites/world/city/bg_build_4.png" id="5_ivg2o"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="6_qltym"]
+[ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="13_y1yrt"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="14_4476r"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="15_1hlr2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="16_isrn4"]
@@ -46,7 +47,7 @@ color = Color(1, 1, 1, 0.698039)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ctmjw"]
 shader = ExtResource("6_qltym")
-shader_parameter/lod = 1.94
+shader_parameter/lod = 1.322
 
 [sub_resource type="Curve2D" id="Curve2D_1vm0o"]
 _data = {
@@ -112,6 +113,14 @@ texture = ExtResource("2_w8y7g")
 position = Vector2(1601.25, -108.75)
 texture = ExtResource("3_4f7u4")
 
+[node name="Sprite2D7" type="Sprite2D" parent="-2"]
+position = Vector2(2851.25, -238.75)
+texture = ExtResource("3_4f7u4")
+
+[node name="Sprite2D12" type="Sprite2D" parent="-2"]
+position = Vector2(3651.25, 171.25)
+texture = ExtResource("3_4f7u4")
+
 [node name="Sprite2D9" type="Sprite2D" parent="-2"]
 position = Vector2(412.5, -503.75)
 texture = ExtResource("3_4f7u4")
@@ -128,9 +137,14 @@ texture = ExtResource("3_4f7u4")
 position = Vector2(3037.5, 250)
 texture = ExtResource("4_bmbfl")
 
-[node name="Sprite2D7" type="Sprite2D" parent="-2"]
-position = Vector2(2795, -7.62939e-06)
-texture = ExtResource("3_4f7u4")
+[node name="Chimney" parent="-2" instance=ExtResource("13_y1yrt")]
+position = Vector2(3261.25, -356.25)
+
+[node name="Chimney2" parent="-2" instance=ExtResource("13_y1yrt")]
+position = Vector2(2258.75, -686.25)
+
+[node name="Chimney3" parent="-2" instance=ExtResource("13_y1yrt")]
+position = Vector2(1683.75, -511.25)
 
 [node name="-1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -143,10 +157,6 @@ texture = ExtResource("2_w8y7g")
 [node name="Sprite2D8" type="Sprite2D" parent="-1"]
 position = Vector2(2548.89, -125.556)
 texture = ExtResource("2_w8y7g")
-
-[node name="Sprite2D9" type="Sprite2D" parent="-1"]
-position = Vector2(2902.22, 202.222)
-texture = ExtResource("2_hjj8j")
 
 [node name="Sprite2D10" type="Sprite2D" parent="-1"]
 position = Vector2(-95.5556, -97.7778)
@@ -176,6 +186,10 @@ texture = ExtResource("3_4f7u4")
 position = Vector2(691, -127)
 texture = ExtResource("3_4f7u4")
 
+[node name="Sprite2D9" type="Sprite2D" parent="-1"]
+position = Vector2(2902.22, 202.222)
+texture = ExtResource("2_hjj8j")
+
 [node name="DustParticles" type="GPUParticles2D" parent="-1"]
 material = SubResource("CanvasItemMaterial_2svsj")
 position = Vector2(-586, -643)
@@ -184,6 +198,15 @@ process_material = SubResource("ParticleProcessMaterial_tlmmq")
 texture = ExtResource("5_8v0y4")
 lifetime = 1.5
 visibility_rect = Rect2(-50, -700, 5668, 2000)
+
+[node name="Chimney" parent="-1" instance=ExtResource("13_y1yrt")]
+position = Vector2(2914.44, -381.111)
+
+[node name="Chimney2" parent="-1" instance=ExtResource("13_y1yrt")]
+position = Vector2(2205.56, -206.667)
+
+[node name="Chimney3" parent="-1" instance=ExtResource("13_y1yrt")]
+position = Vector2(13.3333, -275.556)
 
 [node name="Blur" type="Sprite2D" parent="-1"]
 material = SubResource("ShaderMaterial_ctmjw")
@@ -219,6 +242,15 @@ texture = ExtResource("1_jrspm")
 [node name="Sprite2D2" type="Sprite2D" parent="0/Sprites"]
 position = Vector2(940, 141)
 texture = ExtResource("2_hjj8j")
+
+[node name="Chimney" parent="0/Sprites" instance=ExtResource("13_y1yrt")]
+position = Vector2(500, -249)
+
+[node name="Chimney2" parent="0/Sprites" instance=ExtResource("13_y1yrt")]
+position = Vector2(1442, 8)
+
+[node name="Chimney3" parent="0/Sprites" instance=ExtResource("13_y1yrt")]
+position = Vector2(3639, -280)
 
 [node name="Player" parent="0" instance=ExtResource("2_srtmg")]
 position = Vector2(57, -47)

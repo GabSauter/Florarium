@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8sh66vfl7som"]
+
+[ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="1_pc8sc"]
+[ext_resource type="Texture2D" uid="uid://7x2o47wfgan2" path="res://assets/sprites/world/city/chimney.png" id="2_6xa8l"]
+
+[sub_resource type="Curve" id="Curve_jgtli"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.153846), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lpnwf"]
+curve = SubResource("Curve_jgtli")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7w2j6"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(14, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 20.73
+initial_velocity_min = 43.02
+initial_velocity_max = 59.15
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.8
+scale_curve = SubResource("CurveTexture_lpnwf")
+
+[node name="Chimney" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+self_modulate = Color(0.646029, 0.646029, 0.646029, 1)
+position = Vector2(0, -32)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_7w2j6")
+texture = ExtResource("1_pc8sc")
+lifetime = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6xa8l")
