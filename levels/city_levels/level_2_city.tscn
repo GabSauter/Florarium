@@ -1,0 +1,232 @@
+[gd_scene load_steps=21 format=4 uid="uid://b1ncidm1g5yk5"]
+
+[ext_resource type="Texture2D" uid="uid://blwu40uo5mtr6" path="res://assets/sprites/world/city/house_2.png" id="1_0mrxs"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_2wdhp"]
+[ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_bqtnj"]
+[ext_resource type="Texture2D" uid="uid://cmsh1bo7m3l2w" path="res://assets/sprites/world/city/bg_build_1.png" id="1_ecm15"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="1_hjky7"]
+[ext_resource type="Texture2D" uid="uid://baibfve15mhp8" path="res://assets/sprites/world/city/bg_build_3.png" id="2_17v85"]
+[ext_resource type="Texture2D" uid="uid://x5qbq3qqlhjk" path="res://assets/sprites/world/city/house_4.png" id="2_77p56"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="2_blfx3"]
+[ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="2_cfjcx"]
+[ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="3_3n5jo"]
+[ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="4_niyiu"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="7_4r0di"]
+[ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="9_q1gmn"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="14_55go8"]
+[ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="14_y8tnl"]
+[ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="15_2t0s4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="15_knhl7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcuv1"]
+shader = ExtResource("7_4r0di")
+shader_parameter/lod = 1.322
+
+[sub_resource type="Curve2D" id="Curve2D_vn4ew"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 200, 0, 0, 0, 100, 0, -370, 0, 0, 0, 0, 0, 200)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_h4ict"]
+script = ExtResource("15_knhl7")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Level2City" type="Node2D"]
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+self_modulate = Color(0.279692, 0.277845, 0.370631, 1)
+position = Vector2(2135, -954)
+rotation = -3.14159
+scale = Vector2(27.7008, -16.5368)
+texture = ExtResource("1_2wdhp")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-2"]
+position = Vector2(940, 208.75)
+texture = ExtResource("2_cfjcx")
+
+[node name="Sprite2D7" type="Sprite2D" parent="-2"]
+position = Vector2(50.0001, 152.5)
+texture = ExtResource("2_cfjcx")
+
+[node name="Sprite2D8" type="Sprite2D" parent="-2"]
+position = Vector2(2223.75, -386.25)
+texture = ExtResource("1_ecm15")
+
+[node name="Sprite2D9" type="Sprite2D" parent="-2"]
+position = Vector2(2553.75, -466.25)
+texture = ExtResource("2_17v85")
+
+[node name="Sprite2D" type="Sprite2D" parent="-2"]
+position = Vector2(1011.25, 392.5)
+texture = ExtResource("2_17v85")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-2"]
+position = Vector2(321.25, 243.75)
+texture = ExtResource("2_cfjcx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-2"]
+position = Vector2(2021.25, -565)
+texture = ExtResource("2_cfjcx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-2"]
+position = Vector2(2781.25, -696.25)
+texture = ExtResource("1_ecm15")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-2"]
+position = Vector2(628.75, 421.25)
+texture = ExtResource("2_77p56")
+
+[node name="Chimney" parent="-2" instance=ExtResource("3_3n5jo")]
+position = Vector2(243.75, -155)
+
+[node name="Chimney2" parent="-2" instance=ExtResource("3_3n5jo")]
+position = Vector2(1153.75, 180)
+
+[node name="Chimney3" parent="-2" instance=ExtResource("3_3n5jo")]
+position = Vector2(2093.75, -965)
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+position = Vector2(640, 232.222)
+texture = ExtResource("1_ecm15")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-1"]
+position = Vector2(483.333, 388.889)
+texture = ExtResource("2_17v85")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="-1"]
+position = Vector2(1665.56, -454.444)
+texture = ExtResource("1_ecm15")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(2421.11, -665.556)
+texture = ExtResource("2_cfjcx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-1"]
+position = Vector2(1247.78, 227.778)
+texture = ExtResource("2_cfjcx")
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_mcuv1")
+position = Vector2(2372.78, -932.792)
+scale = Vector2(31.9389, 18.1946)
+texture = ExtResource("1_2wdhp")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprites" type="Node" parent="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(242, 338)
+texture = ExtResource("1_0mrxs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1947, -373)
+texture = ExtResource("1_0mrxs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1160, 407)
+texture = ExtResource("2_77p56")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1398, -433)
+texture = ExtResource("2_77p56")
+
+[node name="Chimney" parent="0/Sprites" instance=ExtResource("3_3n5jo")]
+position = Vector2(1314, -568)
+
+[node name="Chimney2" parent="0/Sprites" instance=ExtResource("3_3n5jo")]
+position = Vector2(2060, -547)
+
+[node name="Spikes" type="Node" parent="0"]
+
+[node name="Spike" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1642, -210)
+
+[node name="Spike7" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(2037, -205)
+
+[node name="Spike8" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(2113, -206)
+
+[node name="Spike9" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(2181, -209)
+
+[node name="Spike10" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(2253, -212)
+
+[node name="Spike11" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(2308, -212)
+
+[node name="Spike2" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1734, -207)
+
+[node name="Spike3" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1813, -209)
+
+[node name="Spike4" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1889, -209)
+
+[node name="Spike5" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1968, -208)
+
+[node name="Spike6" parent="0/Spikes" instance=ExtResource("9_q1gmn")]
+position = Vector2(1606, -225)
+rotation = 1.13049
+
+[node name="Player" parent="0" instance=ExtResource("1_hjky7")]
+position = Vector2(174, 461)
+
+[node name="Respawn" parent="0" instance=ExtResource("2_blfx3")]
+position = Vector2(180, 470)
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("1_bqtnj")]
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAAAAAUAAAAEAAEAAAAAAAYAAAAIAAMAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAP//AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAPz/AAAAAAEAAAABAAUAAAAKAAAAAAACAAUAAAAKAAAAAAADAAUAAAAKAAAAAAAEAAUAAAAKAAAAAAAFAAUAAAAKAAAAAAAGAAUAAAAKAAAAAAAEAAYAAAAJAAMAAAADAAYAAAAJAAMAAAACAAYAAAAJAAMAAAABAAYAAAAJAAMAAAAFAAYAAAAJAAMAAAAGAAYAAAAJAAMAAAAHAAYAAAAJAAMAAAAIAAYAAAAJAAMAAAAHAAUAAAAKAAAAAAAIAAUAAAAKAAAAAAAJAAUAAAAKAAAAAAAKAAUAAAAKAAAAAAAJAAYAAAAJAAMAAAAKAAYAAAAJAAMAAAALAAYAAAAJAAMAAAALAAUAAAAKAAAAAAAMAAYAAAAJAAMAAAAMAAUAAAAFAAEAAAAMAAQAAAAIAAEAAAAMAAMAAAAIAAEAAAAMAAIAAAAIAAEAAAAMAAEAAAAIAAEAAAAMAAAAAAAIAAEAAAANAAAAAAAJAAIAAAANAAEAAAAJAAIAAAANAAIAAAAJAAIAAAANAAMAAAAJAAIAAAANAAQAAAAJAAIAAAANAAUAAAAJAAIAAAANAAYAAAAJAAMAAAAOAAYAAAAJAAMAAAAOAAUAAAAJAAIAAAAOAAQAAAAJAAIAAAAOAAMAAAAJAAIAAAAOAAAAAAAJAAIAAAAOAAEAAAAJAAIAAAAOAAIAAAAJAAIAAAAPAAIAAAAJAAIAAAAPAAEAAAAJAAIAAAAPAAAAAAAJAAIAAAAPAAMAAAAJAAIAAAAPAAQAAAAJAAIAAAAPAAUAAAAJAAIAAAAPAAYAAAAJAAMAAAAMAP//AAAIAAEAAAANAP//AAAJAAIAAAAOAP//AAAJAAIAAAAPAP//AAAJAAIAAAANAP7/AAAJAAIAAAAMAP7/AAAIAAEAAAAOAP7/AAAJAAIAAAAPAP7/AAAGAAEAAAANAP3/AAAKAAAAAAAMAP3/AAAIAAAAAAAOAP3/AAAKAAAAAAAPAP3/AAALAAAAAAAQAP//AAAJAAIAAAARAP//AAAJAAIAAAASAP//AAAJAAIAAAATAP//AAAJAAIAAAASAP7/AAAKAAAAAAARAP7/AAAKAAAAAAAQAP7/AAAKAAAAAAATAP7/AAAKAAAAAAAUAP7/AAAKAAAAAAAUAP//AAAJAAIAAAAVAP7/AAAKAAAAAAAVAP//AAAJAAIAAAAWAP7/AAAKAAAAAAAWAP//AAAJAAIAAAAXAPz/AAAEAAEAAAAXAP3/AAAIAAEAAAAXAP7/AAAFAAEAAAAYAP3/AAAJAAIAAAAYAPz/AAAKAAAAAAAYAP7/AAAJAAIAAAAYAP//AAAJAAIAAAAXAP//AAAJAAIAAAAZAP7/AAAJAAIAAAAZAP3/AAAJAAIAAAAaAP3/AAAJAAIAAAAaAPz/AAAKAAAAAAAaAP7/AAAJAAIAAAAZAP//AAAJAAIAAAAZAPz/AAAKAAAAAAAaAP//AAAJAAIAAAAbAP3/AAAJAAIAAAAbAPz/AAAKAAAAAAAbAP7/AAAJAAIAAAAbAP//AAAJAAIAAAAcAPz/AAAKAAAAAAAcAP3/AAAJAAIAAAAcAP7/AAAJAAIAAAAcAP//AAAJAAIAAAAdAPz/AAAHAAEAAAAdAP3/AAALAAIAAAAdAP7/AAALAAIAAAAdAP//AAALAAIAAAAQAAAAAAAJAAIAAAARAAAAAAAJAAIAAAASAAAAAAAJAAIAAAATAAAAAAAJAAIAAAAUAAAAAAAJAAIAAAAVAAAAAAAJAAIAAAAWAAAAAAAJAAIAAAAXAAAAAAAJAAIAAAAYAAAAAAAJAAIAAAAZAAAAAAAJAAIAAAAaAAAAAAAJAAIAAAAbAAAAAAAJAAIAAAAcAAAAAAAJAAIAAAAdAAAAAAALAAIAAAAdAAEAAAALAAIAAAAcAAEAAAAJAAIAAAAbAAEAAAAJAAIAAAAaAAEAAAAJAAIAAAAZAAEAAAAJAAIAAAAYAAEAAAAJAAIAAAAXAAEAAAAJAAIAAAAWAAEAAAAJAAIAAAAVAAEAAAAJAAIAAAAUAAEAAAAJAAIAAAATAAEAAAAJAAIAAAASAAEAAAAJAAIAAAARAAEAAAAJAAIAAAAQAAIAAAAJAAIAAAAQAAEAAAAJAAIAAAAQAAMAAAAJAAIAAAAQAAQAAAAJAAIAAAAQAAUAAAAJAAIAAAAQAAYAAAAJAAMAAAARAAIAAAAJAAIAAAARAAMAAAAJAAIAAAARAAQAAAAJAAIAAAARAAUAAAAJAAIAAAARAAYAAAAJAAMAAAASAAIAAAAJAAIAAAASAAMAAAAJAAIAAAASAAQAAAAJAAIAAAASAAUAAAAJAAIAAAASAAYAAAAJAAMAAAATAAUAAAAJAAIAAAATAAYAAAAJAAMAAAATAAQAAAAJAAIAAAATAAMAAAAJAAIAAAATAAIAAAAJAAIAAAAUAAIAAAAJAAIAAAAVAAIAAAAJAAIAAAAWAAIAAAAJAAIAAAAXAAIAAAAJAAIAAAAYAAIAAAAJAAIAAAAdAAIAAAALAAIAAAAcAAIAAAAJAAIAAAAbAAIAAAAJAAIAAAAaAAIAAAAJAAIAAAAZAAIAAAAJAAIAAAAVAAMAAAAJAAIAAAAUAAMAAAAJAAIAAAAWAAMAAAAJAAIAAAAXAAMAAAAJAAIAAAAYAAMAAAAJAAIAAAAZAAMAAAAJAAIAAAAaAAMAAAAJAAIAAAAbAAMAAAAJAAIAAAAcAAMAAAAJAAIAAAAdAAMAAAALAAIAAAAcAAQAAAAJAAIAAAAbAAQAAAAJAAIAAAAaAAQAAAAJAAIAAAAZAAQAAAAJAAIAAAAYAAQAAAAJAAIAAAAXAAQAAAAJAAIAAAAWAAQAAAAJAAIAAAAVAAQAAAAJAAIAAAAUAAQAAAAJAAIAAAAdAAQAAAALAAIAAAAdAAUAAAALAAIAAAAcAAUAAAAJAAIAAAAbAAUAAAAJAAIAAAAaAAUAAAAJAAIAAAAZAAUAAAAJAAIAAAAYAAUAAAAJAAIAAAAXAAUAAAAJAAIAAAAWAAUAAAAJAAIAAAAVAAUAAAAJAAIAAAAUAAUAAAAJAAIAAAAUAAYAAAAJAAMAAAAVAAYAAAAJAAMAAAAWAAYAAAAJAAMAAAAXAAYAAAAJAAMAAAAYAAYAAAAJAAMAAAAZAAYAAAAJAAMAAAAaAAYAAAAJAAMAAAAbAAYAAAAJAAMAAAAcAAYAAAAJAAMAAAAdAAYAAAALAAMAAAAdAPv/AAAAAAEAAAAdAPr/AAAAAAEAAAAdAPn/AAAAAAEAAAAdAPj/AAAAAAEAAAAdAPf/AAAAAAEAAAAdAPb/AAAAAAEAAAAdAPX/AAAAAAEAAAAdAPT/AAAAAAAAAAAAAPv/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPj/AAAAAAEAAAAAAPf/AAAAAAEAAAAAAPb/AAAAAAEAAAAAAPX/AAAAAAAAAAAXAPv/AAAAAAAAAAA=")
+
+[node name="MovePlataform" parent="0" instance=ExtResource("4_niyiu")]
+position = Vector2(966, -140)
+rotation = 3.14159
+curve = SubResource("Curve2D_vn4ew")
+speed = 0.25
+speed_scale = 0.5
+
+[node name="PathFollow2D" parent="0/MovePlataform" index="0"]
+position = Vector2(0, 200)
+rotation = -1.5708
+
+[node name="AnimatableBody" parent="0/MovePlataform" index="1"]
+position = Vector2(0, 200)
+rotation = -1.5708
+
+[node name="DashCollectable" parent="0" instance=ExtResource("14_y8tnl")]
+position = Vector2(2121, -428)
+
+[node name="NextLevel" parent="0" instance=ExtResource("15_2t0s4")]
+position = Vector2(2932, -395)
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+position = Vector2(738, 306)
+script = ExtResource("14_55go8")
+follow_mode = 2
+follow_target = NodePath("../0/Player")
+tween_resource = SubResource("Resource_h4ict")
+follow_damping = true
+draw_limits = true
+limit_left = 98
+limit_top = -900
+limit_right = 2900
+limit_bottom = 666
+
+[editable path="0/MovePlataform"]
