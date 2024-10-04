@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="6_tedtx"]
 [ext_resource type="Texture2D" uid="uid://7x2o47wfgan2" path="res://assets/sprites/world/city/chimney.png" id="11_7drgu"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="14_f2tr8"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="15_o12l6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="16_s02qc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="17_gmpo0"]
+[ext_resource type="PackedScene" uid="uid://csdest26gf2ut" path="res://levels/city_levels/level_4_city.tscn" id="18_akrik"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6pxtv"]
 shader = ExtResource("5_yg2f4")
@@ -364,18 +364,7 @@ speed = 0.22
 
 [node name="NextLevel" parent="0" instance=ExtResource("14_f2tr8")]
 position = Vector2(4332, 690)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 1
-position = Vector2(898, 531)
-zoom = Vector2(0.8, 0.8)
-limit_left = 98
-limit_top = -360
-limit_right = 4304
-limit_bottom = 981
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("15_o12l6")
+new_scene = ExtResource("18_akrik")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(898, 531)

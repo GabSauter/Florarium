@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c4xuxw8eapjaw"]
+[gd_scene load_steps=32 format=4 uid="uid://c4xuxw8eapjaw"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_3kk5w"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="1_jrspm"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="15_1hlr2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="16_isrn4"]
 [ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="18_6av24"]
+[ext_resource type="PackedScene" uid="uid://b1ncidm1g5yk5" path="res://levels/city_levels/level_2_city.tscn" id="19_qdkpj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="22_p1g3h"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_vk14x"]
 
@@ -63,6 +64,12 @@ script = ExtResource("23_vk14x")
 duration = 1.0
 transition = 0
 ease = 2
+
+[sub_resource type="Curve2D" id="Curve2D_sic5i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 327, -61, 0, 0, 0, 0, 3917, -61)
+}
+point_count = 2
 
 [node name="Level1City" type="Node2D"]
 
@@ -318,6 +325,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAEAAAAGAAE
 
 [node name="NextLevel" parent="0" instance=ExtResource("16_isrn4")]
 position = Vector2(4033, -7)
+new_scene = ExtResource("19_qdkpj")
 
 [node name="Plataform" type="Node" parent="0"]
 
@@ -346,14 +354,18 @@ position = Vector2(122, 21)
 position = Vector2(121.5, 0)
 shape = SubResource("RectangleShape2D_0c70i")
 
-[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
-position = Vector2(637, -47)
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
+position = Vector2(637, -61)
 script = ExtResource("22_p1g3h")
-follow_mode = 2
+follow_mode = 4
 follow_target = NodePath("../0/Player")
+follow_path = NodePath("../Path2D")
 tween_resource = SubResource("Resource_ffkvq")
 draw_limits = true
 limit_left = -3
 limit_right = 4004
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_sic5i")
 
 [editable path="0/Plataform/MovePlataform"]
