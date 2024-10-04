@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b1ncidm1g5yk5"]
+[gd_scene load_steps=22 format=4 uid="uid://b1ncidm1g5yk5"]
 
 [ext_resource type="Texture2D" uid="uid://blwu40uo5mtr6" path="res://assets/sprites/world/city/house_2.png" id="1_0mrxs"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_2wdhp"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="14_y8tnl"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="15_2t0s4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="15_knhl7"]
+[ext_resource type="PackedScene" uid="uid://863q77rub4xf" path="res://levels/city_levels/level_3_city.tscn" id="16_n2g8f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mcuv1"]
 shader = ExtResource("7_4r0di")
@@ -215,6 +216,7 @@ position = Vector2(2121, -428)
 
 [node name="NextLevel" parent="0" instance=ExtResource("15_2t0s4")]
 position = Vector2(2932, -395)
+new_scene = ExtResource("16_n2g8f")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(738, 306)

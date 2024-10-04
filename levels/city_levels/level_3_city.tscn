@@ -1,0 +1,392 @@
+[gd_scene load_steps=24 format=4 uid="uid://863q77rub4xf"]
+
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_cpfs3"]
+[ext_resource type="Texture2D" uid="uid://dddcbf3jo8b2n" path="res://assets/sprites/world/city/trash_bin.png" id="1_pvcqe"]
+[ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_twirn"]
+[ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="1_v5kco"]
+[ext_resource type="Texture2D" uid="uid://blwu40uo5mtr6" path="res://assets/sprites/world/city/house_2.png" id="2_7lj7h"]
+[ext_resource type="Texture2D" uid="uid://baibfve15mhp8" path="res://assets/sprites/world/city/bg_build_3.png" id="2_ka2qn"]
+[ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="2_vyy0w"]
+[ext_resource type="Texture2D" uid="uid://x5qbq3qqlhjk" path="res://assets/sprites/world/city/house_4.png" id="3_ectrq"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="3_g6ttx"]
+[ext_resource type="Texture2D" uid="uid://cmsh1bo7m3l2w" path="res://assets/sprites/world/city/bg_build_1.png" id="3_nm4su"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="4_cxb54"]
+[ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="5_choe5"]
+[ext_resource type="Texture2D" uid="uid://c8rf60nqwwb7i" path="res://assets/sprites/world/city/bg_build_4.png" id="5_e1pky"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="5_yg2f4"]
+[ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="6_tedtx"]
+[ext_resource type="Texture2D" uid="uid://7x2o47wfgan2" path="res://assets/sprites/world/city/chimney.png" id="11_7drgu"]
+[ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="14_f2tr8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="15_o12l6"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="16_s02qc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="17_gmpo0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pxtv"]
+shader = ExtResource("5_yg2f4")
+shader_parameter/lod = 1.322
+
+[sub_resource type="Curve2D" id="Curve2D_pffx6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -105, -4, 0, 0, 0, 0, 3200, -4, 0, 0, 0, 0, -105, -4)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_og8do"]
+script = ExtResource("17_gmpo0")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Level3City" type="Node2D"]
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+self_modulate = Color(0.279692, 0.277845, 0.370631, 1)
+position = Vector2(1968.75, -183.75)
+rotation = -3.14159
+scale = Vector2(27.7008, -16.5368)
+texture = ExtResource("1_cpfs3")
+
+[node name="Sprite2D" type="Sprite2D" parent="-2"]
+position = Vector2(601.25, 610)
+texture = ExtResource("1_v5kco")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-2"]
+position = Vector2(1188.75, 623.75)
+texture = ExtResource("1_v5kco")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-2"]
+position = Vector2(796.25, 823.75)
+texture = ExtResource("2_ka2qn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-2"]
+position = Vector2(1577.5, 628.75)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D7" type="Sprite2D" parent="-2"]
+position = Vector2(2416.25, 557.5)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D8" type="Sprite2D" parent="-2"]
+position = Vector2(3570, 760)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D9" type="Sprite2D" parent="-2"]
+position = Vector2(4426.25, 501.25)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-2"]
+position = Vector2(2591.25, 647.5)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-2"]
+position = Vector2(3347.5, 591.25)
+texture = ExtResource("1_v5kco")
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+position = Vector2(197.778, 375.556)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-1"]
+position = Vector2(961.111, 573.334)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(1823.33, 573.334)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D7" type="Sprite2D" parent="-1"]
+position = Vector2(1364.44, 803.333)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D8" type="Sprite2D" parent="-1"]
+position = Vector2(514.445, 654.444)
+texture = ExtResource("2_ka2qn")
+flip_h = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="-1"]
+position = Vector2(2197.78, 704.444)
+texture = ExtResource("5_e1pky")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="-1"]
+position = Vector2(2925.56, 558.889)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-1"]
+position = Vector2(3801.11, 540)
+texture = ExtResource("3_nm4su")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-1"]
+position = Vector2(4196.67, 398.889)
+texture = ExtResource("1_v5kco")
+
+[node name="Sprite2D10" type="Sprite2D" parent="-1"]
+position = Vector2(3156.67, 821.111)
+texture = ExtResource("1_v5kco")
+flip_h = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="-1"]
+position = Vector2(4002.22, 742.222)
+texture = ExtResource("1_v5kco")
+flip_h = true
+
+[node name="Chimney" parent="-1" instance=ExtResource("6_tedtx")]
+position = Vector2(397.778, 436.667)
+
+[node name="Chimney3" parent="-1" instance=ExtResource("6_tedtx")]
+position = Vector2(3130, 421.111)
+
+[node name="Chimney2" parent="-1" instance=ExtResource("6_tedtx")]
+position = Vector2(1380, 404.444)
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_6pxtv")
+position = Vector2(2351.11, -323.333)
+scale = Vector2(31.9389, 18.1946)
+texture = ExtResource("1_cpfs3")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprites" type="Node" parent="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(333, 671)
+texture = ExtResource("1_pvcqe")
+
+[node name="Sprite2D6" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(528, 728)
+texture = ExtResource("3_ectrq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1765, 230)
+texture = ExtResource("2_7lj7h")
+
+[node name="Sprite2D7" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1945, -127)
+texture = ExtResource("1_pvcqe")
+
+[node name="Sprite2D8" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(1851, 55)
+texture = ExtResource("11_7drgu")
+
+[node name="Sprite2D9" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(636, 593)
+texture = ExtResource("11_7drgu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(2219, 224)
+texture = ExtResource("2_7lj7h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(2220, -100)
+texture = ExtResource("2_7lj7h")
+
+[node name="Sprite2D5" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(2891, 729)
+texture = ExtResource("3_ectrq")
+
+[node name="Obstacles" type="Node" parent="0"]
+
+[node name="Spike" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(436, 893)
+
+[node name="Spike2" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(509, 894)
+
+[node name="Spike3" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(596, 897)
+
+[node name="Spike4" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(665, 894)
+
+[node name="Spike5" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(750, 893)
+
+[node name="Spike51" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3350, 396)
+scale = Vector2(0.879891, 0.879891)
+
+[node name="Spike6" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(829, 893)
+
+[node name="Spike7" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(904, 893)
+
+[node name="Spike8" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(986, 897)
+
+[node name="Spike9" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1074, 896)
+
+[node name="Spike10" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1150, 895)
+
+[node name="Spike11" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1238, 896)
+
+[node name="Spike12" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1329, 895)
+
+[node name="Spike13" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1417, 896)
+
+[node name="Spike14" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1504, 896)
+
+[node name="Spike15" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1588, 896)
+
+[node name="Spike16" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1655, 694)
+
+[node name="Spike17" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1745, 694)
+
+[node name="Spike18" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1836, 694)
+
+[node name="Spike19" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(1929, 694)
+
+[node name="Spike20" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2023, 694)
+
+[node name="Spike21" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2110, 694)
+
+[node name="Spike22" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2200, 695)
+
+[node name="Spike23" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2285, 694)
+
+[node name="Spike24" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2361, 694)
+
+[node name="Spike25" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2434, 691)
+
+[node name="Spike26" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2540, 890)
+
+[node name="Spike27" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2632, 894)
+
+[node name="Spike28" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2715, 889)
+
+[node name="Spike29" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2796, 891)
+
+[node name="Spike30" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2869, 891)
+
+[node name="Spike31" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(2957, 890)
+
+[node name="Spike32" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3041, 891)
+
+[node name="Spike33" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3135, 891)
+
+[node name="Spike34" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3224, 893)
+
+[node name="Spike35" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3272, 895)
+
+[node name="Spike36" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3435, 890)
+
+[node name="Spike37" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3508, 895)
+
+[node name="Spike38" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3591, 893)
+
+[node name="Spike39" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3683, 892)
+
+[node name="Spike40" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3770, 888)
+
+[node name="Spike41" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3859, 892)
+
+[node name="Spike50" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3349, 690)
+
+[node name="Spike42" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3920, 891)
+
+[node name="Spike43" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3977, 890)
+
+[node name="Spike44" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3290, 540)
+rotation = -1.5941
+
+[node name="Spike45" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3287, 463)
+rotation = -1.5941
+
+[node name="Spike48" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3413, 465)
+rotation = -4.69201
+
+[node name="Spike49" parent="0/Obstacles" instance=ExtResource("5_choe5")]
+position = Vector2(3413, 542)
+rotation = -4.69201
+
+[node name="Respawn" parent="0" instance=ExtResource("4_cxb54")]
+position = Vector2(170, 674)
+
+[node name="Player" parent="0" instance=ExtResource("3_g6ttx")]
+position = Vector2(165, 665)
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("1_twirn")]
+tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAEAAEAAAABAAcAAAAKAAAAAAACAAcAAAAKAAAAAAADAAcAAAALAAAAAAAAAAgAAAAIAAEAAAABAAgAAAAJAAIAAAACAAgAAAAJAAIAAAADAAgAAAALAAIAAAADAAkAAAAGAAMAAAAEAAkAAAACAAMAAAAFAAkAAAACAAMAAAAGAAkAAAACAAMAAAAHAAkAAAACAAMAAAAIAAkAAAACAAMAAAACAAkAAAAJAAMAAAABAAkAAAAJAAMAAAAAAAkAAAAIAAMAAAAJAAkAAAACAAMAAAAKAAkAAAACAAMAAAALAAkAAAACAAMAAAAMAAkAAAACAAMAAAANAAkAAAACAAMAAAAOAAkAAAACAAMAAAAPAAkAAAACAAMAAAAQAAkAAAAFAAMAAAARAAkAAAAJAAMAAAASAAkAAAAJAAMAAAATAAkAAAAJAAMAAAAUAAkAAAAJAAMAAAAVAAkAAAAJAAMAAAAWAAkAAAAJAAMAAAAXAAkAAAAJAAMAAAAYAAkAAAAGAAMAAAAZAAkAAAACAAMAAAARAAQAAAAKAAAAAAARAAcAAAAKAAAAAAARAAgAAAAJAAIAAAASAAcAAAAKAAAAAAASAAgAAAAJAAIAAAATAAgAAAAJAAIAAAATAAcAAAAKAAAAAAAUAAcAAAAKAAAAAAAUAAgAAAAJAAIAAAAVAAgAAAAJAAIAAAAVAAcAAAAKAAAAAAASAAQAAAAKAAAAAAATAAQAAAAFAAEAAAAUAAQAAAAGAAEAAAAVAAQAAAAKAAAAAAAWAAQAAAAKAAAAAAAWAAUAAAAJAAMAAAAVAAUAAAAJAAMAAAAUAAUAAAAJAAMAAAATAAUAAAAJAAMAAAASAAUAAAAJAAMAAAARAAUAAAAJAAMAAAATAAMAAAAIAAEAAAATAAIAAAAIAAEAAAATAAEAAAAIAAEAAAATAAAAAAAIAAEAAAAUAAAAAAALAAIAAAAUAAEAAAALAAIAAAAUAAIAAAALAAIAAAAUAAMAAAALAAIAAAAQAAQAAAAKAAAAAAAQAAUAAAAJAAMAAAAPAAUAAAAIAAMAAAAPAAQAAAAIAAAAAAAQAAcAAAAIAAAAAAAQAAgAAAAIAAEAAAAXAAQAAAAKAAAAAAAXAAUAAAAJAAMAAAAYAAUAAAAJAAMAAAAYAAQAAAAKAAAAAAAZAAQAAAALAAAAAAAZAAUAAAALAAMAAAAPAAAAAAAIAAMAAAAPAP//AAAIAAEAAAAPAP7/AAAIAAEAAAAPAP3/AAAIAAEAAAATAP//AAAIAAAAAAAUAP//AAALAAAAAAAPAPz/AAAIAAAAAAAQAPz/AAAGAAAAAAARAPz/AAACAAMAAAASAPz/AAACAAMAAAATAPz/AAACAAMAAAAUAPz/AAACAAMAAAAVAPz/AAACAAMAAAAWAPz/AAACAAMAAAAXAPz/AAAFAAAAAAAYAAAAAAALAAMAAAAYAP//AAALAAIAAAAYAP7/AAALAAIAAAAYAP3/AAALAAIAAAAYAPz/AAALAAAAAAAaAAkAAAACAAMAAAAWAAcAAAAKAAAAAAAWAAgAAAAJAAIAAAAXAAcAAAAKAAAAAAAXAAgAAAAJAAIAAAAYAAcAAAALAAAAAAAYAAgAAAALAAIAAAAbAAkAAAACAAMAAAAcAAkAAAACAAMAAAAdAAkAAAACAAMAAAAeAAkAAAACAAMAAAAfAAkAAAACAAMAAAAgAAkAAAACAAMAAAAhAAkAAAACAAIAAAAiAAkAAAACAAMAAAAjAAkAAAACAAMAAAAlAAkAAAACAAMAAAAkAAkAAAACAAMAAAAmAAkAAAACAAMAAAAQAAEAAAAAAAIAAAAQAAAAAAAHAAIAAAAQAP//AAALAAIAAAAQAP7/AAALAAIAAAAQAP3/AAALAAIAAAAXAP3/AAAIAAEAAAAXAP7/AAAIAAEAAAAXAP//AAAIAAEAAAAXAAAAAAAEAAIAAAAXAAEAAAAAAAIAAAArAP3/AAAAAAAAAAArAP7/AAAAAAEAAAArAP//AAAAAAEAAAArAAAAAAAAAAEAAAArAAEAAAAAAAEAAAArAAIAAAAAAAEAAAArAAMAAAAAAAEAAAArAAQAAAAAAAEAAAArAAUAAAAAAAEAAAArAAYAAAAAAAEAAAArAAcAAAAHAAEAAAArAAgAAAALAAIAAAArAAkAAAALAAMAAAAqAAcAAAAKAAAAAAApAAcAAAAKAAAAAAAoAAcAAAAIAAAAAAAoAAgAAAAIAAEAAAApAAgAAAAJAAIAAAAqAAgAAAAJAAIAAAAqAAkAAAAJAAMAAAApAAkAAAAJAAMAAAAoAAkAAAAFAAMAAAAnAAkAAAACAAMAAAAhAAgAAAAAAAEAAAAhAAcAAAAAAAAAAAAhAAUAAAAAAAIAAAAhAAQAAAAAAAAAAAA=")
+
+[node name="MovePlataform" parent="0" instance=ExtResource("2_vyy0w")]
+position = Vector2(570, 648)
+curve = SubResource("Curve2D_pffx6")
+speed = 0.22
+
+[node name="NextLevel" parent="0" instance=ExtResource("14_f2tr8")]
+position = Vector2(4332, 690)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(898, 531)
+zoom = Vector2(0.8, 0.8)
+limit_left = 98
+limit_top = -360
+limit_right = 4304
+limit_bottom = 981
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("15_o12l6")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+position = Vector2(898, 531)
+script = ExtResource("16_s02qc")
+follow_mode = 1
+follow_target = NodePath("../0/Player")
+zoom = Vector2(0.8, 0.8)
+tween_resource = SubResource("Resource_og8do")
+follow_damping = true
+draw_limits = true
+limit_left = 98
+limit_top = -360
+limit_right = 4304
+limit_bottom = 981
