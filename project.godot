@@ -90,6 +90,10 @@ Pause={
 2d_physics/layer_8="bouncePlataform"
 2d_physics/layer_9="nextLevel"
 
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.972549, 0.956863, 0.909804, 1)

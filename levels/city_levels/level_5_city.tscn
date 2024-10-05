@@ -1,0 +1,348 @@
+[gd_scene load_steps=56 format=4 uid="uid://ds702xwtvnmyd"]
+
+[ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_4hxpc"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_bx7vx"]
+[ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="1_grw8x"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="2_4lv46"]
+[ext_resource type="Texture2D" uid="uid://cmsh1bo7m3l2w" path="res://assets/sprites/world/city/bg_build_1.png" id="2_d0cua"]
+[ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="2_fnd3v"]
+[ext_resource type="Texture2D" uid="uid://dym2pp4vpjdx4" path="res://assets/sprites/world/city/house_3.png" id="3_fk7dg"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="3_mo841"]
+[ext_resource type="Texture2D" uid="uid://blwu40uo5mtr6" path="res://assets/sprites/world/city/house_2.png" id="4_8yu1j"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="4_gpthp"]
+[ext_resource type="Texture2D" uid="uid://x5qbq3qqlhjk" path="res://assets/sprites/world/city/house_4.png" id="5_2ysmk"]
+[ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="5_wvobn"]
+[ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="6_u6hw8"]
+[ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="9_uhwtj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="14_qfotk"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="15_xtd2e"]
+[ext_resource type="Texture2D" uid="uid://dmvnr6adpltln" path="res://assets/sprites/world/city/flood_water/flood_water0000.png" id="16_j5rjl"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_wmdfb"]
+[ext_resource type="Texture2D" uid="uid://ba5ngstxdiphp" path="res://assets/sprites/world/city/flood_water/flood_water0001.png" id="17_weoju"]
+[ext_resource type="Texture2D" uid="uid://dkkfxwlja5x12" path="res://assets/sprites/world/city/flood_water/flood_water0002.png" id="18_dubbd"]
+[ext_resource type="Script" path="res://entities/game_related/move_throw_path.gd" id="18_frti3"]
+[ext_resource type="Texture2D" uid="uid://ioapvqoieyoo" path="res://assets/sprites/world/city/flood_water/flood_water0003.png" id="19_xo13d"]
+[ext_resource type="Texture2D" uid="uid://b6u76rsu1ygc8" path="res://assets/sprites/world/city/flood_water/flood_water0004.png" id="20_doji1"]
+[ext_resource type="Texture2D" uid="uid://8wbd378co61r" path="res://assets/sprites/world/city/flood_water/flood_water0005.png" id="21_52rre"]
+[ext_resource type="Texture2D" uid="uid://dpe3ujamir1aq" path="res://assets/sprites/world/city/flood_water/flood_water0006.png" id="22_5nt78"]
+[ext_resource type="Texture2D" uid="uid://cna5r0afbgl6m" path="res://assets/sprites/world/city/flood_water/flood_water0007.png" id="23_r5rxr"]
+[ext_resource type="Texture2D" uid="uid://c1bi4nv8lwcbj" path="res://assets/sprites/world/city/flood_water/flood_water0008.png" id="24_7uo68"]
+[ext_resource type="Texture2D" uid="uid://c4kt6h5c0p1n8" path="res://assets/sprites/world/city/flood_water/flood_water0009.png" id="25_arcjc"]
+[ext_resource type="Texture2D" uid="uid://bg8ffemcy4rj6" path="res://assets/sprites/world/city/flood_water/flood_water0010.png" id="26_4xns6"]
+[ext_resource type="Texture2D" uid="uid://cwprexjivyqyo" path="res://assets/sprites/world/city/flood_water/flood_water0011.png" id="27_i5hxs"]
+[ext_resource type="Texture2D" uid="uid://bgcoma6ufv82t" path="res://assets/sprites/world/city/flood_water/flood_water0012.png" id="28_2mrii"]
+[ext_resource type="Texture2D" uid="uid://cnhvn7bhdnl0b" path="res://assets/sprites/world/city/flood_water/flood_water0013.png" id="29_23a6t"]
+[ext_resource type="Texture2D" uid="uid://du8hegtkh7p32" path="res://assets/sprites/world/city/flood_water/flood_water0014.png" id="30_3pvwb"]
+[ext_resource type="Texture2D" uid="uid://2gmxedtdmf6k" path="res://assets/sprites/world/city/flood_water/flood_water0015.png" id="31_kpmdg"]
+[ext_resource type="Texture2D" uid="uid://cjrjfps3rj6kb" path="res://assets/sprites/world/city/flood_water/flood_water0016.png" id="32_41yic"]
+[ext_resource type="Texture2D" uid="uid://do7ovabhligm7" path="res://assets/sprites/world/city/flood_water/flood_water0017.png" id="33_67trv"]
+[ext_resource type="Texture2D" uid="uid://cklqoxegci2dy" path="res://assets/sprites/world/city/flood_water/flood_water0018.png" id="34_mndpa"]
+[ext_resource type="Texture2D" uid="uid://cr06aaxycv2b6" path="res://assets/sprites/world/city/flood_water/flood_water0019.png" id="35_7vbva"]
+[ext_resource type="Texture2D" uid="uid://dfmx3pnp08fe7" path="res://assets/sprites/world/city/flood_water/flood_water0020.png" id="36_hea2u"]
+[ext_resource type="Texture2D" uid="uid://boddfff2mjyls" path="res://assets/sprites/world/city/flood_water/flood_water0021.png" id="37_n78o1"]
+[ext_resource type="Texture2D" uid="uid://bsktdrsgvoa4y" path="res://assets/sprites/world/city/flood_water/flood_water0022.png" id="38_bmfq2"]
+[ext_resource type="Texture2D" uid="uid://bgstr6thqumqq" path="res://assets/sprites/world/city/flood_water/flood_water0023.png" id="39_i1qpq"]
+[ext_resource type="Texture2D" uid="uid://dq8vb2ebu48ea" path="res://assets/sprites/world/city/flood_water/flood_water0024.png" id="40_it3j7"]
+[ext_resource type="Texture2D" uid="uid://dtvkov410fva6" path="res://assets/sprites/world/city/flood_water/flood_water0025.png" id="41_54g3w"]
+[ext_resource type="Texture2D" uid="uid://ffdxujgcypoy" path="res://assets/sprites/world/city/flood_water/flood_water0026.png" id="42_na8fm"]
+[ext_resource type="Texture2D" uid="uid://can03oijjyh0b" path="res://assets/sprites/world/city/flood_water/flood_water0027.png" id="43_frlqg"]
+[ext_resource type="Texture2D" uid="uid://djohv5gt475c2" path="res://assets/sprites/world/city/flood_water/flood_water0028.png" id="44_viskm"]
+[ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/Saw.tscn" id="45_c0fq2"]
+[ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="46_67ma3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbxr6"]
+shader = ExtResource("4_gpthp")
+shader_parameter/lod = 1.322
+
+[sub_resource type="Curve2D" id="Curve2D_iho87"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 59, 4, 0, 0, 0, 0, -460, 4, 0, 0, 0, 0, 59, 4)
+}
+point_count = 3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1na1c"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(800, 1, 1)
+gravity = Vector3(0, 498, 0)
+scale_max = 3.0
+
+[sub_resource type="Curve2D" id="Curve2D_x6ogx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 550, 1453, 0, 0, 0, 0, 550, -2814)
+}
+point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thb2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_j5rjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_weoju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dubbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xo13d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_doji1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_52rre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5nt78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r5rxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7uo68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_arcjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4xns6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i5hxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2mrii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_23a6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3pvwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kpmdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_41yic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_67trv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mndpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_7vbva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hea2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_n78o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_bmfq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_i1qpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_it3j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_54g3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_na8fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_frlqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_viskm")
+}],
+"loop": true,
+"name": &"flood",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_tfrto"]
+script = ExtResource("16_wmdfb")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Level5City" type="Node2D"]
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+self_modulate = Color(0.279692, 0.277845, 0.370631, 1)
+position = Vector2(815, -1128.75)
+rotation = -3.14159
+scale = Vector2(27.7008, -23.6644)
+texture = ExtResource("1_bx7vx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-2"]
+position = Vector2(438.75, 358.75)
+texture = ExtResource("1_grw8x")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-2"]
+position = Vector2(-67.4999, 352.5)
+texture = ExtResource("1_grw8x")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-2"]
+position = Vector2(960, -395)
+texture = ExtResource("1_grw8x")
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(985.556, 340)
+texture = ExtResource("2_d0cua")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-1"]
+position = Vector2(183.333, 353.333)
+texture = ExtResource("2_d0cua")
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_wbxr6")
+position = Vector2(845.556, -1185.56)
+scale = Vector2(31.9389, 26.0751)
+texture = ExtResource("1_bx7vx")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Node" type="Node" parent="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="0/Node"]
+position = Vector2(144, 539)
+texture = ExtResource("3_fk7dg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/Node"]
+position = Vector2(720, 576)
+texture = ExtResource("4_8yu1j")
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/Node"]
+position = Vector2(716, 156)
+texture = ExtResource("5_2ysmk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/Node"]
+position = Vector2(602, -206)
+texture = ExtResource("6_u6hw8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="0/Node"]
+position = Vector2(108, -553)
+texture = ExtResource("5_2ysmk")
+
+[node name="spikes" type="Node" parent="0"]
+
+[node name="Spike" parent="0/spikes" instance=ExtResource("9_uhwtj")]
+position = Vector2(230, -408)
+
+[node name="Spike2" parent="0/spikes" instance=ExtResource("9_uhwtj")]
+position = Vector2(315, -405)
+
+[node name="Spike3" parent="0/spikes" instance=ExtResource("9_uhwtj")]
+position = Vector2(388, -406)
+
+[node name="Spike4" parent="0/spikes" instance=ExtResource("9_uhwtj")]
+position = Vector2(472, -407)
+
+[node name="Spike5" parent="0/spikes" instance=ExtResource("9_uhwtj")]
+position = Vector2(559, -410)
+
+[node name="Player" parent="0" instance=ExtResource("3_mo841")]
+position = Vector2(50, 649)
+
+[node name="Respawn" parent="0" instance=ExtResource("2_4lv46")]
+position = Vector2(51, 671)
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("1_4hxpc")]
+tile_map_data = PackedByteArray("AAD//wAAAAALAAIAAAD//wEAAAALAAIAAAD//wIAAAALAAIAAAD//wQAAAAGAAIAAAD//wUAAAALAAIAAAD//wYAAAALAAIAAAD//wcAAAAJAAIAAAD//wgAAAAJAAIAAAAAAAgAAAAJAAIAAAABAAgAAAAJAAIAAAAAAAcAAAAKAAAAAAABAAcAAAAKAAAAAAACAAcAAAAKAAAAAAACAAgAAAAJAAIAAAADAAgAAAAJAAIAAAADAAcAAAAKAAAAAAAEAAcAAAAKAAAAAAAEAAgAAAAJAAIAAAAFAAgAAAAJAAIAAAAFAAcAAAAKAAAAAAAGAAgAAAAJAAIAAAAGAAcAAAAKAAAAAAAHAAgAAAAJAAIAAAAHAAcAAAAKAAAAAAAIAAgAAAAJAAIAAAAIAAcAAAAKAAAAAAAJAAgAAAAJAAIAAAAJAAcAAAAKAAAAAAAKAAgAAAAJAAIAAAAKAAcAAAAKAAAAAAALAAgAAAALAAIAAAALAAcAAAAHAAEAAAALAAYAAAAAAAEAAAALAAUAAAAAAAEAAAALAAQAAAAAAAEAAAALAAMAAAAAAAEAAAALAAIAAAAAAAEAAAALAAEAAAAAAAEAAAALAAAAAAAHAAIAAAD/////AAALAAIAAAD///7/AAALAAIAAAD///3/AAALAAIAAAD///z/AAAGAAIAAAD///v/AAAJAAIAAAD///r/AAALAAIAAAD///n/AAALAAIAAAD///j/AAALAAEAAAD///f/AAALAAIAAAD///b/AAALAAIAAAD//wkAAAAJAAIAAAAAAAkAAAAJAAIAAAABAAkAAAAJAAIAAAACAAkAAAAJAAIAAAADAAkAAAAJAAIAAAAEAAkAAAAJAAIAAAAFAAkAAAAJAAIAAAAGAAkAAAAJAAIAAAAHAAkAAAAJAAIAAAAIAAkAAAAJAAIAAAAJAAkAAAAJAAIAAAAKAAkAAAAJAAIAAAALAAkAAAALAAIAAAALAAoAAAALAAIAAAAKAAoAAAAJAAIAAAAJAAoAAAAJAAIAAAAIAAoAAAAJAAIAAAAHAAoAAAAJAAIAAAAGAAoAAAAJAAIAAAAFAAoAAAAJAAIAAAAEAAoAAAAJAAIAAAADAAoAAAAJAAIAAAACAAoAAAAJAAIAAAABAAoAAAAJAAIAAAAAAAoAAAAJAAIAAAD//woAAAAJAAIAAAD//wsAAAAJAAIAAAAAAAsAAAAJAAIAAAABAAsAAAAJAAIAAAACAAsAAAAJAAIAAAADAAsAAAAJAAIAAAAEAAsAAAAJAAIAAAAFAAsAAAAJAAIAAAAGAAsAAAAJAAIAAAAHAAsAAAAJAAIAAAAIAAsAAAAJAAIAAAAJAAsAAAAJAAIAAAAKAAsAAAAJAAIAAAALAAsAAAALAAIAAAALAAwAAAALAAIAAAAKAAwAAAAJAAIAAAAJAAwAAAAJAAIAAAAIAAwAAAAJAAIAAAAHAAwAAAAJAAIAAAAGAAwAAAAJAAIAAAAFAAwAAAAJAAIAAAAEAAwAAAAJAAIAAAADAAwAAAAJAAIAAAACAAwAAAAJAAIAAAABAAwAAAAJAAIAAAAAAAwAAAAJAAIAAAD//wwAAAAJAAIAAAD//w0AAAAJAAIAAAAAAA0AAAAJAAIAAAABAA0AAAAJAAIAAAACAA0AAAAJAAIAAAADAA0AAAAJAAIAAAAEAA0AAAAJAAIAAAAFAA0AAAAJAAIAAAAGAA0AAAAJAAIAAAAHAA0AAAAJAAIAAAAIAA0AAAAJAAIAAAAJAA0AAAAJAAIAAAAKAA0AAAAJAAIAAAALAA0AAAALAAIAAAALAA4AAAALAAIAAAAKAA4AAAAJAAIAAAAJAA4AAAAJAAIAAAAIAA4AAAAJAAIAAAAHAA4AAAAJAAIAAAAGAA4AAAAJAAIAAAAFAA4AAAAJAAIAAAAEAA4AAAAJAAIAAAADAA4AAAAJAAIAAAACAA4AAAAJAAIAAAABAA4AAAAJAAIAAAAAAA4AAAAJAAIAAAD//w4AAAAJAAIAAAD//w8AAAAJAAIAAAAAAA8AAAAJAAIAAAABAA8AAAAJAAIAAAACAA8AAAAJAAIAAAADAA8AAAAJAAIAAAAEAA8AAAAJAAIAAAAFAA8AAAAJAAIAAAAGAA8AAAAJAAIAAAAHAA8AAAAJAAIAAAAIAA8AAAAJAAIAAAAJAA8AAAAJAAIAAAAKAA8AAAAJAAIAAAALAA8AAAALAAIAAAALABAAAAALAAMAAAAKABAAAAAJAAMAAAAJABAAAAAJAAMAAAAIABAAAAAJAAMAAAAHABAAAAAJAAMAAAAGABAAAAAJAAMAAAAFABAAAAAJAAMAAAAEABAAAAAJAAMAAAADABAAAAAJAAMAAAACABAAAAAJAAMAAAABABAAAAAJAAMAAAAAABAAAAAJAAMAAAD//xAAAAAJAAMAAAD//wMAAAAJAAIAAAAAAAQAAAAJAAMAAAABAAQAAAAJAAMAAAACAAQAAAAJAAMAAAADAAQAAAAJAAMAAAAEAAQAAAAJAAMAAAAFAAQAAAAJAAMAAAAGAAQAAAAJAAMAAAAHAAQAAAAJAAMAAAAIAAQAAAALAAMAAAAIAAMAAAALAAAAAAAHAAMAAAAKAAAAAAAGAAMAAAAKAAAAAAAFAAMAAAAKAAAAAAAEAAMAAAAKAAAAAAADAAMAAAAKAAAAAAACAAMAAAAKAAAAAAABAAMAAAAKAAAAAAAAAAMAAAAKAAAAAAAKAAAAAAAJAAMAAAAJAAAAAAAJAAMAAAAIAAAAAAAJAAMAAAAHAAAAAAAJAAMAAAAGAAAAAAAJAAMAAAAFAAAAAAAJAAMAAAAEAAAAAAAJAAMAAAADAAAAAAAIAAMAAAADAP//AAAIAAAAAAAEAP//AAAKAAAAAAAFAP//AAAKAAAAAAAGAP//AAAKAAAAAAAHAP//AAAKAAAAAAAIAP//AAAKAAAAAAAJAP//AAAKAAAAAAAKAP//AAAKAAAAAAALAP//AAAHAAEAAAALAP7/AAAAAAEAAAALAP3/AAAAAAEAAAALAPz/AAAAAAEAAAALAPv/AAAAAAEAAAALAPr/AAAAAAEAAAALAPn/AAAAAAEAAAALAPj/AAAAAAEAAAALAPf/AAAAAAEAAAALAPb/AAAAAAEAAAD///X/AAALAAIAAAD///T/AAALAAIAAAD///P/AAALAAIAAAALAPX/AAAAAAEAAAALAPT/AAAAAAEAAAALAPP/AAADAAEAAAALAPL/AAAAAAEAAAD///L/AAALAAIAAAD///H/AAALAAEAAAD///D/AAALAAIAAAD//+//AAALAAIAAAD//+7/AAALAAEAAAD//+3/AAALAAIAAAD//+z/AAALAAIAAAALAPH/AAAAAAEAAAALAPD/AAAAAAEAAAALAO//AAAAAAEAAAALAO7/AAAAAAEAAAALAO3/AAAAAAEAAAALAOz/AAAAAAEAAAALAOv/AAACAAAAAAD//+v/AAALAAEAAAAAAPz/AAAJAAMAAAABAPz/AAAGAAMAAAACAPz/AAACAAMAAAADAPz/AAACAAMAAAAEAPz/AAACAAMAAAAFAPz/AAACAAMAAAAGAPz/AAAFAAMAAAAHAPz/AAALAAMAAAAHAPv/AAALAAAAAAAGAPv/AAAIAAAAAAABAPv/AAALAAAAAAAAAPv/AAAKAAAAAAAAAPj/AAADAAMAAAADAPf/AAAAAAMAAAAGAPf/AAAAAAMAAAAJAPb/AAAAAAMAAAAKAPP/AAABAAMAAAAAAPH/AAADAAMAAAAAAO7/AAADAAMAAAAAAOv/AAADAAMAAAD//+r/AAALAAIAAAD//+n/AAALAAIAAAD//+j/AAALAAIAAAAIAOv/AAABAAMAAAAJAOv/AAACAAMAAAAKAOv/AAACAAMAAAD//+f/AAALAAIAAAD//+b/AAALAAIAAAD//+X/AAALAAIAAAD//+T/AAALAAIAAAD//+P/AAALAAIAAAD//+L/AAALAAIAAAD//+H/AAALAAAAAAALAOj/AAABAAIAAAALAOf/AAAAAAEAAAALAOb/AAAAAAEAAAALAOX/AAAAAAEAAAALAOT/AAAAAAEAAAALAOP/AAAAAAEAAAALAOL/AAAAAAEAAAALAOH/AAAAAAAAAAD+/+H/AAAIAAAAAAD+/+L/AAAIAAEAAAD+/+P/AAAIAAEAAAD+/+T/AAAIAAEAAAD+/+X/AAAIAAEAAAD+/+b/AAAIAAEAAAD+/+f/AAAIAAEAAAD+/+j/AAAIAAEAAAD+/+n/AAAIAAEAAAD+/+r/AAAIAAEAAAD+/+v/AAAIAAEAAAD+/+z/AAAIAAEAAAD+/+3/AAAIAAEAAAD+/+7/AAAIAAEAAAD+/+//AAAIAAEAAAD+//D/AAAIAAEAAAD+//H/AAAIAAEAAAD+//L/AAAIAAEAAAD+//P/AAAIAAEAAAD+//T/AAAIAAEAAAD+//X/AAAIAAEAAAD+//b/AAAIAAEAAAD+//f/AAAIAAEAAAD+//j/AAAIAAEAAAD+//n/AAAIAAEAAAD+//r/AAAIAAEAAAD+//v/AAAIAAEAAAD+//z/AAAIAAEAAAD+//3/AAAIAAEAAAD+//7/AAAIAAEAAAD+////AAAIAAEAAAD+/wAAAAAIAAEAAAD+/wEAAAAIAAEAAAD+/wIAAAAIAAEAAAD+/wMAAAAIAAEAAAD+/wQAAAAIAAEAAAD+/wUAAAAIAAEAAAD+/wYAAAAIAAEAAAD+/wcAAAAIAAEAAAD+/wgAAAAIAAEAAAD+/wkAAAAIAAEAAAD+/woAAAAIAAEAAAD+/wsAAAAIAAEAAAD+/wwAAAAIAAEAAAD+/w0AAAAIAAEAAAD+/w4AAAAIAAEAAAD+/w8AAAAIAAEAAAD+/xAAAAAIAAMAAAAMAOj/AAADAAAAAAAMAOn/AAAAAAEAAAAMAOr/AAAAAAEAAAAMAOv/AAADAAIAAAA=")
+
+[node name="MovePlataform" parent="0" instance=ExtResource("2_fnd3v")]
+position = Vector2(741, -1368)
+curve = SubResource("Curve2D_iho87")
+speed = 0.1
+
+[node name="DashCollectable" parent="0" instance=ExtResource("5_wvobn")]
+position = Vector2(454, -2168)
+
+[node name="RainingParticles" type="GPUParticles2D" parent="0"]
+self_modulate = Color(0.238289, 0.420547, 0.471209, 1)
+position = Vector2(508, -3114)
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_1na1c")
+lifetime = 10.0
+visibility_rect = Rect2(-750, -100, 1500, 5200)
+trail_enabled = true
+trail_lifetime = 0.02
+
+[node name="Path2D" type="Path2D" parent="0"]
+curve = SubResource("Curve2D_x6ogx")
+script = ExtResource("18_frti3")
+speed = 110
+
+[node name="PathFollow2D" type="PathFollow2D" parent="0/Path2D"]
+position = Vector2(550, 1453)
+rotation = 0.0163029
+rotates = false
+loop = false
+
+[node name="movableNode" type="Node2D" parent="0/Path2D/PathFollow2D"]
+
+[node name="Saw" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("45_c0fq2")]
+position = Vector2(-46.1254, 395.827)
+scale = Vector2(8.92286, 0.238144)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="0/Path2D/PathFollow2D/movableNode"]
+position = Vector2(-37.4516, 156.631)
+rotation = -0.0163029
+scale = Vector2(0.732073, 0.732073)
+sprite_frames = SubResource("SpriteFrames_thb2n")
+animation = &"flood"
+autoplay = "flood"
+
+[node name="Sprite2D" type="Sprite2D" parent="0/Path2D/PathFollow2D/movableNode"]
+self_modulate = Color(0.201618, 0.344967, 0.430274, 1)
+position = Vector2(-40.2011, 740.586)
+rotation = -0.0171214
+scale = Vector2(-8.14511, -4.20118)
+texture = ExtResource("1_bx7vx")
+
+[node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]
+position = Vector2(1204, -2102)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(536, 540)
+limit_left = -100
+limit_top = -2400
+limit_right = 1176
+limit_bottom = 900
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("14_qfotk")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
+position = Vector2(536, 540)
+script = ExtResource("15_xtd2e")
+follow_mode = 4
+follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")
+follow_path = NodePath("../0/Path2D")
+tween_resource = SubResource("Resource_tfrto")
+follow_offset = Vector2(0, -100)
+follow_damping = true
+draw_limits = true
+limit_left = -100
+limit_top = -2400
+limit_right = 1176
+limit_bottom = 900
