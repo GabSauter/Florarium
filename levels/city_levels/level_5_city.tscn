@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://ds702xwtvnmyd"]
+[gd_scene load_steps=55 format=4 uid="uid://ds702xwtvnmyd"]
 
 [ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_4hxpc"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_bx7vx"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="5_wvobn"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="6_u6hw8"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="9_uhwtj"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="14_qfotk"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="15_xtd2e"]
 [ext_resource type="Texture2D" uid="uid://dmvnr6adpltln" path="res://assets/sprites/world/city/flood_water/flood_water0000.png" id="16_j5rjl"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_wmdfb"]
@@ -220,7 +219,8 @@ texture = ExtResource("1_bx7vx")
 [node name="0" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Node" type="Node" parent="0"]
+[node name="Node" type="Node2D" parent="0"]
+z_index = -5
 
 [node name="Sprite2D" type="Sprite2D" parent="0/Node"]
 position = Vector2(144, 539)
@@ -321,19 +321,8 @@ texture = ExtResource("1_bx7vx")
 [node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]
 position = Vector2(1204, -2102)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(536, 540)
-limit_left = -100
-limit_top = -2400
-limit_right = 1176
-limit_bottom = 900
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("14_qfotk")
-
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(536, 540)
+position = Vector2(538.849, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")

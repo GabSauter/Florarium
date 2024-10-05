@@ -292,11 +292,6 @@ position = Vector2(593.75, 1451.25)
 scale = Vector2(0.163858, 0.23727)
 texture = ExtResource("1_6et3i")
 
-[node name="Sprite2D5" type="Sprite2D" parent="-2"]
-position = Vector2(1857.5, 1497.5)
-scale = Vector2(0.163858, 0.23727)
-texture = ExtResource("1_6et3i")
-
 [node name="Sprite2D6" type="Sprite2D" parent="-2"]
 position = Vector2(2176.25, 722.5)
 scale = Vector2(0.683963, 0.990393)
@@ -439,16 +434,6 @@ texture = ExtResource("1_6et3i")
 [node name="Sprite2D3" type="Sprite2D" parent="-1"]
 position = Vector2(671.111, 1453.33)
 scale = Vector2(0.228872, 0.317761)
-texture = ExtResource("1_6et3i")
-
-[node name="Sprite2D5" type="Sprite2D" parent="-1"]
-position = Vector2(1804.45, 1434.44)
-scale = Vector2(0.228872, 0.317761)
-texture = ExtResource("1_6et3i")
-
-[node name="Sprite2D6" type="Sprite2D" parent="-1"]
-position = Vector2(1961.11, 1565.56)
-scale = Vector2(0.139983, 0.317761)
 texture = ExtResource("1_6et3i")
 
 [node name="Sprite2D7" type="Sprite2D" parent="-1"]
@@ -695,7 +680,8 @@ texture = ExtResource("4_o8h34")
 [node name="0" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Sprites" type="Node" parent="0"]
+[node name="Sprites" type="Node2D" parent="0"]
+z_index = -5
 
 [node name="Sprite2D" type="Sprite2D" parent="0/Sprites"]
 position = Vector2(630, 1559)
@@ -766,6 +752,7 @@ texture = ExtResource("12_8yy1f")
 [node name="Sprite2D16" type="Sprite2D" parent="0/Sprites"]
 position = Vector2(-1530, 179)
 rotation = 1.38017
+scale = Vector2(1, 1)
 texture = ExtResource("13_p1ui2")
 
 [node name="Sprite2D15" type="Sprite2D" parent="0/Sprites"]

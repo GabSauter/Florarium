@@ -261,6 +261,7 @@ texture = ExtResource("16_el7fc")
 follow_viewport_enabled = true
 
 [node name="BackSprites2" type="Node2D" parent="0"]
+z_index = -5
 
 [node name="Sprite2D" type="Sprite2D" parent="0/BackSprites2"]
 position = Vector2(1332, -411)

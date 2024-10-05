@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://csdest26gf2ut"]
+[gd_scene load_steps=24 format=4 uid="uid://csdest26gf2ut"]
 
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="1_47dqg"]
 [ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="1_krnbq"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_mlyoa"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="17_8bdv2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="17_pn5i6"]
+[ext_resource type="PackedScene" uid="uid://ds702xwtvnmyd" path="res://levels/city_levels/level_5_city.tscn" id="18_efojc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gyg8m"]
 shader = ExtResource("4_glp0g")
@@ -116,7 +117,8 @@ texture = ExtResource("1_m1i43")
 [node name="0" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Sprites" type="Node" parent="0"]
+[node name="Sprites" type="Node2D" parent="0"]
+z_index = -5
 
 [node name="Sprite2D" type="Sprite2D" parent="0/Sprites"]
 position = Vector2(146, 535)
@@ -204,6 +206,7 @@ position = Vector2(1282, 2715)
 
 [node name="NextLevel" parent="0" instance=ExtResource("17_pn5i6")]
 position = Vector2(2533, 3389)
+new_scene = ExtResource("18_efojc")
 
 [node name="Area2D" parent="." node_paths=PackedStringArray("camera_in") instance=ExtResource("17_8bdv2")]
 position = Vector2(937, 773)
