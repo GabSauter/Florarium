@@ -3,7 +3,7 @@ extends Area2D
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var text: String
+@export_multiline var text: String
 @export var sprites: SpriteFrames
 
 func _ready() -> void:
@@ -16,7 +16,7 @@ func _ready() -> void:
 	if current_texture:
 		var sprite_height = current_texture.get_size().y
 		var label_size = label.get_minimum_size()
-		label.position = Vector2(label.position.x, animated_sprite.position.y - sprite_height / 2 - label_size.y)
+		label.position = Vector2(label.position.x, animated_sprite.position.y - sprite_height / 2 - label_size.y - 5)
 
 func _process(delta: float) -> void:
 	pass

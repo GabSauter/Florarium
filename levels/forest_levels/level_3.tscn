@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cpo757j58sgpi"]
+[gd_scene load_steps=40 format=3 uid="uid://cpo757j58sgpi"]
 
 [ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="1_f4k8j"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_vphdd"]
@@ -21,7 +21,10 @@
 [ext_resource type="Shader" path="res://shaders/wind_shader.gdshader" id="16_mmege"]
 [ext_resource type="Texture2D" uid="uid://d1e821hay34i7" path="res://assets/sprites/world/forest/plants.png" id="17_exq4b"]
 [ext_resource type="Texture2D" uid="uid://jpo7n2kkvkb5" path="res://assets/sprites/world/forest/trees/tree4.png" id="18_7abgw"]
+[ext_resource type="PackedScene" uid="uid://bdhltk7k04xcu" path="res://entities/NPC/npc.tscn" id="19_bfaur"]
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="20_65f3f"]
+[ext_resource type="Texture2D" uid="uid://cy6nmp3xyjxta" path="res://assets/sprites/characters/frog/frog0000.png" id="20_gy5vn"]
+[ext_resource type="Texture2D" uid="uid://6q1a6g5x5pr6" path="res://assets/sprites/characters/frog/frog0001.png" id="21_b7wg0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fwb5p"]
 shader = ExtResource("6_360uc")
@@ -51,6 +54,20 @@ scale_min = 0.5
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_8vnvh")
 color = Color(1, 1, 1, 0.698039)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3l0pa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_gy5vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_b7wg0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e3366"]
 shader = ExtResource("16_mmege")
@@ -400,8 +417,17 @@ scale = Vector2(0.416227, 0.416227)
 texture = ExtResource("10_4u1k5")
 flip_h = true
 
+[node name="NPC" parent="0" instance=ExtResource("19_bfaur")]
+position = Vector2(2032, 280)
+text = "[center][color=Black][wave]Hey! 
+Apenas um experiente consegue pular aqui. 
+Hehe"
+sprites = SubResource("SpriteFrames_3l0pa")
+
 [node name="Player" parent="0" instance=ExtResource("2_al43u")]
 position = Vector2(139, 358)
+
+[node name="Camera2D" type="Camera2D" parent="0/Player"]
 
 [node name="NextLevel" parent="0" instance=ExtResource("12_gbvq1")]
 position = Vector2(2599, -315)

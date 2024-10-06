@@ -27,6 +27,7 @@ shape = SubResource("CircleShape2D_1fkkl")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 10
 clip_contents = false
 anchors_preset = 8
 anchor_left = 0.5
