@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdhltk7k04xcu"]
+
+[ext_resource type="Script" path="res://entities/NPC/npc.gd" id="1_jlj7q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fkkl"]
+radius = 155.081
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci2pc"]
+bg_color = Color(0.97269, 0.984699, 0.991943, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_jlj7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1fkkl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ci2pc")
+bbcode_enabled = true
+text = "[color=black][wave]Teste"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
