@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cakgxa7mjawj7"]
 
-[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/ground_tile_map.tscn" id="1_gjil1"]
+[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="1_gjil1"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="1_j5lbv"]
 [ext_resource type="Texture2D" uid="uid://hv1j8q03a5n8" path="res://assets/sprites/world/forest/trees/background_cut_tree.png" id="1_q3d5y"]
 [ext_resource type="Texture2D" uid="uid://cfocqvf1aeoxj" path="res://assets/sprites/world/forest/trees/cut_top_tree5.png" id="2_2jgle"]

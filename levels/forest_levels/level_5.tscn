@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://lp80t1s1omfq"]
 
 [ext_resource type="Texture2D" uid="uid://dnom00g6rxrvj" path="res://assets/sprites/world/forest/trees/background_tree.png" id="1_6et3i"]
-[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/ground_tile_map.tscn" id="1_ishb4"]
+[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="1_ishb4"]
 [ext_resource type="Texture2D" uid="uid://culyweuqtbxdy" path="res://assets/sprites/world/forest/rock1.png" id="1_mtaf8"]
 [ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="1_nab5a"]
 [ext_resource type="Texture2D" uid="uid://ct5cds70n415" path="res://assets/sprites/world/forest/bush.png" id="1_okeom"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="18_2bsc7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_emn5c"]
 [ext_resource type="Script" path="res://levels/change_camera2.gd" id="19_v24qg"]
-[ext_resource type="PackedScene" uid="uid://cakgxa7mjawj7" path="res://levels/level_6.tscn" id="20_s8nav"]
+[ext_resource type="PackedScene" uid="uid://cakgxa7mjawj7" path="res://levels/forest_levels/level_6.tscn" id="20_s8nav"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="23_yt353"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_avq0h"]

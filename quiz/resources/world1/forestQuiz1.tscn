@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_0d7ns"]
 [ext_resource type="Theme" uid="uid://ivi55pxe0xcn" path="res://ui/quiz_theme.tres" id="1_rswde"]
-[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/level_2.tscn" id="2_wptqt"]
+[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/forest_levels/level_2.tscn" id="2_wptqt"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/resources/world1/world1_theme.tres" id="3_s2r5q"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_jnc7g"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_upnt6"]

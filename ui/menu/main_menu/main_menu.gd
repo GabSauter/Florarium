@@ -15,7 +15,7 @@ func _ready():
 	levelContainer = get_tree().current_scene.get_node("LevelContainer")
 
 func _on_start_button_button_down():
-	var level1 = preload("res://levels/level_1.tscn")
+	var level1 = preload("res://levels/forest_levels/level_1.tscn")
 	levelContainer.next_level(level1)
 	
 	self.queue_free()
@@ -26,5 +26,3 @@ func _on_options_button_button_down():
 
 func _on_quit_button_button_down():
 	get_tree().quit()
-
-

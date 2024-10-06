@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="2_tdw76"]
 [ext_resource type="Texture2D" uid="uid://bkxy08h3b1nbp" path="res://assets/sprites/world/forest/trees/tree5.png" id="2_ussiv"]
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="3_dnwm1"]
-[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/ground_tile_map.tscn" id="3_jn2o3"]
+[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="3_jn2o3"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="4_64iwo"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="4_ef0en"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_i8lih"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dikud05oag0be" path="res://assets/sprites/world/forest/trees/tree2.png" id="8_khw5w"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="12_7c678"]
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="13_awb7c"]
-[ext_resource type="PackedScene" uid="uid://lp80t1s1omfq" path="res://levels/level_5.tscn" id="13_tewu8"]
+[ext_resource type="PackedScene" uid="uid://lp80t1s1omfq" path="res://levels/forest_levels/level_5.tscn" id="13_tewu8"]
 [ext_resource type="Script" path="res://levels/change_camera.gd" id="19_2bkfp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vbhmm"]

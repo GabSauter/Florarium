@@ -322,7 +322,7 @@ texture = ExtResource("1_bx7vx")
 position = Vector2(1204, -2102)
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(538.849, 540)
+position = Vector2(538.2, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")
