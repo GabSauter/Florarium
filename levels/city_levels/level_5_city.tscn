@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="9_uhwtj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="15_xtd2e"]
 [ext_resource type="Texture2D" uid="uid://dmvnr6adpltln" path="res://assets/sprites/world/city/flood_water/flood_water0000.png" id="16_j5rjl"]
+[ext_resource type="PackedScene" uid="uid://btjryqd8q2ddi" path="res://entities/obstacles/Spike.tscn" id="16_sob4x"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_wmdfb"]
 [ext_resource type="Texture2D" uid="uid://ba5ngstxdiphp" path="res://assets/sprites/world/city/flood_water/flood_water0001.png" id="17_weoju"]
 [ext_resource type="Texture2D" uid="uid://dkkfxwlja5x12" path="res://assets/sprites/world/city/flood_water/flood_water0002.png" id="18_dubbd"]
@@ -46,7 +47,6 @@
 [ext_resource type="Texture2D" uid="uid://ffdxujgcypoy" path="res://assets/sprites/world/city/flood_water/flood_water0026.png" id="42_na8fm"]
 [ext_resource type="Texture2D" uid="uid://can03oijjyh0b" path="res://assets/sprites/world/city/flood_water/flood_water0027.png" id="43_frlqg"]
 [ext_resource type="Texture2D" uid="uid://djohv5gt475c2" path="res://assets/sprites/world/city/flood_water/flood_water0028.png" id="44_viskm"]
-[ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/Saw.tscn" id="45_c0fq2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="46_67ma3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbxr6"]
@@ -299,9 +299,9 @@ loop = false
 
 [node name="movableNode" type="Node2D" parent="0/Path2D/PathFollow2D"]
 
-[node name="Saw" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("45_c0fq2")]
-position = Vector2(-46.1254, 395.827)
-scale = Vector2(8.92286, 0.238144)
+[node name="Spike" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("16_sob4x")]
+position = Vector2(11.0909, 434.877)
+scale = Vector2(14.9981, 0.800027)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="0/Path2D/PathFollow2D/movableNode"]
 position = Vector2(-37.4516, 156.631)
@@ -322,7 +322,7 @@ texture = ExtResource("1_bx7vx")
 position = Vector2(1204, -2102)
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(538.2, 540)
+position = Vector2(539.446, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")

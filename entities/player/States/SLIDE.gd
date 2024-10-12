@@ -1,11 +1,19 @@
 extends "state.gd"
 
+@onready var animated_sprite: AnimatedSprite2D = $"../../AnimatedSprite"
+
 func enter_state():
 	if Player.velocity.y > 0:
 		Player.velocity.y *= .5
 
 func update(delta):
 	Player.animated_sprite.play("slide")
+	#var slide_sprites = Player.animated_sprite.sprite_frames["slide"]
+	
+	if Player.get_wall_normal().x > 0 and Player.is_on_wall_only():
+		Player.animated_sprite.position.x = 10
+	elif Player.get_wall_normal().x < 0 and Player.is_on_wall_only():
+		Player.animated_sprite.position.x = 0
 	
 	player_movement(delta)
 	Player.gravity(delta)

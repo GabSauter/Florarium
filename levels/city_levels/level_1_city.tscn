@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c4xuxw8eapjaw"]
+[gd_scene load_steps=36 format=4 uid="uid://c4xuxw8eapjaw"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_3kk5w"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="1_jrspm"]
@@ -20,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="16_isrn4"]
 [ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/MovePlataform.tscn" id="18_6av24"]
 [ext_resource type="PackedScene" uid="uid://b1ncidm1g5yk5" path="res://levels/city_levels/level_2_city.tscn" id="19_qdkpj"]
+[ext_resource type="PackedScene" uid="uid://bdhltk7k04xcu" path="res://entities/NPC/npc.tscn" id="21_tduk1"]
+[ext_resource type="Texture2D" uid="uid://dw65v4jers2h1" path="res://assets/sprites/characters/human1/human0000.png" id="22_nvcw4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="22_p1g3h"]
+[ext_resource type="Texture2D" uid="uid://dn8o8a28fr5wo" path="res://assets/sprites/characters/human1/human0001.png" id="23_acpsy"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_vk14x"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2svsj"]
@@ -49,6 +52,20 @@ color = Color(1, 1, 1, 0.698039)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ctmjw"]
 shader = ExtResource("6_qltym")
 shader_parameter/lod = 1.322
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iigck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_nvcw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_acpsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Curve2D" id="Curve2D_1vm0o"]
 _data = {
@@ -211,6 +228,11 @@ texture = ExtResource("1_3kk5w")
 
 [node name="0" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="NPC" parent="0" instance=ExtResource("21_tduk1")]
+position = Vector2(2326, -41)
+text = "[center][color=Black][wave]Já percebeu que a cidade está cada vez mais quente?"
+sprites = SubResource("SpriteFrames_iigck")
 
 [node name="Sprites" type="Node2D" parent="0"]
 z_index = -5

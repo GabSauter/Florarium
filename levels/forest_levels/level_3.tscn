@@ -427,8 +427,6 @@ sprites = SubResource("SpriteFrames_3l0pa")
 [node name="Player" parent="0" instance=ExtResource("2_al43u")]
 position = Vector2(139, 358)
 
-[node name="Camera2D" type="Camera2D" parent="0/Player"]
-
 [node name="NextLevel" parent="0" instance=ExtResource("12_gbvq1")]
 position = Vector2(2599, -315)
 new_scene = ExtResource("15_1v4gn")
