@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=4 uid="uid://b8bhlu4cjh0r"]
+
+[ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="1_3uhll"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_nj012"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_4km6l"]
+[ext_resource type="Texture2D" uid="uid://5hg8sd38v74e" path="res://assets/sprites/world/intelligent_city/flower.png" id="2_hw0e3"]
+[ext_resource type="Texture2D" uid="uid://dfxkwsh1hgek7" path="res://assets/sprites/world/intelligent_city/house1.png" id="2_sq6eq"]
+[ext_resource type="Texture2D" uid="uid://dikud05oag0be" path="res://assets/sprites/world/forest/trees/tree2.png" id="3_4ebde"]
+[ext_resource type="Texture2D" uid="uid://dh0xteiv4c4n6" path="res://assets/sprites/world/forest/trees/tree3.png" id="3_37i86"]
+[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="3_60n6t"]
+[ext_resource type="Texture2D" uid="uid://cuvomgwopsl17" path="res://assets/sprites/world/intelligent_city/house2.png" id="3_n0gft"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="4_g4uqi"]
+[ext_resource type="Texture2D" uid="uid://c7uqqp7rsrdsj" path="res://assets/sprites/world/intelligent_city/bush.png" id="6_gocd0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ai52x"]
+shader = ExtResource("4_g4uqi")
+shader_parameter/lod = 1.322
+
+[node name="Level1IntelligentCity" type="Node2D"]
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+modulate = Color(0.866133, 0.884091, 0.993183, 1)
+position = Vector2(1550, 17.5)
+scale = Vector2(19.835, 9.3)
+texture = ExtResource("1_nj012")
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D5" type="Sprite2D" parent="-1"]
+position = Vector2(536.667, -68.8889)
+texture = ExtResource("2_hw0e3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-1"]
+position = Vector2(126.667, -180)
+texture = ExtResource("2_sq6eq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-1"]
+position = Vector2(186.667, -67.7778)
+texture = ExtResource("2_hw0e3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="-1"]
+position = Vector2(2003.33, -65.5556)
+texture = ExtResource("2_hw0e3")
+
+[node name="Sprite2D9" type="Sprite2D" parent="-1"]
+position = Vector2(1847.78, -63.3333)
+texture = ExtResource("2_hw0e3")
+
+[node name="Sprite2D8" type="Sprite2D" parent="-1"]
+position = Vector2(1928.89, -66.6667)
+texture = ExtResource("2_hw0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+position = Vector2(126.667, 107)
+texture = ExtResource("2_sq6eq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(615.556, 96.6667)
+texture = ExtResource("3_n0gft")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-1"]
+position = Vector2(1926.67, 101.111)
+texture = ExtResource("3_n0gft")
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_ai52x")
+position = Vector2(2372.78, -932.792)
+scale = Vector2(31.9389, 18.1946)
+texture = ExtResource("1_nj012")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="BackSprites" type="Sprite2D" parent="0"]
+
+[node name="Sprite2D10" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(868, 204)
+texture = ExtResource("6_gocd0")
+
+[node name="Sprite2D11" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(942, 194)
+texture = ExtResource("6_gocd0")
+
+[node name="Sprite2D12" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(996, 214)
+texture = ExtResource("6_gocd0")
+
+[node name="Sprite2D13" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(386, 206)
+texture = ExtResource("6_gocd0")
+
+[node name="Sprite2D14" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(1741, 67)
+texture = ExtResource("6_gocd0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(1292, 90)
+texture = ExtResource("2_sq6eq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(902, 107)
+texture = ExtResource("3_4ebde")
+flip_h = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(334, 111)
+texture = ExtResource("3_37i86")
+flip_h = true
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("1_3uhll")]
+tile_map_data = PackedByteArray("AAAAAAIAAAAKAAAAAAABAAIAAAAKAAAAAAACAAIAAAAKAAAAAAADAAIAAAAKAAAAAAACAAMAAAAJAAIAAAABAAMAAAAJAAIAAAAAAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAQAAAAJAAIAAAABAAQAAAAJAAIAAAAAAAQAAAAJAAIAAAADAAQAAAAJAAIAAAABAAUAAAAJAAIAAAAAAAUAAAAJAAIAAAACAAUAAAAJAAIAAAADAAUAAAAJAAIAAAADAAYAAAAJAAIAAAACAAYAAAAJAAIAAAABAAYAAAAJAAIAAAAAAAYAAAAJAAIAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAEAAEAAAD//wMAAAAIAAEAAAD//wQAAAAIAAEAAAD//wUAAAAIAAEAAAD//wYAAAAIAAEAAAD///z/AAAAAAEAAAD///v/AAAAAAEAAAD///r/AAAAAAAAAAAEAAIAAAAKAAAAAAAEAAMAAAAJAAIAAAAEAAQAAAAJAAIAAAAEAAUAAAAJAAIAAAAEAAYAAAAJAAIAAAAFAAYAAAAJAAIAAAAFAAUAAAAJAAIAAAAFAAQAAAAJAAIAAAAFAAMAAAAJAAIAAAAFAAIAAAAKAAAAAAAGAAMAAAAJAAIAAAAGAAQAAAAJAAIAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAIAAAAHAAYAAAAJAAIAAAAIAAYAAAAJAAIAAAAIAAUAAAAJAAIAAAAIAAQAAAAJAAIAAAAHAAQAAAAJAAIAAAAHAAMAAAAJAAIAAAAHAAUAAAAJAAIAAAAIAAMAAAAJAAIAAAAIAAIAAAAKAAAAAAAHAAIAAAAKAAAAAAAGAAIAAAAKAAAAAAAJAAIAAAAKAAAAAAAJAAMAAAAJAAIAAAAJAAQAAAAJAAIAAAAJAAUAAAAJAAIAAAAJAAYAAAAJAAIAAAAKAAYAAAAJAAIAAAAKAAUAAAAJAAIAAAAKAAQAAAAJAAIAAAAKAAMAAAAJAAIAAAAKAAIAAAAKAAAAAAALAAIAAAAKAAAAAAALAAMAAAAJAAIAAAALAAQAAAAJAAIAAAALAAUAAAAJAAIAAAALAAYAAAAJAAIAAAAMAAYAAAAJAAIAAAAMAAUAAAAJAAIAAAAMAAQAAAAJAAIAAAAMAAMAAAAJAAIAAAAMAAIAAAAKAAAAAAANAAIAAAAKAAAAAAANAAMAAAAJAAIAAAANAAQAAAAJAAIAAAANAAUAAAAJAAIAAAANAAYAAAAJAAIAAAAOAAUAAAAJAAIAAAAOAAQAAAAJAAIAAAAOAAMAAAAJAAIAAAAOAAIAAAAKAAAAAAAOAAYAAAAJAAIAAAAPAAUAAAAJAAIAAAAPAAQAAAAJAAIAAAAPAAMAAAAJAAIAAAAPAAIAAAAFAAEAAAAPAAEAAAAIAAAAAAAPAAYAAAAJAAIAAAAPAAcAAAAJAAMAAAAQAAYAAAAJAAIAAAAQAAUAAAAJAAIAAAAQAAQAAAAJAAIAAAAQAAMAAAAJAAIAAAAQAAIAAAAJAAIAAAAQAAcAAAAJAAMAAAAOAAcAAAAJAAMAAAANAAcAAAAJAAMAAAAMAAcAAAAJAAMAAAALAAcAAAAJAAMAAAAKAAcAAAAJAAMAAAAJAAcAAAAJAAMAAAAIAAcAAAAJAAMAAAAHAAcAAAAJAAMAAAAGAAcAAAAJAAMAAAAFAAcAAAAJAAMAAAAEAAcAAAAJAAMAAAADAAcAAAAJAAMAAAACAAcAAAAJAAMAAAABAAcAAAAJAAMAAAAAAAcAAAAJAAMAAAD//wcAAAAIAAMAAAAQAAEAAAAKAAAAAAARAAEAAAALAAAAAAARAAIAAAAGAAEAAAARAAMAAAAJAAIAAAARAAQAAAAJAAIAAAARAAUAAAAJAAIAAAARAAYAAAAJAAIAAAARAAcAAAAJAAMAAAASAAIAAAAKAAAAAAASAAMAAAAJAAIAAAASAAQAAAAJAAIAAAASAAUAAAAJAAIAAAASAAYAAAAJAAIAAAASAAcAAAAJAAMAAAATAAcAAAAJAAMAAAATAAYAAAAJAAIAAAATAAUAAAAJAAIAAAATAAQAAAAJAAIAAAATAAMAAAAJAAIAAAATAAIAAAAKAAAAAAAUAAIAAAALAAAAAAAUAAMAAAALAAIAAAAUAAQAAAALAAIAAAAUAAUAAAALAAIAAAAUAAYAAAALAAIAAAAUAAcAAAALAAMAAAA=")
+
+[node name="Player" parent="0" instance=ExtResource("2_4km6l")]
+position = Vector2(99, 157)
+
+[node name="Camera2D" type="Camera2D" parent="0/Player"]
+
+[node name="FrontSprites" type="Sprite2D" parent="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="0/FrontSprites"]
+position = Vector2(654, 165)
+texture = ExtResource("3_4ebde")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/FrontSprites"]
+position = Vector2(1151, 170)
+texture = ExtResource("3_4ebde")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/FrontSprites"]
+position = Vector2(1660, 170)
+texture = ExtResource("3_4ebde")
+
+[node name="GroundTileMap" parent="0" instance=ExtResource("3_60n6t")]
+layer_0/tile_data = PackedInt32Array(196624, 0, 3, 196614, 0, 3, 196619, 0, 3)
