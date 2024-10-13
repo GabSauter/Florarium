@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b8bhlu4cjh0r"]
+[gd_scene load_steps=31 format=4 uid="uid://b8bhlu4cjh0r"]
 
 [ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="1_3uhll"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_nj012"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="21_jyglv"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="22_hbeue"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="25_8dyvj"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="25_lei83"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="26_k2b7n"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="27_8qpm8"]
 
@@ -85,16 +84,6 @@ texture = ExtResource("1_nj012")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="-2"]
 position = Vector2(978.75, -46.25)
-sprite_frames = SubResource("SpriteFrames_agegt")
-autoplay = "default"
-
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="-2"]
-position = Vector2(2256.25, -76.25)
-sprite_frames = SubResource("SpriteFrames_agegt")
-autoplay = "default"
-
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="-2"]
-position = Vector2(2870, -110)
 sprite_frames = SubResource("SpriteFrames_agegt")
 autoplay = "default"
 
@@ -377,7 +366,7 @@ position = Vector2(1660, 170)
 texture = ExtResource("3_4ebde")
 
 [node name="GroundTileMap" parent="0" instance=ExtResource("3_60n6t")]
-layer_0/tile_data = PackedInt32Array(196624, 0, 3, 196614, 0, 3, 196619, 0, 3, 262177, 0, 3)
+layer_0/tile_data = PackedInt32Array(196624, 0, 3, 262177, 0, 3, 196614, 0, 3, 196619, 0, 3)
 
 [node name="DashCollectable" parent="0" instance=ExtResource("21_jyglv")]
 position = Vector2(2887, -347)
@@ -387,14 +376,6 @@ position = Vector2(3418, -653)
 
 [node name="NextLevel" parent="0" instance=ExtResource("22_hbeue")]
 position = Vector2(3733, -605)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(2617, 286)
-zoom = Vector2(0.6, 0.6)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("25_lei83")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(636, 100)

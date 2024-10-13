@@ -1,9 +1,319 @@
-[gd_scene format=3 uid="uid://ce3u56d0nockm"]
+[gd_scene load_steps=33 format=4 uid="uid://ce3u56d0nockm"]
+
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_t87ap"]
+[ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="2_0rdi5"]
+[ext_resource type="Texture2D" uid="uid://dikud05oag0be" path="res://assets/sprites/world/forest/trees/tree2.png" id="2_4et6p"]
+[ext_resource type="Texture2D" uid="uid://5hg8sd38v74e" path="res://assets/sprites/world/intelligent_city/flower.png" id="2_7oa2a"]
+[ext_resource type="Texture2D" uid="uid://cuvomgwopsl17" path="res://assets/sprites/world/intelligent_city/house2.png" id="2_jr4hd"]
+[ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="2_my7uh"]
+[ext_resource type="Texture2D" uid="uid://dfxkwsh1hgek7" path="res://assets/sprites/world/intelligent_city/house1.png" id="3_notqe"]
+[ext_resource type="Texture2D" uid="uid://c7uqqp7rsrdsj" path="res://assets/sprites/world/intelligent_city/bush.png" id="3_te62t"]
+[ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="3_tku1l"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="3_wn6m1"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="4_6a5fo"]
+[ext_resource type="Texture2D" uid="uid://jpo7n2kkvkb5" path="res://assets/sprites/world/forest/trees/tree4.png" id="4_i6gc7"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="4_l6g8o"]
+[ext_resource type="Texture2D" uid="uid://c2a6dwtv4pfpw" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0000.png" id="4_rgjtc"]
+[ext_resource type="Texture2D" uid="uid://c2w2uhv6wj3by" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0001.png" id="5_ll0fq"]
+[ext_resource type="Texture2D" uid="uid://bkxy08h3b1nbp" path="res://assets/sprites/world/forest/trees/tree5.png" id="5_vxna3"]
+[ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="5_x837s"]
+[ext_resource type="Texture2D" uid="uid://bkq0cu66ns8ay" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0002.png" id="6_nlo1r"]
+[ext_resource type="Texture2D" uid="uid://deiw7ev2g1fdo" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0003.png" id="7_bgps8"]
+[ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="7_eayps"]
+[ext_resource type="Texture2D" uid="uid://bkkxldpgdgr8a" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0004.png" id="8_277u8"]
+[ext_resource type="Texture2D" uid="uid://5hxgywiesvhl" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0005.png" id="9_c7n61"]
+[ext_resource type="Texture2D" uid="uid://ccj2frdbmhsx5" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0006.png" id="10_253fk"]
+[ext_resource type="Texture2D" uid="uid://bnkagqrvsy4j" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0007.png" id="11_1nlbv"]
+[ext_resource type="PackedScene" uid="uid://65xulbxf35f6" path="res://assets/sprites/world/intelligent_city/solar_panel/SolarPanel.tscn" id="12_bpuxy"]
+[ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="15_5tjq1"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="27_13ksi"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="28_5rirr"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="29_ieeyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsda3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rgjtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ll0fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nlo1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bgps8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_277u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c7n61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_253fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1nlbv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdfn0"]
+shader = ExtResource("4_l6g8o")
+shader_parameter/lod = 1.322
+
+[sub_resource type="Resource" id="Resource_tmtd8"]
+script = ExtResource("28_5rirr")
+duration = 1.0
+transition = 0
+ease = 2
 
 [node name="Level2IntelligentCity" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+modulate = Color(0.866133, 0.884091, 0.993183, 1)
+position = Vector2(1687.5, 27.5)
+scale = Vector2(27.2487, 12.2687)
+texture = ExtResource("1_t87ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="-2"]
+position = Vector2(603.75, 745)
+texture = ExtResource("2_jr4hd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-2"]
+position = Vector2(2612.5, 343.75)
+texture = ExtResource("3_notqe")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-2"]
+position = Vector2(2238.75, 352.5)
+texture = ExtResource("2_jr4hd")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="-2"]
+position = Vector2(873.75, 397.5)
+sprite_frames = SubResource("SpriteFrames_hsda3")
+autoplay = "default"
+
+[node name="SolarPanel" parent="-2" instance=ExtResource("12_bpuxy")]
+position = Vector2(2241.25, 95)
 
 [node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+position = Vector2(871.111, 820)
+texture = ExtResource("3_notqe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-1"]
+position = Vector2(1394.44, 27.7778)
+texture = ExtResource("2_jr4hd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(2052.22, 313.333)
+texture = ExtResource("2_jr4hd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-1"]
+position = Vector2(2776.67, 321.111)
+texture = ExtResource("2_jr4hd")
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_mdfn0")
+position = Vector2(1911.11, -321.111)
+scale = Vector2(31.9389, 18.1946)
+texture = ExtResource("1_t87ap")
 
 [node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="BackSprites" type="Node" parent="0"]
+
+[node name="Sprite2D9" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(249, 501)
+texture = ExtResource("2_7oa2a")
+
+[node name="Sprite2D10" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2432, 133)
+texture = ExtResource("2_7oa2a")
+
+[node name="Sprite2D11" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(1096, -198)
+texture = ExtResource("3_te62t")
+
+[node name="Sprite2D12" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2071, 385)
+texture = ExtResource("3_te62t")
+
+[node name="Sprite2D" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(118, -20)
+texture = ExtResource("2_4et6p")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(326, 675)
+texture = ExtResource("3_notqe")
+
+[node name="Sprite2D5" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2430, 301)
+texture = ExtResource("3_notqe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(1107, -319)
+texture = ExtResource("4_i6gc7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2133, 142)
+texture = ExtResource("5_vxna3")
+
+[node name="Sprite2D6" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(91, 100)
+texture = ExtResource("7_eayps")
+
+[node name="Sprite2D7" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(522, 795)
+texture = ExtResource("7_eayps")
+
+[node name="Sprite2D8" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(449, -220)
+texture = ExtResource("2_7oa2a")
+
+[node name="Sprite2D13" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2170, 385)
+texture = ExtResource("3_te62t")
+
+[node name="Sprite2D14" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(2109, 398)
+texture = ExtResource("3_te62t")
+
+[node name="Sprite2D15" type="Sprite2D" parent="0/BackSprites"]
+position = Vector2(1124, -186)
+texture = ExtResource("3_te62t")
+
+[node name="Obstacles" type="Node" parent="0"]
+
+[node name="Spike" parent="0/Obstacles" instance=ExtResource("2_0rdi5")]
+position = Vector2(828, 890)
+
+[node name="Spike2" parent="0/Obstacles" instance=ExtResource("2_0rdi5")]
+position = Vector2(897, 891)
+
+[node name="Spike3" parent="0/Obstacles" instance=ExtResource("2_0rdi5")]
+position = Vector2(973, 891)
+
+[node name="Obstacles2" type="Node" parent="0"]
+
+[node name="Spike" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1227, 91)
+
+[node name="Spike4" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1313, 91)
+
+[node name="Spike5" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1387, 93)
+
+[node name="Spike6" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1471, 90)
+
+[node name="Spike7" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1542, 90)
+
+[node name="Spike8" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1619, 90)
+
+[node name="Spike9" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1703, 90)
+
+[node name="Spike10" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1742, 90)
+
+[node name="Spike11" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1831, 191)
+
+[node name="Spike12" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(1944, 292)
+
+[node name="Spike13" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2042, 393)
+
+[node name="Spike14" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2134, 395)
+
+[node name="Spike15" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2223, 397)
+
+[node name="Spike16" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2314, 395)
+
+[node name="Spike17" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2403, 395)
+
+[node name="Spike18" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2489, 393)
+
+[node name="Spike19" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2576, 388)
+
+[node name="Spike20" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(2665, 391)
+
+[node name="Spike2" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(897, 891)
+
+[node name="Spike3" parent="0/Obstacles2" instance=ExtResource("2_0rdi5")]
+position = Vector2(973, 891)
+
+[node name="NextLevel" parent="0" instance=ExtResource("5_x837s")]
+position = Vector2(2833, -409)
+
+[node name="Respawn" parent="0" instance=ExtResource("3_wn6m1")]
+position = Vector2(48, 571)
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("2_my7uh")]
+tile_map_data = PackedByteArray("AAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAABAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAEAAEAAAAAAAYAAAALAAAAAAABAAcAAAALAAAAAAAAAAcAAAAGAAEAAAD//wcAAAAIAAEAAAD//wgAAAAIAAEAAAAAAAgAAAAJAAIAAAABAAgAAAAGAAEAAAACAAgAAAAKAAAAAAADAAgAAAAKAAAAAAAEAAgAAAAKAAAAAAAFAAgAAAAKAAAAAAAGAAgAAAAKAAAAAAAHAAgAAAALAAAAAAD//wkAAAAIAAEAAAAAAAkAAAAJAAIAAAABAAkAAAAJAAIAAAACAAkAAAAJAAIAAAADAAkAAAAJAAIAAAAEAAkAAAAJAAIAAAAFAAkAAAAJAAIAAAAGAAkAAAAJAAIAAAAHAAkAAAAGAAEAAAD//woAAAAIAAMAAAAAAAoAAAAJAAMAAAABAAoAAAAJAAMAAAACAAoAAAAJAAMAAAADAAoAAAAJAAMAAAAEAAoAAAAJAAMAAAAFAAoAAAAJAAMAAAAGAAoAAAAJAAMAAAAHAAoAAAAJAAMAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAIAAAAKAAUAAAAIAAAAAAAKAAYAAAAIAAEAAAAKAAcAAAAIAAEAAAAKAAgAAAAIAAEAAAAIAAoAAAAJAAMAAAAJAAoAAAAJAAMAAAAKAAoAAAAJAAMAAAAKAAkAAAAFAAEAAAAJAAkAAAAKAAAAAAAIAAkAAAAKAAAAAAACAAEAAAADAAMAAAABAAEAAAACAAMAAAAAAAEAAAACAAMAAAD///3/AAAAAAEAAAD///z/AAAAAAEAAAD///v/AAAAAAEAAAD///r/AAAAAAEAAAD///n/AAAAAAEAAAAKAP7/AAABAAMAAAAEAP7/AAAAAAMAAAAOAAkAAAAJAAIAAAAOAAoAAAAJAAMAAAAPAAoAAAAJAAMAAAAPAAkAAAAJAAIAAAANAAoAAAAJAAMAAAAMAAoAAAAJAAMAAAALAAoAAAAJAAMAAAALAAkAAAAJAAIAAAAMAAkAAAAJAAIAAAANAAkAAAAJAAIAAAAQAP//AAABAAMAAAARAP//AAADAAMAAAAQAAkAAAAJAAIAAAAQAAoAAAAJAAMAAAARAAoAAAAJAAMAAAARAAkAAAAJAAIAAAALAAgAAAAJAAIAAAALAAcAAAAJAAIAAAALAAYAAAAJAAIAAAALAAUAAAAFAAEAAAALAAQAAAAIAAEAAAALAAMAAAAIAAEAAAALAAIAAAAIAAEAAAALAAEAAAAEAAEAAAALAAAAAAAAAAEAAAALAP//AAAAAAEAAAALAP7/AAADAAAAAAAMAAEAAAAKAAAAAAANAAEAAAAKAAAAAAAOAAEAAAAKAAAAAAAPAAEAAAAKAAAAAAAQAAEAAAAKAAAAAAARAAEAAAALAAAAAAARAAgAAAAJAAIAAAARAAcAAAAJAAIAAAARAAYAAAAJAAIAAAARAAUAAAAJAAIAAAARAAQAAAAJAAIAAAARAAMAAAAJAAIAAAARAAIAAAAGAAEAAAAQAAgAAAAJAAIAAAAQAAcAAAAJAAIAAAAQAAYAAAAJAAIAAAAQAAUAAAAJAAIAAAAQAAQAAAAJAAIAAAAQAAMAAAAJAAIAAAAQAAIAAAAJAAIAAAAPAAgAAAAJAAIAAAAPAAcAAAAJAAIAAAAPAAYAAAAJAAIAAAAPAAUAAAAJAAIAAAAPAAQAAAAJAAIAAAAPAAMAAAAJAAIAAAAPAAIAAAAJAAIAAAAOAAgAAAAJAAIAAAAOAAcAAAAJAAIAAAAOAAYAAAAJAAIAAAAOAAUAAAAJAAIAAAAOAAQAAAAJAAIAAAAOAAMAAAAJAAIAAAAOAAIAAAAJAAIAAAANAAgAAAAJAAIAAAANAAcAAAAJAAIAAAANAAYAAAAJAAIAAAANAAUAAAAJAAIAAAANAAQAAAAJAAIAAAANAAMAAAAJAAIAAAANAAIAAAAJAAIAAAAMAAgAAAAJAAIAAAAMAAcAAAAJAAIAAAAMAAYAAAAJAAIAAAAMAAUAAAAJAAIAAAAMAAQAAAAJAAIAAAAMAAMAAAAJAAIAAAAMAAIAAAAJAAIAAAATAAoAAAAJAAMAAAATAAkAAAAJAAIAAAATAAgAAAAJAAIAAAATAAcAAAAJAAIAAAATAAYAAAAJAAIAAAATAAUAAAAJAAIAAAATAAQAAAAGAAEAAAATAAMAAAALAAAAAAASAAoAAAAJAAMAAAASAAkAAAAJAAIAAAASAAgAAAAJAAIAAAASAAcAAAAJAAIAAAASAAYAAAAJAAIAAAASAAUAAAAJAAIAAAASAAQAAAAJAAIAAAASAAMAAAAGAAEAAAAZAAQAAAAKAAAAAAAZAAUAAAAJAAIAAAAZAAYAAAAJAAIAAAAZAAcAAAAJAAIAAAAZAAgAAAAJAAIAAAAZAAkAAAAJAAIAAAAZAAoAAAAJAAMAAAAYAAoAAAAJAAMAAAAXAAoAAAAJAAMAAAAWAAoAAAAJAAMAAAAVAAoAAAAJAAMAAAAUAAoAAAAJAAMAAAAYAAkAAAAJAAIAAAAYAAgAAAAJAAIAAAAYAAcAAAAJAAIAAAAYAAYAAAAJAAIAAAAYAAUAAAAJAAIAAAAYAAQAAAAKAAAAAAAXAAkAAAAJAAIAAAAXAAgAAAAJAAIAAAAXAAcAAAAJAAIAAAAXAAYAAAAJAAIAAAAXAAUAAAAJAAIAAAAXAAQAAAAKAAAAAAAWAAkAAAAJAAIAAAAWAAgAAAAJAAIAAAAWAAcAAAAJAAIAAAAWAAYAAAAJAAIAAAAWAAUAAAAJAAIAAAAWAAQAAAAKAAAAAAAVAAkAAAAJAAIAAAAVAAgAAAAJAAIAAAAVAAcAAAAJAAIAAAAVAAYAAAAJAAIAAAAVAAUAAAAJAAIAAAAVAAQAAAAKAAAAAAAUAAkAAAAJAAIAAAAUAAgAAAAJAAIAAAAUAAcAAAAJAAIAAAAUAAYAAAAJAAIAAAAUAAUAAAAJAAIAAAAUAAQAAAAKAAAAAAASAAIAAAALAAAAAAAaAAQAAAAKAAAAAAAaAAUAAAAJAAIAAAAaAAYAAAAJAAIAAAAaAAcAAAAJAAIAAAAaAAgAAAAJAAIAAAAaAAkAAAAJAAIAAAAaAAoAAAAJAAMAAAAbAAEAAAAIAAEAAAAbAAIAAAAIAAEAAAAbAAMAAAAIAAEAAAAbAAQAAAAFAAEAAAAbAAUAAAAJAAIAAAAbAAYAAAAJAAIAAAAbAAcAAAAJAAIAAAAbAAgAAAAJAAIAAAAbAAkAAAAJAAIAAAAbAAoAAAAJAAMAAAAcAPv/AAAAAAEAAAAcAPr/AAAAAAEAAAAcAPn/AAAAAAEAAAAcAPz/AAADAAEAAAAcAP3/AAAAAAEAAAAcAP7/AAAAAAEAAAAcAP//AAAHAAEAAAAcAAAAAAALAAIAAAAcAAEAAAALAAIAAAAcAAIAAAALAAIAAAAcAAMAAAALAAIAAAAcAAQAAAALAAIAAAAcAAUAAAALAAIAAAAcAAYAAAALAAIAAAAcAAcAAAALAAIAAAAcAAgAAAALAAIAAAAcAAkAAAALAAIAAAAcAAoAAAALAAMAAAAbAP//AAAIAAAAAAAbAAAAAAAIAAEAAAAbAPz/AAABAAMAAAAcAPj/AAAAAAEAAAAcAPf/AAAAAAEAAAAcAPb/AAAAAAEAAAAcAPX/AAAAAAAAAAD///j/AAAAAAEAAAD///f/AAAAAAEAAAD///b/AAAAAAEAAAD///X/AAAAAAEAAAD///T/AAAAAAEAAAD///P/AAAAAAEAAAD///L/AAAAAAEAAAD///H/AAAAAAAAAAA=")
+
+[node name="DashCollectable" parent="0" instance=ExtResource("3_tku1l")]
+position = Vector2(2359, -128)
+
+[node name="Player" parent="0" instance=ExtResource("4_6a5fo")]
+position = Vector2(41, 553)
+
+[node name="FrontSprites" type="Node" parent="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="0/FrontSprites"]
+position = Vector2(51, 772)
+texture = ExtResource("2_4et6p")
+
+[node name="GroundTileMap" parent="0/FrontSprites" instance=ExtResource("15_5tjq1")]
+layer_0/tile_data = PackedInt32Array(589824, 0, 3)
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+position = Vector2(722, 553)
+script = ExtResource("27_13ksi")
+follow_mode = 2
+follow_target = NodePath("../0/Player")
+zoom = Vector2(0.8, 0.8)
+tween_resource = SubResource("Resource_tmtd8")
+follow_damping = true
+draw_limits = true
+limit_left = -78
+limit_top = -597
+limit_right = 2800
+limit_bottom = 1083
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(722, 553)
+zoom = Vector2(0.8, 0.8)
+limit_left = -78
+limit_top = -597
+limit_right = 2800
+limit_bottom = 1083
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("29_ieeyf")
