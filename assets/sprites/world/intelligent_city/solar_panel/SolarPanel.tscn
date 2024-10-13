@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://65xulbxf35f6"]
+
+[ext_resource type="Texture2D" uid="uid://m6k73idfku6d" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0000.png" id="1_jqca5"]
+[ext_resource type="Script" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel.gd" id="1_rhhup"]
+[ext_resource type="Texture2D" uid="uid://dpxde3fxr7iny" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0001.png" id="2_pkqdh"]
+[ext_resource type="Texture2D" uid="uid://cimyv5sg7ut4y" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0002.png" id="3_jt68o"]
+[ext_resource type="Texture2D" uid="uid://iww351awcwop" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0003.png" id="4_7ieer"]
+[ext_resource type="Texture2D" uid="uid://dua2uvvpld4a5" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0004.png" id="5_fvs4o"]
+[ext_resource type="Texture2D" uid="uid://wwcy0ltpl4c6" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0005.png" id="6_oimjq"]
+[ext_resource type="Texture2D" uid="uid://08q82b46mnhd" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0006.png" id="7_g36rp"]
+[ext_resource type="Texture2D" uid="uid://cun8tffnwnyem" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0007.png" id="8_5nye0"]
+[ext_resource type="Texture2D" uid="uid://c88if74xoso4n" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0008.png" id="9_8sg5m"]
+[ext_resource type="Texture2D" uid="uid://b0p78g8p5f85t" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0009.png" id="10_nvime"]
+[ext_resource type="Texture2D" uid="uid://bnp50h8tmcs1p" path="res://assets/sprites/world/intelligent_city/solar_panel/solar_panel0010.png" id="11_6d35h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjrex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jqca5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pkqdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jt68o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ieer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fvs4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oimjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g36rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5nye0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8sg5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nvime")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6d35h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 50.0
+}]
+
+[node name="SolarPanel" type="Node2D"]
+script = ExtResource("1_rhhup")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gjrex")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
