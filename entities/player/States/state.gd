@@ -13,7 +13,7 @@ func update(delta):
 	return null
 
 func player_movement(delta):
-	if Player.movement_input.x == 0:
+	if Player.movement_input.x == 0 and Player.is_on_floor():
 		Player.velocity.x = move_toward(Player.velocity.x, 0, Player.movement.FRICTION * delta)
 	else:
 		if (Player.movement_input.x > 0 && Player.velocity.x < 0) or (Player.movement_input.x < 0 && Player.velocity.x > 0):

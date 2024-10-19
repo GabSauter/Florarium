@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://baup2poxcmpod"]
+
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_iv0fd"]
+
+[sub_resource type="GDScript" id="GDScript_0itdn"]
+script/source = "extends Node2D
+
+@onready var timer: Timer = $Timer
+@onready var sprite: Sprite2D = $Sprite2D
+
+func _ready() -> void:
+	pass
+
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="LevelTransition" type="Node2D"]
+script = SubResource("GDScript_0itdn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(21.1044, 9.51038)
+texture = ExtResource("1_iv0fd")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

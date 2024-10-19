@@ -79,8 +79,8 @@ follow_viewport_scale = 0.8
 
 [node name="BackgroundColor" type="Sprite2D" parent="-2"]
 modulate = Color(0.866133, 0.884091, 0.993183, 1)
-position = Vector2(2292, 147)
-scale = Vector2(31.9987, 12.2687)
+position = Vector2(2292, -67.44)
+scale = Vector2(31.9987, 14.4131)
 texture = ExtResource("1_cp6ey")
 
 [node name="Sprite2D" type="Sprite2D" parent="-2"]
@@ -181,9 +181,9 @@ rotation = -0.988158
 bounce_force = 2200
 
 [node name="BouncePlataform3" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
-position = Vector2(1528, 32)
+position = Vector2(1517, 15.9999)
 rotation = 1.15426
-bounce_force = 1920
+bounce_force = 1980
 
 [node name="BouncePlataform4" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(342, 693)

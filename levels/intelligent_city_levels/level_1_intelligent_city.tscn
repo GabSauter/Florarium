@@ -79,8 +79,8 @@ follow_viewport_scale = 0.8
 
 [node name="BackgroundColor" type="Sprite2D" parent="-2"]
 modulate = Color(0.866133, 0.884091, 0.993183, 1)
-position = Vector2(2291.38, -279.375)
-scale = Vector2(27.2487, 12.2687)
+position = Vector2(2291.38, -656.878)
+scale = Vector2(27.2487, 16.0437)
 texture = ExtResource("1_nj012")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="-2"]
