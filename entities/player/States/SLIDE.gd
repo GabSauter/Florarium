@@ -26,7 +26,8 @@ func update(delta):
 	
 	if !Player.is_on_wall_only():
 		return STATES.FALL
-	if Player.jump_input_actuation:
+	if Player.jump_input_actuation or Player.jump_buffer:
+		Player.jump_buffer = false
 		return STATES.WALL_JUMP
 	if Player.is_on_floor():
 		return STATES.IDLE

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdsfu0u441jsy"]
 
-[ext_resource type="Script" path="res://entities/player/states/DASH.gd" id="1_hsbyd"]
-[ext_resource type="Texture2D" uid="uid://oxknlci1nl0a" path="res://assets/sprites/game_related/circle_particle.png" id="2_g5mll"]
+[ext_resource type="Script" path="res://entities/player/states/DASH.gd" id="1_5ph3t"]
+[ext_resource type="Texture2D" uid="uid://oxknlci1nl0a" path="res://assets/sprites/game_related/circle_particle.png" id="2_llgt2"]
 
 [sub_resource type="Gradient" id="Gradient_gdr5q"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -30,7 +30,7 @@ scale_curve = SubResource("CurveTexture_auhco")
 color_ramp = SubResource("GradientTexture1D_ld1xg")
 
 [node name="Dash" type="Node2D"]
-script = ExtResource("1_hsbyd")
+script = ExtResource("1_5ph3t")
 
 [node name="DashDuration" type="Timer" parent="."]
 
@@ -38,13 +38,14 @@ script = ExtResource("1_hsbyd")
 wait_time = 0.05
 
 [node name="PauseGameTimer" type="Timer" parent="."]
-wait_time = 0.1
+process_mode = 3
+wait_time = 0.03
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 60
 process_material = SubResource("ParticleProcessMaterial_4st74")
-texture = ExtResource("2_g5mll")
+texture = ExtResource("2_llgt2")
 lifetime = 0.5
 explosiveness = 0.14
 

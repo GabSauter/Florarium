@@ -1,0 +1,332 @@
+[gd_scene load_steps=32 format=4 uid="uid://crf8sao0jfead"]
+
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_cp6ey"]
+[ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="1_eape4"]
+[ext_resource type="PackedScene" uid="uid://cstc5n3u4vh7p" path="res://entities/plataforms/BouncePlataform.tscn" id="2_y84mi"]
+[ext_resource type="PackedScene" uid="uid://wr01b77fbs7e" path="res://entities/collectables/dashCollectable/Dash_Collectable.tscn" id="3_bv2gi"]
+[ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="3_vdfeu"]
+[ext_resource type="Texture2D" uid="uid://dh0xteiv4c4n6" path="res://assets/sprites/world/forest/trees/tree3.png" id="4_fgbbu"]
+[ext_resource type="Texture2D" uid="uid://bkxy08h3b1nbp" path="res://assets/sprites/world/forest/trees/tree5.png" id="4_fl5hq"]
+[ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="4_gufhs"]
+[ext_resource type="Texture2D" uid="uid://dfxkwsh1hgek7" path="res://assets/sprites/world/intelligent_city/house1.png" id="5_5xcrk"]
+[ext_resource type="Texture2D" uid="uid://c7uqqp7rsrdsj" path="res://assets/sprites/world/intelligent_city/bush.png" id="5_bhxxq"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="5_k7gi5"]
+[ext_resource type="Texture2D" uid="uid://dikud05oag0be" path="res://assets/sprites/world/forest/trees/tree2.png" id="5_ojik0"]
+[ext_resource type="Texture2D" uid="uid://svc28uslw27t" path="res://assets/sprites/world/forest/trees/tree1.png" id="5_u3jua"]
+[ext_resource type="Texture2D" uid="uid://cuvomgwopsl17" path="res://assets/sprites/world/intelligent_city/house2.png" id="6_mqstx"]
+[ext_resource type="Texture2D" uid="uid://jpo7n2kkvkb5" path="res://assets/sprites/world/forest/trees/tree4.png" id="6_sjphy"]
+[ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="7_a627o"]
+[ext_resource type="Texture2D" uid="uid://c2a6dwtv4pfpw" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0000.png" id="7_aprif"]
+[ext_resource type="Texture2D" uid="uid://c2w2uhv6wj3by" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0001.png" id="8_bmmvb"]
+[ext_resource type="Texture2D" uid="uid://5hg8sd38v74e" path="res://assets/sprites/world/intelligent_city/flower.png" id="8_bqu3a"]
+[ext_resource type="Texture2D" uid="uid://bkq0cu66ns8ay" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0002.png" id="9_fe10l"]
+[ext_resource type="Texture2D" uid="uid://deiw7ev2g1fdo" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0003.png" id="10_wmgni"]
+[ext_resource type="Texture2D" uid="uid://bkkxldpgdgr8a" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0004.png" id="11_cttl7"]
+[ext_resource type="Texture2D" uid="uid://5hxgywiesvhl" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0005.png" id="12_xdgqf"]
+[ext_resource type="Texture2D" uid="uid://ccj2frdbmhsx5" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0006.png" id="13_lpjm6"]
+[ext_resource type="Texture2D" uid="uid://bnkagqrvsy4j" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0007.png" id="14_woivv"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="17_86lmu"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="27_iehf7"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="28_bb6lv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw525"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aprif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bmmvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fe10l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wmgni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cttl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xdgqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lpjm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_woivv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rsku3"]
+shader = ExtResource("17_86lmu")
+shader_parameter/lod = 1.322
+
+[sub_resource type="Resource" id="Resource_34ues"]
+script = ExtResource("28_bb6lv")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Level4IntelligentCity" type="Node2D"]
+
+[node name="-2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="BackgroundColor" type="Sprite2D" parent="-2"]
+modulate = Color(0.866133, 0.884091, 0.993183, 1)
+position = Vector2(2292, 147)
+scale = Vector2(31.9987, 12.2687)
+texture = ExtResource("1_cp6ey")
+
+[node name="Sprite2D" type="Sprite2D" parent="-2"]
+position = Vector2(373.75, 625)
+texture = ExtResource("5_ojik0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-2"]
+position = Vector2(888.75, 686.25)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D6" type="Sprite2D" parent="-2"]
+position = Vector2(2081.25, 653.75)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D7" type="Sprite2D" parent="-2"]
+position = Vector2(2692.5, -35)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D8" type="Sprite2D" parent="-2"]
+position = Vector2(3742.5, -83.75)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-2"]
+position = Vector2(965.25, 686.5)
+texture = ExtResource("4_fgbbu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-2"]
+position = Vector2(3054.25, -66.25)
+texture = ExtResource("5_u3jua")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-2"]
+position = Vector2(3485.25, -91.25)
+texture = ExtResource("6_sjphy")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="-2"]
+position = Vector2(86.25, 397.5)
+sprite_frames = SubResource("SpriteFrames_rw525")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="-2"]
+position = Vector2(1557.25, 562.5)
+sprite_frames = SubResource("SpriteFrames_rw525")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="-2"]
+position = Vector2(2926.25, -153.5)
+sprite_frames = SubResource("SpriteFrames_rw525")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="-2"]
+position = Vector2(4241.25, -592.5)
+sprite_frames = SubResource("SpriteFrames_rw525")
+autoplay = "default"
+
+[node name="-1" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+position = Vector2(596.667, 665.778)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="-1"]
+position = Vector2(1161.67, 638.778)
+texture = ExtResource("6_mqstx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="-1"]
+position = Vector2(1790.67, 570.778)
+texture = ExtResource("4_fl5hq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="-1"]
+position = Vector2(2845.56, -83.3333)
+texture = ExtResource("5_ojik0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="-1"]
+position = Vector2(3656.67, -93.3333)
+texture = ExtResource("5_ojik0")
+
+[node name="Blur" type="Sprite2D" parent="-1"]
+material = SubResource("ShaderMaterial_rsku3")
+position = Vector2(2750, -744.445)
+scale = Vector2(31.9389, 18.1946)
+texture = ExtResource("1_cp6ey")
+
+[node name="0" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Plataforms" type="Node" parent="0"]
+
+[node name="BouncePlataform" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(1109, -187)
+rotation = 1.13963
+bounce_force = 1600
+
+[node name="BouncePlataform2" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(2072, 308)
+rotation = -0.988158
+bounce_force = 2200
+
+[node name="BouncePlataform3" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(1528, 32)
+rotation = 1.15426
+bounce_force = 1920
+
+[node name="BouncePlataform4" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(342, 693)
+bounce_force = 1600
+
+[node name="BouncePlataform5" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(644, 699)
+bounce_force = 1600
+
+[node name="BouncePlataform6" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(817, 665)
+rotation = 1.48955
+bounce_force = 1900
+
+[node name="BouncePlataform7" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
+position = Vector2(1243, 690)
+rotation = -0.0989832
+bounce_force = 2200
+
+[node name="Collectables" type="Node" parent="0"]
+
+[node name="DashCollectable" parent="0/Collectables" instance=ExtResource("3_bv2gi")]
+position = Vector2(3517, -189)
+
+[node name="Sprites" type="Node" parent="0"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(3178, -289)
+texture = ExtResource("5_bhxxq")
+
+[node name="Sprite2D" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(127, 597)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(2299, -184)
+texture = ExtResource("5_5xcrk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(3255, -112)
+texture = ExtResource("6_mqstx")
+
+[node name="Sprite2D5" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(4070, -384)
+texture = ExtResource("8_bqu3a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="0/Sprites"]
+position = Vector2(4070, -209)
+texture = ExtResource("5_5xcrk")
+
+[node name="Obstacles" type="Node" parent="0"]
+
+[node name="Spike2" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1358, -108)
+
+[node name="Spike11" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(2736, -3)
+
+[node name="Spike12" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(2823, -3)
+
+[node name="Spike13" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(2910, -1)
+
+[node name="Spike14" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(2997, -6)
+
+[node name="Spike15" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3084, -10)
+
+[node name="Spike16" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3170, -8)
+
+[node name="Spike18" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3259, -10)
+
+[node name="Spike19" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3346, -3)
+
+[node name="Spike20" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3435, -3)
+
+[node name="Spike21" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3524, -3)
+
+[node name="Spike22" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3610, -3)
+
+[node name="Spike23" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3685, -5)
+
+[node name="Spike24" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3767, -3)
+
+[node name="Spike17" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(3170, -8)
+
+[node name="Spike3" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1444, -109)
+
+[node name="Spike4" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1538, 690)
+
+[node name="Spike5" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1631, 691)
+
+[node name="Spike6" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1724, 693)
+
+[node name="Spike7" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1811, 693)
+
+[node name="Spike8" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1902, 694)
+
+[node name="Spike9" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(1988, 696)
+
+[node name="Spike10" parent="0/Obstacles" instance=ExtResource("4_gufhs")]
+position = Vector2(2073, 694)
+
+[node name="Respawn" parent="0" instance=ExtResource("5_k7gi5")]
+position = Vector2(72, 674)
+
+[node name="Player" parent="0" instance=ExtResource("3_vdfeu")]
+position = Vector2(82, 664)
+
+[node name="CityGroundTileMap" parent="0" instance=ExtResource("1_eape4")]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAEAAEAAAD/////AAAAAAEAAAD///7/AAAAAAEAAAAKAAcAAAAKAAAAAAAAAAcAAAAKAAAAAAABAAcAAAAKAAAAAAACAAcAAAAKAAAAAAADAAcAAAAKAAAAAAAEAAcAAAAJAAAAAAAFAAcAAAAKAAAAAAAGAAcAAAAKAAAAAAAHAAcAAAAJAAAAAAAIAAcAAAAKAAAAAAAJAAcAAAAKAAAAAAAIAAgAAAAJAAIAAAAHAAgAAAAJAAIAAAAGAAgAAAAJAAIAAAAFAAgAAAAJAAIAAAAEAAgAAAAJAAIAAAADAAgAAAAJAAIAAAACAAgAAAAJAAIAAAABAAgAAAAJAAIAAAAAAAgAAAAJAAIAAAD//wgAAAAIAAEAAAAJAAgAAAAJAAIAAAAKAAgAAAAJAAIAAAD//wkAAAAIAAEAAAAAAAkAAAAJAAIAAAABAAkAAAAJAAIAAAACAAkAAAAJAAIAAAADAAkAAAAJAAIAAAAEAAkAAAAJAAIAAAAFAAkAAAAJAAIAAAAGAAkAAAAJAAIAAAAHAAkAAAAJAAIAAAAIAAkAAAAJAAIAAAAJAAkAAAAJAAIAAAAKAAkAAAAJAAIAAAD//woAAAAIAAEAAAAAAAoAAAAJAAIAAAABAAoAAAAJAAIAAAACAAoAAAAJAAIAAAADAAoAAAAJAAIAAAAEAAoAAAAJAAIAAAAFAAoAAAAJAAIAAAAGAAoAAAAJAAIAAAAHAAoAAAAJAAIAAAAIAAoAAAAJAAIAAAAJAAoAAAAJAAIAAAAKAAoAAAAJAAIAAAD//wsAAAAIAAMAAAAAAAsAAAAJAAMAAAABAAsAAAAJAAMAAAACAAsAAAAJAAMAAAADAAsAAAAJAAMAAAAEAAsAAAAJAAMAAAAFAAsAAAAJAAMAAAAGAAsAAAAJAAMAAAAHAAsAAAAJAAMAAAAIAAsAAAAJAAMAAAAJAAsAAAAJAAMAAAAKAAsAAAAJAAMAAAALAAsAAAAJAAMAAAALAAoAAAAJAAIAAAALAAkAAAAJAAIAAAALAAgAAAAJAAIAAAALAAcAAAAKAAAAAAAMAAcAAAAKAAAAAAAMAAgAAAAJAAIAAAAMAAkAAAAJAAIAAAANAAkAAAAJAAIAAAANAAoAAAAJAAIAAAANAAsAAAAJAAMAAAAMAAsAAAAJAAMAAAAMAAoAAAAJAAIAAAAOAAkAAAAJAAIAAAAOAAgAAAAJAAIAAAAOAAcAAAAGAAEAAAAOAAoAAAAJAAIAAAAOAAsAAAAJAAMAAAAOAAYAAAALAAIAAAAOAAUAAAALAAIAAAANAAYAAAAIAAEAAAANAAcAAAAFAAEAAAANAAgAAAAJAAIAAAANAAUAAAAIAAEAAAAOAAQAAAALAAIAAAANAAQAAAAIAAEAAAANAAMAAAAIAAEAAAAOAAMAAAALAAIAAAAKAAQAAAAAAAIAAAAKAAMAAAAAAAEAAAAKAAIAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAAAAAAAAAAEAAAAKAP//AAAAAAEAAAAKAP7/AAAAAAEAAAANAAIAAAAIAAEAAAAOAAIAAAALAAIAAAAOAAEAAAALAAIAAAANAAEAAAAIAAEAAAANAAAAAAAIAAEAAAAOAAAAAAALAAIAAAANAP//AAAIAAAAAAAOAP//AAALAAAAAAAKAP3/AAAAAAEAAAAKAPz/AAAAAAEAAAAKAPv/AAAAAAEAAAAKAPr/AAAAAAAAAAAPAAcAAAAKAAAAAAAQAAcAAAAKAAAAAAARAAcAAAAKAAAAAAASAAcAAAAKAAAAAAATAAcAAAAKAAAAAAASAAgAAAAJAAIAAAARAAgAAAAJAAIAAAAQAAgAAAAJAAIAAAAPAAgAAAAJAAIAAAATAAgAAAAJAAIAAAASAAkAAAAJAAIAAAARAAkAAAAJAAIAAAAQAAkAAAAJAAIAAAAPAAkAAAAJAAIAAAATAAkAAAAJAAIAAAAUAAkAAAAJAAIAAAATAAoAAAAJAAIAAAASAAoAAAAJAAIAAAARAAoAAAAJAAIAAAAQAAoAAAAJAAIAAAAPAAoAAAAJAAIAAAAUAAoAAAAJAAIAAAAUAAsAAAAJAAMAAAATAAsAAAAJAAMAAAASAAsAAAAJAAMAAAARAAsAAAAJAAMAAAAQAAsAAAAJAAMAAAAPAAsAAAAJAAMAAAAUAAgAAAAJAAIAAAAUAAcAAAAKAAAAAAAVAAgAAAAJAAIAAAAVAAkAAAAJAAIAAAAVAAoAAAAJAAIAAAAVAAsAAAAJAAMAAAAVAAcAAAAFAAEAAAAVAAYAAAAIAAEAAAAVAAUAAAAIAAEAAAAVAAQAAAAIAAEAAAAVAAMAAAAIAAEAAAAWAAMAAAAJAAIAAAAWAAIAAAAJAAIAAAAWAAEAAAAJAAIAAAAWAAAAAAAJAAIAAAAVAAAAAAAIAAEAAAAVAP//AAAIAAAAAAAWAP//AAAKAAAAAAAXAP//AAAKAAAAAAAYAP//AAAKAAAAAAAZAP//AAAKAAAAAAAaAP//AAALAAAAAAAZAAAAAAAJAAIAAAAYAAAAAAAJAAIAAAAXAAAAAAAJAAIAAAAaAAAAAAAGAAEAAAAZAAEAAAAJAAIAAAAYAAEAAAAJAAIAAAAXAAEAAAAJAAIAAAAaAAEAAAAJAAIAAAAZAAIAAAAJAAIAAAAYAAIAAAAJAAIAAAAXAAIAAAAJAAIAAAAaAAIAAAAJAAIAAAAaAAMAAAAJAAIAAAAZAAMAAAAJAAIAAAAYAAMAAAAJAAIAAAAXAAMAAAAJAAIAAAAaAAsAAAAJAAMAAAAaAAoAAAAJAAIAAAAaAAkAAAAJAAIAAAAaAAgAAAAJAAIAAAAaAAcAAAAJAAIAAAAaAAYAAAAJAAIAAAAaAAUAAAAJAAIAAAAaAAQAAAAJAAIAAAAZAAsAAAAJAAMAAAAZAAoAAAAJAAIAAAAZAAkAAAAJAAIAAAAZAAgAAAAJAAIAAAAZAAcAAAAJAAIAAAAZAAYAAAAJAAIAAAAZAAUAAAAJAAIAAAAZAAQAAAAJAAIAAAAYAAsAAAAJAAMAAAAYAAoAAAAJAAIAAAAYAAkAAAAJAAIAAAAYAAgAAAAJAAIAAAAYAAcAAAAJAAIAAAAYAAYAAAAJAAIAAAAYAAUAAAAJAAIAAAAYAAQAAAAJAAIAAAAXAAsAAAAJAAMAAAAXAAoAAAAJAAIAAAAXAAkAAAAJAAIAAAAXAAgAAAAJAAIAAAAXAAcAAAAJAAIAAAAXAAYAAAAJAAIAAAAXAAUAAAAJAAIAAAAXAAQAAAAJAAIAAAAWAAsAAAAJAAMAAAAWAAoAAAAJAAIAAAAWAAkAAAAJAAIAAAAWAAgAAAAJAAIAAAAWAAcAAAAJAAIAAAAWAAYAAAAJAAIAAAAWAAUAAAAJAAIAAAAWAAQAAAAJAAIAAAAEAAYAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAAEAAIAAAAAAAAAAAAHAAYAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAQAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAEAAAAAAAEAAAAVAAEAAAAIAAEAAAAVAAIAAAAIAAEAAAAbAAAAAAAKAAAAAAAcAAAAAAAKAAAAAAAdAAAAAAAKAAAAAAAeAAAAAAAKAAAAAAAfAAAAAAAKAAAAAAAgAAAAAAAKAAAAAAAhAAAAAAAKAAAAAAAiAAAAAAAKAAAAAAAjAAAAAAAKAAAAAAAkAAAAAAAKAAAAAAAkAAEAAAAJAAIAAAAjAAEAAAAJAAIAAAAiAAEAAAAJAAIAAAAhAAEAAAAJAAIAAAAgAAEAAAAJAAIAAAAfAAEAAAAJAAIAAAAeAAEAAAAJAAIAAAAdAAEAAAAJAAIAAAAcAAEAAAAJAAIAAAAbAAEAAAAJAAIAAAAbAAIAAAAJAAIAAAAcAAIAAAAJAAIAAAAdAAIAAAAJAAIAAAAeAAIAAAAJAAIAAAAfAAIAAAAJAAIAAAAgAAIAAAAJAAIAAAAhAAIAAAAJAAIAAAAiAAIAAAAJAAIAAAAjAAIAAAAJAAIAAAAkAAIAAAAJAAIAAAAiAAMAAAAJAAIAAAAhAAMAAAAJAAIAAAAgAAMAAAAJAAIAAAAfAAMAAAAJAAIAAAAeAAMAAAAJAAIAAAAdAAMAAAAJAAIAAAAcAAMAAAAJAAIAAAAbAAMAAAAJAAIAAAAkAAsAAAAJAAMAAAAkAAoAAAAJAAIAAAAkAAkAAAAJAAIAAAAkAAgAAAAJAAIAAAAkAAcAAAAJAAIAAAAkAAYAAAAJAAIAAAAkAAUAAAAJAAIAAAAkAAQAAAAJAAIAAAAjAAsAAAAJAAMAAAAjAAoAAAAJAAIAAAAjAAkAAAAJAAIAAAAjAAgAAAAJAAIAAAAjAAcAAAAJAAIAAAAjAAYAAAAJAAIAAAAjAAUAAAAJAAIAAAAjAAQAAAAJAAIAAAAiAAsAAAAJAAMAAAAiAAoAAAAJAAIAAAAiAAkAAAAJAAIAAAAiAAgAAAAJAAIAAAAiAAcAAAAJAAIAAAAiAAYAAAAJAAIAAAAiAAUAAAAJAAIAAAAiAAQAAAAJAAIAAAAhAAsAAAAJAAMAAAAhAAoAAAAJAAIAAAAhAAkAAAAJAAIAAAAhAAgAAAAJAAIAAAAhAAcAAAAJAAIAAAAhAAYAAAAJAAIAAAAhAAUAAAAJAAIAAAAhAAQAAAAJAAIAAAAgAAsAAAAJAAMAAAAgAAoAAAAJAAIAAAAgAAkAAAAJAAIAAAAgAAgAAAAJAAIAAAAgAAcAAAAJAAIAAAAgAAYAAAAJAAIAAAAgAAUAAAAJAAIAAAAgAAQAAAAJAAIAAAAfAAsAAAAJAAMAAAAfAAoAAAAJAAIAAAAfAAkAAAAJAAIAAAAfAAgAAAAJAAIAAAAfAAcAAAAJAAIAAAAfAAYAAAAJAAIAAAAfAAUAAAAJAAIAAAAfAAQAAAAJAAIAAAAeAAsAAAAJAAMAAAAeAAoAAAAJAAIAAAAeAAkAAAAJAAIAAAAeAAgAAAAJAAIAAAAeAAcAAAAJAAIAAAAeAAYAAAAJAAIAAAAeAAUAAAAJAAIAAAAeAAQAAAAJAAIAAAAdAAsAAAAJAAMAAAAdAAoAAAAJAAIAAAAdAAkAAAAJAAIAAAAdAAgAAAAJAAIAAAAdAAcAAAAJAAIAAAAdAAYAAAAJAAIAAAAdAAUAAAAJAAIAAAAdAAQAAAAJAAIAAAAcAAsAAAAJAAMAAAAcAAoAAAAJAAIAAAAcAAkAAAAJAAIAAAAcAAgAAAAJAAIAAAAcAAcAAAAJAAIAAAAcAAYAAAAJAAIAAAAcAAUAAAAJAAIAAAAcAAQAAAAJAAIAAAAbAAsAAAAJAAMAAAAbAAoAAAAJAAIAAAAbAAkAAAAJAAIAAAAbAAgAAAAJAAIAAAAbAAcAAAAJAAIAAAAbAAYAAAAJAAIAAAAbAAUAAAAJAAIAAAAbAAQAAAAJAAIAAAAkAAMAAAAJAAIAAAAjAAMAAAAJAAIAAAAlAAAAAAAKAAAAAAAlAAEAAAAJAAIAAAAlAAIAAAAJAAIAAAAlAAMAAAAJAAIAAAAlAAQAAAAJAAIAAAAlAAUAAAAJAAIAAAAlAAYAAAAJAAIAAAAlAAcAAAAJAAIAAAAlAAgAAAAJAAIAAAAlAAkAAAAJAAIAAAAlAAoAAAAJAAIAAAAlAAsAAAAJAAMAAAAmAAsAAAAJAAMAAAAmAAoAAAAJAAIAAAAmAAkAAAAJAAIAAAAmAAgAAAAJAAIAAAAmAAcAAAAJAAIAAAAmAAYAAAAJAAIAAAAmAAUAAAAJAAIAAAAmAAQAAAAJAAIAAAAmAAMAAAAJAAIAAAAmAAIAAAAJAAIAAAAmAAEAAAAJAAIAAAAmAAAAAAAFAAEAAAAnAP//AAAKAAAAAAAnAAAAAAAJAAIAAAAnAAEAAAAJAAIAAAAnAAIAAAAJAAIAAAAnAAMAAAAJAAIAAAAnAAQAAAAJAAIAAAAoAAQAAAAJAAIAAAAoAAUAAAAJAAIAAAAoAAYAAAAJAAIAAAAoAAcAAAAJAAIAAAAoAAgAAAAJAAIAAAAoAAkAAAAJAAIAAAAoAAoAAAAJAAIAAAAnAAoAAAAJAAIAAAAnAAsAAAAJAAMAAAAnAAkAAAAJAAIAAAAnAAgAAAAJAAIAAAAnAAcAAAAJAAIAAAAnAAYAAAAJAAIAAAAnAAUAAAAJAAIAAAAoAAsAAAAJAAMAAAAoAAMAAAAJAAIAAAAoAAIAAAAJAAIAAAAoAAEAAAAJAAIAAAAoAAAAAAAJAAIAAAAoAP//AAAKAAAAAAAmAP//AAAIAAAAAAAHAAAAAAAAAAAAAAApAP//AAAKAAAAAAApAAAAAAAJAAIAAAApAAEAAAAJAAIAAAApAAIAAAAJAAIAAAApAAMAAAAJAAIAAAApAAQAAAAJAAIAAAApAAUAAAAJAAIAAAApAAYAAAAJAAIAAAApAAcAAAAJAAIAAAApAAgAAAAJAAIAAAApAAkAAAAJAAIAAAApAAoAAAAJAAIAAAApAAsAAAAJAAMAAAAqAAsAAAAJAAMAAAAqAAoAAAAJAAIAAAAqAAkAAAAJAAIAAAAqAAgAAAAJAAIAAAAqAAcAAAAJAAIAAAAqAAYAAAAJAAIAAAAqAAUAAAAJAAIAAAAqAAQAAAAJAAIAAAAqAAMAAAAJAAIAAAAqAAIAAAAJAAIAAAAqAAEAAAAJAAIAAAAqAAAAAAAJAAIAAAArAAAAAAAJAAIAAAArAP//AAAKAAAAAAAqAP//AAAKAAAAAAArAAEAAAAJAAIAAAArAAIAAAAJAAIAAAArAAMAAAAJAAIAAAArAAQAAAAJAAIAAAArAAUAAAAJAAIAAAArAAYAAAAJAAIAAAArAAcAAAAJAAIAAAArAAgAAAAJAAIAAAArAAkAAAAJAAIAAAArAAoAAAAJAAIAAAArAAsAAAAJAAMAAAAsAAsAAAALAAMAAAAsAAoAAAALAAIAAAAsAAkAAAALAAIAAAAsAAgAAAALAAIAAAAsAAcAAAALAAIAAAAsAAYAAAALAAIAAAAsAAUAAAALAAIAAAAsAAQAAAALAAIAAAAsAAMAAAALAAIAAAAsAAIAAAALAAIAAAAsAAEAAAALAAIAAAAsAAAAAAALAAIAAAAsAP//AAAHAAEAAAAsAP7/AAAAAAEAAAAsAP3/AAAAAAEAAAAsAPz/AAAAAAEAAAAsAPv/AAAAAAEAAAAsAPr/AAAAAAEAAAAsAPn/AAAAAAEAAAAsAPj/AAAAAAEAAAAsAPf/AAAAAAEAAAAsAPb/AAAAAAEAAAAsAPX/AAAAAAAAAAD///3/AAAAAAEAAAD///z/AAAAAAEAAAD///v/AAAAAAEAAAD///r/AAAAAAEAAAD///n/AAAAAAEAAAD///j/AAAAAAAAAAA=")
+
+[node name="NextLevel" parent="0" instance=ExtResource("7_a627o")]
+position = Vector2(4427, -106)
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+position = Vector2(614, 500)
+script = ExtResource("27_iehf7")
+follow_mode = 2
+follow_target = NodePath("../0/Player")
+tween_resource = SubResource("Resource_34ues")
+follow_offset = Vector2(30, 0)
+follow_damping = true
+draw_limits = true
+limit_left = -26
+limit_top = -430
+limit_right = 4400
+limit_bottom = 860

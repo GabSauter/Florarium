@@ -4,3 +4,8 @@
 
 [node name="JUMP" type="Node2D"]
 script = ExtResource("1_pe7ca")
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]

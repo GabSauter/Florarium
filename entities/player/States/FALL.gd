@@ -55,7 +55,7 @@ func start_jump_buffer_timer():
 		JumpBufferTimer.start(jump_buffer_duration)
 
 func _on_jump_buffer_timer_timeout():
-	if Player.current_state == STATES.IDLE or Player.current_state == STATES.MOVE:
+	if Player.current_state == STATES.IDLE or Player.current_state == STATES.MOVE or Player.current_state == STATES.SLIDE:
 		Player.jump_buffer = true
 	else:
 		Player.jump_buffer = false

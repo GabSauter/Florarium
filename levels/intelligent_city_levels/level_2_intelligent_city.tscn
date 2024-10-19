@@ -26,9 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://bnkagqrvsy4j" path="res://assets/sprites/world/intelligent_city/aeolic_turbine/aeolic_turbine0007.png" id="11_1nlbv"]
 [ext_resource type="PackedScene" uid="uid://65xulbxf35f6" path="res://assets/sprites/world/intelligent_city/solar_panel/SolarPanel.tscn" id="12_bpuxy"]
 [ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="15_5tjq1"]
+[ext_resource type="PackedScene" uid="uid://c3obllhey4fxu" path="res://levels/intelligent_city_levels/level_3_intelligent_city.tscn" id="22_4t3vp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="27_13ksi"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="28_5rirr"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="29_ieeyf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hsda3"]
 animations = [{
@@ -270,6 +270,7 @@ position = Vector2(973, 891)
 
 [node name="NextLevel" parent="0" instance=ExtResource("5_x837s")]
 position = Vector2(2833, -409)
+new_scene = ExtResource("22_4t3vp")
 
 [node name="Respawn" parent="0" instance=ExtResource("3_wn6m1")]
 position = Vector2(48, 571)
@@ -305,15 +306,3 @@ limit_left = -78
 limit_top = -597
 limit_right = 2800
 limit_bottom = 1083
-
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(722, 553)
-zoom = Vector2(0.8, 0.8)
-limit_left = -78
-limit_top = -597
-limit_right = 2800
-limit_bottom = 1083
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("29_ieeyf")

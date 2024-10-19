@@ -5,12 +5,20 @@ extends "state.gd"
 @onready var DashDuration_timer = $DashDuration
 @onready var ghost_timer = $GhostTimer
 @onready var particles = $GPUParticles2D
+@onready var pause_game_timer: Timer = $PauseGameTimer
 
 var ghost_scene = preload("res://entities/player/effects/DashGhost.tscn")
+
+@onready var camera_host: PhantomCameraHost = $"../../../../../../Camera2D/PhantomCameraHost"
+var camera: PhantomCamera2D
+var shake_intensity = 2.5
+var shake_duration = 0.2
+var shake_time = 0.0
 
 var dashing = false
 
 func enter_state():
+	pause_game()
 	emit_particles()
 	
 	Player.can_dash = false
@@ -23,6 +31,8 @@ func enter_state():
 	
 	handle_dash_velocity_on_different_directions()
 	start_ghost()
+	
+	start_camera_shake()
 
 func update(delta):
 	if Player.dead:
@@ -38,6 +48,11 @@ func update(delta):
 	
 	if !dashing:
 		return STATES.FALL
+	
+	if shake_time > 0.0:
+		shake_time -= delta
+		apply_camera_shake()
+	
 	return null
 
 func exit_state():
@@ -86,3 +101,19 @@ func _on_dash_duration_timeout():
 
 func _on_ghost_timer_timeout():
 	instance_ghost()
+
+func start_camera_shake():
+	camera = camera_host._active_pcam_2d
+	shake_time = shake_duration
+
+func apply_camera_shake():
+	if camera:
+		var offset = Vector2(randf_range(-shake_intensity, shake_intensity), randf_range(-shake_intensity, shake_intensity))
+		camera.position += offset
+
+func pause_game():
+	pause_game_timer.start(0.03)
+	get_tree().paused = true
+
+func _on_pause_game_timer_timeout() -> void:
+	get_tree().paused = false

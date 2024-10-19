@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://ds702xwtvnmyd"]
+[gd_scene load_steps=56 format=4 uid="uid://ds702xwtvnmyd"]
 
 [ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_4hxpc"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_bx7vx"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://can03oijjyh0b" path="res://assets/sprites/world/city/flood_water/flood_water0027.png" id="43_frlqg"]
 [ext_resource type="Texture2D" uid="uid://djohv5gt475c2" path="res://assets/sprites/world/city/flood_water/flood_water0028.png" id="44_viskm"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="46_67ma3"]
+[ext_resource type="PackedScene" uid="uid://b8bhlu4cjh0r" path="res://levels/intelligent_city_levels/level_1_intelligent_city.tscn" id="47_hvs32"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbxr6"]
 shader = ExtResource("4_gpthp")
@@ -320,9 +321,10 @@ texture = ExtResource("1_bx7vx")
 
 [node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]
 position = Vector2(1204, -2102)
+new_scene = ExtResource("47_hvs32")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(539.446, 540)
+position = Vector2(537.688, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")

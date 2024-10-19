@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cstc5n3u4vh7p"]
 
 [ext_resource type="Script" path="res://entities/plataforms/BouncePlataform.gd" id="1_7lj7h"]
-[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_uosaw"]
+[ext_resource type="Texture2D" uid="uid://tp17tyfewida" path="res://assets/sprites/plataform/BouncePlataform.png" id="2_cdaj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2vu"]
-size = Vector2(438, 22)
+size = Vector2(131, 26)
 
 [node name="BouncePlataform" type="Area2D"]
 collision_layer = 128
 script = ExtResource("1_7lj7h")
+bounce_force = 1200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.945098, 0.329412, 0.858824, 1)
-scale = Vector2(2.19, 0.11)
-texture = ExtResource("1_uosaw")
+texture = ExtResource("2_cdaj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 12)
 shape = SubResource("RectangleShape2D_ob2vu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

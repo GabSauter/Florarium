@@ -2,6 +2,9 @@ extends "state.gd"
 
 var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tscn")
 
+@onready var JumpBufferTimer = $JumpBufferTimer
+@export var jump_buffer_duration = .1
+
 func enter_state():
 	var jump_dust_particles = jump_dust_particles_scene.instantiate()
 	jump_dust_particles.position = Player.position
@@ -16,6 +19,7 @@ func update(delta):
 	Player.gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
+	start_jump_buffer_timer()
 	
 	if Player.dead:
 		return STATES.DIE
@@ -35,3 +39,13 @@ func cut_jump_height():
 	if Player.cut_jump_input:
 		if Player.velocity.y < 0:
 			Player.velocity.y *= Player.movement.CUT_JUMP_HEIGHT
+
+func start_jump_buffer_timer():
+	if Player.jump_input_actuation:
+		JumpBufferTimer.start(jump_buffer_duration)
+
+func _on_jump_buffer_timer_timeout():
+	if Player.current_state == STATES.IDLE or Player.current_state == STATES.MOVE or Player.current_state == STATES.SLIDE:
+		Player.jump_buffer = true
+	else:
+		Player.jump_buffer = false
