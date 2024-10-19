@@ -26,7 +26,7 @@ shader_parameter/lod = 1.94
 
 [sub_resource type="Curve2D" id="Curve2D_c0hhu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 249, 536, -91.2463, 44.065, 91.2463, -44.065, 3193, 584, -154.319, -1.0107, 154.319, 1.0107, 3541, 152, -35.9188, -4.48985, 35.9188, 4.48985, 3842, 484, 34.7058, -18.6878, -34.7058, 18.6878, 4266, 154, 0, 0, 0, 0, 5580, -75, -84.0896, -13.4543, 84.0896, 13.4543, 6749, 154, 0, 0, 0, 0, 7121, 609)
+"points": PackedVector2Array(0, 0, 0, 0, -234, 539, -91.2463, 44.065, 91.2463, -44.065, 3193, 584, -154.319, -1.0107, 154.319, 1.0107, 3541, 152, -35.9188, -4.48985, 35.9188, 4.48985, 3842, 484, 34.7058, -18.6878, -34.7058, 18.6878, 4266, 154, 0, 0, 0, 0, 5580, -75, -84.0896, -13.4543, 84.0896, 13.4543, 6749, 154, 0, 0, 0, 0, 7121, 609)
 }
 point_count = 8
 
@@ -854,7 +854,7 @@ script = ExtResource("13_02ark")
 speed = 300
 
 [node name="PathFollow2D" type="PathFollow2D" parent="0/Path2D"]
-position = Vector2(249, 536)
+position = Vector2(-234, 539)
 rotation = 0.0163029
 rotates = false
 loop = false
@@ -902,7 +902,7 @@ follow_viewport_enabled = true
 follow_viewport_scale = 1.1
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(632, 536)
+position = Vector2(632, 539)
 script = ExtResource("13_ah2hw")
 priority = 10
 follow_mode = 4

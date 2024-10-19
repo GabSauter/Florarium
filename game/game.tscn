@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bum8rrxocek8d"]
+[gd_scene load_steps=7 format=3 uid="uid://bum8rrxocek8d"]
 
 [ext_resource type="PackedScene" uid="uid://borto8er3l4xv" path="res://ui/menu/main_menu/main_menu.tscn" id="1_ftlkm"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rnwei"]
 [ext_resource type="Script" path="res://game/LevelContainer.gd" id="2_ps7hn"]
 [ext_resource type="Script" path="res://game/UIContainer.gd" id="2_x85wu"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_roqhq"]
+[ext_resource type="PackedScene" uid="uid://baup2poxcmpod" path="res://entities/game_related/LevelTransition.tscn" id="6_5legh"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rnwei")
+
+[node name="LevelTransition" parent="." instance=ExtResource("6_5legh")]
 
 [node name="UIContainer" type="CanvasLayer" parent="."]
 layer = 3

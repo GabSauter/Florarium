@@ -9,4 +9,5 @@ func _ready():
 
 func _on_body_entered(body: Node):
 	if body is Player:
+#		await the animation to trasition
 		levelContainer.next_level(new_scene)
