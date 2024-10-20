@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://4u5ufpe5uao3"]
+
+[ext_resource type="Script" path="res://entities/game_related/move_throw_path.gd" id="1_cggu0"]
+[ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/Saw.tscn" id="2_00ywa"]
+
+[sub_resource type="Curve2D" id="Curve2D_p2ymq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3143, -400, 0, 0, 0, 0, 3143, 150)
+}
+point_count = 2
+
+[node name="MovableSaw" type="Path2D"]
+curve = SubResource("Curve2D_p2ymq")
+script = ExtResource("1_cggu0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(3143, -400)
+rotation = 0.0163029
+rotates = false
+loop = false
+
+[node name="movableNode" type="Node2D" parent="PathFollow2D"]
+
+[node name="Saw" parent="PathFollow2D/movableNode" instance=ExtResource("2_00ywa")]
+position = Vector2(1.08143, 4.98304)
