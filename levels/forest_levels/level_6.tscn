@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cakgxa7mjawj7"]
+[gd_scene load_steps=26 format=3 uid="uid://cakgxa7mjawj7"]
 
 [ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="1_gjil1"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="1_j5lbv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_ah2hw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_1dpvu"]
 [ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/Saw.tscn" id="14_arc0k"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="16_1ebhu"]
 [ext_resource type="Script" path="res://levels/change_camera_zoom.gd" id="17_541kj"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="18_euint"]
 
@@ -896,6 +897,8 @@ position = Vector2(-849.947, 316.898)
 
 [node name="Saw7" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
 position = Vector2(-849.844, -474.209)
+
+[node name="DashVisual" parent="0" instance=ExtResource("16_1ebhu")]
 
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

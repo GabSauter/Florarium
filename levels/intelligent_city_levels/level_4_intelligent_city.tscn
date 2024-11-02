@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://crf8sao0jfead"]
+[gd_scene load_steps=34 format=4 uid="uid://crf8sao0jfead"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_cp6ey"]
 [ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="1_eape4"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrc86hwc44rq" path="res://levels/intelligent_city_levels/level_5_intelligent_city.tscn" id="27_2l3h8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="27_iehf7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="28_bb6lv"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="28_mqc8v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rw525"]
 animations = [{
@@ -318,6 +319,8 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAE
 [node name="NextLevel" parent="0" instance=ExtResource("7_a627o")]
 position = Vector2(4427, -106)
 new_scene = ExtResource("27_2l3h8")
+
+[node name="DashVisual" parent="0" instance=ExtResource("28_mqc8v")]
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(614, 500)

@@ -151,7 +151,7 @@ shape = SubResource("CapsuleShape2D_uc1ng")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_myxxo")
 sprite_frames = SubResource("SpriteFrames_4oo88")
-animation = &"slide"
+animation = &"idle"
 
 [node name="STATES" type="Node2D" parent="."]
 script = ExtResource("4_cvlxd")

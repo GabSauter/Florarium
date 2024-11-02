@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://rqrnufebeu3c"]
+[gd_scene load_steps=35 format=3 uid="uid://rqrnufebeu3c"]
 
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="1_dnotk"]
 [ext_resource type="Texture2D" uid="uid://dnom00g6rxrvj" path="res://assets/sprites/world/forest/trees/background_tree.png" id="1_ua14w"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="12_7c678"]
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="13_awb7c"]
 [ext_resource type="PackedScene" uid="uid://lp80t1s1omfq" path="res://levels/forest_levels/level_5.tscn" id="13_tewu8"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="16_fgogv"]
 [ext_resource type="Script" path="res://levels/change_camera.gd" id="19_2bkfp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vbhmm"]
@@ -390,6 +391,8 @@ process_material = SubResource("ParticleProcessMaterial_u28rc")
 texture = ExtResource("13_awb7c")
 lifetime = 1.5
 visibility_rect = Rect2(-1400, -800, 2868, 1700)
+
+[node name="DashVisual" parent="0" instance=ExtResource("16_fgogv")]
 
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

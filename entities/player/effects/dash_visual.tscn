@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://qvbame0g1vde"]
+
+[ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="1_mlegl"]
+[ext_resource type="Script" path="res://entities/player/effects/dash_visual.gd" id="1_sgdsw"]
+
+[node name="DashVisual" type="Node2D"]
+script = ExtResource("1_sgdsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.412798, 0.412798)
+texture = ExtResource("1_mlegl")

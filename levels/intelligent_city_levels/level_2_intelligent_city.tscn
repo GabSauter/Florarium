@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ce3u56d0nockm"]
+[gd_scene load_steps=34 format=4 uid="uid://ce3u56d0nockm"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_t87ap"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/Glass_spikes.tscn" id="2_0rdi5"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c3obllhey4fxu" path="res://levels/intelligent_city_levels/level_3_intelligent_city.tscn" id="22_4t3vp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="27_13ksi"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="28_5rirr"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="28_i1pr5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hsda3"]
 animations = [{
@@ -292,6 +293,8 @@ texture = ExtResource("2_4et6p")
 
 [node name="GroundTileMap" parent="0/FrontSprites" instance=ExtResource("15_5tjq1")]
 layer_0/tile_data = PackedInt32Array(589824, 0, 3)
+
+[node name="DashVisual" parent="0" instance=ExtResource("28_i1pr5")]
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(722, 553)

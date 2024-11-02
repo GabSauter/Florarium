@@ -32,7 +32,7 @@ func enter_state():
 	handle_dash_velocity_on_different_directions()
 	start_ghost()
 	
-	#start_camera_shake()
+	start_camera_shake()
 
 func update(delta):
 	if Player.dead:

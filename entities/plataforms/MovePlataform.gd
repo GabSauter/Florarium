@@ -21,4 +21,4 @@ func _ready():
 		set_process(false)
 
 func _process(delta):
-	path.progress += speed
+	path.progress += speed * delta

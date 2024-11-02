@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://csdest26gf2ut"]
+[gd_scene load_steps=25 format=4 uid="uid://csdest26gf2ut"]
 
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="1_47dqg"]
 [ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="1_krnbq"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="17_8bdv2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="17_pn5i6"]
 [ext_resource type="PackedScene" uid="uid://ds702xwtvnmyd" path="res://levels/city_levels/level_5_city.tscn" id="18_efojc"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="19_h2oil"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gyg8m"]
 shader = ExtResource("4_glp0g")
@@ -207,6 +208,8 @@ position = Vector2(1282, 2715)
 [node name="NextLevel" parent="0" instance=ExtResource("17_pn5i6")]
 position = Vector2(2533, 3389)
 new_scene = ExtResource("18_efojc")
+
+[node name="DashVisual" parent="0" instance=ExtResource("19_h2oil")]
 
 [node name="Area2D" parent="." node_paths=PackedStringArray("camera_in") instance=ExtResource("17_8bdv2")]
 position = Vector2(937, 773)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b8bhlu4cjh0r"]
+[gd_scene load_steps=33 format=4 uid="uid://b8bhlu4cjh0r"]
 
 [ext_resource type="PackedScene" uid="uid://cihcctkf1m72d" path="res://levels/intelligent_city_levels/intelligent_city_ground_tile_map.tscn" id="1_3uhll"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_nj012"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="22_hbeue"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="25_8dyvj"]
 [ext_resource type="PackedScene" uid="uid://ce3u56d0nockm" path="res://levels/intelligent_city_levels/level_2_intelligent_city.tscn" id="25_qlj71"]
+[ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="26_7fv3c"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="26_k2b7n"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="27_8qpm8"]
 
@@ -378,6 +379,8 @@ position = Vector2(3418, -653)
 [node name="NextLevel" parent="0" instance=ExtResource("22_hbeue")]
 position = Vector2(3733, -605)
 new_scene = ExtResource("25_qlj71")
+
+[node name="DashVisual" parent="0" instance=ExtResource("26_7fv3c")]
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(636, 100)
