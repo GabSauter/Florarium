@@ -17,10 +17,6 @@ func _ready() -> void:
 	hold_jump_text.text = "Segure " + KEYBIND_DEFAULT.jump_key.as_text_physical_keycode() + " para pular mais alto"
 	respawn_text.text = "Esse é um checkpoint caso você perca\nirá voltar para o último checkpoint"
 	spikes_text.text = "Evite os espinhos para não perder"
-	wall_jump_text.text = "Aperte " + KEYBIND_DEFAULT.jump_key.as_text_physical_keycode() + " quando estiver em uma parede para realizar o pulo na parede\nVocê pode realizar consecutivos pulos na parede"
+	wall_jump_text.text = "Aperte " + KEYBIND_DEFAULT.jump_key.as_text_physical_keycode() + " quando estiver em uma parede\npara realizar o pulo na parede"
 	dash_text.text = "Aperte " + KEYBIND_DEFAULT.dash_key.as_text_physical_keycode() + " para realizar um dash\nQuando você encosta no chão você ganha um dash para usar\nTente pular e dar um dash para cima"
 	dash_collectable_text.text = "Colete o item de dash para habilitar a habilidade de dash\ne poder dashar sem precisar enconstar no chão"
-	
-
-func _process(delta: float) -> void:
-	pass

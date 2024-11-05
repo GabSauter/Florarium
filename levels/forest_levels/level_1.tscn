@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ddqjd3aptdlu8"]
+[gd_scene load_steps=45 format=3 uid="uid://ddqjd3aptdlu8"]
 
 [ext_resource type="Script" path="res://levels/forest_levels/level_1.gd" id="1_eea5y"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/Player.tscn" id="2_gwwpf"]
@@ -28,6 +28,10 @@
 [ext_resource type="Script" path="res://levels/forest_levels/tutorials.gd" id="24_q1bgv"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="25_2jisg"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="26_ay1n3"]
+[ext_resource type="VideoStream" path="res://assets/videos/tutorial/VideoJumpWallTutorial.ogv" id="26_xj67h"]
+[ext_resource type="VideoStream" path="res://assets/videos/tutorial/VideoJumpDashTutorial.ogv" id="27_iknvi"]
+[ext_resource type="VideoStream" path="res://assets/videos/tutorial/VideoJumpDashHorizontal.ogv" id="28_sgys1"]
+[ext_resource type="VideoStream" path="res://assets/videos/tutorial/VideoJumpDashColectDash.ogv" id="29_68s6x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54j1q"]
 shader = ExtResource("3_pkfc0")
@@ -87,17 +91,17 @@ directional_velocity_max = 100.0
 directional_velocity_curve = SubResource("CurveXYZTexture_hgfmq")
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="Resource" id="Resource_niwjn"]
-script = ExtResource("26_ay1n3")
-duration = 1.0
-transition = 0
-ease = 2
-
 [sub_resource type="Curve2D" id="Curve2D_by4ft"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 364, 245, 0, 0, 0, 0, 2322, 233, 0, 0, 0, 0, 2597, -84, 0, 0, 0, 0, 3525, -87, 0, 0, 0, 0, 3805, -318, 0, 0, 0, 0, 3809, -622, 0, 0, 0, 0, 4749, -639, 0, 0, 0, 0, 5002, -914, 0, 0, 0, 0, 7658, -905)
 }
 point_count = 9
+
+[sub_resource type="Resource" id="Resource_niwjn"]
+script = ExtResource("26_ay1n3")
+duration = 1.0
+transition = 0
+ease = 2
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_eea5y")
@@ -904,7 +908,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131087, 65536, 0, 131092, 196608, 0, 196614, 393216, 0, 196611, 196608, 0, -65501, 262144, 0, -393171, 327680, 0, -589773, 458752, 0, -589750, 524288, 0, -589747, 393216, 0)
 
 [node name="Player" parent="0" instance=ExtResource("2_gwwpf")]
-position = Vector2(366, 364)
+position = Vector2(3810, -41)
 
 [node name="Obstacles" type="Node2D" parent="0"]
 
@@ -1136,6 +1140,48 @@ autowrap_mode = 0
 
 [node name="DashVisual" parent="0" instance=ExtResource("25_2jisg")]
 
+[node name="TutorialVideos" type="Node" parent="0"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="0/TutorialVideos"]
+offset_left = 3927.0
+offset_top = -185.0
+offset_right = 4647.0
+offset_bottom = 535.0
+scale = Vector2(0.277172, 0.277172)
+stream = ExtResource("26_xj67h")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="0/TutorialVideos"]
+offset_left = 4934.0
+offset_top = -645.0
+offset_right = 5894.0
+offset_bottom = 75.0
+scale = Vector2(0.229713, 0.229713)
+stream = ExtResource("27_iknvi")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="0/TutorialVideos"]
+offset_left = 5180.0
+offset_top = -740.0
+offset_right = 6140.0
+offset_bottom = -20.0
+scale = Vector2(0.212931, 0.212931)
+stream = ExtResource("28_sgys1")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer4" type="VideoStreamPlayer" parent="0/TutorialVideos"]
+offset_left = 6039.0
+offset_top = -739.0
+offset_right = 6999.0
+offset_bottom = -19.0001
+scale = Vector2(0.243745, 0.243745)
+stream = ExtResource("29_68s6x")
+autoplay = true
+loop = true
+
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 follow_viewport_scale = 1.1
@@ -1307,8 +1353,11 @@ tile_set = SubResource("TileSet_4an2l")
 format = 2
 layer_0/tile_data = PackedInt32Array(262153, 0, 0, 262149, 0, 0, 262150, 65536, 0, 196622, 196608, 0, 196630, 262144, 0, 37, 524288, 0)
 
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_by4ft")
+
 [node name="PhantomCamera2D2" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(580, 244.99)
+position = Vector2(3701.45, -232.574)
 script = ExtResource("17_ppfwa")
 follow_mode = 4
 follow_target = NodePath("../0/Player")
@@ -1321,6 +1370,3 @@ follow_damping_value = Vector2(0.2, 0.2)
 draw_limits = true
 limit_left = -60
 limit_right = 8097
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_by4ft")
