@@ -273,7 +273,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAALAAIAAAD//wEAAAALAAIAAAD//wIAAAALAAI
 [node name="MovePlataform" parent="0" instance=ExtResource("2_fnd3v")]
 position = Vector2(741, -1368)
 curve = SubResource("Curve2D_iho87")
-speed = 0.1
+speed = 150.0
 
 [node name="DashCollectable" parent="0" instance=ExtResource("5_wvobn")]
 position = Vector2(454, -2168)
@@ -327,7 +327,7 @@ new_scene = ExtResource("47_hvs32")
 [node name="DashVisual" parent="0" instance=ExtResource("48_vtjwd")]
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(539.73, 540)
+position = Vector2(539.327, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")

@@ -202,8 +202,7 @@ tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAAAAAUAAAAEAAEAAAAAAAYAAAAIAAM
 position = Vector2(966, -140)
 rotation = 3.14159
 curve = SubResource("Curve2D_vn4ew")
-speed = 0.25
-speed_scale = 0.5
+speed = 150.0
 
 [node name="PathFollow2D" parent="0/MovePlataform" index="0"]
 position = Vector2(0, 200)

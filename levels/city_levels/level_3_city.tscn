@@ -362,7 +362,7 @@ tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAE
 [node name="MovePlataform" parent="0" instance=ExtResource("2_vyy0w")]
 position = Vector2(570, 648)
 curve = SubResource("Curve2D_pffx6")
-speed = 0.22
+speed = 170.0
 
 [node name="NextLevel" parent="0" instance=ExtResource("14_f2tr8")]
 position = Vector2(4332, 690)

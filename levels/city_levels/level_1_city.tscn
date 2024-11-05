@@ -77,17 +77,17 @@ point_count = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c70i"]
 size = Vector2(265, 20)
 
-[sub_resource type="Resource" id="Resource_ffkvq"]
-script = ExtResource("23_vk14x")
-duration = 1.0
-transition = 0
-ease = 2
-
 [sub_resource type="Curve2D" id="Curve2D_sic5i"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 327, -61, 0, 0, 0, 0, 3917, -61)
 }
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_ffkvq"]
+script = ExtResource("23_vk14x")
+duration = 1.0
+transition = 0
+ease = 2
 
 [node name="Level1City" type="Node2D"]
 
@@ -356,8 +356,7 @@ new_scene = ExtResource("19_qdkpj")
 [node name="MovePlataform" parent="0/Plataform" instance=ExtResource("18_6av24")]
 position = Vector2(2859, 16)
 curve = SubResource("Curve2D_1vm0o")
-speed = 0.25
-speed_scale = 0.5
+speed = 150.0
 
 [node name="PathFollow2D" parent="0/Plataform/MovePlataform" index="0"]
 position = Vector2(-50, -8)
@@ -380,6 +379,9 @@ shape = SubResource("RectangleShape2D_0c70i")
 
 [node name="DashVisual" parent="0" instance=ExtResource("24_kf1v4")]
 
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_sic5i")
+
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
 position = Vector2(637, -61)
 script = ExtResource("22_p1g3h")
@@ -390,8 +392,5 @@ tween_resource = SubResource("Resource_ffkvq")
 draw_limits = true
 limit_left = -3
 limit_right = 4004
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_sic5i")
 
 [editable path="0/Plataform/MovePlataform"]
