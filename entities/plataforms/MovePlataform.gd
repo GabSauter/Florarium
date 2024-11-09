@@ -4,6 +4,7 @@ extends Path2D
 @onready var animation = $AnimationPlayer
 @onready var sprite_2d = $AnimatableBody/Sprite2D
 @onready var collision_shape_2d = $AnimatableBody/CollisionShape2D
+@onready var player: Player = $"../../Player"
 
 #@export var sprite: Texture2D
 #@export var collisionShape: Shape2D
@@ -22,3 +23,6 @@ func _ready():
 
 func _process(delta):
 	path.progress += speed * delta
+	
+	if player.current_state == player.STATES.DIE:
+		path.progress = 0

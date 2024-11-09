@@ -383,11 +383,12 @@ shape = SubResource("RectangleShape2D_0c70i")
 curve = SubResource("Curve2D_sic5i")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(637, -61)
+position = Vector2(708.111, -61)
 script = ExtResource("22_p1g3h")
 follow_mode = 4
 follow_target = NodePath("../0/Player")
 follow_path = NodePath("../Path2D")
+zoom = Vector2(0.9, 0.9)
 tween_resource = SubResource("Resource_ffkvq")
 draw_limits = true
 limit_left = -3
