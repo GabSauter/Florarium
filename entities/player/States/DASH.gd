@@ -103,8 +103,9 @@ func _on_ghost_timer_timeout():
 	instance_ghost()
 
 func start_camera_shake():
-	camera = camera_host._active_pcam_2d
-	shake_time = shake_duration
+	if camera_host != null:
+		camera = camera_host._active_pcam_2d
+		shake_time = shake_duration
 
 func apply_camera_shake():
 	if camera:

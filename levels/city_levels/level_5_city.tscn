@@ -300,11 +300,11 @@ loop = false
 [node name="movableNode" type="Node2D" parent="0/Path2D/PathFollow2D"]
 
 [node name="Spike" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("16_sob4x")]
-position = Vector2(11.0909, 434.877)
+position = Vector2(11.1109, 457.874)
 scale = Vector2(14.9981, 0.800027)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="0/Path2D/PathFollow2D/movableNode"]
-position = Vector2(-37.4516, 156.631)
+position = Vector2(-37.0767, 179.628)
 rotation = -0.0163029
 scale = Vector2(0.732073, 0.732073)
 sprite_frames = SubResource("SpriteFrames_thb2n")
@@ -313,7 +313,7 @@ autoplay = "flood"
 
 [node name="Sprite2D" type="Sprite2D" parent="0/Path2D/PathFollow2D/movableNode"]
 self_modulate = Color(0.201618, 0.344967, 0.430274, 1)
-position = Vector2(-40.2011, 740.586)
+position = Vector2(-40.0077, 763.583)
 rotation = -0.0171214
 scale = Vector2(-8.14511, -4.20118)
 texture = ExtResource("1_bx7vx")
@@ -325,7 +325,7 @@ new_scene = ExtResource("47_hvs32")
 [node name="DashVisual" parent="0" instance=ExtResource("48_vtjwd")]
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
-position = Vector2(nan, nan)
+position = Vector2(550, 540)
 script = ExtResource("15_xtd2e")
 follow_mode = 4
 follow_target = NodePath("../0/Path2D/PathFollow2D/movableNode")
