@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://uls4jye5scsr"]
+
+[ext_resource type="Script" path="res://quiz/resources/quiz_question.gd" id="1_8ho6s"]
+
+[resource]
+script = ExtResource("1_8ho6s")
+question = "Como podemos evitar a poluição nas cidades?"
+options = Array[String](["Jogando lixo no chão", "Reciclando e jogando o lixo no lugar certo", "Não andando de bicicleta"])
+correct = "Reciclando e jogando o lixo no lugar certo"
+explanation = "Reciclar e jogar o lixo no lugar certo evita poluição e mantém o ambiente limpo. Isso faz com que nossa cidade seja mais saudável e agradável para todos."

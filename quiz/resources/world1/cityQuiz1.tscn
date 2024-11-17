@@ -1,0 +1,916 @@
+[gd_scene load_steps=13 format=3 uid="uid://1yvi5t0x6oin"]
+
+[ext_resource type="Theme" uid="uid://ivi55pxe0xcn" path="res://ui/quiz_theme.tres" id="1_2vbr6"]
+[ext_resource type="Script" path="res://quiz/QuizController.gd" id="2_tb815"]
+[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/forest_levels/level_2.tscn" id="3_f16ig"]
+[ext_resource type="Resource" uid="uid://2k8yo5jysq13" path="res://quiz/resources/world1/city_theme.tres" id="4_2lhtt"]
+[ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="5_yea2o"]
+[ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="6_jt5ky"]
+[ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="7_q68rh"]
+[ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="8_cugjt"]
+[ext_resource type="FontFile" uid="uid://u6q7uliuq4p7" path="res://fonts/Southland TTF.ttf" id="9_ip51i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kj43"]
+bg_color = Color(1, 1, 1, 0.435294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3f18"]
+bg_color = Color(1, 1, 1, 0.196078)
+
+[sub_resource type="Theme" id="Theme_ixjsh"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_5kj43")
+Button/styles/normal = SubResource("StyleBoxFlat_m3f18")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2vbr6")
+script = ExtResource("2_tb815")
+next_scene = ExtResource("3_f16ig")
+quiz = ExtResource("4_2lhtt")
+color_right = Color(0.603922, 1, 0.572549, 1)
+color_wrong = Color(1, 0.772549, 0.733333, 1)
+
+[node name="Background" type="TextureRect" parent="Control"]
+self_modulate = Color(0.392157, 0.686275, 0.627451, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_yea2o")
+
+[node name="BackGroundSprites" type="Sprite2D" parent="Control/Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(123, 685)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D34" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(70, 725)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D35" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(176, 715)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(385, 710)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(569, 695)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(813, 708)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1020, 685)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1196, 710)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1125, 564)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(946, 491)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1223, 441)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(318, 517)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(152, 479)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(8, 547)
+scale = Vector2(0.771664, 0.771664)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(11, 368)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(197, 343)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(358, 386)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(950, 331)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1053, 374)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1182, 311)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1056, 273)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(305, 288)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(78, 270)
+scale = Vector2(0.587637, 0.587637)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(174, 212)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(975, 189)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1174, 209)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1277, 141)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(4.00012, 136)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(120, 96)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(243, 88)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(177, 70)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(976, 98)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D135" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(884, 98)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D136" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(872, 165)
+scale = Vector2(0.32093, 0.32093)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D137" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(871, 269)
+scale = Vector2(0.446109, 0.446109)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1062, 121)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1165, 98)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1251, 70)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D36" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(317, 735)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(529, 722)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D38" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(819, 722)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D39" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1028, 712)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D40" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1250, 730)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D41" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1131, 594)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D42" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1065, 594)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D43" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1211, 472)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D44" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(953, 529)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D45" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(306, 549)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D46" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(27, 579)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D47" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(146, 505)
+scale = Vector2(0.725411, 0.725411)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D48" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(17, 393)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D130" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(353, 412)
+scale = Vector2(0.538169, 0.538169)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D131" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(838, 433)
+scale = Vector2(0.538169, 0.538169)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D132" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(860, 284)
+scale = Vector2(0.538169, 0.538169)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D133" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(870, 181)
+scale = Vector2(0.402984, 0.402984)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D134" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(887, 109)
+scale = Vector2(0.295509, 0.295509)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D49" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(195, 368)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D50" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(306, 311)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D51" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(948, 358)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D52" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1042, 397)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D53" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1182, 333)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D54" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1053, 298)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D55" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(66.0001, 293)
+scale = Vector2(0.548865, 0.548865)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D56" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(50.3003, 46.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D68" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(47.5122, 50.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D57" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(118.3, 34.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D69" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(115.512, 38.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D58" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(218.3, 46.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D70" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(215.512, 50.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D59" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(282.3, 30.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D71" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(279.512, 34.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D60" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(396.3, 26.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D72" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(393.512, 30.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D61" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(556.3, 32.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D73" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(553.512, 36.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D62" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(608.3, 2.10009)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D74" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(605.512, 6.87963)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D63" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(682.3, 14.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D75" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(679.512, 18.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D64" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(740.3, 4.10009)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D76" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(737.512, 8.87963)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D65" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(788.3, 26.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D77" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(785.512, 30.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D66" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(906.3, 26.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D78" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(903.512, 30.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D67" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(858.3, 12.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D79" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(855.512, 16.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D80" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(972.3, 40.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D81" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(969.512, 44.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D82" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1002.3, 22.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D83" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(999.512, 26.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D84" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1056.3, 36.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D85" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1053.51, 40.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D86" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1090.3, 14.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D87" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1087.51, 18.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D88" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1134.3, 32.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D89" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1131.51, 36.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D90" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1198.3, 6.10009)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D91" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1195.51, 10.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D92" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1228.3, 28.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D93" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1225.51, 32.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D94" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1180.3, 46.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D95" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1177.51, 50.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D96" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1094.3, 66.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D97" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1091.51, 70.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D98" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(172.3, 6.10009)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D99" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(169.512, 10.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D100" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(56.3003, 8.10009)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D101" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(53.5122, 12.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D102" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(-3.69972, 30.1001)
+scale = Vector2(0.162002, 0.162002)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D103" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(-6.48781, 34.8796)
+scale = Vector2(0.158639, 0.158639)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D104" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(167, 224)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D116" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(285.011, 188.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D117" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(278.011, 200.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D118" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(360.011, 213.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D119" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(353.011, 225.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D120" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(85.0107, 187.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D121" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(78.0107, 199.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D122" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(191.011, 142.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D123" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(184.011, 154.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D124" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(344.011, 122.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D125" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(337.011, 134.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D126" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1091.01, 173.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D127" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1084.01, 185.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D128" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1285.01, 259.337)
+scale = Vector2(0.406738, 0.406738)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D129" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1278.01, 271.337)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D105" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(974, 206)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D106" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(15.0001, 151)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D107" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1168, 226)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D108" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1282, 157)
+scale = Vector2(0.398296, 0.398296)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D109" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1065, 129)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D110" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1160, 108)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D111" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(1248, 79)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D112" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(977, 108)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D113" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(246, 99)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D138" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(297.897, 78.9656)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D139" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(300.897, 89.9656)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D140" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(394.897, 83.9656)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D141" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(397.897, 94.9656)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D142" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(447.897, 108.966)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D143" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(450.897, 119.966)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D144" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(350.897, 55.9656)
+scale = Vector2(0.239313, 0.239313)
+texture = ExtResource("6_jt5ky")
+
+[node name="Sprite2D145" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(353.897, 66.9656)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D114" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(116, 106)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="Sprite2D115" type="Sprite2D" parent="Control/Background/BackGroundSprites"]
+position = Vector2(173, 79)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("7_q68rh")
+
+[node name="CardBackground" type="TextureRect" parent="Control/Background"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_cugjt")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Background/CardBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -339.5
+offset_right = 156.0
+offset_bottom = 257.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0349066
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/CardBackground/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="QuestionText" type="Label" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+theme_override_font_sizes/font_size = 82
+text = "Pergunta"
+horizontal_alignment = 1
+
+[node name="VBoxContainerOptions" type="VBoxContainer" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Button1" type="Button" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+text = "a) Opção 1
+"
+alignment = 0
+
+[node name="Button2" type="Button" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+text = "b) Opção 1
+"
+alignment = 0
+
+[node name="Button3" type="Button" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+text = "c) Opção 1
+"
+alignment = 0
+
+[node name="Button4" type="Button" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+text = "d) Opção 1
+"
+alignment = 0
+
+[node name="LabelExplanation" type="Label" parent="Control/Background/CardBackground/VBoxContainer2/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ip51i")
+text = "Explicação da resposta certa"
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+
+[node name="NextQuestionButton" type="Button" parent="Control/Background/CardBackground"]
+layout_mode = 2
+offset_left = 140.177
+offset_top = 591.654
+offset_right = 437.177
+offset_bottom = 642.654
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_ixjsh")
+text = "Próxima Pergunta"
+
+[node name="QuizOver" type="Control" parent="Control/Background"]
+visible = false
+anchors_preset = 0
+offset_left = 342.0
+offset_top = 26.0
+offset_right = 936.0
+offset_bottom = 694.0
+
+[node name="BackGround" type="TextureRect" parent="Control/Background/QuizOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_cugjt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/QuizOver/BackGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -94.0
+offset_right = 69.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/Background/QuizOver/BackGround/VBoxContainer"]
+layout_mode = 2
+text = "Quiz Finalizado"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Background/QuizOver/BackGround/VBoxContainer"]
+layout_mode = 2
+text = "Você Acertou:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Control/Background/QuizOver/BackGround/VBoxContainer"]
+layout_mode = 2
+text = "0/0"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Control/Background/QuizOver/BackGround/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ixjsh")
+text = "Continuar"
+
+[connection signal="button_down" from="Control/Background/CardBackground/NextQuestionButton" to="Control" method="_on_next_question_button_button_down"]
+[connection signal="button_down" from="Control/Background/QuizOver/BackGround/VBoxContainer/ContinueButton" to="Control" method="_on_continue_button_button_down"]

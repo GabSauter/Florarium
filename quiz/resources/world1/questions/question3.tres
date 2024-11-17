@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://dyvuojklsf5pd"]
+
+[ext_resource type="Script" path="res://quiz/resources/quiz_question.gd" id="1_5npfq"]
+
+[resource]
+script = ExtResource("1_5npfq")
+question = "O que é desmatamento?"
+options = Array[String](["Plantar muitas árvores", "Cortar muitas árvores sem controle", "Pintar árvores de verde"])
+correct = "Cortar muitas árvores sem controle"
+explanation = "Desmatamento é quando cortamos muitas árvores de uma área sem plantar novas no lugar, o que prejudica o meio ambiente e a vida de animais."

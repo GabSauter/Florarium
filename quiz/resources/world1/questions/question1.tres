@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_rxqyi")
-question = "Pergunta 1?"
-options = Array[String](["Opção certa", "Opção 2", "Opção 3", "Opção 4"])
-correct = "Opção certa"
-explanation = "Explicação 1"
+question = "O que as árvores fazem pelo ar que respiramos?"
+options = Array[String](["Deixam o ar mais limpo", "Produzem vento", "Deixam o ar mais quente"])
+correct = "Deixam o ar mais limpo"
+explanation = "As árvores ajudam a limpar o ar que respiramos porque elas absorvem gás carbônico (CO₂) e produzem oxigênio, o que deixa o ar mais puro e saudável."

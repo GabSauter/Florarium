@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://bl5hos5doyxcw"]
+
+[ext_resource type="Script" path="res://quiz/resources/quiz_question.gd" id="1_3djuj"]
+
+[resource]
+script = ExtResource("1_3djuj")
+question = "O que causa alagamentos nas cidades?"
+options = Array[String](["Chuvas muito fortes e lixo nos bueiros", "Sol forte", "Plantas crescendo nas calçadas"])
+correct = "Chuvas muito fortes e lixo nos bueiros"
+explanation = "Quando jogamos lixo nas ruas, ele pode entupir bueiros e causar alagamentos, principalmente em dias de chuva forte. Cuidar do lixo ajuda a evitar esses problemas."

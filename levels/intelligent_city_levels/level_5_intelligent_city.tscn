@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dtrc86hwc44rq"]
+[gd_scene load_steps=43 format=4 uid="uid://dtrc86hwc44rq"]
 
 [ext_resource type="Texture2D" uid="uid://5hg8sd38v74e" path="res://assets/sprites/world/intelligent_city/flower.png" id="1_k0j4c"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="1_ob1xc"]
@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://gwfoousaoey7" path="res://assets/sprites/world/forest/rock2.png" id="24_h7eee"]
 [ext_resource type="Texture2D" uid="uid://ct5cds70n415" path="res://assets/sprites/world/forest/bush.png" id="28_l8pc3"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="32_eopu2"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="37_c08ui"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tf2x3"]
 animations = [{
@@ -940,11 +939,3 @@ draw_limits = true
 [node name="Area2D4" parent="." node_paths=PackedStringArray("camera_in") instance=ExtResource("11_7yp6i")]
 position = Vector2(15910, -2805)
 camera_in = NodePath("../PhantomCamera2D4")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(1040, 90)
-zoom = Vector2(0.6, 0.6)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("37_c08ui")

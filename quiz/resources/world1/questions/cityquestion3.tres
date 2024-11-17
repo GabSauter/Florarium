@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://cvardbf0xrhtt"]
+
+[ext_resource type="Script" path="res://quiz/resources/quiz_question.gd" id="1_vdtv8"]
+
+[resource]
+script = ExtResource("1_vdtv8")
+question = "Por que a poluição é ruim para nós?"
+options = Array[String](["Deixa o céu mais bonito", "Pode causar doenças e problemas na natureza", "Dá mais espaço para carros na rua"])
+correct = "Pode causar doenças e problemas na natureza"
+explanation = "A poluição traz problemas para o meio ambiente e para a nossa saúde, como doenças respiratórias e contaminação da água e do solo."
