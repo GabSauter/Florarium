@@ -96,7 +96,7 @@ ease = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aex2q"]
 size = Vector2(554, 1018)
 
-[node name="Level4" type="Node2D"]
+[node name="Level4Forest" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

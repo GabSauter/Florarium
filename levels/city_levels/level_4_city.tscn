@@ -33,7 +33,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="level4City" type="Node2D"]
+[node name="Level4City" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

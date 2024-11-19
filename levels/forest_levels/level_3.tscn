@@ -122,7 +122,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="Level2" type="Node2D"]
+[node name="Level3Forest" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

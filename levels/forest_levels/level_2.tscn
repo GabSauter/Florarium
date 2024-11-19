@@ -85,7 +85,7 @@ _data = {
 }
 point_count = 5
 
-[node name="Level2" type="Node2D"]
+[node name="Level2Forest" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

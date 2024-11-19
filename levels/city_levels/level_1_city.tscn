@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c4xuxw8eapjaw"]
+[gd_scene load_steps=38 format=4 uid="uid://c4xuxw8eapjaw"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_3kk5w"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="1_jrspm"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dn8o8a28fr5wo" path="res://assets/sprites/characters/human1/human0001.png" id="23_acpsy"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_vk14x"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="24_kf1v4"]
+[ext_resource type="AudioStream" uid="uid://budv2d733pikj" path="res://assets/audios/musics/citymusic.mp3" id="25_ty8gp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2svsj"]
 blend_mode = 1
@@ -378,6 +379,10 @@ position = Vector2(121.5, 0)
 shape = SubResource("RectangleShape2D_0c70i")
 
 [node name="DashVisual" parent="0" instance=ExtResource("24_kf1v4")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="0"]
+stream = ExtResource("25_ty8gp")
+autoplay = true
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_sic5i")

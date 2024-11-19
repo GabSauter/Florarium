@@ -16,7 +16,7 @@ func _ready() -> void:
 	if current_texture:
 		var sprite_height = current_texture.get_size().y
 		var label_size = label.get_rect().size
-		label.position = Vector2(label.position.x - label.size.x + 50, animated_sprite.position.y - sprite_height / 2 - label_size.y + 50)
+		label.position = Vector2(label.position.x - label.size.x + 100, animated_sprite.position.y - sprite_height / 2 - label_size.y + 50)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

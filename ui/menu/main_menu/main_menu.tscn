@@ -87,8 +87,8 @@ size_flags_vertical = 8
 
 [node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Jogar
 "
 flat = true
@@ -96,16 +96,16 @@ alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Opções"
 flat = true
 alignment = 0
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Fechar
 "
 flat = true

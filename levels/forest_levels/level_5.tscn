@@ -116,7 +116,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="level_5" type="Node2D"]
+[node name="Level5Forest" type="Node2D"]
 
 [node name="-2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
