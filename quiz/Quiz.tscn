@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://75uc2y7iiq0t"]
+[gd_scene load_steps=4 format=3 uid="uid://lgwckeprjxnl"]
 
 [ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_8cfku"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_dfe0y"]
-[ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/resources/world1/world1_theme.tres" id="2_hm008"]
+[ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/forest/forest_quiz_1_theme.tres" id="2_hm008"]
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1280, 720)

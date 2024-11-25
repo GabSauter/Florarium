@@ -49,14 +49,14 @@ func _button_pressed(button: Button):
 	if current_quiz.correct == button.text:
 		button.modulate = color_right
 		stylebox.bg_color = Color("#FFF")
-		button.add_theme_stylebox_override("normal", stylebox)
+		#button.add_theme_stylebox_override("normal", stylebox)
 		numberOfCorrect += 1
 		audio_correct.play()
 		next_question_button.disabled = false
 	else:
 		button.modulate = color_wrong
-		stylebox.bg_color = Color("#FFF")
-		button.add_theme_stylebox_override("normal", stylebox)
+		#stylebox.bg_color = Color("#FFF")
+		#button.add_theme_stylebox_override("normal", stylebox)
 		audio_wrong.play()
 	
 	label_explanation.visible = true
@@ -65,8 +65,8 @@ func next_question():
 	for button in buttons:
 		button.pressed.disconnect(_button_pressed)
 		button.modulate = Color.WHITE
-		var stylebox = StyleBoxEmpty.new()
-		button.add_theme_stylebox_override("normal", stylebox)
+		#var stylebox = StyleBoxEmpty.new()
+		#button.add_theme_stylebox_override("normal", stylebox)
 	
 	load_quiz()
 

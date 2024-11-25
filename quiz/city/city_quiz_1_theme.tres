@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuizTheme" load_steps=6 format=3 uid="uid://2k8yo5jysq13"]
+
+[ext_resource type="Script" path="res://quiz/theme.gd" id="1_l2k75"]
+[ext_resource type="Script" path="res://quiz/quiz_question.gd" id="2_1lixy"]
+[ext_resource type="Resource" uid="uid://bl5hos5doyxcw" path="res://quiz/city/city_quiz_1_question_1.tres" id="3_erelo"]
+[ext_resource type="Resource" uid="uid://uls4jye5scsr" path="res://quiz/city/city_quiz_1_question_2.tres" id="4_rcypt"]
+[ext_resource type="Resource" uid="uid://cvardbf0xrhtt" path="res://quiz/city/city_quiz_1_question_3.tres" id="5_gppj1"]
+
+[resource]
+script = ExtResource("1_l2k75")
+theme = Array[ExtResource("2_1lixy")]([ExtResource("3_erelo"), ExtResource("4_rcypt"), ExtResource("5_gppj1")])
