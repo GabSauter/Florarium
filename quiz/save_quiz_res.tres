@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SaveQuizManager" load_steps=2 format=3 uid="uid://cuxfcohmrq4p6"]
+
+[ext_resource type="Script" path="res://quiz/save_quiz_resource.gd" id="1_e0lig"]
+
+[resource]
+script = ExtResource("1_e0lig")
+quiz_name = ""
+number_of_correct_answers = 0
+number_of_questions = 0

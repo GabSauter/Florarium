@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://duoidkopi2o1i"]
 
-[ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_qhlvf"]
-[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/forest_levels/level_2.tscn" id="2_ak3k8"]
+[ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_qhlvf"]
+[ext_resource type="PackedScene" uid="uid://c4xuxw8eapjaw" path="res://levels/city_levels/level_1_city.tscn" id="2_klewn"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/forest/forest_quiz_1_theme.tres" id="3_csmv8"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_h3kd1"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_xdfj8"]
@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qhlvf")
-next_scene = ExtResource("2_ak3k8")
+next_scene = ExtResource("2_klewn")
 quiz = ExtResource("3_csmv8")
 color_right = Color(0.603922, 1, 0.572549, 1)
 color_wrong = Color(1, 0.772549, 0.733333, 1)

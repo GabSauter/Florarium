@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://can03oijjyh0b" path="res://assets/sprites/world/city/flood_water/flood_water0027.png" id="43_frlqg"]
 [ext_resource type="Texture2D" uid="uid://djohv5gt475c2" path="res://assets/sprites/world/city/flood_water/flood_water0028.png" id="44_viskm"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="46_67ma3"]
-[ext_resource type="PackedScene" uid="uid://b8bhlu4cjh0r" path="res://levels/intelligent_city_levels/level_1_intelligent_city.tscn" id="47_hvs32"]
+[ext_resource type="PackedScene" uid="uid://byl846yuny273" path="res://quiz/city/CityQuiz1.tscn" id="46_llodb"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="48_vtjwd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbxr6"]
@@ -320,7 +320,7 @@ texture = ExtResource("1_bx7vx")
 
 [node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]
 position = Vector2(1204, -2102)
-new_scene = ExtResource("47_hvs32")
+new_scene = ExtResource("46_llodb")
 
 [node name="DashVisual" parent="0" instance=ExtResource("48_vtjwd")]
 

@@ -8,4 +8,5 @@
 
 [resource]
 script = ExtResource("1_ekbqc")
+name = "ecologic_city_quiz_1"
 theme = Array[ExtResource("2_sv37s")]([ExtResource("3_c4u8k"), ExtResource("4_qofh1"), ExtResource("5_o70xe")])

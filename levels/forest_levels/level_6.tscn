@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://btjryqd8q2ddi" path="res://entities/obstacles/Spike.tscn" id="4_ljgcl"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="5_iy3vm"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="6_g34eh"]
-[ext_resource type="PackedScene" uid="uid://c4xuxw8eapjaw" path="res://levels/city_levels/level_1_city.tscn" id="9_y6oe0"]
+[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/ForestQuiz1.tscn" id="9_4trij"]
 [ext_resource type="Script" path="res://entities/game_related/move_throw_path.gd" id="13_02ark"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_ah2hw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_1dpvu"]
@@ -557,7 +557,7 @@ position = Vector2(7050, 1976)
 
 [node name="NextLevel" parent="0" instance=ExtResource("6_g34eh")]
 position = Vector2(10028, 1992)
-new_scene = ExtResource("9_y6oe0")
+new_scene = ExtResource("9_4trij")
 
 [node name="Obstables" type="Node2D" parent="0"]
 

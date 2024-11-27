@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://lgwckeprjxnl"]
 
-[ext_resource type="Script" path="res://quiz/QuizController.gd" id="1_8cfku"]
+[ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_8cfku"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_dfe0y"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/forest/forest_quiz_1_theme.tres" id="2_hm008"]
 

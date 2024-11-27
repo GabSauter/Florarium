@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="18_qfg4r"]
 [ext_resource type="PackedScene" uid="uid://w02nw88at0wg" path="res://levels/forest_levels/ground_tile_map.tscn" id="19_qefe5"]
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="19_xvtqw"]
-[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/forest_levels/level_2.tscn" id="20_7i5r2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/NextLevel.tscn" id="21_1igl7"]
 [ext_resource type="Texture2D" uid="uid://dxcow3kpswktp" path="res://assets/sprites/world/forest/leaf_particle.png" id="21_4fye0"]
+[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/ForestQuiz1.tscn" id="23_yknt6"]
 [ext_resource type="Script" path="res://levels/forest_levels/tutorials.gd" id="24_q1bgv"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="25_2jisg"]
 [ext_resource type="FontFile" uid="uid://cr5yrlossy2c4" path="res://fonts/Sunnyspells.otf" id="25_mfxdg"]
@@ -1013,7 +1013,7 @@ position = Vector2(6693, -907)
 
 [node name="NextLevel" parent="0" instance=ExtResource("21_1igl7")]
 position = Vector2(8127, -819)
-new_scene = ExtResource("20_7i5r2")
+new_scene = ExtResource("23_yknt6")
 
 [node name="Tutorials" type="Node" parent="0"]
 script = ExtResource("24_q1bgv")
