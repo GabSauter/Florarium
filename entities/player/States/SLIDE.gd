@@ -3,34 +3,34 @@ extends "state.gd"
 @onready var animated_sprite: AnimatedSprite2D = $"../../AnimatedSprite"
 
 func enter_state():
-	if Player.velocity.y > 0:
-		Player.velocity.y *= .5
+	if player.velocity.y > 0:
+		player.velocity.y *= .5
 
 func update(delta):
-	Player.animated_sprite.play("slide")
-	#var slide_sprites = Player.animated_sprite.sprite_frames["slide"]
+	player.animated_sprite.play("slide")
+	#var slide_sprites = player.animated_sprite.sprite_frames["slide"]
 	
-	if Player.get_wall_normal().x > 0 and Player.is_on_wall_only():
-		Player.animated_sprite.position.x = 10
-	elif Player.get_wall_normal().x < 0 and Player.is_on_wall_only():
-		Player.animated_sprite.position.x = 0
+	if player.get_wall_normal().x > 0 and player.is_on_wall_only():
+		player.animated_sprite.position.x = 10
+	elif player.get_wall_normal().x < 0 and player.is_on_wall_only():
+		player.animated_sprite.position.x = 0
 	
 	player_movement(delta)
-	Player.gravity(delta)
+	player.gravity(delta)
 	
-	if Player.dead:
+	if player.dead:
 		return STATES.DIE
 	
-	if Player.bounce:
+	if player.bounce:
 		return STATES.BOUNCE
 	
-	if !Player.is_on_wall_only():
+	if !player.is_on_wall_only():
 		return STATES.FALL
-	if Player.jump_input_actuation or Player.jump_buffer:
-		Player.jump_buffer = false
+	if player.jump_input_actuation or player.jump_buffer:
+		player.jump_buffer = false
 		return STATES.WALL_JUMP
-	if Player.is_on_floor():
+	if player.is_on_floor():
 		return STATES.IDLE
-	if Player.dash_input and Player.can_dash:
+	if player.dash_input and player.can_dash:
 		return STATES.DASH
 	return null

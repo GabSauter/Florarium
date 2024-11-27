@@ -12,11 +12,9 @@ var current_music_path: String = ""
 func play_music_for_level():
 	var active_level = level_container.new_scene_instance
 	if not active_level:
-		print("No active level found in LevelContainer!")
 		return
 
 	var level_name = active_level.name
-	print(level_name)
 	var new_music_path = ""
 
 	if level_name.begins_with("Level") and level_name.contains("Forest"):
@@ -28,16 +26,11 @@ func play_music_for_level():
 	elif level_name.begins_with("Level") and level_name.contains("City") and !level_name.contains("Intelligent"):
 		new_music_path = music_map["city"]
 		self.volume_db = -5
-
-	print(new_music_path)
-	print(current_music_path)
+	
 	if new_music_path != "" and new_music_path != current_music_path:
 		current_music_path = new_music_path
 		self.stream = load(new_music_path)
 		self.play()
-		print("Playing new music:", new_music_path)
-	else:
-		print("Music remains unchanged or no matching music found.")
 
 func _on_finished() -> void:
 	self.stream_paused = false

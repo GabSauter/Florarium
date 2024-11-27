@@ -114,7 +114,7 @@ func save_quiz():
 		file.close()
 		if existing_data != "":
 			var json = JSON.new()
-			var json_result = json.parse(existing_data)
+			json.parse(existing_data)
 			quiz_data = json.data
 
 	quiz_data[quiz.name] = {

@@ -1,27 +1,27 @@
 extends "state.gd"
 
 func enter_state():
-	Player.can_dash = true
+	player.can_dash = true
 
 func update(delta):
-	Player.animated_sprite.play("run")
+	player.animated_sprite.play("run")
 	
-	Player.gravity(delta)
+	player.gravity(delta)
 	player_movement(delta)
 	
-	if Player.dead:
+	if player.dead:
 		return STATES.DIE
 	
-	if Player.bounce:
+	if player.bounce:
 		return STATES.BOUNCE
 	
-	if Player.movement_input == Vector2.ZERO:
+	if player.movement_input == Vector2.ZERO:
 		return STATES.IDLE
-	if Player.velocity.y >0:
+	if player.velocity.y >0:
 		return STATES.FALL
-	if Player.jump_input_actuation or Player.jump_buffer:
-		Player.jump_buffer = false
+	if player.jump_input_actuation or player.jump_buffer:
+		player.jump_buffer = false
 		return STATES.JUMP
-	if Player.dash_input and Player.can_dash:
+	if player.dash_input and player.can_dash:
 		return STATES.DASH
 	return null

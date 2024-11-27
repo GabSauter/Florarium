@@ -34,7 +34,7 @@ var bounce_force
 func _ready():
 	for state in STATES.get_children():
 		state.STATES = STATES
-		state.Player = self
+		state.player = self
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
 
@@ -45,20 +45,20 @@ func _physics_process(delta):
 
 func gravity(delta):
 	if not is_on_floor():
-		var get_gravity
+		var gravity
 		if abs(velocity.y) < movement.APEX_RANGE:
-			get_gravity = movement.APEX_GRAVITY
+			gravity = movement.APEX_GRAVITY
 		elif current_state == STATES.FALL:
-			get_gravity = movement.FALL_GRAVITY
+			gravity = movement.FALL_GRAVITY
 		elif current_state == STATES.SLIDE and velocity.y > 0:
-			get_gravity = movement.SLIDE_GRAVITY
+			gravity = movement.SLIDE_GRAVITY
 		else:
-			get_gravity = movement.JUMP_GRAVITY
+			gravity = movement.JUMP_GRAVITY
 		
 		if velocity.y > movement.MAX_FALL_SPEED:
 			velocity.y = movement.MAX_FALL_SPEED
 		else:
-			velocity.y += get_gravity * delta
+			velocity.y += gravity * delta
 
 func change_state(input_state):
 	if input_state != null:

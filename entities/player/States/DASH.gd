@@ -21,13 +21,13 @@ func enter_state():
 	pause_game()
 	emit_particles()
 	
-	Player.can_dash = false
+	player.can_dash = false
 	dashing = true
-	DashDuration_timer.start(Player.movement.dash_duration)
-	if Player.movement_input != Vector2.ZERO:
-		dash_direction = Player.movement_input
+	DashDuration_timer.start(player.movement.dash_duration)
+	if player.movement_input != Vector2.ZERO:
+		dash_direction = player.movement_input
 	else:
-		dash_direction = Player.last_direction
+		dash_direction = player.last_direction
 	
 	handle_dash_velocity_on_different_directions()
 	start_ghost()
@@ -35,15 +35,15 @@ func enter_state():
 	start_camera_shake()
 
 func update(delta):
-	if Player.dead:
+	if player.dead:
 		return STATES.DIE
 	
-	if Player.is_on_floor() and (Player.jump_input_actuation or Player.jump_buffer):
-		Player.jump_buffer = false
-		Player.can_dash = true
+	if player.is_on_floor() and (player.jump_input_actuation or player.jump_buffer):
+		player.jump_buffer = false
+		player.can_dash = true
 		return STATES.JUMP
 	
-	if Player.bounce:
+	if player.bounce:
 		return STATES.BOUNCE
 	
 	if !dashing:
@@ -61,40 +61,40 @@ func exit_state():
 	dashing = false
 
 func handle_dash_velocity_on_different_directions():
-	if Player.movement_input in [Vector2(1, 0), Vector2(-1, 0)]:
-		Player.velocity = dash_direction.normalized() * Player.movement.dash_speed_x
-	elif Player.movement_input in [Vector2(0, 1), Vector2(0, -1)]:
-		Player.velocity = dash_direction.normalized() * Player.movement.dash_speed_y
+	if player.movement_input in [Vector2(1, 0), Vector2(-1, 0)]:
+		player.velocity = dash_direction.normalized() * player.movement.dash_speed_x
+	elif player.movement_input in [Vector2(0, 1), Vector2(0, -1)]:
+		player.velocity = dash_direction.normalized() * player.movement.dash_speed_y
 	else:
-		Player.velocity = dash_direction.normalized() * Player.movement.dash_speed_diagonal
+		player.velocity = dash_direction.normalized() * player.movement.dash_speed_diagonal
 
 func instance_ghost():
 	var ghost = ghost_scene.instantiate()
 	
-	var frameIndex: int = Player.animated_sprite.get_frame()
-	var animationName: String = Player.animated_sprite.animation
-	var spriteFrames: SpriteFrames = Player.animated_sprite.get_sprite_frames()
+	var frameIndex: int = player.animated_sprite.get_frame()
+	var animationName: String = player.animated_sprite.animation
+	var spriteFrames: SpriteFrames = player.animated_sprite.get_sprite_frames()
 	var currentTexture: Texture2D = spriteFrames.get_frame_texture(animationName, frameIndex)
 	
 	ghost.texture = currentTexture
 	ghost.global_position = self.global_position
-	ghost.flip_h = Player.animated_sprite.flip_h
+	ghost.flip_h = player.animated_sprite.flip_h
 	
-	Player.get_parent().add_child(ghost)
+	player.get_parent().add_child(ghost)
 
 func start_ghost():
 	instance_ghost()
 	ghost_timer.start()
-	Player.animated_sprite.material.set_shader_parameter("mix_weight", 0.7)
-	Player.animated_sprite.material.set_shader_parameter("whiten", true)
+	player.animated_sprite.material.set_shader_parameter("mix_weight", 0.7)
+	player.animated_sprite.material.set_shader_parameter("whiten", true)
 
 func stop_ghost():
 	ghost_timer.stop()
-	Player.animated_sprite.material.set_shader_parameter("whiten", false)
+	player.animated_sprite.material.set_shader_parameter("whiten", false)
 
 func emit_particles():
 	particles.emitting = true
-	particles.process_material.direction = Vector3(-Player.movement_input.x,-Player.movement_input.y,0)
+	particles.process_material.direction = Vector3(-player.movement_input.x,-player.movement_input.y,0)
 
 func _on_dash_duration_timeout():
 	dashing = false

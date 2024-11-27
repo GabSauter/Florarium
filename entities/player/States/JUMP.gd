@@ -7,45 +7,45 @@ var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tsc
 
 func enter_state():
 	var jump_dust_particles = jump_dust_particles_scene.instantiate()
-	jump_dust_particles.position = Player.position
+	jump_dust_particles.position = player.position
 	jump_dust_particles.emitting = true
-	Player.get_parent().add_child(jump_dust_particles)
+	player.get_parent().add_child(jump_dust_particles)
 	
-	Player.velocity.y = Player.movement.JUMP_VELOCITY
+	player.velocity.y = player.movement.JUMP_VELOCITY
 
 func update(delta):
-	Player.animated_sprite.play("jump")
+	player.animated_sprite.play("jump")
 	
-	Player.gravity(delta)
+	player.gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
 	start_jump_buffer_timer()
 	
-	if Player.dead:
+	if player.dead:
 		return STATES.DIE
 	
-	if Player.bounce:
+	if player.bounce:
 		return STATES.BOUNCE
 	
-	if Player.velocity.y > 0:
+	if player.velocity.y > 0:
 		return STATES.FALL
-	if Player.is_on_wall_only():
+	if player.is_on_wall_only():
 		return STATES.SLIDE
-	if Player.dash_input and Player.can_dash:
+	if player.dash_input and player.can_dash:
 		return STATES.DASH
 	return null
 
 func cut_jump_height():
-	if Player.cut_jump_input:
-		if Player.velocity.y < 0:
-			Player.velocity.y *= Player.movement.CUT_JUMP_HEIGHT
+	if player.cut_jump_input:
+		if player.velocity.y < 0:
+			player.velocity.y *= player.movement.CUT_JUMP_HEIGHT
 
 func start_jump_buffer_timer():
-	if Player.jump_input_actuation:
+	if player.jump_input_actuation:
 		JumpBufferTimer.start(jump_buffer_duration)
 
 func _on_jump_buffer_timer_timeout():
-	if Player.current_state == STATES.IDLE or Player.current_state == STATES.MOVE or Player.current_state == STATES.SLIDE:
-		Player.jump_buffer = true
+	if player.current_state == STATES.IDLE or player.current_state == STATES.MOVE or player.current_state == STATES.SLIDE:
+		player.jump_buffer = true
 	else:
-		Player.jump_buffer = false
+		player.jump_buffer = false

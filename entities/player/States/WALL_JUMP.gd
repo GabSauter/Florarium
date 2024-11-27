@@ -1,25 +1,25 @@
 extends "state.gd"
 
 func enter_state():
-	Player.velocity.x = Player.movement.JUMP_OFF_WALL_POWER * Player.get_wall_normal()[0]
-	Player.velocity.y = Player.movement.JUMP_VELOCITY
+	player.velocity.x = player.movement.JUMP_OFF_WALL_POWER * player.get_wall_normal()[0]
+	player.velocity.y = player.movement.JUMP_VELOCITY
 
 func update(delta):
-	Player.animated_sprite.play("jump")
+	player.animated_sprite.play("jump")
 	
-	Player.gravity(delta)
+	player.gravity(delta)
 	player_movement(delta)
 	
-	if Player.dead:
+	if player.dead:
 		return STATES.DIE
 	
-	if Player.bounce:
+	if player.bounce:
 		return STATES.BOUNCE
 	
-	if Player.is_on_wall():
+	if player.is_on_wall():
 		return STATES.SLIDE
-	if Player.velocity.y > 0:
+	if player.velocity.y > 0:
 		return STATES.FALL
-	if Player.dash_input and Player.can_dash:
+	if player.dash_input and player.can_dash:
 		return STATES.DASH
 	return null
