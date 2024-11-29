@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://dicg0w66g6ag3"]
+
+[ext_resource type="Script" path="res://quiz/quiz_question.gd" id="1_fo1pv"]
+
+[resource]
+script = ExtResource("1_fo1pv")
+question = "Qual é o nome do fenômeno  que aumenta a temperatura da terra?"
+options = Array[String](["Aquecimento global", "Quentura", "Temperatura alta"])
+correct = "Aquecimento global"
+explanation = "O fenômeno que aumenta a temperatura da Terra é o aquecimento global, que é o aumento anormal da temperatura média do planeta."

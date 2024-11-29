@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://ccq5ormk1vft2"]
+
+[ext_resource type="Script" path="res://quiz/quiz_question.gd" id="1_201lr"]
+
+[resource]
+script = ExtResource("1_201lr")
+question = "O que são as mudança climática?"
+options = Array[String](["Mudanças no clima do planeta, como mais calor ou frio", "Uma tempestade forte que acontece de repente", "Quando o sol fica mais perto da Terra"])
+correct = "Mudanças no clima do planeta, como mais calor ou frio"
+explanation = "Mudanças climáticas são alterações no clima do planeta, como o aumento do calor ou mudanças nas chuvas. Muitas dessas mudanças são causadas pelas ações das pessoas, como poluição."

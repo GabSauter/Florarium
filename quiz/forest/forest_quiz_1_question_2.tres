@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_5t28d")
 question = "Por que é importante proteger as florestas?"
-options = Array[String](["Para termos papel suficiente", "Para proteger animais e ajudar a natureza", "Porque as árvores são chatas"])
-correct = "Para proteger animais e ajudar a natureza"
+options = Array[String](["Para termos papel suficiente", "Para proteger a natureza, os animais e o planeta", "Porque as árvores são chatas"])
+correct = "Para proteger a natureza, os animais e o planeta"
 explanation = "Proteger as florestas é importante porque elas são a casa de muitos animais e ajudam a manter o equilíbrio da natureza. Elas também ajudam a combater a mudança climática."

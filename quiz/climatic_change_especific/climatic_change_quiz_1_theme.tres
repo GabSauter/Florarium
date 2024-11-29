@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizTheme" load_steps=6 format=3 uid="uid://cki0fvnr43stc"]
+
+[ext_resource type="Script" path="res://quiz/theme.gd" id="1_b4gpi"]
+[ext_resource type="Script" path="res://quiz/quiz_question.gd" id="2_8054o"]
+[ext_resource type="Resource" uid="uid://ccq5ormk1vft2" path="res://quiz/climatic_change_especific/climatic_change_quiz_1_question_1.tres" id="3_jqda4"]
+[ext_resource type="Resource" uid="uid://ducj5nkulh7eo" path="res://quiz/climatic_change_especific/climatic_change_quiz_1_question_2.tres" id="4_jdxgx"]
+[ext_resource type="Resource" uid="uid://dicg0w66g6ag3" path="res://quiz/climatic_change_especific/climatic_change_quiz_1_question_3.tres" id="5_g8bft"]
+
+[resource]
+script = ExtResource("1_b4gpi")
+name = "climatic_change_quiz_1"
+theme = Array[ExtResource("2_8054o")]([ExtResource("3_jqda4"), ExtResource("4_jdxgx"), ExtResource("5_g8bft")])

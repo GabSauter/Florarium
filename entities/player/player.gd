@@ -104,4 +104,4 @@ func player_input():
 
 func goDownFromOneWayPlataform():
 	if is_on_floor():
-			position.y += 1
+		position.y += 1

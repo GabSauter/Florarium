@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://ducj5nkulh7eo"]
+
+[ext_resource type="Script" path="res://quiz/quiz_question.gd" id="1_7avr8"]
+
+[resource]
+script = ExtResource("1_7avr8")
+question = "Por que as mudanças climáticas acontecem?"
+options = Array[String](["Por causa de atividades humanas, como poluição e desmatamento", "Porque o planeta gira mais rápido", "Porque chove muito no mesmo lugar"])
+correct = "Por causa de atividades humanas, como poluição e desmatamento"
+explanation = "As mudanças climáticas acontecem principalmente por causa da poluição do ar e do desmatamento, que aumentam o calor na Terra."
