@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_3djuj")
-question = "O que causa alagamentos nas cidades?"
-options = Array[String](["Chuvas muito fortes e mudanças climáticas", "Sol forte", "Plantas crescendo nas calçadas"])
-correct = "Chuvas muito fortes e lixo nos bueiros"
-explanation = "Quando jogamos lixo nas ruas, ele pode entupir bueiros e causar alagamentos, principalmente em dias de chuva forte. Cuidar do lixo ajuda a evitar esses problemas."
+question = "O'que causa alagamentos nas cidades?"
+options = Array[String](["Chuvas muito fortes geralmente causadas pelas mudanças climáticas", "Sol forte", "Plantas crescendo nas calçadas"])
+correct = "Chuvas muito fortes geralmente causadas pelas mudanças climáticas"
+explanation = "As mudanças climáticas aumentam a frequência e a intensidade de chuvas fortes, que, combinadas com a impermeabilização do solo urbano (asfalto e concreto), causam alagamentos. Além disso, o descarte inadequado de lixo agrava o problema, entupindo bueiros e dificultando o escoamento da água."

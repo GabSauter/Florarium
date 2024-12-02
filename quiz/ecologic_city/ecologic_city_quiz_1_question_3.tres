@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_tq3yb")
-question = "O que ajuda a diminuir a mudança climática?"
-options = Array[String](["Usar menos plástico e economizar energia", "Usar o carro o tempo todo", "Queimar árvores"])
-correct = "Usar menos plástico e economizar energia"
-explanation = "Usar menos plástico, economizar energia e outras atitudes sustentáveis ajudam a diminuir a poluição e a reduzir o aquecimento global."
+question = "O que significa \"transporte sustentável\"?"
+options = Array[String](["Usar carros a gasolina e diesel, pois são mais baratos.", "Usar transporte público, bicicletas ou carros elétricos para reduzir a poluição.", "Usar carros de qualquer tipo sem se preocupar com os impactos ambientais."])
+correct = "Usar transporte público, bicicletas ou carros elétricos para reduzir a poluição."
+explanation = "Transporte sustentável significa adotar meios de transporte que têm menor impacto ambiental, como o transporte público movido por energias limpas, bicicletas e carros elétricos. Esses meios de transporte ajudam a reduzir a emissão de gases poluentes, como CO₂, e contribuem para um futuro mais saudável e sustentável."

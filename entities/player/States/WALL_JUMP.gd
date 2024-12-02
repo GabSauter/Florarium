@@ -7,7 +7,7 @@ func enter_state():
 func update(delta):
 	player.animated_sprite.play("jump")
 	
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	player_movement(delta)
 	
 	if player.dead:

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_f0ulm")
-question = "O que é uma cidade ecológica?"
-options = Array[String](["Uma cidade com muitas fábricas", "Uma cidade com muitas plantas e reciclagem", "Uma cidade com poucos parques"])
-correct = "Uma cidade com muitas plantas e reciclagem"
-explanation = "Cidades ecológicas têm muitas plantas, espaços verdes e reciclagem. Elas ajudam a cuidar do meio ambiente e deixam o lugar onde vivemos mais saudável."
+question = "O que é uma fonte de energia limpa?"
+options = Array[String](["Energia que vem de combustíveis fósseis, como carvão e petróleo.", "Energia gerada a partir de fontes naturais e renováveis, como o sol e o vento.", "Energia que depende de recursos não renováveis, como gás natural."])
+correct = "Energia gerada a partir de fontes naturais e renováveis, como o sol e o vento."
+explanation = "Fontes de energia limpa são aquelas que não poluem o meio ambiente e são renováveis, como a solar, eólica e hidrelétrica. Elas não emitem gases de efeito estufa e ajudam a combater as mudanças climáticas, ao contrário dos combustíveis fósseis, que aumentam a poluição e o aquecimento global."

@@ -1,7 +1,7 @@
 extends "state.gd"
 
 func update(delta):
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
 	if player.velocity.y > 0:

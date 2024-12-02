@@ -1,5 +1,3 @@
-2ª Animação:
-
 Roteiro de Animação Educativa: “O Superpoder das Árvores”
 
 Cenário inicial: Um bosque vibrante, com árvores verdes, pássaros cantando e o som do vento. O título aparece: “O Superpoder das Árvores”.
@@ -15,7 +13,7 @@ Narrador:
 (Ilustração: crianças brincando felizes na sombra de uma árvore.)
 
 Narrador:
-"Mas não é só isso! Elas também são como esponjas gigantes que limpam o ar. As folhas das árvores absorvem um gás chamado dióxido de carbono, que, em excesso, aquece o planeta. E o que elas devolvem pra gente? Oxigênio puro, o ar que respiramos!"
+"Mas não é só isso! Elas também são como esponjas gigantes que limpam o ar. As folhas das árvores absorvem um gás chamado dióxido de carbono CO2, que, em excesso, aquece o planeta. E o que elas devolvem pra gente? Oxigênio puro O2, o ar que respiramos!"
 
 (Animação: a árvore “sugando” o dióxido de carbono e soltando bolhas de oxigênio.)
 
@@ -43,3 +41,16 @@ Narrador (voz animada novamente):
 
 Narrador:
 "Porque as árvores são superpoderosas e precisam de nós para continuar salvando o mundo!"
+
+Perguntas:
+O que as árvores fazem pelo ar que respiramos?
+Deixam o ar mais limpo
+As árvores ajudam a limpar o ar que respiramos porque elas absorvem gás carbônico (CO₂) e produzem oxigênio (O2), o que deixa o ar mais puro e saudável.
+
+Por que é importante proteger as florestas?
+Para proteger a natureza, os animais e o planeta
+Proteger as florestas é importante porque elas são a casa de muitos animais e ajudam a manter o equilíbrio da natureza. Elas também ajudam a combater a mudança climática.
+
+O que é desmatamento?
+Cortar muitas árvores sem controle
+Desmatamento é quando cortamos muitas árvores de uma área sem plantar novas no lugar, o que prejudica o meio ambiente e a vida de animais.

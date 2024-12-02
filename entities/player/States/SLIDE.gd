@@ -16,7 +16,7 @@ func update(delta):
 		player.animated_sprite.position.x = 0
 	
 	player_movement(delta)
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	
 	if player.dead:
 		return STATES.DIE

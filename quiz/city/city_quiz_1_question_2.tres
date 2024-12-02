@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://uls4jye5scsr"]
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://cvardbf0xrhtt"]
 
 [ext_resource type="Script" path="res://quiz/quiz_question.gd" id="1_8ho6s"]
 
 [resource]
 script = ExtResource("1_8ho6s")
-question = "Como podemos evitar a poluição nas cidades?"
-options = Array[String](["Jogando lixo no chão", "Reciclando e jogando o lixo no lugar certo", "Não andando de bicicleta"])
-correct = "Reciclando e jogando o lixo no lugar certo"
-explanation = "Reciclar e jogar o lixo no lugar certo evita poluição e mantém o ambiente limpo. Isso faz com que nossa cidade seja mais saudável e agradável para todos."
+question = "O'que é o efeito estufa?"
+options = Array[String](["É o aquecimento natural do planeta causado por gases como o CO₂ que ficam presos na atmosfera.", "É o processo de poluição causado por queimadas e desmatamento.", "É uma camada de fumaça preta que cobre cidades poluídas."])
+correct = "É o aquecimento natural do planeta causado por gases como o CO₂ que ficam presos na atmosfera."
+explanation = "O efeito estufa é um fenômeno natural que mantém o planeta aquecido e habitável, mas está sendo intensificado pela emissão de gases como CO₂. Esses gases aprisionam o calor do sol na atmosfera, aquecendo o planeta além do normal e contribuindo para as mudanças climáticas."

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_4tmy3")
-question = "Por que devemos plantar mais árvores?"
-options = Array[String](["Porque é divertido", "Para ajudar o planeta e o clima", "Para criar mais sombras para carros"])
-correct = "Para ajudar o planeta e o clima"
-explanation = "Plantar árvores é importante porque elas absorvem gases poluentes e ajudam a manter o clima equilibrado. Elas também oferecem sombra e beleza para o ambiente."
+question = "Como o plantio de árvores ajuda a combater as mudanças climáticas?"
+options = Array[String](["As árvores aumentam a quantidade de dióxido de carbono (CO₂) na atmosfera.", "As árvores absorvem CO₂ e liberam oxigênio, melhorando a qualidade do ar.", "As árvores deixam o solo mais seco e não têm impacto no clima."])
+correct = "As árvores absorvem CO₂ e liberam oxigênio, melhorando a qualidade do ar."
+explanation = "As árvores são importantes para combater as mudanças climáticas porque absorvem o dióxido de carbono, um dos principais gases de efeito estufa, e liberam oxigênio. Esse processo ajuda a reduzir a quantidade de CO₂ na atmosfera, mitigando o aquecimento global e melhorando a qualidade do ar."

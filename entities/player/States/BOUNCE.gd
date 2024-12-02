@@ -7,7 +7,7 @@ func enter_state():
 	player.bounce = false
 
 func update(delta):
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	player_movement(delta)
 	
 	if player.dead:

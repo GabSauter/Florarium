@@ -1,6 +1,5 @@
 Roteiro de Animação Educativa: “A Cidade Poluidora”
-
-Cenário inicial: Um céu cinza e pesado, com fumaça cobrindo o horizonte. A câmera se aproxima de uma cidade cheia de arranha-céus, ruas movimentadas e um rio ao lado.
+(Cena: céu cinza e pesado com fumaça cobrindo o horizonte. A câmera se aproxima de uma cidade cheia de arranha-céus, ruas movimentadas e um rio ao lado.)
 
 Narrador (voz grave, levemente preocupada):
 "Bem-vindos à Cidade Poluidora. Aqui, o ar está sempre cheio de fumaça e o calor nunca vai embora."
@@ -8,19 +7,19 @@ Narrador (voz grave, levemente preocupada):
 (Cena: carros parados em um grande congestionamento, soltando fumaça pelas saídas de escapamento. Pessoas com máscaras passam pelas calçadas, abanando-se do calor intenso.)
 
 Narrador:
-"Os carros daqui nunca param. E cada um deles solta gases que aquecem ainda mais o planeta."
+"Os carros daqui nunca param. E cada um deles solta gases, como o dióxido de carbono, ou CO₂, que aquece ainda mais o planeta."
 
-(Close em um carro soltando fumaça, que sobe para o céu e forma uma nuvem cinza cobrindo a cidade.)
-
-Narrador:
-"As fábricas também trabalham sem parar. Elas produzem muita energia e bens para a cidade, mas... olha o que sai das chaminés."
-
-(A câmera foca em chaminés soltando fumaça preta. A fumaça se mistura no céu, deixando o ar mais denso.)
+(Close em um carro soltando fumaça. O gás sobe para o céu e se mistura com uma camada invisível ao redor do planeta, representada por um brilho esverdeado.)
 
 Narrador:
-"Além disso, muita energia elétrica é gerada de forma suja, queimando carvão e outros combustíveis que poluem o ar."
+"Esse gás, junto com outros, fica preso na atmosfera. É assim que funciona o efeito estufa: eles deixam o calor do sol entrar, mas não deixam o calor sair, como se cobríssemos o planeta com um cobertor."
 
-(Cena: uma usina elétrica aparece, com fumaça saindo das torres e rios ao redor com cores escuras.)
+(A câmera mostra um planeta envolvido por uma camada transparente, enquanto raios de calor ficam 'presos' ao redor.)
+
+Narrador:
+"Fábricas também contribuem, soltando enormes quantidades de CO₂ e outros gases ao queimar combustíveis fósseis, como carvão e petróleo."
+
+(Cena: chaminés soltando fumaça preta. O céu vai ficando mais escuro, enquanto a camada ao redor do planeta brilha mais intensamente.)
 
 Narrador:
 "Com tanto calor e poluição, a natureza está reagindo. As chuvas fortes aumentam, mas não ajudam — só causam alagamentos."
@@ -28,20 +27,30 @@ Narrador:
 (Cena: ruas da cidade se enchem de água, carros flutuam e as pessoas tentam caminhar com dificuldade.)
 
 Narrador:
-"E os rios? Estão ficando mais sujos a cada dia, cheios de lixo e poluentes das fábricas."
+"Mas isso não precisa continuar assim."
 
-(Animação: o rio ao lado da cidade aparece com peixes mortos na água, enquanto uma fábrica despeja líquidos escuros.)
-
-Narrador:
-"Na Cidade Poluidora, os problemas aumentam, mas há algo que podemos aprender: precisamos mudar nossas ações para evitar que todas as cidades fiquem assim."
-
-(Cena: a cidade cinzenta se transforma lentamente. Algumas pessoas aparecem plantando árvores, usando bicicletas e instalando painéis solares.)
+(Cena: a cidade cinzenta se transforma lentamente. Pessoas aparecem plantando árvores, andando de bicicleta e instalando painéis solares.)
 
 Narrador (voz esperançosa):
-"Se escolhermos alternativas mais limpas, como usar menos carros, gerar energia sustentável e cuidar da natureza, podemos transformar qualquer cidade em um lugar melhor!"
+"Se reduzirmos as emissões de CO₂ e adotarmos alternativas mais limpas, como energia renovável e proteção às florestas, podemos evitar os piores impactos do efeito estufa."
 
 (Corte final: a cidade cinzenta vira uma cidade limpa e verde, com céu azul e um rio cristalino.)
 
-Texto na tela: “O futuro depende de nossas escolhas. Cuide do planeta!”
+Texto na tela:
+“O futuro depende de nossas escolhas. Cuide do planeta!”
 
 Fim da animação.
+
+Perguntas:
+O'Que causam poluição no ar?
+Veículos que liberam gases, fábricas e queimadas
+A poluição do ar é resultado da liberação de gases nocivos, como o CO₂, que são emitidos por veículos, fábricas e queimadas. Esses poluentes não só afetam a qualidade do ar, mas também contribuem para o aquecimento global.
+
+O que causa alagamentos nas cidades?
+Chuvas muito fortes geralmente causadas pelas mudanças climáticas
+As mudanças climáticas aumentam a frequência e a intensidade de chuvas fortes, que, combinadas com a impermeabilização do solo urbano (asfalto e concreto), causam alagamentos. Além disso, o descarte inadequado de lixo agrava o problema, entupindo bueiros e dificultando o escoamento da água.
+
+O'Que é o efeito estufa?
+É o aquecimento natural do planeta causado por gases como o CO₂ que ficam presos na atmosfera. 
+Explicação:
+O efeito estufa é um fenômeno natural que mantém o planeta aquecido e habitável, mas está sendo intensificado pela emissão de gases como CO₂. Esses gases aprisionam o calor do sol na atmosfera, aquecendo o planeta além do normal e contribuindo para as mudanças climáticas.

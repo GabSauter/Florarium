@@ -6,7 +6,7 @@ func enter_state():
 func update(delta):
 	player.animated_sprite.play("idle")
 	
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	player.velocity.x = move_toward(player.velocity.x, 0, player.movement.FRICTION * delta)
 	
 	if player.dead:

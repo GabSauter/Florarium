@@ -43,7 +43,7 @@ func _physics_process(delta):
 	change_state(current_state.update(delta))
 	move_and_slide()
 
-func gravity(delta):
+func calc_gravity(delta):
 	if not is_on_floor():
 		var gravity
 		if abs(velocity.y) < movement.APEX_RANGE:

@@ -16,7 +16,7 @@ func enter_state():
 func update(delta):
 	player.animated_sprite.play("jump")
 	
-	player.gravity(delta)
+	player.calc_gravity(delta)
 	player_movement(delta)
 	cut_jump_height()
 	start_jump_buffer_timer()
