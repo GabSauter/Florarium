@@ -336,4 +336,5 @@ sources/0 = SubResource("TileSetAtlasSource_e0xne")
 
 [node name="CityGroundTileMap" type="TileMapLayer"]
 modulate = Color(1, 0.459807, 0.402806, 1)
+z_index = 10
 tile_set = SubResource("TileSet_mf2if")

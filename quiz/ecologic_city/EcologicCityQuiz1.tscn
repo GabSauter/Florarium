@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="6_5jh77"]
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_38x1i"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="EcologicCityQuiz1" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(1280, 720)
