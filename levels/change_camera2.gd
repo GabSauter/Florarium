@@ -6,4 +6,8 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Player:
-		camera_in.priority = phantom_camera_host._active_pcam_priority+1
+		if phantom_camera_host != null:
+			camera_in.priority = phantom_camera_host._active_pcam_priority+1
+		else:
+			var camera2d = Camera2D.new()
+			
