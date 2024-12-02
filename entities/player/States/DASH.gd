@@ -18,7 +18,7 @@ var shake_time = 0.0
 var dashing = false
 
 func enter_state():
-	pause_game()
+	#pause_game()
 	emit_particles()
 	
 	player.can_dash = false
@@ -112,9 +112,9 @@ func apply_camera_shake():
 		var offset = Vector2(randf_range(-shake_intensity, shake_intensity), randf_range(-shake_intensity, shake_intensity))
 		camera.position += offset
 
-func pause_game():
-	pause_game_timer.start(0.03)
-	get_tree().paused = true
-
-func _on_pause_game_timer_timeout() -> void:
-	get_tree().paused = false
+#func pause_game():
+	#pause_game_timer.start(0.03)
+	#get_tree().paused = true
+#
+#func _on_pause_game_timer_timeout() -> void:
+	#get_tree().paused = false

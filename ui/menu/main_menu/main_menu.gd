@@ -16,7 +16,7 @@ func _ready():
 
 func _on_start_button_button_down():
 	var level1 = preload("res://levels/forest_levels/level_1.tscn")
-	levelContainer.next_level(level1)
+	levelContainer.next_level(new_game_scene)
 	
 	self.queue_free()
 

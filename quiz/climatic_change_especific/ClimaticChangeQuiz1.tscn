@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://crmrueeoygd1i"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_kumj7"]
-[ext_resource type="PackedScene" uid="uid://c3dk5k7nfeh6x" path="res://levels/forest_levels/level_2.tscn" id="2_r5wkk"]
+[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/ForestQuiz1.tscn" id="2_otxcj"]
 [ext_resource type="Resource" uid="uid://cki0fvnr43stc" path="res://quiz/climatic_change_especific/climatic_change_quiz_1_theme.tres" id="3_kl73k"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_routq"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_xyy8e"]
@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kumj7")
-next_scene = ExtResource("2_r5wkk")
+next_scene = ExtResource("2_otxcj")
 quiz = ExtResource("3_kl73k")
 color_right = Color(0.603922, 1, 0.572549, 1)
 color_wrong = Color(1, 0.772549, 0.733333, 1)

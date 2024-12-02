@@ -1,12 +1,11 @@
 extends "state.gd"
 
 func enter_state():
+	player.animated_sprite.play("jump")
 	player.velocity.x = player.movement.JUMP_OFF_WALL_POWER * player.get_wall_normal()[0]
 	player.velocity.y = player.movement.JUMP_VELOCITY
 
 func update(delta):
-	player.animated_sprite.play("jump")
-	
 	player.calc_gravity(delta)
 	player_movement(delta)
 	

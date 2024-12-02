@@ -10,10 +10,9 @@ var can_coyote_jump = true
 
 func enter_state():
 	handle_can_coyote_jump()
+	player.animated_sprite.play("fall")
 
 func update(delta):
-	player.animated_sprite.play("fall")
-	
 	player.calc_gravity(delta)
 	player_movement(delta)
 	
