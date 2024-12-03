@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://tbv4c7bmbf67"]
 
-[ext_resource type="Script" path="res://entities/plataforms/MovePlataform.gd" id="1_4533i"]
+[ext_resource type="Script" path="res://entities/plataforms/move_plataform.gd" id="1_4533i"]
 [ext_resource type="Texture2D" uid="uid://bv6wig2i0w2sd" path="res://assets/sprites/world/city/movable_plataform.png" id="2_ycdan"]
 [ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="3_rtutg"]
 

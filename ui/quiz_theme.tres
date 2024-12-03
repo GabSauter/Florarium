@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://ivi55pxe0xcn"]
 
-[ext_resource type="FontFile" uid="uid://u6q7uliuq4p7" path="res://fonts/Southland TTF.ttf" id="1_8ox4c"]
+[ext_resource type="FontFile" uid="uid://u6q7uliuq4p7" path="res://fonts/southland.ttf" id="1_8ox4c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3daqg"]
 

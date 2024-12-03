@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfpu3dtqg207i"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_oj2f2"]
-[ext_resource type="Script" path="res://entities/plataforms/DisappearPlatform.gd" id="1_q1u70"]
+[ext_resource type="Script" path="res://entities/plataforms/disappear_platform.gd" id="1_q1u70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62eys"]
 size = Vector2(242, 20)

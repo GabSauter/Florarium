@@ -13,7 +13,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="Area2D" type="Area2D" node_paths=PackedStringArray("camera_in")]
+[node name="ChangeCamera" type="Area2D" node_paths=PackedStringArray("camera_in")]
 position = Vector2(1433, 1061)
 script = ExtResource("1_2dhbg")
 camera_in = NodePath("PhantomCamera2D")

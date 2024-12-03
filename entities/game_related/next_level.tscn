@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd2vvgssqjvim"]
 
-[ext_resource type="Script" path="res://entities/game_related/NextLevel.gd" id="1_7lnhi"]
+[ext_resource type="Script" path="res://entities/game_related/next_level.gd" id="1_7lnhi"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_87he8"]
-[ext_resource type="Shader" path="res://shaders/godrays.gdshader" id="2_wbqrc"]
+[ext_resource type="Shader" path="res://shaders/god_rays.gdshader" id="2_wbqrc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kblo5"]
 shader = ExtResource("2_wbqrc")

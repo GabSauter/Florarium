@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4u5ufpe5uao3"]
 
 [ext_resource type="Script" path="res://entities/game_related/move_throw_path.gd" id="1_cggu0"]
-[ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/Saw.tscn" id="2_00ywa"]
+[ext_resource type="PackedScene" uid="uid://bpbvc8e30cp52" path="res://entities/obstacles/saw.tscn" id="2_00ywa"]
 
 [sub_resource type="Curve2D" id="Curve2D_p2ymq"]
 _data = {

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://npo482ygrryi"]
 
 [ext_resource type="Texture2D" uid="uid://dfw6sqmlv6fst" path="res://icon.svg" id="1_j6m31"]
-[ext_resource type="Shader" path="res://shaders/DashGhost.gdshader" id="1_lqocm"]
-[ext_resource type="Script" path="res://entities/player/effects/DashGhost.gd" id="2_ng7ei"]
+[ext_resource type="Shader" path="res://shaders/dash_ghost.gdshader" id="1_lqocm"]
+[ext_resource type="Script" path="res://entities/player/effects/dash_ghost.gd" id="2_ng7ei"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rx62o"]
 shader = ExtResource("1_lqocm")

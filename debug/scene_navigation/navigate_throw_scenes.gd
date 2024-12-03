@@ -2,16 +2,16 @@ extends Node
 
 var new_scene: PackedScene
 
-var levelContainer: LevelContainer
+var level_container: LevelContainer
 
-var quizzesScenes = [
+var quizzes_scenes = [
 	"ClimaticChangeQuiz1",
 	"ForestQuiz1",
 	"CityQuiz1",
 	"EcologicCityQuiz1"
 ]
 
-var levelsScenes = [
+var levels_scenes = [
 	"Level1Forest",
 	"Level2Forest",
 	"Level3Forest",
@@ -31,20 +31,21 @@ var levelsScenes = [
 ];
 
 func _ready():
-	levelContainer = get_tree().current_scene.get_node("LevelContainer")
+	level_container = get_tree().current_scene.get_node("LevelContainer")
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Navigate"):
-		var currScene = levelContainer.get_child(0)
-		if quizzesScenes.has(currScene.name):
-			var child_node = currScene.get_child(0)
-			new_scene = child_node.next_scene
-
-		elif levelsScenes.has(currScene.name):
-			var child_node = currScene.find_child("0").find_child("NextLevel")
-			new_scene = child_node.new_scene
-
-		if new_scene:
-			levelContainer.next_level(new_scene)
-		else:
-			print("Next scene is null!")
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("Navigate"):
+			var currScene = level_container.get_child(0)
+			if quizzes_scenes.has(currScene.name):
+				var child_node = currScene.get_child(0)
+				new_scene = child_node.next_scene
+			
+			elif levels_scenes.has(currScene.name):
+				var child_node = currScene.find_child("0").find_child("NextLevel")
+				new_scene = child_node.new_scene
+			
+			if new_scene:
+				level_container.next_level(new_scene)
+			else:
+				print("Next scene is null!")

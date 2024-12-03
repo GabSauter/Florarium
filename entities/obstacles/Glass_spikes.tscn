@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqubnevsali2t"]
 
-[ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_vof2e"]
+[ext_resource type="Script" path="res://entities/obstacles/hitbox.gd" id="1_vof2e"]
 [ext_resource type="Texture2D" uid="uid://e6jclxjhicvv" path="res://assets/sprites/world/city/glass_spikes.png" id="2_jrpbl"]
 
 [node name="Spike" type="Node2D"]

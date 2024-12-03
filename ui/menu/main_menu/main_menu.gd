@@ -15,9 +15,6 @@ func _ready():
 	levelContainer = get_tree().current_scene.get_node("LevelContainer")
 
 func _on_start_button_button_down():
-	var forestlevel1 = preload("res://levels/forest_levels/level_1.tscn")
-	var citylevel1 = preload("res://levels/forest_levels/level_1.tscn")
-	var ecologiccitylevel1 = preload("res://levels/intelligent_city_levels/level_1_intelligent_city.tscn")
 	levelContainer.next_level(new_game_scene)
 	
 	self.queue_free()

@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://bpbvc8e30cp52"]
 
-[ext_resource type="Script" path="res://entities/obstacles/Spike.gd" id="1_7m3yr"]
-[ext_resource type="Texture2D" uid="uid://bx1pocbkoetg" path="res://assets/sprites/world/forest/saw/frame0000.png" id="1_ny0yg"]
-[ext_resource type="Texture2D" uid="uid://gw5pjkjsdovf" path="res://assets/sprites/world/forest/saw/frame0001.png" id="2_q8x5h"]
+[ext_resource type="Script" path="res://entities/obstacles/hitbox.gd" id="1_2syfu"]
+[ext_resource type="Texture2D" uid="uid://bx1pocbkoetg" path="res://assets/sprites/world/forest/saw/frame0000.png" id="2_0pj2s"]
+[ext_resource type="Texture2D" uid="uid://gw5pjkjsdovf" path="res://assets/sprites/world/forest/saw/frame0001.png" id="3_q8ncy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rumhu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ny0yg")
+"texture": ExtResource("2_0pj2s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_q8x5h")
+"texture": ExtResource("3_q8ncy")
 }],
 "loop": true,
 "name": &"rotate",
@@ -22,7 +22,7 @@ animations = [{
 radius = 86.0058
 
 [node name="Saw" type="Node2D"]
-script = ExtResource("1_7m3yr")
+script = ExtResource("1_2syfu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rumhu")

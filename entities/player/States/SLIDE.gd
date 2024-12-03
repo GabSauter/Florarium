@@ -8,7 +8,6 @@ func enter_state():
 
 func update(delta):
 	player.animated_sprite.play("slide")
-	#var slide_sprites = player.animated_sprite.sprite_frames["slide"]
 	
 	if player.get_wall_normal().x > 0 and player.is_on_wall_only():
 		player.animated_sprite.position.x = 10

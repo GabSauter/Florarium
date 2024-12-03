@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cr5yrlossy2c4"
-path="res://.godot/imported/Sunnyspells.otf-7d60519313b906a0bd2f85ab02c25be5.fontdata"
+path="res://.godot/imported/sunny_spells.otf-a70de310a28201128e8710c0dbefc035.fontdata"
 
 [deps]
 
-source_file="res://fonts/Sunnyspells.otf"
-dest_files=["res://.godot/imported/Sunnyspells.otf-7d60519313b906a0bd2f85ab02c25be5.fontdata"]
+source_file="res://fonts/sunny_spells.otf"
+dest_files=["res://.godot/imported/sunny_spells.otf-a70de310a28201128e8710c0dbefc035.fontdata"]
 
 [params]
 

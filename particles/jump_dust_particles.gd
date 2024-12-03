@@ -6,4 +6,3 @@ func _ready():
 	var time = (lifetime * 2) / speed_scale
 	var timer = get_tree().create_timer(time)
 	timer.timeout.connect(self.queue_free)
-

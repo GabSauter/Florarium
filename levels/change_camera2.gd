@@ -10,4 +10,3 @@ func _on_body_entered(body):
 			camera_in.priority = phantom_camera_host._active_pcam_priority+1
 		else:
 			var camera2d = Camera2D.new()
-			

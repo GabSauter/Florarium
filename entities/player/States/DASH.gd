@@ -7,7 +7,7 @@ extends "state.gd"
 @onready var particles = $GPUParticles2D
 @onready var pause_game_timer: Timer = $PauseGameTimer
 
-var ghost_scene = preload("res://entities/player/effects/DashGhost.tscn")
+var ghost_scene = preload("res://entities/player/effects/dash_ghost.tscn")
 
 @onready var camera_host: PhantomCameraHost = $"../../../../../../Camera2D/PhantomCameraHost"
 var camera: PhantomCamera2D

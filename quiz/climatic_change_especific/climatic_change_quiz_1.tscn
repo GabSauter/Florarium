@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://crmrueeoygd1i"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_kumj7"]
-[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/ForestQuiz1.tscn" id="2_otxcj"]
+[ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/forest_quiz_1.tscn" id="2_otxcj"]
 [ext_resource type="Resource" uid="uid://cki0fvnr43stc" path="res://quiz/climatic_change_especific/climatic_change_quiz_1_theme.tres" id="3_kl73k"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_routq"]
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_xyy8e"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://d33nbegkq8h2m"]
 
-[ext_resource type="Script" path="res://entities/player/Player.gd" id="1_2uie1"]
-[ext_resource type="Resource" uid="uid://dg0p36t1gcoud" path="res://entities/player/resources/Player_Movement_Data.tres" id="2_uereg"]
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_2uie1"]
+[ext_resource type="Resource" uid="uid://dg0p36t1gcoud" path="res://entities/player/resources/player_movement_data.tres" id="2_uereg"]
 [ext_resource type="Script" path="res://entities/player/states/STATES.gd" id="4_cvlxd"]
 [ext_resource type="PackedScene" uid="uid://dv0ag13x6bv10" path="res://entities/player/states/IDLE.tscn" id="4_gbad6"]
 [ext_resource type="PackedScene" uid="uid://cr7ot4x6pvlfa" path="res://entities/player/states/MOVE.tscn" id="6_f0qif"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6t3r2im4wee" path="res://entities/player/states/AIR_JUMP.tscn" id="11_o4xu1"]
 [ext_resource type="PackedScene" uid="uid://bktfpmjsmwl5o" path="res://entities/player/states/WALL_JUMP.tscn" id="12_g8hft"]
 [ext_resource type="PackedScene" uid="uid://cup3sk1s7crm0" path="res://entities/player/states/DIE.tscn" id="14_eq251"]
-[ext_resource type="Shader" path="res://shaders/DashGhost.gdshader" id="14_k04nh"]
+[ext_resource type="Shader" path="res://shaders/dash_ghost.gdshader" id="14_k04nh"]
 [ext_resource type="PackedScene" uid="uid://bdfsckrrfil0f" path="res://entities/player/states/BOUNCE.tscn" id="15_2b0nd"]
 [ext_resource type="Texture2D" uid="uid://d0n7u18jr6m17" path="res://assets/sprites/characters/player/fall/frame0000.png" id="16_gyp7v"]
 [ext_resource type="Texture2D" uid="uid://d2ncjsencnrpi" path="res://assets/sprites/characters/player/stand/frame0000.png" id="16_rhnx7"]

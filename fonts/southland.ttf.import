@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://u6q7uliuq4p7"
-path="res://.godot/imported/Southland TTF.ttf-6e3b6382c06abefb10787b61e99df83b.fontdata"
+path="res://.godot/imported/southland.ttf-d8432b26a3316fa985872b7859f300b2.fontdata"
 
 [deps]
 
-source_file="res://fonts/Southland TTF.ttf"
-dest_files=["res://.godot/imported/Southland TTF.ttf-6e3b6382c06abefb10787b61e99df83b.fontdata"]
+source_file="res://fonts/southland.ttf"
+dest_files=["res://.godot/imported/southland.ttf-d8432b26a3316fa985872b7859f300b2.fontdata"]
 
 [params]
 

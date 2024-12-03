@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://wr01b77fbs7e"]
 
-[ext_resource type="Script" path="res://entities/collectables/dashCollectable/Dash_Collectable.gd" id="1_nxv3o"]
+[ext_resource type="Script" path="res://entities/collectables/dash_collectable/dash_collectable.gd" id="1_nxv3o"]
 [ext_resource type="Texture2D" uid="uid://ddgxes7x22hu7" path="res://assets/sprites/game_related/dash_recovery.png" id="2_xfw2r"]
 [ext_resource type="Texture2D" uid="uid://bcrdn8jrx5iui" path="res://assets/effects/light/point_light.webp" id="3_stm4q"]
 
