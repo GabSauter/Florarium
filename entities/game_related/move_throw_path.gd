@@ -9,7 +9,7 @@ func _ready():
 	path_follow_2d.progress_ratio = 0
 
 func _process(delta):
-	if player.current_state == player.STATES.DIE:
+	if player.STATES.current_state == player.STATES.DIE:
 		reset_position()
 	if path_follow_2d.progress_ratio <= 0.99:
 		path_follow_2d.progress += speed * delta

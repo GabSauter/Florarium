@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdsfu0u441jsy"]
+[gd_scene load_steps=9 format=3 uid="uid://cdsfu0u441jsy"]
 
 [ext_resource type="Script" path="res://entities/player/states/DASH.gd" id="1_5ph3t"]
 [ext_resource type="Texture2D" uid="uid://oxknlci1nl0a" path="res://assets/sprites/game_related/circle_particle.png" id="2_llgt2"]
+[ext_resource type="AudioStream" uid="uid://b2g183jk2b268" path="res://assets/audios/sfx/dash.ogg" id="3_mjkep"]
 
 [sub_resource type="Gradient" id="Gradient_gdr5q"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -48,6 +49,10 @@ process_material = SubResource("ParticleProcessMaterial_4st74")
 texture = ExtResource("2_llgt2")
 lifetime = 0.5
 explosiveness = 0.14
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mjkep")
+bus = &"SFX"
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]

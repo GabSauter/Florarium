@@ -1,5 +1,6 @@
 extends "state.gd"
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var common_behaviours: Node2D = $"../../CommonBehaviours"
 
 var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tscn")
@@ -8,6 +9,7 @@ var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tsc
 @export var jump_buffer_duration = .1
 
 func enter_state():
+	audio_stream_player_2d.play()
 	var jump_dust_particles = jump_dust_particles_scene.instantiate()
 	jump_dust_particles.position = player.position
 	jump_dust_particles.emitting = true

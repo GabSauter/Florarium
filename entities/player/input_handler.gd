@@ -12,6 +12,9 @@ var cut_jump_input = false
 var dash_input = false
 
 func player_input():
+	if player.dead:
+		return
+	
 	movement_input = Vector2.ZERO
 	if Input.is_action_pressed("MoveRight"):
 		animated_sprite.flip_h = true

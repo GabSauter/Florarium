@@ -2,11 +2,14 @@ extends Area2D
 
 @onready var label: RichTextLabel = $ColorRect/RichTextLabel
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@export var audio: AudioStream
 @export_multiline var text: String
 @export var sprites: SpriteFrames
 
 func _ready() -> void:
+	audio_stream_player_2d.stream = audio
 	label.visible = false
 	label.text = text
 	animated_sprite.sprite_frames = sprites
@@ -20,6 +23,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		audio_stream_player_2d.play()
 		label.visible = true
 
 func _on_body_exited(body: Node2D) -> void:

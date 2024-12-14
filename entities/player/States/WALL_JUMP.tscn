@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bktfpmjsmwl5o"]
+[gd_scene load_steps=3 format=3 uid="uid://bktfpmjsmwl5o"]
 
 [ext_resource type="Script" path="res://entities/player/states/WALL_JUMP.gd" id="1_i1g8c"]
+[ext_resource type="AudioStream" uid="uid://cikfqp4c3ltjp" path="res://assets/audios/sfx/jump.ogg" id="2_6af4o"]
 
 [node name="WALL_JUMP" type="Node2D"]
 script = ExtResource("1_i1g8c")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6af4o")
+volume_db = -2.616
+bus = &"SFX"

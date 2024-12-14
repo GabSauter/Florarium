@@ -2,12 +2,16 @@ extends "state.gd"
 
 @onready var common_behaviours: Node2D = $"../../CommonBehaviours"
 @onready var animated_sprite: AnimatedSprite2D = $"../../../AnimatedSprite"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func enter_state():
 	if player.velocity.y > 0:
 		player.velocity.y *= .5
 
 func update(delta):
+	if player.velocity.y > 0 and !audio_stream_player_2d.playing:
+		audio_stream_player_2d.play()
+	
 	player.animated_sprite.play("slide")
 	
 	if player.get_wall_normal().x > 0 and player.is_on_wall_only():
@@ -34,3 +38,6 @@ func update(delta):
 	if player.input_handler.dash_input and player.can_dash:
 		return STATES.DASH
 	return null
+
+func exit_state():
+	audio_stream_player_2d.stop()

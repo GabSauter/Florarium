@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://tbv4c7bmbf67"]
+[gd_scene load_steps=15 format=3 uid="uid://tbv4c7bmbf67"]
 
 [ext_resource type="Script" path="res://entities/plataforms/move_plataform.gd" id="1_4533i"]
 [ext_resource type="Texture2D" uid="uid://bv6wig2i0w2sd" path="res://assets/sprites/world/city/movable_plataform.png" id="2_ycdan"]
 [ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="3_rtutg"]
+[ext_resource type="AudioStream" uid="uid://brbky88ubew7g" path="res://assets/audios/sfx/motor.ogg" id="4_0w7qr"]
 
 [sub_resource type="Curve" id="Curve_qjygj"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -121,3 +122,10 @@ callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_p3gq7")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0w7qr")
+volume_db = -15.699
+bus = &"SFX"
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

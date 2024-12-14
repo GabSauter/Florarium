@@ -6,9 +6,11 @@ var timer_duration = 1.5
 @onready var sprite = $Sprite2D
 @onready var area_2d = $Area2D
 @onready var particles = $GPUParticles2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
+		audio_stream_player_2d.play()
 		body.can_dash = true
 		
 		sprite.visible = false

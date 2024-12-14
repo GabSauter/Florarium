@@ -4,7 +4,6 @@ extends Node2D
 @onready var states: Node2D = $"../STATES"
 
 # Horizontal Movement
-
 func player_movement(delta):
 	if player.input_handler.movement_input.x == 0 and player.is_on_floor():
 		player.velocity.x = move_toward(player.velocity.x, 0, player.movement.FRICTION * delta)
@@ -28,7 +27,6 @@ func decelerate_when_turn(amount, delta):
 
 
 # Gravity
-
 func calc_gravity(delta):
 	if not player.is_on_floor():
 		var gravity: float

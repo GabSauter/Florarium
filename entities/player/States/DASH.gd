@@ -6,10 +6,11 @@ extends "state.gd"
 @onready var ghost_timer = $GhostTimer
 @onready var particles = $GPUParticles2D
 @onready var pause_game_timer: Timer = $PauseGameTimer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var ghost_scene = preload("res://entities/player/effects/dash_ghost.tscn")
 
-@onready var camera_host: PhantomCameraHost = %PhantomCameraHost
+@onready var camera_host: PhantomCameraHost = get_node("/root/Game/Camera2D/PhantomCameraHost")
 
 var camera: PhantomCamera2D
 var shake_intensity = 2.5
@@ -20,6 +21,7 @@ var dashing = false
 
 func enter_state():
 	#pause_game()
+	audio_stream_player_2d.play()
 	emit_particles()
 	
 	player.can_dash = false

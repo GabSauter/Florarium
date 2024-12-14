@@ -43,7 +43,6 @@ limit_left = -60
 limit_right = 8097
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-unique_name_in_owner = true
 script = ExtResource("5_roqhq")
 
 [connection signal="finished" from="AudioMusicManager" to="AudioMusicManager" method="_on_finished"]

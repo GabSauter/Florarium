@@ -3,6 +3,7 @@ extends "state.gd"
 @onready var common_behaviours: Node2D = $"../../CommonBehaviours"
 
 func enter_state():
+	player.animated_sprite.play("jump")
 	player.velocity.x = player.velocity.x - cos(player.bounce_rotation + PI/2) * player.bounce_force
 	player.velocity.y = -sin(player.bounce_rotation + PI/2) * player.bounce_force
 	player.can_dash = true

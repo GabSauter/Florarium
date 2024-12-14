@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cpo757j58sgpi"]
+[gd_scene load_steps=42 format=3 uid="uid://cpo757j58sgpi"]
 
 [ext_resource type="Texture2D" uid="uid://ntlh2fn3fsob" path="res://assets/sprites/effects/fade_circle.png" id="1_f4k8j"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_vphdd"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bdwrilg1axdqx" path="res://assets/sprites/world/forest/flower1.png" id="10_4u1k5"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/respawn.tscn" id="10_an7tx"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/next_level.tscn" id="12_gbvq1"]
+[ext_resource type="AudioStream" uid="uid://cp0loqapvfvcb" path="res://assets/audios/sfx/frog_speaking.mp3" id="12_luo7l"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_ljai1"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_wfhrv"]
 [ext_resource type="PackedScene" uid="uid://rqrnufebeu3c" path="res://levels/forest_levels/level_4.tscn" id="15_1v4gn"]
@@ -420,6 +421,7 @@ flip_h = true
 
 [node name="NPC" parent="0" instance=ExtResource("19_bfaur")]
 position = Vector2(2032, 280)
+audio = ExtResource("12_luo7l")
 text = "[center][color=Black][wave]Hey! 
 Apenas um experiente consegue pular aqui. 
 Hehe"
