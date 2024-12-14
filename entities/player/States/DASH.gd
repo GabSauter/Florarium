@@ -9,7 +9,8 @@ extends "state.gd"
 
 var ghost_scene = preload("res://entities/player/effects/dash_ghost.tscn")
 
-@onready var camera_host: PhantomCameraHost = $"../../../../../../Camera2D/PhantomCameraHost"
+@onready var camera_host: PhantomCameraHost = %PhantomCameraHost
+
 var camera: PhantomCamera2D
 var shake_intensity = 2.5
 var shake_duration = 0.2
@@ -24,10 +25,10 @@ func enter_state():
 	player.can_dash = false
 	dashing = true
 	DashDuration_timer.start(player.movement.dash_duration)
-	if player.movement_input != Vector2.ZERO:
-		dash_direction = player.movement_input
+	if player.input_handler.movement_input != Vector2.ZERO:
+		dash_direction = player.input_handler.movement_input
 	else:
-		dash_direction = player.last_direction
+		dash_direction = player.input_handler.last_direction
 	
 	handle_dash_velocity_on_different_directions()
 	start_ghost()
@@ -38,7 +39,7 @@ func update(delta):
 	if player.dead:
 		return STATES.DIE
 	
-	if player.is_on_floor() and (player.jump_input_actuation or player.jump_buffer):
+	if player.is_on_floor() and (player.input_handler.jump_input_actuation or player.jump_buffer):
 		player.jump_buffer = false
 		player.can_dash = true
 		return STATES.JUMP
@@ -61,9 +62,9 @@ func exit_state():
 	dashing = false
 
 func handle_dash_velocity_on_different_directions():
-	if player.movement_input in [Vector2(1, 0), Vector2(-1, 0)]:
+	if player.input_handler.movement_input in [Vector2(1, 0), Vector2(-1, 0)]:
 		player.velocity = dash_direction.normalized() * player.movement.dash_speed_x
-	elif player.movement_input in [Vector2(0, 1), Vector2(0, -1)]:
+	elif player.input_handler.movement_input in [Vector2(0, 1), Vector2(0, -1)]:
 		player.velocity = dash_direction.normalized() * player.movement.dash_speed_y
 	else:
 		player.velocity = dash_direction.normalized() * player.movement.dash_speed_diagonal
@@ -94,7 +95,7 @@ func stop_ghost():
 
 func emit_particles():
 	particles.emitting = true
-	particles.process_material.direction = Vector3(-player.movement_input.x,-player.movement_input.y,0)
+	particles.process_material.direction = Vector3(-player.input_handler.movement_input.x,-player.input_handler.movement_input.y,0)
 
 func _on_dash_duration_timeout():
 	dashing = false

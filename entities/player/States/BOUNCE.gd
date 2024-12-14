@@ -1,5 +1,7 @@
 extends "state.gd"
 
+@onready var common_behaviours: Node2D = $"../../CommonBehaviours"
+
 func enter_state():
 	player.velocity.x = player.velocity.x - cos(player.bounce_rotation + PI/2) * player.bounce_force
 	player.velocity.y = -sin(player.bounce_rotation + PI/2) * player.bounce_force
@@ -7,8 +9,8 @@ func enter_state():
 	player.bounce = false
 
 func update(delta):
-	player.calc_gravity(delta)
-	player_movement(delta)
+	common_behaviours.calc_gravity(delta)
+	common_behaviours.player_movement(delta)
 	
 	if player.dead:
 		return STATES.DIE
@@ -17,7 +19,7 @@ func update(delta):
 		return STATES.FALL
 	if player.is_on_wall_only():
 		return STATES.SLIDE
-	if player.dash_input and player.can_dash:
+	if player.input_handler.dash_input and player.can_dash:
 		return STATES.DASH
 	if player.is_on_floor():
 		return STATES.MOVE

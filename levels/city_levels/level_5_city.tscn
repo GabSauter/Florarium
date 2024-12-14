@@ -278,6 +278,7 @@ speed = 150.0
 
 [node name="RainingParticles" type="GPUParticles2D" parent="0"]
 self_modulate = Color(0.238289, 0.420547, 0.471209, 1)
+z_index = 13
 position = Vector2(508, -3114)
 amount = 150
 process_material = SubResource("ParticleProcessMaterial_1na1c")
@@ -298,6 +299,7 @@ rotates = false
 loop = false
 
 [node name="movableNode" type="Node2D" parent="0/Path2D/PathFollow2D"]
+z_index = 15
 
 [node name="Spike" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("16_sob4x")]
 position = Vector2(11.1109, 457.874)

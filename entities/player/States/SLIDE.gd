@@ -1,6 +1,7 @@
 extends "state.gd"
 
-@onready var animated_sprite: AnimatedSprite2D = $"../../AnimatedSprite"
+@onready var common_behaviours: Node2D = $"../../CommonBehaviours"
+@onready var animated_sprite: AnimatedSprite2D = $"../../../AnimatedSprite"
 
 func enter_state():
 	if player.velocity.y > 0:
@@ -14,8 +15,8 @@ func update(delta):
 	elif player.get_wall_normal().x < 0 and player.is_on_wall_only():
 		player.animated_sprite.position.x = 0
 	
-	player_movement(delta)
-	player.calc_gravity(delta)
+	common_behaviours.player_movement(delta)
+	common_behaviours.calc_gravity(delta)
 	
 	if player.dead:
 		return STATES.DIE
@@ -25,11 +26,11 @@ func update(delta):
 	
 	if !player.is_on_wall_only():
 		return STATES.FALL
-	if player.jump_input_actuation or player.jump_buffer:
+	if player.input_handler.jump_input_actuation or player.jump_buffer:
 		player.jump_buffer = false
 		return STATES.WALL_JUMP
 	if player.is_on_floor():
 		return STATES.IDLE
-	if player.dash_input and player.can_dash:
+	if player.input_handler.dash_input and player.can_dash:
 		return STATES.DASH
 	return null

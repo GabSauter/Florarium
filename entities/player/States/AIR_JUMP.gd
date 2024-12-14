@@ -1,8 +1,10 @@
 extends "state.gd"
 
+@onready var common_behaviours: Node2D = $"../../CommonBehaviours"
+
 func update(delta):
-	player.calc_gravity(delta)
-	player_movement(delta)
+	common_behaviours.calc_gravity(delta)
+	common_behaviours.player_movement(delta)
 	cut_jump_height()
 	if player.velocity.y > 0:
 		return STATES.FALL

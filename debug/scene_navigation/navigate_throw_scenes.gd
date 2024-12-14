@@ -33,7 +33,7 @@ var levels_scenes = [
 func _ready():
 	level_container = get_tree().current_scene.get_node("LevelContainer")
 
-func _process(delta: float) -> void:
+func _process(_delta: float):
 	if OS.is_debug_build():
 		if Input.is_action_just_pressed("Navigate"):
 			var currScene = level_container.get_child(0)

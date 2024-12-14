@@ -7,7 +7,7 @@ var noise: FastNoiseLite = FastNoiseLite.new()
 var noise_offset := Vector2(randf() * 150, randf() * 150)
 var noise_scale: float = 15.0
 var noise_speed: float = 2.0
-var follow_speed: float = 6.5
+var follow_speed: float = 5.5
 
 func _ready() -> void:
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 	# Target position with noise applied
 	var target_position
-	if player.last_direction.x > 0:
+	if player.input_handler.last_direction.x > 0:
 		target_position = player.position + noise_position + Vector2(-45,-10)
 	else:
 		target_position = player.position + noise_position + Vector2(45,-10)

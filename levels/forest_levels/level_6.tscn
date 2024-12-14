@@ -851,6 +851,7 @@ rotates = false
 loop = false
 
 [node name="movableNode" type="Node2D" parent="0/Path2D/PathFollow2D"]
+z_index = 15
 
 [node name="Saw" parent="0/Path2D/PathFollow2D/movableNode" instance=ExtResource("14_arc0k")]
 position = Vector2(-645.431, 101.535)

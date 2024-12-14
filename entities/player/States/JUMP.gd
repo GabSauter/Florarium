@@ -1,5 +1,7 @@
 extends "state.gd"
 
+@onready var common_behaviours: Node2D = $"../../CommonBehaviours"
+
 var jump_dust_particles_scene = preload("res://particles/jump_dust_particles.tscn")
 
 @onready var JumpBufferTimer = $JumpBufferTimer
@@ -16,8 +18,8 @@ func enter_state():
 func update(delta):
 	player.animated_sprite.play("jump")
 	
-	player.calc_gravity(delta)
-	player_movement(delta)
+	common_behaviours.calc_gravity(delta)
+	common_behaviours.player_movement(delta)
 	cut_jump_height()
 	start_jump_buffer_timer()
 	
@@ -31,21 +33,21 @@ func update(delta):
 		return STATES.FALL
 	if player.is_on_wall_only():
 		return STATES.SLIDE
-	if player.dash_input and player.can_dash:
+	if player.input_handler.dash_input and player.can_dash:
 		return STATES.DASH
 	return null
 
 func cut_jump_height():
-	if player.cut_jump_input:
+	if player.input_handler.cut_jump_input:
 		if player.velocity.y < 0:
 			player.velocity.y *= player.movement.CUT_JUMP_HEIGHT
 
 func start_jump_buffer_timer():
-	if player.jump_input_actuation:
+	if player.input_handler.jump_input_actuation:
 		JumpBufferTimer.start(jump_buffer_duration)
 
 func _on_jump_buffer_timer_timeout():
-	if player.current_state == STATES.IDLE or player.current_state == STATES.MOVE or player.current_state == STATES.SLIDE:
+	if player.STATES.current_state == STATES.IDLE or player.STATES.current_state == STATES.MOVE or player.STATES.current_state == STATES.SLIDE:
 		player.jump_buffer = true
 	else:
 		player.jump_buffer = false

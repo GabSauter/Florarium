@@ -107,8 +107,9 @@ func _on_continue_button_button_down():
 func save_quiz():
 	const QUIZ_SAVE_PATH: String = "user://QuizzesData.save"
 	var quiz_data = {}
+	var file: FileAccess
 	if FileAccess.file_exists(QUIZ_SAVE_PATH):
-		var file = FileAccess.open(QUIZ_SAVE_PATH, FileAccess.READ)
+		file = FileAccess.open(QUIZ_SAVE_PATH, FileAccess.READ)
 		var existing_data = file.get_as_text()
 		file.close()
 		if existing_data != "":
@@ -121,7 +122,7 @@ func save_quiz():
 		"number_of_questions": questions_already_responded.size()
 	}
 
-	var file = FileAccess.open(QUIZ_SAVE_PATH, FileAccess.WRITE)
+	file = FileAccess.open(QUIZ_SAVE_PATH, FileAccess.WRITE)
 	var json_data_string = JSON.stringify(quiz_data, "\t")
 	file.store_string(json_data_string)
 	file.close()

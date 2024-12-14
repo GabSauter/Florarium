@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dtikb6ji87s0d" path="res://entities/player/states/FALL.tscn" id="8_012id"]
 [ext_resource type="PackedScene" uid="uid://cdsfu0u441jsy" path="res://entities/player/states/DASH.tscn" id="9_rm8r7"]
 [ext_resource type="PackedScene" uid="uid://b5kk2p0o54mk3" path="res://entities/player/states/SLIDE.tscn" id="10_c3l66"]
+[ext_resource type="PackedScene" uid="uid://cp6t3r2im4wee" path="res://entities/player/states/AIR_JUMP.tscn" id="11_o4xu1"]
 [ext_resource type="PackedScene" uid="uid://bktfpmjsmwl5o" path="res://entities/player/states/WALL_JUMP.tscn" id="12_g8hft"]
 [ext_resource type="PackedScene" uid="uid://cup3sk1s7crm0" path="res://entities/player/states/DIE.tscn" id="14_eq251"]
 [ext_resource type="Shader" path="res://shaders/dash_ghost.gdshader" id="14_k04nh"]
@@ -30,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://4lylbttlr0o4" path="res://assets/sprites/characters/player/jump/frame0002.png" id="23_4t1tg"]
 [ext_resource type="Texture2D" uid="uid://dqmrndqav7b8g" path="res://assets/sprites/characters/player/jump/frame0003.png" id="24_sfhbb"]
 [ext_resource type="Texture2D" uid="uid://c3enevr3bq5h4" path="res://assets/sprites/characters/player/run/frame0003.png" id="24_ss81y"]
-[ext_resource type="Script" path="res://entities/player/input_handler.gd" id="25_m0kd7"]
 [ext_resource type="Script" path="res://entities/player/states/common_behaviours.gd" id="25_mistg"]
 [ext_resource type="Texture2D" uid="uid://cigkx7kcol7d3" path="res://assets/sprites/characters/player/run/frame0004.png" id="25_qbunw"]
 [ext_resource type="Texture2D" uid="uid://yswc3or08s42" path="res://assets/sprites/characters/player/jump/frame0004.png" id="25_xypw1"]
@@ -155,9 +155,6 @@ material = SubResource("ShaderMaterial_myxxo")
 sprite_frames = SubResource("SpriteFrames_4oo88")
 animation = &"idle"
 
-[node name="InputHandler" type="Node2D" parent="."]
-script = ExtResource("25_m0kd7")
-
 [node name="Behaviour" type="Node2D" parent="."]
 
 [node name="CommonBehaviours" type="Node2D" parent="Behaviour"]
@@ -171,12 +168,17 @@ script = ExtResource("4_cvlxd")
 [node name="MOVE" parent="Behaviour/STATES" instance=ExtResource("6_f0qif")]
 
 [node name="JUMP" parent="Behaviour/STATES" instance=ExtResource("7_uw7eh")]
+jump_buffer_duration = null
 
 [node name="FALL" parent="Behaviour/STATES" instance=ExtResource("8_012id")]
+coyote_duration = null
+jump_buffer_duration = null
 
 [node name="DASH" parent="Behaviour/STATES" instance=ExtResource("9_rm8r7")]
 
 [node name="SLIDE" parent="Behaviour/STATES" instance=ExtResource("10_c3l66")]
+
+[node name="AIR_JUMP" parent="Behaviour/STATES" instance=ExtResource("11_o4xu1")]
 
 [node name="WALL_JUMP" parent="Behaviour/STATES" instance=ExtResource("12_g8hft")]
 
