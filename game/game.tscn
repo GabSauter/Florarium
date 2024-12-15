@@ -23,11 +23,9 @@ script = ExtResource("2_x85wu")
 [node name="MainMenu" parent="UIContainer" instance=ExtResource("1_ftlkm")]
 new_game_scene = ExtResource("5_j4rxo")
 
-[node name="AudioMusicManager" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioMusicManager" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStream_3dhjj")
 volume_db = -8.211
-max_distance = 999999.0
-panning_strength = 0.0
 bus = &"Music"
 script = ExtResource("5_w7v0i")
 

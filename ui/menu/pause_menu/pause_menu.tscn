@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd8nup6cyjgy4"]
+[gd_scene load_steps=5 format=3 uid="uid://dd8nup6cyjgy4"]
 
 [ext_resource type="Script" path="res://ui/menu/pause_menu/pause_menu.gd" id="1_6805y"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="2_bs1j7"]
 [ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu/options_menu.tscn" id="3_8x5g5"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="4_mqh0u"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -63,6 +64,10 @@ text = "Sair para o menu"
 [node name="OptionsMenu" parent="." instance=ExtResource("3_8x5g5")]
 visible = false
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mqh0u")
+volume_db = -11.345
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnp5w6nkrm4p6"]
+[gd_scene load_steps=10 format=3 uid="uid://bnp5w6nkrm4p6"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_xyxhu"]
 [ext_resource type="PackedScene" uid="uid://b8bhlu4cjh0r" path="res://levels/intelligent_city_levels/level_1_intelligent_city.tscn" id="2_5y7yy"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_llg1c"]
 [ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="6_5jh77"]
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_38x1i"]
+[ext_resource type="AudioStream" uid="uid://belw4prd8re4t" path="res://assets/audios/sfx/correct.mp3" id="8_bx6b2"]
+[ext_resource type="AudioStream" uid="uid://dkxelba8kve87" path="res://assets/audios/sfx/wrong.mp3" id="9_rgi34"]
 
 [node name="EcologicCityQuiz1" type="CanvasLayer"]
 
@@ -826,8 +828,12 @@ text = "Explicação da resposta certa"
 autowrap_mode = 2
 
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+stream = ExtResource("8_bx6b2")
+bus = &"SFX"
 
 [node name="AudioWrong" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+stream = ExtResource("9_rgi34")
+bus = &"SFX"
 
 [node name="NextQuestionButton" type="Button" parent="Control/Background/CardBackground"]
 layout_mode = 1

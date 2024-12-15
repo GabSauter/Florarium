@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5cbca25q3kw8"]
+[gd_scene load_steps=4 format=3 uid="uid://b5cbca25q3kw8"]
 
 [ext_resource type="PackedScene" uid="uid://djg11mldwxkjo" path="res://ui/menu/options_menu/option_video/components/options_display_button.tscn" id="1_uwlk6"]
 [ext_resource type="Script" path="res://ui/menu/options_menu/option_video/components/resolution_mode_button.gd" id="2_vy38v"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="3_b3pld"]
 
 [node name="Resolution_Mode_Button" instance=ExtResource("1_uwlk6")]
 script = ExtResource("2_vy38v")
 
 [node name="Label" parent="HBoxContainer" index="0"]
 text = "Resolução"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("3_b3pld")
+volume_db = -11.345
+
+[connection signal="button_down" from="HBoxContainer/OptionButton" to="." method="_on_option_button_button_down"]
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://uowkqq54vc8u"]
+[gd_scene load_steps=7 format=3 uid="uid://uowkqq54vc8u"]
 
 [ext_resource type="PackedScene" uid="uid://c40660wl8h7pu" path="res://ui/menu/options_menu/option_video/components/window_mode_button.tscn" id="1_0131g"]
+[ext_resource type="Script" path="res://ui/menu/options_menu/components/options_container.gd" id="1_n3j60"]
 [ext_resource type="PackedScene" uid="uid://b5cbca25q3kw8" path="res://ui/menu/options_menu/option_video/components/resolution_mode_button.tscn" id="2_emldp"]
 [ext_resource type="PackedScene" uid="uid://cevnbuo2e4utj" path="res://ui/menu/options_menu/option_control/components/hot_key_rebind_button.tscn" id="3_tqmdf"]
 [ext_resource type="Script" path="res://ui/menu/options_menu/option_audio/audio_menu.gd" id="4_hkls7"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="6_skmt3"]
 
 [node name="OptionsContainer" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n3j60")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -25,9 +28,11 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
+current_tab = 0
 
 [node name="Vídeo" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Vídeo"]
 layout_mode = 1
@@ -57,6 +62,7 @@ layout_mode = 2
 [node name="Controles" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controles"]
 layout_mode = 1
@@ -117,6 +123,7 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 script = ExtResource("4_hkls7")
+metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Áudio"]
 layout_mode = 1
@@ -180,6 +187,12 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_skmt3")
+volume_db = -9.455
+
+[connection signal="tab_button_pressed" from="TabContainer" to="." method="_on_tab_container_tab_button_pressed"]
+[connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_clicked"]
 [connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/MasterHSlider" to="TabContainer/Áudio" method="_on_master_h_slider_value_changed"]
 [connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/MusicHSlider" to="TabContainer/Áudio" method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="TabContainer/Áudio/MarginContainer/AudioBoxContainer/GridContainer/SFXHSlider" to="TabContainer/Áudio" method="_on_sfxh_slider_value_changed"]

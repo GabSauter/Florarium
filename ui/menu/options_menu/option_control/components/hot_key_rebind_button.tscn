@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cevnbuo2e4utj"]
+[gd_scene load_steps=3 format=3 uid="uid://cevnbuo2e4utj"]
 
 [ext_resource type="Script" path="res://ui/menu/options_menu/option_control/components/hot_key_rebind_button.gd" id="1_q354j"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="2_kuca0"]
 
 [node name="HotKey_Rebind_Button" type="Control" groups=["hotkey_button"]]
 layout_mode = 3
@@ -36,4 +37,9 @@ layout_mode = 2
 toggle_mode = true
 text = "Action_key"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kuca0")
+volume_db = -11.345
+
+[connection signal="button_down" from="HBoxContainer/Button" to="." method="_on_button_button_down"]
 [connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

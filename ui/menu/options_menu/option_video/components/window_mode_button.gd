@@ -1,6 +1,7 @@
 extends Control
 
 @onready var option_button = $HBoxContainer/OptionButton as OptionButton
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 const WINDOW_MODE_ARRAY = [
 	"Full-Screen",
@@ -37,3 +38,9 @@ func on_window_mode_selected(index: int):
 		3: #Bordeless Full-Screen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+
+func _on_option_button_button_down() -> void:
+	audio_stream_player.play()
+
+func _on_option_button_item_selected(index: int) -> void:
+	audio_stream_player.play()

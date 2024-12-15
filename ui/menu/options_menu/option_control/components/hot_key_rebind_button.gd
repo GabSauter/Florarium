@@ -2,6 +2,7 @@ class_name HotkeyRebindButton extends Control
 
 @onready var label = $HBoxContainer/Label as Label
 @onready var button = $HBoxContainer/Button as Button
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var action_name: String = ""
 
@@ -55,6 +56,7 @@ func _on_button_toggled(button_pressed):
 				i.button.toggle_mode = true
 				i.set_process_unhandled_key_input(false)
 		
+		audio_stream_player.play()
 		set_text_for_key()
 
 func _unhandled_key_input(event):
@@ -69,3 +71,6 @@ func rebind_action_key(event):
 		set_process_unhandled_key_input(false)
 		set_text_for_key()
 		set_action_name()
+
+func _on_button_button_down() -> void:
+	audio_stream_player.play()

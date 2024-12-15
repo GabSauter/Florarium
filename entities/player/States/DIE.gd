@@ -3,8 +3,8 @@ extends "state.gd"
 @onready var timer: Timer = $Timer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-@onready var game_music: AudioStreamPlayer2D = get_node("/root/Game/AudioMusicManager")
-var game_music_volume: int
+@onready var game_music: AudioStreamPlayer = get_node("/root/Game/AudioMusicManager")
+var game_music_volume: float
 
 func enter_state():
 	audio_stream_player_2d.play()

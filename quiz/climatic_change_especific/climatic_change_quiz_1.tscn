@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crmrueeoygd1i"]
+[gd_scene load_steps=10 format=3 uid="uid://crmrueeoygd1i"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_kumj7"]
 [ext_resource type="PackedScene" uid="uid://duoidkopi2o1i" path="res://quiz/forest/forest_quiz_1.tscn" id="2_otxcj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ilkni35bq4ke" path="res://assets/sprites/world/forest/trees/cut_tree5.png" id="5_xyy8e"]
 [ext_resource type="Texture2D" uid="uid://c5c4a3mjbnde5" path="res://assets/sprites/world/forest/bush2.png" id="6_4e3hj"]
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_gspoi"]
+[ext_resource type="AudioStream" uid="uid://belw4prd8re4t" path="res://assets/audios/sfx/correct.mp3" id="8_3sxu0"]
+[ext_resource type="AudioStream" uid="uid://dkxelba8kve87" path="res://assets/audios/sfx/wrong.mp3" id="9_muvsb"]
 
 [node name="ClimaticChangeQuiz1" type="CanvasLayer"]
 
@@ -826,8 +828,12 @@ text = "Explicação da resposta certa"
 autowrap_mode = 2
 
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+stream = ExtResource("8_3sxu0")
+bus = &"SFX"
 
 [node name="AudioWrong" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+stream = ExtResource("9_muvsb")
+bus = &"SFX"
 
 [node name="NextQuestionButton" type="Button" parent="Control/Background/CardBackground"]
 layout_mode = 1

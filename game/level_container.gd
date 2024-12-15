@@ -2,7 +2,7 @@ class_name LevelContainer extends Node2D
 
 @onready var level_transition_animation: AnimationPlayer = $"../LevelTransition/AnimationPlayer"
 @onready var level_transition_canvas: CanvasLayer = $"../LevelTransition/CanvasLayer"
-@onready var audio_stream_player: AudioStreamPlayer2D = $"../AudioMusicManager"
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioMusicManager"
 
 var new_scene_instance: Node
 
@@ -20,7 +20,10 @@ func next_level(next_level_scene):
 func _deferred_add_child(next_level_scene):
 	new_scene_instance = next_level_scene.instantiate()
 	self.add_child(new_scene_instance)
-	audio_stream_player.play_music()
+	
+	var type_of_level = audio_stream_player.check_type_of_level(new_scene_instance)
+	audio_stream_player.play_music(type_of_level)
+	
 	await get_tree().create_timer(1.5).timeout
 	level_transition_animation.play("fade_out")
 	await get_tree().create_timer(1).timeout
