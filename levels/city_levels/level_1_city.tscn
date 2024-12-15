@@ -235,7 +235,8 @@ follow_viewport_enabled = true
 [node name="NPC" parent="0" instance=ExtResource("21_tduk1")]
 position = Vector2(2326, -41)
 audio = ExtResource("11_jxli6")
-text = "[center][color=Black][wave]Já percebeu que a cidade está cada vez mais quente?"
+text = "[center][color=Black][wave]Já percebeu que a cidade
+está cada vez mais quente?"
 sprites = SubResource("SpriteFrames_iigck")
 
 [node name="Sprites" type="Node2D" parent="0"]

@@ -15,31 +15,17 @@ shape = SubResource("CircleShape2D_1fkkl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 autoplay = "default"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 10
-offset_left = -178.0
-offset_top = -59.0
-offset_right = 86.0
-offset_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(1, 1, 1, 0)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 10
 clip_contents = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -15.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 187.0
+offset_bottom = 143.0
 theme_override_styles/normal = ExtResource("2_stc4r")
 bbcode_enabled = true
 text = "
 [center][color=black][wave]Testeeeeeeee
+eeeeeeee
+eeeeeee
 "
 scroll_active = false
 autowrap_mode = 2

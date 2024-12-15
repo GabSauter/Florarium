@@ -422,8 +422,8 @@ flip_h = true
 [node name="NPC" parent="0" instance=ExtResource("19_bfaur")]
 position = Vector2(2032, 280)
 audio = ExtResource("12_luo7l")
-text = "[center][color=Black][wave]Hey! 
-Apenas um experiente consegue pular aqui. 
+text = "[center][color=Black][wave]Hey!
+Apenas um experiente consegue pular aqui.
 Hehe"
 sprites = SubResource("SpriteFrames_3l0pa")
 
