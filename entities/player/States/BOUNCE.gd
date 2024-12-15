@@ -1,8 +1,10 @@
 extends "state.gd"
 
 @onready var common_behaviours: Node2D = $"../../CommonBehaviours"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func enter_state():
+	audio_stream_player_2d.play()
 	player.animated_sprite.play("jump")
 	player.velocity.x = player.velocity.x - cos(player.bounce_rotation + PI/2) * player.bounce_force
 	player.velocity.y = -sin(player.bounce_rotation + PI/2) * player.bounce_force

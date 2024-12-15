@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://ds702xwtvnmyd"]
+[gd_scene load_steps=57 format=4 uid="uid://ds702xwtvnmyd"]
 
 [ext_resource type="PackedScene" uid="uid://dq2ly7gjy40m4" path="res://levels/city_levels/city_ground_tile_map.tscn" id="1_4hxpc"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_bx7vx"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://djohv5gt475c2" path="res://assets/sprites/world/city/flood_water/flood_water0028.png" id="44_viskm"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/next_level.tscn" id="46_67ma3"]
 [ext_resource type="PackedScene" uid="uid://bnp5w6nkrm4p6" path="res://quiz/ecologic_city/ecologic_city_quiz_1.tscn" id="46_g7g1q"]
+[ext_resource type="AudioStream" uid="uid://d3l472tm1vpmn" path="res://assets/audios/sfx/rain.mp3" id="48_p6jsj"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="48_vtjwd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbxr6"]
@@ -280,7 +281,7 @@ speed = 150.0
 self_modulate = Color(0.238289, 0.420547, 0.471209, 1)
 z_index = 13
 position = Vector2(508, -3114)
-amount = 150
+amount = 450
 process_material = SubResource("ParticleProcessMaterial_1na1c")
 lifetime = 10.0
 visibility_rect = Rect2(-750, -100, 1500, 5200)
@@ -319,6 +320,15 @@ position = Vector2(-40.0077, 763.583)
 rotation = -0.0171214
 scale = Vector2(-8.14511, -4.20118)
 texture = ExtResource("1_bx7vx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="0/Path2D/PathFollow2D/movableNode"]
+position = Vector2(-0.434814, 96.0199)
+rotation = -0.0163029
+stream = ExtResource("48_p6jsj")
+volume_db = -5.233
+pitch_scale = 1.5
+autoplay = true
+parameters/looping = true
 
 [node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]
 position = Vector2(1204, -2102)

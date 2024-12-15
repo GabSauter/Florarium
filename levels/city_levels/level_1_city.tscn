@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://c4xuxw8eapjaw"]
+[gd_scene load_steps=39 format=4 uid="uid://c4xuxw8eapjaw"]
 
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_3kk5w"]
 [ext_resource type="Texture2D" uid="uid://e60g8eqk38qt" path="res://assets/sprites/world/city/house_1.png" id="1_jrspm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d6cex3lse2wr" path="res://assets/sprites/effects/spotlight_1.png" id="5_8v0y4"]
 [ext_resource type="Texture2D" uid="uid://c8rf60nqwwb7i" path="res://assets/sprites/world/city/bg_build_4.png" id="5_ivg2o"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="6_qltym"]
+[ext_resource type="AudioStream" uid="uid://dsh78l5tws0th" path="res://assets/audios/sfx/blah.ogg" id="11_jxli6"]
 [ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="13_y1yrt"]
 [ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/respawn.tscn" id="14_4476r"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/glass_spikes.tscn" id="15_1hlr2"]
@@ -233,6 +234,7 @@ follow_viewport_enabled = true
 
 [node name="NPC" parent="0" instance=ExtResource("21_tduk1")]
 position = Vector2(2326, -41)
+audio = ExtResource("11_jxli6")
 text = "[center][color=Black][wave]Já percebeu que a cidade está cada vez mais quente?"
 sprites = SubResource("SpriteFrames_iigck")
 
