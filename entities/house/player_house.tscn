@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bld242oact0q7"]
+[gd_scene load_steps=6 format=3 uid="uid://bld242oact0q7"]
 
+[ext_resource type="Script" path="res://entities/house/player_house.gd" id="1_3e3o3"]
 [ext_resource type="Texture2D" uid="uid://chs73e3bem46b" path="res://assets/sprites/world/ending/player_house_back.png" id="1_wwogc"]
 [ext_resource type="Texture2D" uid="uid://cc61jyamidonu" path="res://assets/sprites/world/ending/player_house_front.png" id="2_3j2vi"]
+[ext_resource type="PackedScene" uid="uid://borto8er3l4xv" path="res://ui/menu/main_menu/main_menu.tscn" id="2_jrkbl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmcyx"]
-size = Vector2(53, 127.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78awo"]
+size = Vector2(81, 138)
 
 [node name="PlayerHouse" type="Node2D"]
+script = ExtResource("1_3e3o3")
+new_scene = ExtResource("2_jrkbl")
 
 [node name="SpriteBack" type="Sprite2D" parent="."]
 position = Vector2(-66, 0)
@@ -19,16 +23,18 @@ position = Vector2(36, -12)
 texture = ExtResource("2_3j2vi")
 flip_h = true
 
-[node name="AreaEndGame" type="Area2D" parent="."]
-position = Vector2(176, -2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEndGame"]
-position = Vector2(-120, 67.75)
-shape = SubResource("RectangleShape2D_dmcyx")
-
 [node name="StaticBody" type="StaticBody2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody"]
 z_index = 5
 polygon = PackedVector2Array(-32, 8, -21, -155, 56, -151, 45, -94, 50, -25, 60, -2, 103, 108, 102, 128, 87, 129, 48, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(75, 61)
+shape = SubResource("RectangleShape2D_78awo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

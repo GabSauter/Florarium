@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk32uutxlj7rt"]
+
+[ext_resource type="Script" path="res://ui/end_game/end_game.gd" id="1_i73xt"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="2_1xif3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc2dc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owe4l"]
+
+[node name="EndGame" type="CanvasLayer"]
+script = ExtResource("1_i73xt")
+
+[node name="Container" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc2dc")
+
+[node name="Container2" type="MarginContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -243.0
+offset_top = 91.0
+offset_right = 292.0
+offset_bottom = 648.0
+grow_horizontal = 2
+
+[node name="LabelPressAnyButton" type="Label" parent="Container/Container2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Aperte Enter para continuar"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Container2"]
+layout_mode = 2
+
+[node name="LabelOrientando" type="Label" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Orientando:"
+horizontal_alignment = 1
+
+[node name="LabelNameOrientando" type="Label" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+text = "Gabriel De Andrade Sauter"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="HSeparator" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_owe4l")
+
+[node name="LabelOrientador" type="Label" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Orientadora:"
+horizontal_alignment = 1
+
+[node name="LabelNameOrientador" type="Label" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+text = "Simone Nasser Matos"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="HSeparator" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+theme_override_styles/separator = SubResource("StyleBoxEmpty_owe4l")
+
+[node name="LabelThanks" type="Label" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Obrigado por Jogar!"
+horizontal_alignment = 1
+
+[node name="VSeparator3" type="HSeparator" parent="Container/Container2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_owe4l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1xif3")
+volume_db = -10.716
+pitch_scale = 1.56

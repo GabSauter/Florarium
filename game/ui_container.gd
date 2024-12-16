@@ -2,7 +2,7 @@ class_name UIContainer extends CanvasLayer
 
 @onready var audio_music_manager: AudioStreamPlayer = $"../AudioMusicManager"
 
-func next_ui(next_ui_scene):
+func next_ui(next_ui_scene: PackedScene):
 	if self.get_child_count() > 0:
 		var current_scene = self.get_child(0)
 		current_scene.queue_free()
