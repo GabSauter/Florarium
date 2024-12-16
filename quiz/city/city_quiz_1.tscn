@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byl846yuny273"]
+[gd_scene load_steps=11 format=3 uid="uid://byl846yuny273"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_g3tsp"]
 [ext_resource type="PackedScene" uid="uid://c4xuxw8eapjaw" path="res://levels/city_levels/level_1_city.tscn" id="2_xomqv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_kmmjr"]
 [ext_resource type="AudioStream" uid="uid://belw4prd8re4t" path="res://assets/audios/sfx/correct.mp3" id="8_26e2k"]
 [ext_resource type="AudioStream" uid="uid://dkxelba8kve87" path="res://assets/audios/sfx/wrong.mp3" id="9_1sgya"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="10_ikg67"]
 
 [node name="CityQuiz1" type="CanvasLayer"]
 
@@ -833,6 +834,13 @@ bus = &"SFX"
 
 [node name="AudioWrong" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
 stream = ExtResource("9_1sgya")
+bus = &"SFX"
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+position = Vector2(-344, -29)
+stream = ExtResource("10_ikg67")
+volume_db = -0.655
+pitch_scale = 1.4
 bus = &"SFX"
 
 [node name="NextQuestionButton" type="Button" parent="Control/Background/CardBackground"]

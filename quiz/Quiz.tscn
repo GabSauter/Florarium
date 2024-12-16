@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lgwckeprjxnl"]
+[gd_scene load_steps=5 format=3 uid="uid://lgwckeprjxnl"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_8cfku"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="1_dfe0y"]
 [ext_resource type="Resource" uid="uid://bmljji4apg5rr" path="res://quiz/forest/forest_quiz_1_theme.tres" id="2_hm008"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="4_vcctq"]
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
@@ -99,11 +100,17 @@ offset_bottom = 624.0
 size_flags_vertical = 8
 text = "Próxima Pergunta"
 
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="Background/CardBackground"]
+position = Vector2(-344, -29)
+
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="Background/CardBackground"]
 position = Vector2(-344, -29)
 
-[node name="AudioWrong" type="AudioStreamPlayer2D" parent="Background/CardBackground"]
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="Background/CardBackground"]
 position = Vector2(-344, -29)
+stream = ExtResource("4_vcctq")
+volume_db = -8.504
+pitch_scale = 1.4
 
 [node name="QuizOver" type="Control" parent="Background"]
 visible = false

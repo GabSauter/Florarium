@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bld242oact0q7"]
+
+[ext_resource type="Texture2D" uid="uid://chs73e3bem46b" path="res://assets/sprites/world/ending/player_house_back.png" id="1_wwogc"]
+[ext_resource type="Texture2D" uid="uid://cc61jyamidonu" path="res://assets/sprites/world/ending/player_house_front.png" id="2_3j2vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmcyx"]
+size = Vector2(53, 127.5)
+
+[node name="PlayerHouse" type="Node2D"]
+
+[node name="SpriteBack" type="Sprite2D" parent="."]
+position = Vector2(-66, 0)
+texture = ExtResource("1_wwogc")
+flip_h = true
+
+[node name="SpriteFront" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(36, -12)
+texture = ExtResource("2_3j2vi")
+flip_h = true
+
+[node name="AreaEndGame" type="Area2D" parent="."]
+position = Vector2(176, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEndGame"]
+position = Vector2(-120, 67.75)
+shape = SubResource("RectangleShape2D_dmcyx")
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody"]
+z_index = 5
+polygon = PackedVector2Array(-32, 8, -21, -155, 56, -151, 45, -94, 50, -25, 60, -2, 103, 108, 102, 128, 87, 129, 48, 0)

@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var particles = $GPUParticles2D
+@onready var audio_stream_player_2d_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 # com o is active, faz com que o respawn seja no último checkpoint pego
 # desabilitando os checkpoints anteriores, sendo viável para jogos tipo celeste, mas inviável para jogos tipo hollow knight
@@ -16,3 +17,4 @@ func _on_body_entered(body):
 		isActive = true
 		animated_sprite.play("open_flower")
 		particles.emitting = true
+		audio_stream_player_2d_2.play()

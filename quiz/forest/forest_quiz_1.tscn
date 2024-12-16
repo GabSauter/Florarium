@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duoidkopi2o1i"]
+[gd_scene load_steps=11 format=3 uid="uid://duoidkopi2o1i"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_qhlvf"]
 [ext_resource type="PackedScene" uid="uid://ddqjd3aptdlu8" path="res://levels/forest_levels/level_1.tscn" id="2_4n5rf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_xp8c8"]
 [ext_resource type="AudioStream" uid="uid://belw4prd8re4t" path="res://assets/audios/sfx/correct.mp3" id="8_y30rq"]
 [ext_resource type="AudioStream" uid="uid://dkxelba8kve87" path="res://assets/audios/sfx/wrong.mp3" id="9_2pp1m"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="10_oiphq"]
 
 [node name="ForestQuiz1" type="CanvasLayer"]
 
@@ -850,6 +851,13 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 text = "Próxima Pergunta"
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+position = Vector2(-344, -29)
+stream = ExtResource("10_oiphq")
+volume_db = -0.655
+pitch_scale = 1.4
+bus = &"SFX"
 
 [node name="QuizOver" type="Control" parent="Control/Background"]
 visible = false

@@ -10,6 +10,7 @@ var level_container: LevelContainer
 @onready var label_explanation = $Background/CardBackground/VBoxContainer2/VBoxContainer/LabelExplanation
 @onready var audio_wrong = $Background/CardBackground/AudioWrong
 @onready var audio_correct = $Background/CardBackground/AudioCorrect
+@onready var audio_button = $Background/CardBackground/AudioButton
 
 @onready var quiz_over = $Background/QuizOver
 @onready var score = $Background/QuizOver/BackGround/VBoxContainer/Score
@@ -79,6 +80,7 @@ func append_the_question_in_last_position():
 	quiz.theme.append(current_quiz)
 
 func _on_next_question_button_button_down():
+	audio_button.play()
 	index += 1
 	if index >= quiz.theme.size():
 		end_quiz()
@@ -101,6 +103,7 @@ func end_quiz():
 	save_quiz()
 
 func _on_continue_button_button_down():
+	audio_button.play()
 	level_container = get_tree().current_scene.get_node("LevelContainer")
 	level_container.next_level(next_scene)
 

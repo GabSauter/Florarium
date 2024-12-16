@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnp5w6nkrm4p6"]
+[gd_scene load_steps=11 format=3 uid="uid://bnp5w6nkrm4p6"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_xyxhu"]
 [ext_resource type="PackedScene" uid="uid://b8bhlu4cjh0r" path="res://levels/intelligent_city_levels/level_1_intelligent_city.tscn" id="2_5y7yy"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfly6tpy6kml8" path="res://assets/sprites/quiz/parchment.png" id="7_38x1i"]
 [ext_resource type="AudioStream" uid="uid://belw4prd8re4t" path="res://assets/audios/sfx/correct.mp3" id="8_bx6b2"]
 [ext_resource type="AudioStream" uid="uid://dkxelba8kve87" path="res://assets/audios/sfx/wrong.mp3" id="9_rgi34"]
+[ext_resource type="AudioStream" uid="uid://cem7omqs5ar48" path="res://assets/audios/sfx/hit.mp3" id="10_dccxm"]
 
 [node name="EcologicCityQuiz1" type="CanvasLayer"]
 
@@ -850,6 +851,13 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 text = "Próxima Pergunta"
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="Control/Background/CardBackground"]
+position = Vector2(-344, -29)
+stream = ExtResource("10_dccxm")
+volume_db = -0.655
+pitch_scale = 1.4
+bus = &"SFX"
 
 [node name="QuizOver" type="Control" parent="Control/Background"]
 visible = false

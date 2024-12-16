@@ -325,9 +325,10 @@ texture = ExtResource("1_bx7vx")
 position = Vector2(-0.434814, 96.0199)
 rotation = -0.0163029
 stream = ExtResource("48_p6jsj")
-volume_db = -5.233
+volume_db = -8.504
 pitch_scale = 1.5
 autoplay = true
+bus = &"SFX"
 parameters/looping = true
 
 [node name="NextLevel" parent="0" instance=ExtResource("46_67ma3")]

@@ -18,9 +18,10 @@ var musics = {
 var current_music: String = ""
 
 func play_music(music_name: String):
+	if music_name == "main_menu":
+		self.volume_db = -10
 	if music_name != "" and current_music != music_name:
 		current_music = music_name
-		print(music_name)
 		self.stream = load(musics[music_name])
 		self.play()
 
@@ -32,19 +33,19 @@ func check_type_of_level(new_scene_instance):
 	var level_name = new_scene_instance.name
 	if level_name.begins_with("Level") and level_name.contains("Forest"):
 		if level_name.contains("6"):
-			self.volume_db = -7
+			self.volume_db = -22
 			return "last_level_forest"
 		else:
-			self.volume_db = 0
+			self.volume_db = -4
 			return "forest"
 	elif level_name.begins_with("Level") and level_name.contains("IntelligentCity"):
-		self.volume_db = -10
+		self.volume_db = -28
 		return "intelligent_city"
 	elif level_name.begins_with("Level") and level_name.contains("City") and !level_name.contains("Intelligent"):
 		if level_name.contains("5"):
-			self.volume_db = -5
+			self.volume_db = -18
 			return "last_level_city"
 		else:
-			self.volume_db = -5
+			self.volume_db = -15
 			return "city"
 	return ""
