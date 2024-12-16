@@ -8,5 +8,5 @@
 
 [resource]
 script = ExtResource("1_l2k75")
-name = ""
+name = "city_quiz_1"
 theme = Array[ExtResource("2_1lixy")]([ExtResource("5_gppj1"), ExtResource("3_erelo"), ExtResource("6_lc0er")])
