@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/player.tscn" id="1_hjky7"]
 [ext_resource type="Texture2D" uid="uid://baibfve15mhp8" path="res://assets/sprites/world/city/bg_build_3.png" id="2_17v85"]
 [ext_resource type="Texture2D" uid="uid://x5qbq3qqlhjk" path="res://assets/sprites/world/city/house_4.png" id="2_77p56"]
-[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/respawn.tscn" id="2_blfx3"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="2_blfx3"]
 [ext_resource type="Texture2D" uid="uid://cicxxjhnfvghc" path="res://assets/sprites/world/city/bg_build_2.png" id="2_cfjcx"]
 [ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="3_3n5jo"]
 [ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/move_plataform.tscn" id="4_niyiu"]
