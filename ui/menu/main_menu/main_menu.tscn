@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://borto8er3l4xv"]
 
 [ext_resource type="Script" path="res://ui/menu/main_menu/main_menu.gd" id="1_65v3q"]
-[ext_resource type="PackedScene" uid="uid://ddqjd3aptdlu8" path="res://levels/forest_levels/level_1.tscn" id="2_4s5eu"]
 [ext_resource type="Texture2D" uid="uid://b0r0o21es4uqf" path="res://assets/sprites/menu/background.png" id="3_3m4q5"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="3_3q01p"]
 [ext_resource type="PackedScene" uid="uid://wkku8p1vo8af" path="res://ui/menu/options_menu/options_menu.tscn" id="4_8cpnl"]
@@ -29,6 +28,17 @@ radial_accel_min = 10.0
 radial_accel_max = 10.0
 color_ramp = SubResource("GradientTexture1D_qb8gx")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1emi"]
+bg_color = Color(0.202578, 0.219638, 0.183898, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -38,7 +48,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_65v3q")
-new_game_scene = ExtResource("2_4s5eu")
 
 [node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(643, 373)
@@ -85,11 +94,20 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
+[node name="ContinueGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Continuar jogo
+"
+flat = true
+alignment = 0
+
 [node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Jogar
+text = "Novo jogo
 "
 flat = true
 alignment = 0
@@ -115,10 +133,60 @@ alignment = 0
 visible = false
 layout_mode = 1
 
+[node name="ConfirmNewGamePainel" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 494.0
+offset_right = 68.0
+offset_bottom = 534.0
+
+[node name="Panel" type="Panel" parent="ConfirmNewGamePainel"]
+layout_mode = 0
+offset_right = 279.0
+offset_bottom = 126.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1emi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmNewGamePainel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ConfirmNewGamePainel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Você tem certeza de
+começar um novo jogo?
+Isso irá remover o seu progresso."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmNewGamePainel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="ButtonNo" type="Button" parent="ConfirmNewGamePainel/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Não"
+
+[node name="VSeparator" type="VSeparator" parent="ConfirmNewGamePainel/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 42
+
+[node name="ButtonYes" type="Button" parent="ConfirmNewGamePainel/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sim"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_vghqu")
 volume_db = -11.345
 
+[connection signal="button_down" from="MarginContainer/VBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_down" from="ConfirmNewGamePainel/Panel/VBoxContainer/HBoxContainer/ButtonNo" to="." method="_on_button_no_button_down"]
+[connection signal="button_down" from="ConfirmNewGamePainel/Panel/VBoxContainer/HBoxContainer/ButtonYes" to="." method="_on_button_yes_button_down"]

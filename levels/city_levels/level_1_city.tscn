@@ -16,7 +16,7 @@
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="6_qltym"]
 [ext_resource type="AudioStream" uid="uid://dsh78l5tws0th" path="res://assets/audios/sfx/blah.ogg" id="11_jxli6"]
 [ext_resource type="PackedScene" uid="uid://c8sh66vfl7som" path="res://assets/sprites/world/city/chimney.tscn" id="13_y1yrt"]
-[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="14_4476r"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/respawn.tscn" id="14_4476r"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/glass_spikes.tscn" id="15_1hlr2"]
 [ext_resource type="PackedScene" uid="uid://dd2vvgssqjvim" path="res://entities/game_related/next_level.tscn" id="16_isrn4"]
 [ext_resource type="PackedScene" uid="uid://tbv4c7bmbf67" path="res://entities/plataforms/move_plataform.tscn" id="18_6av24"]

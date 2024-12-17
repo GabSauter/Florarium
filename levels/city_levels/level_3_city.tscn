@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://x5qbq3qqlhjk" path="res://assets/sprites/world/city/house_4.png" id="3_ectrq"]
 [ext_resource type="PackedScene" uid="uid://d33nbegkq8h2m" path="res://entities/player/player.tscn" id="3_g6ttx"]
 [ext_resource type="Texture2D" uid="uid://cmsh1bo7m3l2w" path="res://assets/sprites/world/city/bg_build_1.png" id="3_nm4su"]
-[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/Respawn.tscn" id="4_cxb54"]
+[ext_resource type="PackedScene" uid="uid://lkrvelg1xc1f" path="res://entities/game_related/respawn.tscn" id="4_cxb54"]
 [ext_resource type="PackedScene" uid="uid://bqubnevsali2t" path="res://entities/obstacles/glass_spikes.tscn" id="5_choe5"]
 [ext_resource type="Texture2D" uid="uid://c8rf60nqwwb7i" path="res://assets/sprites/world/city/bg_build_4.png" id="5_e1pky"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="5_yg2f4"]

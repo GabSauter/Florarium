@@ -12,7 +12,7 @@ func enter_state():
 	timer.start(0.05)
 	game_music_volume = game_music.volume_db
 
-func update(delta):
+func update(_delta):
 	player.velocity = Vector2(0,0)
 	if player.dead:
 		#game_music.volume_db = lerp(game_music.volume_db, -30.0, 0.8 * delta)
