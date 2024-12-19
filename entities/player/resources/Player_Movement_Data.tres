@@ -4,19 +4,19 @@
 
 [resource]
 script = ExtResource("1_3vbcq")
-ACCELERATION = 600
+ACCELERATION = 950
 MAX_SPEED = 450
-FRICTION = 2900
-JUMP_HEIGHT = 230.0
-JUMP_TIME_TO_PEAK = 0.45
-JUMP_TIME_TO_DESCENT = 0.42
+FRICTION = 3000
+JUMP_HEIGHT = 220.0
+JUMP_TIME_TO_PEAK = 0.38
+JUMP_TIME_TO_DESCENT = 0.365
 JUMP_TIME_TO_DESCENT_SLIDING = 2.0
 CUT_JUMP_HEIGHT = 0.55
-MAX_FALL_SPEED = 950.0
+MAX_FALL_SPEED = 1000.0
 JUMP_OFF_WALL_POWER = 380
 APEX_GRAVITY = 400.0
 APEX_RANGE = 30.0
-dash_speed_x = 800
-dash_speed_y = 700
-dash_speed_diagonal = 710
+dash_speed_x = 900
+dash_speed_y = 800
+dash_speed_diagonal = 790
 dash_duration = 0.15

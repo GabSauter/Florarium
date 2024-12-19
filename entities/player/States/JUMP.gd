@@ -15,7 +15,7 @@ func enter_state():
 	jump_dust_particles.emitting = true
 	player.get_parent().add_child(jump_dust_particles)
 	
-	player.velocity.y = player.movement.JUMP_VELOCITY
+	player.velocity.y = ((2.0 * player.movement.JUMP_HEIGHT) / player.movement.JUMP_TIME_TO_PEAK) * -1.0
 
 func update(delta):
 	player.animated_sprite.play("jump")

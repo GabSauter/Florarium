@@ -9,7 +9,7 @@ func player_movement(delta):
 		player.velocity.x = move_toward(player.velocity.x, 0, player.movement.FRICTION * delta)
 	else:
 		if (player.input_handler.movement_input.x > 0 && player.velocity.x < 0) or (player.input_handler.movement_input.x < 0 && player.velocity.x > 0):
-			decelerate_when_turn(player.input_handler.movement_input.x * 2500, delta)
+			decelerate_when_turn(player.input_handler.movement_input.x * 8500, delta)
 		else:
 			player.velocity.x = move_toward(player.velocity.x, player.movement.MAX_SPEED * player.input_handler.movement_input.x, player.movement.ACCELERATION * delta)
 	
@@ -33,11 +33,11 @@ func calc_gravity(delta):
 		if abs(player.velocity.y) < player.movement.APEX_RANGE:
 			gravity = player.movement.APEX_GRAVITY
 		elif player.STATES.current_state == player.STATES.FALL:
-			gravity = player.movement.FALL_GRAVITY
+			gravity = ((-2.0 * player.movement.JUMP_HEIGHT) / (player.movement.JUMP_TIME_TO_DESCENT * player.movement.JUMP_TIME_TO_DESCENT)) * -1.0
 		elif player.STATES.current_state == player.STATES.SLIDE and player.velocity.y > 0:
-			gravity = player.movement.SLIDE_GRAVITY
+			gravity = ((-2.0 * player.movement.JUMP_HEIGHT) / (player.movement.JUMP_TIME_TO_DESCENT_SLIDING * player.movement.JUMP_TIME_TO_DESCENT_SLIDING)) * -1.0
 		else:
-			gravity = player.movement.JUMP_GRAVITY
+			gravity = ((-2.0 * player.movement.JUMP_HEIGHT) / (player.movement.JUMP_TIME_TO_PEAK * player.movement.JUMP_TIME_TO_PEAK)) * -1.0
 		
 		if player.velocity.y > player.movement.MAX_FALL_SPEED:
 			player.velocity.y = player.movement.MAX_FALL_SPEED
