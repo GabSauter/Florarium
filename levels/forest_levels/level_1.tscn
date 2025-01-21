@@ -1063,36 +1063,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="RespawnText" type="RichTextLabel" parent="0/Tutorials"]
-offset_left = 2809.0
-offset_top = -169.0
-offset_right = 3144.0
-offset_bottom = -117.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("25_mfxdg")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "Segure <- para ir para esquerda
-E -> para ir para direita"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="SpikesText" type="RichTextLabel" parent="0/Tutorials"]
-z_index = 15
-offset_left = 2998.0
-offset_top = 134.0
-offset_right = 3361.0
-offset_bottom = 221.0
-theme_override_fonts/normal_font = ExtResource("25_mfxdg")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "Segure <- para ir para esquerda
-E -> para ir para direita"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="WallJumpText" type="RichTextLabel" parent="0/Tutorials"]
 z_index = 15
 offset_left = 3684.0

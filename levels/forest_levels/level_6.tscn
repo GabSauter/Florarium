@@ -107,11 +107,6 @@ position = Vector2(5496.25, 740)
 scale = Vector2(0.283919, 0.283919)
 texture = ExtResource("1_q3d5y")
 
-[node name="Sprite2D13" type="Sprite2D" parent="-2"]
-position = Vector2(5870, 672.5)
-scale = Vector2(0.283919, 0.283919)
-texture = ExtResource("1_q3d5y")
-
 [node name="Sprite2D14" type="Sprite2D" parent="-2"]
 position = Vector2(7551.25, 2158.75)
 scale = Vector2(0.283919, 0.283919)
@@ -148,7 +143,7 @@ scale = Vector2(0.283919, 0.283919)
 texture = ExtResource("1_q3d5y")
 
 [node name="Sprite2D11" type="Sprite2D" parent="-2"]
-position = Vector2(5022.5, 610)
+position = Vector2(5035, 700)
 scale = Vector2(0.283919, 0.283919)
 texture = ExtResource("1_q3d5y")
 
@@ -418,11 +413,6 @@ texture = ExtResource("1_q3d5y")
 
 [node name="Sprite2D13" type="Sprite2D" parent="-1"]
 position = Vector2(5630, 992.222)
-scale = Vector2(0.310423, 0.310423)
-texture = ExtResource("1_q3d5y")
-
-[node name="Sprite2D14" type="Sprite2D" parent="-1"]
-position = Vector2(5915.56, 992.222)
 scale = Vector2(0.310423, 0.310423)
 texture = ExtResource("1_q3d5y")
 

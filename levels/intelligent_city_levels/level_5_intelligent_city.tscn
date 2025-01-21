@@ -826,7 +826,7 @@ layer_0/tile_data = PackedInt32Array(-327604, 524288, 0, -458675, 524288, 0, -39
 [node name="BouncePlataform" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(358, 663)
 rotation = 0.548777
-bounce_force = 2650
+bounce_force = 3250
 
 [node name="BouncePlataform2" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(4746, 383)
@@ -835,13 +835,13 @@ bounce_force = 2800
 
 [node name="BouncePlataform3" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(5104, -181)
-rotation = 3.14429
-bounce_force = 3100
+rotation = 3.05063
+bounce_force = 3000
 
 [node name="BouncePlataform7" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(5242, -181)
-rotation = 3.14429
-bounce_force = 3100
+rotation = 3.03938
+bounce_force = 3000
 
 [node name="BouncePlataform5" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(6067, -185)
@@ -866,12 +866,12 @@ bounce_force = 3500
 [node name="BouncePlataform6" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(6619, 386)
 rotation = 6.67078
-bounce_force = 4200
+bounce_force = 4600
 
 [node name="BouncePlataform10" parent="0/Plataforms" instance=ExtResource("4_h1plf")]
 position = Vector2(6746, 408)
 rotation = 6.67078
-bounce_force = 4200
+bounce_force = 4600
 
 [node name="DashCollectables" type="Node" parent="0"]
 

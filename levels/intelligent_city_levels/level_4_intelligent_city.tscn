@@ -174,25 +174,25 @@ follow_viewport_enabled = true
 [node name="BouncePlataform" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(1109, -187)
 rotation = 1.13963
-bounce_force = 1600
+bounce_force = 2400
 
 [node name="BouncePlataform3" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(2973, -109)
 rotation = 0.0743514
-bounce_force = 1300
+bounce_force = 1600
 
 [node name="BouncePlataform8" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(3549, -109)
 rotation = 0.0743514
-bounce_force = 1300
+bounce_force = 1600
 
 [node name="BouncePlataform4" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(342, 693)
-bounce_force = 1600
+bounce_force = 1900
 
 [node name="BouncePlataform5" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(644, 699)
-bounce_force = 1600
+bounce_force = 1900
 
 [node name="BouncePlataform6" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(817, 665)
@@ -202,7 +202,7 @@ bounce_force = 1900
 [node name="BouncePlataform7" parent="0/Plataforms" instance=ExtResource("2_y84mi")]
 position = Vector2(1243, 690)
 rotation = -0.0989832
-bounce_force = 2200
+bounce_force = 2600
 
 [node name="Collectables" type="Node" parent="0"]
 
