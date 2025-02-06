@@ -3,13 +3,15 @@ Roteiro de Animação Educativa: “A Cidade Ecológica”
 Cenário inicial: A animação começa mostrando uma cidade moderna, mas completamente ecológica. O céu está limpo e azul, e o som de pássaros pode ser ouvido. As ruas são cercadas de árvores, e as construções têm telhados verdes e painéis solares. Carros elétricos circulam pelas ruas, e bicicletas são vistas em todas as direções.
 
 Narrador (voz calma e esperançosa):
-"Bem-vindos à Cidade Ecológica, um exemplo de como podemos transformar nosso mundo e combater as mudanças climáticas. Aqui, a natureza e a tecnologia trabalham juntas para criar um futuro mais sustentável."
+"Bem-vindos à Cidade Ecológica, um exemplo de como podemos transformar nosso mundo e combater as mudanças climáticas. Aqui, a natureza e a tecnologia trabalham juntas para 
+criar um futuro mais sustentável."
 
 Cena 1: Fontes de Energia Limpa
 (Visual: A câmera se move por bairros, mostrando edifícios com painéis solares em seus telhados e turbinas eólicas ao fundo.)
 
 Narrador:
-"Aqui, a energia vem de fontes limpas e renováveis. Os painéis solares nas casas captam a energia do sol, enquanto as turbinas eólicas ao longe aproveitam a força do vento. Assim, a cidade não precisa queimar combustíveis fósseis, como carvão ou petróleo, para gerar eletricidade. Isso reduz a poluição do ar e a emissão de gases de efeito estufa."
+"Aqui, a energia vem de fontes limpas e renováveis. Os painéis solares nas casas captam a energia do sol, enquanto as turbinas eólicas ao longe aproveitam a força do vento. 
+Assim, a cidade não precisa queimar combustíveis fósseis, como carvão ou petróleo, para gerar eletricidade. Isso reduz a poluição do ar e a emissão de gases de efeito estufa."
 
 (Cena: A câmera foca em um trabalhador instalando painéis solares e em uma escola com telhado verde, mostrando o impacto positivo da energia solar.)
 
@@ -20,7 +22,8 @@ Cena 2: Transporte Sustentável
 (Visual: Uma rua com carros elétricos e bicicletas sendo usadas por todos os habitantes, sem nenhum carro a combustão.)
 
 Narrador:
-"Na Cidade Ecológica, o transporte é totalmente sustentável. Os carros elétricos não emitem poluentes e ajudam a reduzir o impacto do tráfego nas cidades. Mas a melhor escolha de todas é a bicicleta, que não gera emissões e mantém todos em forma."
+"Na Cidade Ecológica, o transporte é totalmente sustentável. Os carros elétricos não emitem poluentes e ajudam a reduzir o impacto do tráfego nas cidades. Mas a melhor 
+escolha de todas é a bicicleta, que não gera emissões e mantém todos em forma."
 
 (Cena: Uma família pedalando alegremente em uma ciclovia, enquanto o sol brilha sobre o céu claro.)
 
@@ -31,18 +34,21 @@ Cena 3: Plantio de Árvores e Recuperação de Áreas Verdes
 (Visual: Uma praça onde crianças e adultos estão plantando árvores e cuidando de jardins comunitários. Áreas de lazer ao ar livre são vistas com muitas plantas.)
 
 Narrador:
-"A cidade também investe no plantio de árvores. As árvores são essenciais para combater as mudanças climáticas, pois elas absorvem o dióxido de carbono, liberam oxigênio e ajudam a manter o equilíbrio do clima."
+"A cidade também investe no plantio de árvores. As árvores são essenciais para combater as mudanças climáticas, pois elas absorvem o dióxido de carbono, liberam oxigênio e 
+ajudam a manter o equilíbrio do clima."
 
 (Cena: O crescimento de uma árvore sendo mostrado em um time-lapse, desde o plantio até se tornar uma árvore madura.)
 
 Narrador:
-"A cada árvore plantada, mais carbono é retirado da atmosfera e o ar fica mais limpo. Além disso, as árvores ajudam a melhorar a qualidade de vida na cidade, proporcionando sombra e espaços verdes para todos."
+"A cada árvore plantada, mais carbono é retirado da atmosfera e o ar fica mais limpo. Além disso, as árvores ajudam a melhorar a qualidade de vida na cidade, proporcionando 
+sombra e espaços verdes para todos."
 
 Cena 4: Gestão de Resíduos e Reciclagem
 (Visual: Uma central de reciclagem moderna e bem organizada. Lixeiras de diferentes cores estão espalhadas pela cidade, com moradores separando corretamente seus resíduos.)
 
 Narrador:
-"A gestão de resíduos também é fundamental. Em vez de enviar tudo para os aterros sanitários, os moradores da cidade reciclagem, compostam e reusam materiais. Isso diminui a quantidade de lixo e evita a liberação de metano, um gás que contribui para o aquecimento global."
+"A gestão de resíduos também é fundamental. Em vez de enviar tudo para os aterros sanitários, os moradores da cidade reciclagem, compostam e reusam materiais. Isso diminui a 
+quantidade de lixo e evita a liberação de metano, um gás que contribui para o aquecimento global."
 
 (Cena: Um jovem leva uma sacola de alimentos orgânicos para um compostor comunitário, enquanto o lixo reciclável é levado para uma usina moderna.)
 
@@ -53,7 +59,8 @@ Cena 5: Agricultura Sustentável
 (Visual: Uma fazenda urbana dentro da cidade, com hortas comunitárias e cultivo de alimentos sem o uso de pesticidas químicos.)
 
 Narrador:
-"A agricultura na Cidade Ecológica é feita de maneira sustentável. Ao invés de usar produtos químicos que poluem a terra e a água, aqui os agricultores utilizam práticas orgânicas para cultivar alimentos saudáveis, com técnicas que preservam o solo e a biodiversidade."
+"A agricultura na Cidade Ecológica é feita de maneira sustentável. Ao invés de usar produtos químicos que poluem a terra e a água, aqui os agricultores utilizam práticas 
+orgânicas para cultivar alimentos saudáveis, com técnicas que preservam o solo e a biodiversidade."
 
 (Cena: Um agricultor trabalhando na horta, com a ajuda de crianças que estão plantando sementes e colhendo vegetais.)
 
@@ -64,13 +71,16 @@ Cena 6: A Importância das Escolhas Individuais
 (Visual: A câmera mostra moradores realizando pequenas ações: desligando luzes desnecessárias, utilizando roupas recicladas, trocando lâmpadas convencionais por LED.)
 
 Narrador:
-"Mas a mudança começa com cada um de nós. Em nossas escolhas diárias, podemos fazer a diferença. Desligar luzes, escolher produtos sustentáveis e reduzir o consumo de água e energia são atitudes simples que ajudam a combater as mudanças climáticas."
+"Mas a mudança começa com cada um de nós. Em nossas escolhas diárias, podemos fazer a diferença. Desligar luzes, escolher produtos sustentáveis e reduzir o consumo de água 
+e energia são atitudes simples que ajudam a combater as mudanças climáticas."
 
 Cena Final: O Futuro da Cidade Ecológica
-(Visual: A cidade está mais verde e vibrante, com um céu azul claro e pessoas sorrindo, andando por ruas repletas de árvores e flores. A câmera mostra crianças brincando em praças cercadas por natureza.)
+(Visual: A cidade está mais verde e vibrante, com um céu azul claro e pessoas sorrindo, andando por ruas repletas de árvores e flores. A câmera mostra crianças brincando 
+em praças cercadas por natureza.)
 
 Narrador (voz otimista):
-"A Cidade Ecológica é apenas o começo. Se todos nós adotarmos práticas mais conscientes e sustentáveis, podemos criar um mundo mais saudável, equilibrado e preparado para enfrentar as mudanças climáticas."
+"A Cidade Ecológica é apenas o começo. Se todos nós adotarmos práticas mais conscientes e sustentáveis, podemos criar um mundo mais saudável, equilibrado e preparado para 
+enfrentar as mudanças climáticas."
 
 Texto na tela:
 “O futuro está em nossas mãos. Vamos cuidar do nosso planeta, hoje e sempre.”

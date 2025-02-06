@@ -29,7 +29,7 @@ func _ready():
 		saved_game_scene = load(load_saved_game_level_from_file())
 
 func load_saved_game_level_from_file() -> String:
-	var file = FileAccess.open("user://SaveLevel.dat", FileAccess.READ)
+	var file = FileAccess.open("user://saveLevel.dat", FileAccess.READ)
 	if file != null:
 		var content = file.get_as_text()
 		continue_game_button.disabled = false

@@ -1,15 +1,35 @@
 extends AudioStreamPlayer
 
 var musics = {
-	"main_menu": "res://assets/audios/musics/menu_music.mp3",
+	"main_menu": {
+		"location": "res://assets/audios/musics/menu_music.mp3",
+		"volume": -10
+	},
 	
-	"forest": "res://assets/audios/musics/forest_music.mp3",
-	"last_level_forest": "res://assets/audios/musics/last_forest_level_music.mp3",
+	"forest": {
+		"location": "res://assets/audios/musics/forest_music.mp3",
+		"volume": -4
+	},
 	
-	"city": "res://assets/audios/musics/city_music.mp3",
-	"last_level_city": "res://assets/audios/musics/last_level_city_music.mp3",
+	"last_level_forest": {
+		"location": "res://assets/audios/musics/last_forest_level_music.mp3",
+		"volume": -22
+	},
 	
-	"intelligent_city": "res://assets/audios/musics/intelligent_city_music.mp3",
+	"city": {
+		"location": "res://assets/audios/musics/city_music.mp3",
+		"volume": -15
+	},
+	
+	"last_level_city": {
+		"location":"res://assets/audios/musics/last_level_city_music.mp3",
+		"volume": -18
+	},
+	
+	"intelligent_city": {
+		"location":"res://assets/audios/musics/intelligent_city_music.mp3",
+		"volume": -28
+	},
 }
 
 @onready var ui_container: UIContainer = $"../UIContainer"
@@ -18,11 +38,11 @@ var musics = {
 var current_music: String = ""
 
 func play_music(music_name: String):
-	if music_name == "main_menu":
-		self.volume_db = -10
+	print(music_name)
 	if music_name != "" and current_music != music_name:
 		current_music = music_name
-		self.stream = load(musics[music_name])
+		self.volume_db = musics[music_name].volume
+		self.stream = load(musics[music_name].location)
 		self.play()
 
 func _on_finished() -> void:
@@ -31,21 +51,17 @@ func _on_finished() -> void:
 
 func check_type_of_level(new_scene_instance):
 	var level_name = new_scene_instance.name
-	if level_name.begins_with("Level") and level_name.contains("Forest"):
-		if level_name.contains("6"):
-			self.volume_db = -22
-			return "last_level_forest"
-		else:
-			self.volume_db = -4
-			return "forest"
-	elif level_name.begins_with("Level") and level_name.contains("IntelligentCity"):
-		self.volume_db = -28
-		return "intelligent_city"
-	elif level_name.begins_with("Level") and level_name.contains("City") and !level_name.contains("Intelligent"):
-		if level_name.contains("5"):
-			self.volume_db = -18
-			return "last_level_city"
-		else:
-			self.volume_db = -15
-			return "city"
+	if level_name.begins_with("Level"):
+		if  level_name.contains("Forest"):
+			if level_name.contains("6"):
+				return "last_level_forest"
+			else:
+				return "forest"
+		elif level_name.contains("IntelligentCity"):
+			return "intelligent_city"
+		elif level_name.contains("City") and !level_name.contains("Intelligent"):
+			if level_name.contains("5"):
+				return "last_level_city"
+			else:
+				return "city"
 	return ""

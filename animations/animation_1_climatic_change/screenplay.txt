@@ -35,7 +35,8 @@ Fim da animação
 Perguntas:
 Pergunta: O que são as mudanças climáticas?
 Resposta: Mudanças no clima do planeta, como mais calor ou frio
-Explicação: Mudanças climáticas são alterações no clima do planeta, como o aumento do calor ou mudanças nas chuvas. Muitas dessas mudanças são causadas pelas ações das pessoas, como poluição.
+Explicação: Mudanças climáticas são alterações no clima do planeta, como o aumento do calor ou mudanças nas chuvas. Muitas dessas mudanças são causadas
+pelas ações das pessoas, como poluição.
 
 Pergunta: Por que as mudanças climáticas acontecem?
 Resposta: Por causa de atividades humanas, como poluição e desmatamento

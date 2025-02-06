@@ -12,7 +12,8 @@ Narrador:
 (Close em um carro soltando fumaça. O gás sobe para o céu e se mistura com uma camada invisível ao redor do planeta, representada por um brilho esverdeado.)
 
 Narrador:
-"Esse gás, junto com outros, fica preso na atmosfera. É assim que funciona o efeito estufa: eles deixam o calor do sol entrar, mas não deixam o calor sair, como se cobríssemos o planeta com um cobertor."
+"Esse gás, junto com outros, fica preso na atmosfera. É assim que funciona o efeito estufa: eles deixam o calor do sol entrar, mas não deixam o calor sair, como se cobríssemos 
+o planeta com um cobertor."
 
 (A câmera mostra um planeta envolvido por uma camada transparente, enquanto raios de calor ficam 'presos' ao redor.)
 

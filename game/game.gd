@@ -1,6 +1,6 @@
 class_name Game extends Node2D
 
-@onready var audio_music_manager: AudioStreamPlayer = $AudioMusicManager
+@onready var music_manager: AudioStreamPlayer = $MusicManager
 
 func _ready() -> void:
-	audio_music_manager.play_music("main_menu")
+	music_manager.play_music("main_menu")

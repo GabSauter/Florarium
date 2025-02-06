@@ -35,5 +35,5 @@ func center_window():
 func _on_option_button_button_down() -> void:
 	audio_stream_player.play()
 
-func _on_option_button_item_selected(index: int) -> void:
+func _on_option_button_item_selected(_index: int) -> void:
 	audio_stream_player.play()
