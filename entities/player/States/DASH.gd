@@ -22,6 +22,7 @@ var dashing = false
 func enter_state():
 	#pause_game()
 	audio_stream_player_2d.play()
+	
 	emit_particles()
 	
 	player.can_dash = false

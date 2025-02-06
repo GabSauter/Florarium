@@ -38,7 +38,6 @@ var musics = {
 var current_music: String = ""
 
 func play_music(music_name: String):
-	print(music_name)
 	if music_name != "" and current_music != music_name:
 		current_music = music_name
 		self.volume_db = musics[music_name].volume

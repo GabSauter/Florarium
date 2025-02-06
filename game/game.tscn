@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://game/level_container.gd" id="2_ps7hn"]
 [ext_resource type="Script" path="res://game/ui_container.gd" id="2_x85wu"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_roqhq"]
-[ext_resource type="Script" path="res://game/audio_music_manager.gd" id="5_w7v0i"]
+[ext_resource type="Script" path="res://game/managers/music_manager.gd" id="5_w7v0i"]
 [ext_resource type="PackedScene" uid="uid://baup2poxcmpod" path="res://entities/game_related/level_transition.tscn" id="6_5legh"]
 
 [sub_resource type="AudioStream" id="AudioStream_3dhjj"]

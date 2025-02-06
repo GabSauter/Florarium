@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cakgxa7mjawj7" path="res://levels/forest_levels/level_6.tscn" id="20_s8nav"]
 [ext_resource type="Script" path="res://levels/forest_levels/area_music_less.gd" id="22_ilktn"]
 [ext_resource type="PackedScene" uid="uid://qvbame0g1vde" path="res://entities/player/effects/dash_visual.tscn" id="22_wkq8f"]
-[ext_resource type="AudioStream" uid="uid://c618uciv61p0o" path="res://assets/audios/sfx/circular-saw-1-25584.mp3" id="23_1prgn"]
+[ext_resource type="AudioStream" uid="uid://c618uciv61p0o" path="res://assets/audios/sfx/circular-saw.mp3" id="23_1prgn"]
 [ext_resource type="PackedScene" uid="uid://coxfd7ajyd7bc" path="res://camera/change_camera.tscn" id="23_yt353"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_avq0h"]
