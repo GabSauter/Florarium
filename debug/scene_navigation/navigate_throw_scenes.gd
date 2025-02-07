@@ -1,17 +1,13 @@
 extends Node
 
-var new_scene: PackedScene
-
-var level_container: LevelContainer
-
-var quizzes_scenes = [
+const QUIZZES_SCENES_NAMES = [
 	"ClimaticChangeQuiz1",
 	"ForestQuiz1",
 	"CityQuiz1",
 	"EcologicCityQuiz1"
 ]
 
-var levels_scenes = [
+const LEVELS_SCENES_NAMES = [
 	"Level1Forest",
 	"Level2Forest",
 	"Level3Forest",
@@ -30,18 +26,19 @@ var levels_scenes = [
 	"Level5IntelligentCity"
 ];
 
-func _ready():
-	level_container = get_tree().current_scene.get_node("LevelContainer")
+var new_scene: PackedScene
+
+@onready var level_container = $"../Game/LevelContainer"
 
 func _process(_delta: float):
-	if OS.is_debug_build():
+	if OS.is_debug_build() and level_container.get_child_count() != 0:
 		if Input.is_action_just_pressed("Navigate"):
 			var currScene = level_container.get_child(0)
-			if quizzes_scenes.has(currScene.name):
+			if QUIZZES_SCENES_NAMES.has(currScene.name):
 				var child_node = currScene.get_child(0)
 				new_scene = child_node.next_scene
 			
-			elif levels_scenes.has(currScene.name):
+			elif LEVELS_SCENES_NAMES.has(currScene.name):
 				var child_node = currScene.find_child("0").find_child("NextLevel")
 				new_scene = child_node.new_scene
 			
