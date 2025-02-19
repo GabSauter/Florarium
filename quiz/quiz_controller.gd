@@ -3,6 +3,8 @@ extends Control
 var level_container: LevelContainer
 @export var next_scene: PackedScene
 
+@onready var video_stream_player: VideoStreamPlayer = $Background/VideoStreamPlayer
+
 @onready var card_background = $Background/CardBackground
 @onready var v_box_container_options = $Background/CardBackground/VBoxContainer2/VBoxContainer/VBoxContainerOptions
 @onready var question_text = $Background/CardBackground/VBoxContainer2/VBoxContainer/QuestionText
@@ -29,6 +31,8 @@ var numbers_of_guesses: int
 var questions_already_responded: Array[String] = []
 
 func _ready():
+	if video_stream_player:
+		video_stream_player.visible = true
 	numbers_of_guesses = 0
 	number_of_correct_answers = 0
 	
@@ -131,3 +135,6 @@ func save_quiz():
 	file.close()
 
 	print("Quiz data saved:", json_data_string)
+
+func _on_video_stream_player_finished() -> void:
+	video_stream_player.visible = false
