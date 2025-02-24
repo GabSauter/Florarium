@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://byl846yuny273"]
+[gd_scene load_steps=10 format=4 uid="uid://byl846yuny273"]
 
 [ext_resource type="Script" path="res://quiz/quiz_controller.gd" id="1_g3tsp"]
 [ext_resource type="PackedScene" uid="uid://c4xuxw8eapjaw" path="res://levels/city_levels/level_1_city.tscn" id="2_xomqv"]
 [ext_resource type="Resource" uid="uid://2k8yo5jysq13" path="res://quiz/city/city_quiz_1_theme.tres" id="3_8ksmd"]
 [ext_resource type="Texture2D" uid="uid://b7m3fgaobuaib" path="res://assets/sprites/effects/Solid_white.png" id="4_pr2hk"]
+[ext_resource type="VideoStream" path="res://animations/animation_3_city/animation_3.ogv" id="6_h65na"]
 [ext_resource type="Texture2D" uid="uid://dsxht75qe6eo5" path="res://assets/sprites/quiz/computer_quiz.png" id="7_nw5bj"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_ge73g"]
@@ -211,5 +212,15 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Continuar"
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/Background"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.665, 0.665)
+stream = ExtResource("6_h65na")
+volume_db = 5.0
+autoplay = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="button_down" from="Control/Background/CardBackground/NextQuestionButton" to="Control" method="_on_next_question_button_button_down"]
 [connection signal="button_down" from="Control/Background/QuizOver/BackGround/VBoxContainer/ContinueButton" to="Control" method="_on_continue_button_button_down"]
+[connection signal="finished" from="Control/Background/VideoStreamPlayer" to="Control" method="_on_video_stream_player_finished"]
