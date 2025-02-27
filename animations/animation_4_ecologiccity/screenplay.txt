@@ -43,30 +43,6 @@ Narrador:
 "A cada árvore plantada, mais carbono é retirado da atmosfera e o ar fica mais limpo. Além disso, as árvores ajudam a melhorar a qualidade de vida na cidade, proporcionando 
 sombra e espaços verdes para todos."
 
-Cena 4: Gestão de Resíduos e Reciclagem
-(Visual: Uma central de reciclagem moderna e bem organizada. Lixeiras de diferentes cores estão espalhadas pela cidade, com moradores separando corretamente seus resíduos.)
-
-Narrador:
-"A gestão de resíduos também é fundamental. Em vez de enviar tudo para os aterros sanitários, os moradores da cidade reciclagem, compostam e reusam materiais. Isso diminui a 
-quantidade de lixo e evita a liberação de metano, um gás que contribui para o aquecimento global."
-
-(Cena: Um jovem leva uma sacola de alimentos orgânicos para um compostor comunitário, enquanto o lixo reciclável é levado para uma usina moderna.)
-
-Narrador:
-"Cada garrafa reciclada, cada pedaço de comida compostado, ajuda a preservar o meio ambiente e a reduzir a pressão sobre o planeta."
-
-Cena 5: Agricultura Sustentável
-(Visual: Uma fazenda urbana dentro da cidade, com hortas comunitárias e cultivo de alimentos sem o uso de pesticidas químicos.)
-
-Narrador:
-"A agricultura na Cidade Ecológica é feita de maneira sustentável. Ao invés de usar produtos químicos que poluem a terra e a água, aqui os agricultores utilizam práticas 
-orgânicas para cultivar alimentos saudáveis, com técnicas que preservam o solo e a biodiversidade."
-
-(Cena: Um agricultor trabalhando na horta, com a ajuda de crianças que estão plantando sementes e colhendo vegetais.)
-
-Narrador:
-"Com a agricultura urbana, a cidade reduz o impacto ambiental do transporte de alimentos e fortalece a conexão com a natureza."
-
 Cena 6: A Importância das Escolhas Individuais
 (Visual: A câmera mostra moradores realizando pequenas ações: desligando luzes desnecessárias, utilizando roupas recicladas, trocando lâmpadas convencionais por LED.)
 
